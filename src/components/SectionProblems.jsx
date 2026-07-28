@@ -28,11 +28,11 @@ export default function SectionProblems() {
   ];
 
   return (
-    <section className="bg-darkBg py-28 lg:py-40 border-y border-white/5 overflow-hidden">
+    <section className="bg-darkBg py-16 lg:py-24 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             The Inefficiency Audit
           </span>

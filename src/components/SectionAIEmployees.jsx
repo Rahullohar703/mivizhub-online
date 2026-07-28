@@ -90,11 +90,11 @@ export default function SectionAIEmployees({ onOpenBooking }) {
   const selected = EMPLOYEES.find(e => e.id === activeTab) || EMPLOYEES[0];
 
   return (
-    <section id="ai-workforce" className="bg-darkBg py-28 lg:py-40 overflow-hidden">
+    <section id="ai-workforce" className="bg-darkBg py-16 lg:py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             Digital Employee Catalog
           </span>
@@ -107,7 +107,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
         </div>
 
         {/* Tab Selector Bar */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-12 scrollbar-none">
+        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-8 lg:mb-10 scrollbar-none">
           {EMPLOYEES.map((emp) => {
             const isActive = activeTab === emp.id;
             return (

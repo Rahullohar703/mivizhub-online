@@ -46,7 +46,7 @@ export default function SectionHero({ onOpenBooking }) {
   const selectedRole = EMPLOYEES.find(e => e.id === activeEmp) || EMPLOYEES[0];
 
   return (
-    <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 overflow-hidden">
+    <section className="relative pt-20 pb-12 lg:pt-28 lg:pb-20 overflow-hidden">
       {/* Background Soft Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[350px] bg-electricBlue/20 blur-[120px] pointer-events-none rounded-full" />
 
@@ -70,7 +70,7 @@ export default function SectionHero({ onOpenBooking }) {
         </div>
 
         {/* Main Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-14">
+        <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

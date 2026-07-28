@@ -4,14 +4,14 @@ import { XCircle, CheckCircle2, ArrowRight, ShieldCheck, Zap } from 'lucide-reac
 
 export default function SectionSolution() {
   return (
-    <section className="bg-darkBg py-28 lg:py-40 text-white relative overflow-hidden">
+    <section className="bg-darkBg py-16 lg:py-24 text-white relative overflow-hidden">
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-electricBlue/10 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             The Autonomous Solution
           </span>

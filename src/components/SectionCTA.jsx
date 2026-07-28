@@ -4,7 +4,7 @@ import { ArrowRight, Calendar, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export default function SectionCTA({ onOpenBooking }) {
   return (
-    <section className="bg-darkBg py-28 lg:py-40 relative overflow-hidden">
+    <section className="bg-darkBg py-16 lg:py-24 relative overflow-hidden">
       <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center relative z-10">
         
           <motion.div
