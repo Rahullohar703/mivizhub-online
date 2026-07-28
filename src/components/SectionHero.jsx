@@ -46,9 +46,9 @@ export default function SectionHero({ onOpenBooking }) {
   const selectedRole = EMPLOYEES.find(e => e.id === activeEmp) || EMPLOYEES[0];
 
   return (
-    <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 bg-white overflow-hidden bg-grid-pattern">
+    <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 overflow-hidden">
       {/* Background Soft Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-500/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-electricBlue/20 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         
@@ -58,9 +58,9 @@ export default function SectionHero({ onOpenBooking }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-50 border border-gray-200/80 shadow-sm text-xs font-semibold text-gray-700 tracking-wide"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cardBg border border-white/10 shadow-sm text-xs font-semibold text-gray-300 tracking-wide"
           >
-            <span className="w-2 h-2 rounded-full bg-blue-600 status-pulse-green" />
+            <span className="w-2 h-2 rounded-full bg-electricBlue status-pulse-green" />
             <span>Digital Workforce Platform • AI Employees Built For Service Businesses</span>
           </motion.div>
         </div>
@@ -71,16 +71,16 @@ export default function SectionHero({ onOpenBooking }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.06] mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.06] mb-6"
           >
-            Hire Digital Employees That <span className="text-gradient-blue">Never Sleep.</span>
+            Hire Digital Employees That <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue to-blue-400">Never Sleep.</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg sm:text-xl text-gray-600 font-normal leading-relaxed max-w-3xl mx-auto mb-10"
+            className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed max-w-3xl mx-auto mb-10"
           >
             Never miss an inbound lead. Answer calls instantly, qualify prospects, generate quotes, and automate manual work so your team can focus on scaling.
           </motion.p>
@@ -92,19 +92,23 @@ export default function SectionHero({ onOpenBooking }) {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={onOpenBooking}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-gray-900 hover:bg-black text-white font-semibold text-sm shadow-xl shadow-gray-900/10 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-electricBlue hover:bg-blue-600 text-white font-semibold text-sm shadow-[0_0_20px_rgba(0,102,255,0.4)] transition-all flex items-center justify-center gap-2"
             >
               <span>Book Strategy Call</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
-            <a
+            </motion.button>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="#ai-workforce"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2"
             >
               <span>Explore AI Employee Roles</span>
-            </a>
+            </motion.a>
           </motion.div>
         </div>
 

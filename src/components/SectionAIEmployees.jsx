@@ -90,18 +90,18 @@ export default function SectionAIEmployees({ onOpenBooking }) {
   const selected = EMPLOYEES.find(e => e.id === activeTab) || EMPLOYEES[0];
 
   return (
-    <section id="ai-workforce" className="bg-white py-28 lg:py-40 overflow-hidden">
+    <section id="ai-workforce" className="bg-darkBg py-28 lg:py-40 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-blue-600 mb-3 block">
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             Digital Employee Catalog
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
             Hire Your Digital Workforce.
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-normal leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed">
             Pre-built, highly trained AI employees designed specifically for the workflows of architects, builders, contractors, and service companies.
           </p>
         </div>
@@ -116,12 +116,12 @@ export default function SectionAIEmployees({ onOpenBooking }) {
                 onClick={() => setActiveTab(emp.id)}
                 className={`px-6 py-3.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${
                   isActive 
-                    ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/10' 
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
+                    ? 'bg-electricBlue text-white shadow-[0_0_15px_rgba(0,102,255,0.4)]' 
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 <span>{emp.role}</span>
-                {isActive && <span className="w-2 h-2 rounded-full bg-blue-500" />}
+                {isActive && <span className="w-2 h-2 rounded-full bg-white" />}
               </button>
             );
           })}
@@ -135,34 +135,34 @@ export default function SectionAIEmployees({ onOpenBooking }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-3xl border border-gray-200 bg-gray-50/60 p-8 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+            className="rounded-3xl border border-white/5 bg-cardBg p-8 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
           >
             {/* Left Info Column (7 Cols) */}
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-6">
-                <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-mono font-semibold">
+                <span className="px-3 py-1 rounded-full bg-electricBlue/20 text-blue-300 border border-electricBlue/30 text-xs font-mono font-semibold">
                   {selected.badge}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-mono font-semibold">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold">
                   {selected.impact}
                 </span>
               </div>
 
-              <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4">
+              <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
                 {selected.role}
               </h3>
 
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 {selected.summary}
               </p>
 
               <div className="space-y-3 mb-8">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 font-semibold">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-500 font-semibold">
                   Core Responsibilities
                 </h4>
                 {selected.responsibilities.map((resp, i) => (
-                  <div key={i} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <div key={i} className="flex items-start gap-3 text-sm text-gray-300 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-electricBlue shrink-0 mt-0.5" />
                     <span>{resp}</span>
                   </div>
                 ))}
@@ -170,12 +170,12 @@ export default function SectionAIEmployees({ onOpenBooking }) {
 
               {/* Integrations */}
               <div>
-                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 font-semibold mb-3">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-gray-500 font-semibold mb-3">
                   Native System Integrations
                 </h4>
                 <div className="flex items-center gap-2 flex-wrap">
                   {selected.integrations.map((tool, i) => (
-                    <span key={i} className="px-3 py-1 rounded-lg bg-white border border-gray-200 text-gray-700 text-xs font-mono font-medium shadow-2xs">
+                    <span key={i} className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-xs font-mono font-medium shadow-2xs">
                       {tool}
                     </span>
                   ))}
@@ -184,10 +184,10 @@ export default function SectionAIEmployees({ onOpenBooking }) {
             </div>
 
             {/* Right Interactive Sample Conversation (5 Cols) */}
-            <div className="lg:col-span-5 bg-white p-6 rounded-2xl border border-gray-200 shadow-md">
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-100">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-gray-700">
-                  <MessageSquare className="w-4 h-4 text-blue-600" />
+            <div className="lg:col-span-5 bg-darkBg p-6 rounded-2xl border border-white/10 shadow-md">
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-gray-300">
+                  <MessageSquare className="w-4 h-4 text-electricBlue" />
                   Live Execution Log Preview
                 </div>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 status-pulse-green" />
@@ -197,12 +197,15 @@ export default function SectionAIEmployees({ onOpenBooking }) {
                 {selected.sampleLog.map((log, i) => {
                   const isAI = log.sender !== 'Client' && log.sender !== 'Lead' && log.sender !== 'Customer';
                   return (
-                    <div 
+                    <motion.div 
                       key={i} 
+                      initial={{ opacity: 0, x: isAI ? 20 : -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.2 }}
                       className={`p-3 rounded-xl ${
                         isAI 
-                          ? 'bg-blue-50/80 border border-blue-100 text-gray-900 ml-4' 
-                          : 'bg-gray-100 text-gray-800 mr-4'
+                          ? 'bg-electricBlue/20 border border-electricBlue/30 text-white ml-4' 
+                          : 'bg-white/10 text-gray-300 mr-4'
                       }`}
                     >
                       <span className="font-mono text-[10px] font-bold block text-gray-500 mb-1">
@@ -211,18 +214,20 @@ export default function SectionAIEmployees({ onOpenBooking }) {
                       <p className="leading-relaxed">
                         {log.text}
                       </p>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={onOpenBooking}
-                className="mt-6 w-full py-3 rounded-xl bg-gray-900 hover:bg-black text-white text-xs font-semibold transition-all flex items-center justify-center gap-2"
+                className="mt-6 w-full py-3 rounded-xl bg-electricBlue hover:bg-blue-600 shadow-[0_0_15px_rgba(0,102,255,0.4)] text-white text-xs font-semibold transition-all flex items-center justify-center gap-2"
               >
                 <span>Hire {selected.role}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              </motion.button>
             </div>
 
           </motion.div>

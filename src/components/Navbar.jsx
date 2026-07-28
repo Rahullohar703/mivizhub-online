@@ -15,26 +15,23 @@ export default function Navbar({ onOpenBooking }) {
 
   const navLinks = [
     { name: "Solutions", href: "#ai-employees" },
-    { name: "Industries", href: "#industries" },
     { name: "How it Works", href: "#how-it-works" },
-    { name: "Why Us", href: "#why-mivizhub" },
-    { name: "Outcomes", href: "#outcomes" },
   ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
       scrolled 
-        ? 'bg-white/90 backdrop-blur-md border-b border-[#ECECEC] py-3.5 shadow-sm' 
-        : 'bg-white border-b border-transparent py-5'
+        ? 'bg-darkBg/90 backdrop-blur-md border-b border-white/10 py-3.5 shadow-sm' 
+        : 'bg-darkBg border-b border-transparent py-5'
     }`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between">
         
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-[#2563EB] text-white flex items-center justify-center font-extrabold text-sm shadow-sm">
+          <div className="w-8 h-8 rounded-lg bg-electricBlue text-white flex items-center justify-center font-extrabold text-sm shadow-[0_0_15px_rgba(0,102,255,0.5)]">
             M
           </div>
-          <span className="font-bold text-xl text-[#111111] tracking-tight">
+          <span className="font-bold text-xl text-white tracking-tight">
             MivizHub
           </span>
         </a>
@@ -45,7 +42,7 @@ export default function Navbar({ onOpenBooking }) {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-[#666666] hover:text-[#111111] transition-colors"
+              className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
             >
               {link.name}
             </a>
@@ -56,7 +53,7 @@ export default function Navbar({ onOpenBooking }) {
         <div className="hidden sm:flex items-center gap-4">
           <button
             onClick={onOpenBooking}
-            className="px-5 py-2.5 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-semibold shadow-sm transition-all flex items-center gap-2"
+            className="px-5 py-2.5 rounded-full bg-electricBlue hover:bg-blue-600 text-white text-xs font-semibold shadow-[0_0_15px_rgba(0,102,255,0.4)] transition-all flex items-center gap-2"
           >
             <span>Book Free Strategy Call</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -66,7 +63,7 @@ export default function Navbar({ onOpenBooking }) {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#666666] hover:text-[#111111]"
+          className="md:hidden p-2 text-gray-400 hover:text-white"
           aria-label="Toggle Navigation"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -75,13 +72,13 @@ export default function Navbar({ onOpenBooking }) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-[#ECECEC] px-6 py-4 space-y-3">
+        <div className="md:hidden bg-cardBg border-b border-white/10 px-6 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-[#666666] hover:text-[#111111] py-1.5"
+              className="block text-sm font-medium text-gray-400 hover:text-white py-1.5"
             >
               {link.name}
             </a>
@@ -91,7 +88,7 @@ export default function Navbar({ onOpenBooking }) {
               setMobileMenuOpen(false);
               onOpenBooking();
             }}
-            className="mt-2 w-full py-3 rounded-full bg-[#2563EB] text-white text-xs font-semibold flex items-center justify-center gap-2"
+            className="mt-2 w-full py-3 rounded-full bg-electricBlue hover:bg-blue-600 text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,102,255,0.4)]"
           >
             <span>Book Free Strategy Call</span>
             <ArrowRight className="w-3.5 h-3.5" />

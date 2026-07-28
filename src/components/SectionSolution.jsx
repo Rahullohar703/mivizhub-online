@@ -4,15 +4,15 @@ import { XCircle, CheckCircle2, ArrowRight, ShieldCheck, Zap } from 'lucide-reac
 
 export default function SectionSolution() {
   return (
-    <section className="bg-[#09090B] py-28 lg:py-40 text-white relative overflow-hidden bg-grid-pattern-dark">
+    <section className="bg-darkBg py-28 lg:py-40 text-white relative overflow-hidden">
       {/* Glow Effects */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-electricBlue/10 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-blue-400 mb-3 block">
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             The Autonomous Solution
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
@@ -32,7 +32,7 @@ export default function SectionSolution() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 lg:p-10 rounded-3xl bg-gray-950 border border-gray-800/80 flex flex-col justify-between"
+            className="p-8 lg:p-10 rounded-3xl bg-cardBg border border-white/5 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-800">
@@ -77,7 +77,7 @@ export default function SectionSolution() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 lg:p-10 rounded-3xl bg-gray-900 border border-blue-500/40 shadow-2xl shadow-blue-500/10 flex flex-col justify-between relative overflow-hidden"
+            className="p-8 lg:p-10 rounded-3xl bg-[#0d121c] border border-electricBlue/40 shadow-[0_0_30px_rgba(0,102,255,0.15)] flex flex-col justify-between relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
 
