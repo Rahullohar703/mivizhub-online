@@ -1,0 +1,9 @@
+import React from 'react';
+
+export default function Section({ children, className = '', id = '' }) {
+  return (
+    <section id={id} className={`py-20 md:py-32 ${className}`}>
+      {children}
+    </section>
+  );
+}

@@ -7,14 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        darkBg: "#090909",
-        cardBg: "#121215",
-        electricBlue: "#0066FF",
+        offWhite: "#FAFAFA",
+        subtleGray: "#F4F4F5",
+        textMain: "#18181B",
+        textMuted: "#71717A",
+        brandBlack: "#09090B",
+        brandAccent: "#2563EB", 
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         heading: ['Plus Jakarta Sans', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
       }
     },
   },

@@ -1,67 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import Button from './ui/Button';
+import Container from './ui/Container';
+import Section from './ui/Section';
 
 export default function SectionCTA({ onOpenBooking }) {
   return (
-    <section className="bg-darkBg py-16 lg:py-24 relative overflow-hidden">
-      <div className="mx-auto max-w-5xl px-6 lg:px-8 text-center relative z-10">
+    <Section className="bg-[#111111] text-white overflow-hidden py-32 md:py-48">
+      <Container className="text-center relative z-10">
         
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-cardBg border border-white/5 rounded-3xl p-6 sm:p-10 lg:p-16 text-white shadow-2xl relative overflow-hidden"
-          >
-            {/* Subtle Radial Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-electricBlue/20 blur-[120px] pointer-events-none rounded-full" />
-
-            <div className="relative z-10">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-electricBlue/10 border border-electricBlue/20 text-xs font-mono font-semibold text-electricBlue mb-6">
-                <Calendar className="w-3.5 h-3.5" />
-                Let's Get Your Free Time Back
-              </span>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
-                Ready To Stop Working <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue to-blue-400">80 Hours a Week?</span>
-              </h2>
-
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed mb-10">
-              Schedule a quick 15-minute chat with us. We'll show you exactly how our software can save you time and money, with zero tech talk.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={onOpenBooking}
-                className="w-full sm:w-auto px-10 py-4 rounded-full bg-electricBlue hover:bg-blue-600 text-white font-bold text-base shadow-[0_0_20px_rgba(0,102,255,0.4)] transition-all flex items-center justify-center gap-3"
-              >
-                <span>Book a Free Chat With Us</span>
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </div>
-
-            <div className="flex items-center justify-center gap-6 text-xs text-gray-400 font-mono flex-wrap pt-6 border-t border-white/10">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                No Obligation
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                No Technical Skills Needed
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                We Handle All The Setup
-              </span>
-            </div>
-          </div>
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mx-auto"
+        >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-8">
+            Ready to hire your new best employee?
+          </h2>
+          <p className="text-xl text-gray-400 mb-12">
+            Book a free 15-minute chat to see exactly how this works for your business.
+          </p>
+          <Button onClick={onOpenBooking} variant="primary" className="bg-white text-black hover:bg-gray-100 px-10 py-5 text-lg shadow-xl">
+            Book your free chat
+          </Button>
         </motion.div>
 
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
