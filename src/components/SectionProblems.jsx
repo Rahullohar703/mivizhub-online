@@ -7,23 +7,23 @@ export default function SectionProblems() {
     {
       icon: PhoneOff,
       stat: "42%",
-      badge: "Inbound Leakage",
-      title: "Missed Calls Cost Real Revenue.",
-      description: "When your team is on-site or in client meetings, incoming phone inquiries slip straight to voicemail. 78% of customers call the next provider on Google."
+      badge: "Lost Customers",
+      title: "If you don't answer, they call the next guy.",
+      description: "When you're busy on a job, phone calls go to voicemail. Most people just hang up and call your competitor instead."
     },
     {
       icon: Clock,
       stat: "24h+",
-      badge: "Slow Speed-to-Lead",
-      title: "Delayed Follow-Ups Kill Deals.",
-      description: "Quotes sit in your inbox over the weekend. By the time your team responds on Monday, your prospect has already signed with a competitor."
+      badge: "Slow Responses",
+      title: "People hate waiting for replies.",
+      description: "If someone fills out a form on your website on Friday night, they want an answer now. Waiting until Monday means losing the job."
     },
     {
       icon: FileWarning,
       stat: "15h/wk",
-      badge: "Administrative Friction",
-      title: "Manual Overhead Traps Talent.",
-      description: "Your highest-paid project managers and designers spend hours copying lead data, typing preliminary estimates, and answering routine FAQs."
+      badge: "Too Much Paperwork",
+      title: "Spending your nights doing admin work.",
+      description: "Instead of spending time with family, you're stuck at your desk typing up quotes, answering emails, and doing paperwork."
     }
   ];
 
@@ -34,13 +34,13 @@ export default function SectionProblems() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
-            The Inefficiency Audit
+            The Daily Struggle
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
-            Traditional Operations Are Leaking Profits.
+            The Biggest Headaches of Running a Service Business.
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed">
-            Service businesses don't fail from lack of demand—they fail because manual administrative bottlenecks prevent them from capturing it.
+            You're great at what you do, but dealing with the phone, chasing leads, and catching up on paperwork is taking over your life.
           </p>
         </div>
 

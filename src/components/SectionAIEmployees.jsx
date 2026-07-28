@@ -5,81 +5,81 @@ import { Bot, PhoneCall, MessageSquare, FileText, CheckCircle2, ArrowRight, Zap,
 const EMPLOYEES = [
   {
     id: 'receptionist',
-    role: 'AI Receptionist',
-    badge: '24/7 Phone & Voice',
-    summary: 'Answers inbound voice calls in under 3 seconds, qualifies caller needs, and books site visits directly into your calendar.',
-    impact: '0 Missed Inbound Calls',
-    integrations: ['RingCentral', 'Twilio', 'Google Calendar', 'HubSpot', 'Zapier'],
+    role: 'The 24/7 Phone Answerer',
+    badge: 'Never Miss a Call',
+    summary: 'Answers your phone on the very first ring. It sounds like a real person, takes messages, and books appointments on your calendar automatically.',
+    impact: '0 Missed Calls',
+    integrations: ['Your Phone Number', 'Google Calendar', 'Email'],
     responsibilities: [
-      'Natural human-like voice conversations with zero latency delay',
-      'Intelligent screening for high-value vs. low-budget inquiries',
-      'Automated SMS appointment confirmation sent during the call',
-      'Direct sync with your team calendar and CRM'
+      'Answers the phone day or night, even on weekends',
+      'Finds out what the customer needs and their budget',
+      'Texts the customer a confirmation after booking',
+      'Puts the appointment right on your schedule'
     ],
     sampleLog: [
-      { sender: 'Client', text: 'Hi, I need an emergency site inspection for a commercial HVAC install in Austin.' },
-      { sender: 'AI Receptionist', text: 'Hello! I can arrange our lead HVAC engineer to visit your site. Is Thursday morning or afternoon better for you?' },
-      { sender: 'Client', text: 'Thursday morning works great.' },
-      { sender: 'AI Receptionist', text: 'Perfect. I have booked Thursday at 10:00 AM. Confirmation link sent to your mobile.' }
+      { sender: 'Customer', text: 'Hi, I need an emergency repair at my house.' },
+      { sender: 'Phone Answerer', text: 'Hello! I can help with that. Is Thursday morning or afternoon better for you?' },
+      { sender: 'Customer', text: 'Thursday morning works great.' },
+      { sender: 'Phone Answerer', text: 'Perfect. I booked Thursday at 10:00 AM. I just sent a confirmation text to your phone.' }
     ]
   },
   {
     id: 'sales',
-    role: 'AI Sales Assistant',
-    badge: 'Lead Qualification & Nurture',
-    summary: 'Engages web leads, SMS, and WhatsApp inquiries instantly. Scores lead budget and secures signed proposals faster.',
-    impact: '+38% Lead Conversion Rate',
-    integrations: ['WhatsApp API', 'Salesforce', 'Stripe', 'Docusign', 'Meta Lead Ads'],
+    role: 'The Instant Text Replier',
+    badge: 'Follow Up Instantly',
+    summary: 'When someone fills out a form on your website or texts your business number, this assistant replies instantly to keep them from calling a competitor.',
+    impact: 'More Jobs Won',
+    integrations: ['Website Forms', 'Text Messages', 'Email'],
     responsibilities: [
-      'Instant 5-second response to form submissions and WhatsApp leads',
-      'Qualifies budget, project timeline, and decision-maker authority',
-      'Automated follow-up sequences for cold or stalled proposals',
-      'Drafts customized proposal summaries for your sales team'
+      'Replies to website forms in under 5 seconds',
+      'Asks the customer when they need the job done',
+      'Follows up with customers who stopped replying',
+      'Sends you a quick summary of the lead'
     ],
     sampleLog: [
-      { sender: 'Lead', text: 'What is the pricing for renting a 250 kVA diesel generator for 3 months?' },
-      { sender: 'AI Sales Assistant', text: 'For 250 kVA units, our monthly rental rate includes maintenance & delivery. May I confirm your site location and delivery date?' },
-      { sender: 'Lead', text: 'Project site is in Dallas, starting next Monday.' },
-      { sender: 'AI Sales Assistant', text: 'Great! I have generated formal Quote #GEN-802 with delivery included. Sent to your email for review.' }
+      { sender: 'Customer', text: 'Do you guys do residential work in Dallas?' },
+      { sender: 'Text Replier', text: 'Yes we do! We can get someone out to Dallas as early as next Monday. What kind of work do you need done?' },
+      { sender: 'Customer', text: 'I need a full inspection of the property.' },
+      { sender: 'Text Replier', text: 'Great! I just emailed you our pricing sheet for inspections.' }
     ]
   },
   {
     id: 'estimator',
-    role: 'AI Estimator',
-    badge: 'Quote & Spec Automation',
-    summary: 'Parses architectural specs, material requirements, and CAD drawings to generate preliminary line-item quotes in seconds.',
+    role: 'The Fast Quoter',
+    badge: 'Quick Estimates',
+    summary: 'Stop spending your nights doing paperwork. This assistant reads project details and creates a simple, accurate quote in seconds.',
     impact: 'Saves 15+ Hours/Week',
-    integrations: ['AutoCAD', 'Excel', 'Procore', 'QuickBooks', 'Google Drive'],
+    integrations: ['QuickBooks', 'PDF Documents', 'Email'],
     responsibilities: [
-      'Extracts material lists and dimensional specs from PDF blueprints',
-      'Applies your custom pricing matrices and labor rate formulas',
-      'Generates client-ready branded quote PDFs automatically',
-      'Flags potential missing spec items for engineer review'
+      'Reads project details and material lists',
+      'Applies your standard pricing and labor rates',
+      'Creates a professional PDF quote for the customer',
+      'Highlights anything that looks missing or confusing'
     ],
     sampleLog: [
-      { sender: 'System', text: 'Uploaded PDF: Architectural_Blueprint_B4.pdf (18 pages)' },
-      { sender: 'AI Estimator', text: 'Processing specs... Extracted 4,200 sq.ft flooring + HVAC ducting requirements.' },
-      { sender: 'AI Estimator', text: 'Calculated preliminary estimate: $64,500 (Materials: $42k, Labor: $22.5k).' },
-      { sender: 'System', text: 'Draft PDF saved to QuickBooks & sent to Project Manager for approval.' }
+      { sender: 'System', text: 'You forwarded an email with project details attached.' },
+      { sender: 'Fast Quoter', text: 'Reading details... Looks like 4,200 sq.ft of material needed.' },
+      { sender: 'Fast Quoter', text: 'Calculated estimate: $64,500 based on your standard rates.' },
+      { sender: 'System', text: 'Draft Quote saved and sent to your email for review.' }
     ]
   },
   {
     id: 'support',
-    role: 'AI Support Specialist',
-    badge: 'Client Care & Troubleshooting',
-    summary: 'Handles routine customer service tickets, updates work orders, and dispatches field technicians when equipment faults occur.',
-    impact: '80% Tier-1 Resolution',
-    integrations: ['ServiceTitan', 'Zendesk', 'Freshdesk', 'Slack', 'Twilio'],
+    role: 'The Customer Helper',
+    badge: 'Answer Simple Questions',
+    summary: 'Handles routine customer questions like "Are you open?" or "When will the guy be here?" so you don\'t have to be glued to your phone.',
+    impact: 'Less Stress',
+    integrations: ['Text Messages', 'Website Chat', 'Email'],
     responsibilities: [
-      '24/7 client portal and SMS support for active projects',
-      'Queries telemetry data to troubleshoot fault error codes',
-      'Creates and updates field work orders in ServiceTitan',
-      'Sends automated technician ETA updates to clients'
+      'Answers simple questions 24/7',
+      'Checks where your technicians are and tells the customer',
+      'Creates work orders for repair requests',
+      'Texts customers when the technician is on the way'
     ],
     sampleLog: [
-      { sender: 'Customer', text: 'Our generator unit displays fault code E-204.' },
-      { sender: 'AI Support Specialist', text: 'Error E-204 indicates low coolant pressure. I have logged ticket #TK-402 and dispatched Technician Mark (ETA 45 mins).' },
-      { sender: 'Customer', text: 'Thank you for the fast response!' }
+      { sender: 'Customer', text: 'Is your technician still coming today?' },
+      { sender: 'Customer Helper', text: 'Yes! Mark is on his way and should be there in about 45 minutes.' },
+      { sender: 'Customer', text: 'Thank you for letting me know!' }
     ]
   }
 ];
@@ -96,13 +96,13 @@ export default function SectionAIEmployees({ onOpenBooking }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
-            Digital Employee Catalog
+            What Our Software Can Do
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
-            Hire Your Digital Workforce.
+            Meet Your New Virtual Staff.
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed">
-            Pre-built, highly trained AI employees designed specifically for the workflows of architects, builders, contractors, and service companies.
+            Our simple systems are built specifically for local service businesses. They handle the busywork so you don't have to.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
 
               <div className="space-y-3 mb-8">
                 <h4 className="text-xs font-mono uppercase tracking-wider text-gray-500 font-semibold">
-                  Core Responsibilities
+                  What it does for you:
                 </h4>
                 {selected.responsibilities.map((resp, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm text-gray-300 font-medium">
@@ -171,7 +171,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
               {/* Integrations */}
               <div>
                 <h4 className="text-xs font-mono uppercase tracking-wider text-gray-500 font-semibold mb-3">
-                  Native System Integrations
+                  Works with:
                 </h4>
                 <div className="flex items-center gap-2 flex-wrap">
                   {selected.integrations.map((tool, i) => (
@@ -188,7 +188,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
               <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
                 <div className="flex items-center gap-2 text-xs font-mono font-semibold text-gray-300">
                   <MessageSquare className="w-4 h-4 text-electricBlue" />
-                  Live Execution Log Preview
+                  Example conversation
                 </div>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 status-pulse-green" />
               </div>
@@ -225,7 +225,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
                 onClick={onOpenBooking}
                 className="mt-6 w-full py-3 rounded-xl bg-electricBlue hover:bg-blue-600 shadow-[0_0_15px_rgba(0,102,255,0.4)] text-white text-xs font-semibold transition-all flex items-center justify-center gap-2"
               >
-                <span>Hire {selected.role}</span>
+                <span>Learn about {selected.role}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </motion.button>
             </div>
