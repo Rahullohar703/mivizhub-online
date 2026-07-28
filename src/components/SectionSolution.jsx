@@ -26,7 +26,7 @@ export default function SectionSolution() {
         {/* Side-by-Side Comparison Architecture */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
-          {/* Old Way (Red/Gray Tones) */}
+          {/* Loser Card */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -36,15 +36,14 @@ export default function SectionSolution() {
           >
             <div>
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-800">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-red-400 bg-red-500/10 px-3 py-1 rounded border border-red-500/20">
-                  The Old Way
+                <h3 className="text-2xl font-bold text-gray-200">
+                  Doing It Yourself
+                </h3>
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-red-400 bg-red-500/10 px-3 py-1 rounded border border-red-500/20 flex items-center gap-1">
+                  <XCircle className="w-3.5 h-3.5" />
+                  LOSER
                 </span>
-                <span className="text-xs font-mono text-gray-500">Losing Money</span>
               </div>
-
-              <h3 className="text-2xl font-bold text-gray-200 mb-6">
-                Slow and Stressful
-              </h3>
 
               <ul className="space-y-5 mb-8">
                 <li className="flex items-start gap-3 text-sm text-gray-400">
@@ -63,6 +62,10 @@ export default function SectionSolution() {
                   <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                   <span>Paying office staff just to copy and paste data all day.</span>
                 </li>
+                <li className="flex items-start gap-3 text-sm text-gray-400">
+                  <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                  <span>Adds more tasks to your already busy plate.</span>
+                </li>
               </ul>
             </div>
 
@@ -71,7 +74,7 @@ export default function SectionSolution() {
             </div>
           </motion.div>
 
-          {/* New MivizHub AI Way (Blue/Green Tones) */}
+          {/* Winner Card */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,35 +86,35 @@ export default function SectionSolution() {
 
             <div>
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-800">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-400 bg-blue-500/20 px-3 py-1 rounded border border-blue-500/30">
-                  The MivizHub Way
-                </span>
-                <span className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5" />
-                  Working While You Sleep
+                <h3 className="text-2xl font-bold text-white">
+                  MivizHub Virtual Staff
+                </h3>
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/30 flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  WINNER
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Fast and Automatic
-              </h3>
-
               <ul className="space-y-5 mb-8">
                 <li className="flex items-start gap-3 text-sm text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <span>Our software answers the phone on the first ring, 24/7.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <span>Creates accurate quotes automatically in seconds.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <span>Texts customers back instantly so they don't look elsewhere.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <span>Connects directly to your existing phone and email.</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-300">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Removes tasks from your plate so you can focus on work.</span>
                 </li>
               </ul>
             </div>

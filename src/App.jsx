@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import SectionHero from './components/SectionHero';
+import SectionAudience from './components/SectionAudience';
 import SectionProblems from './components/SectionProblems';
 import SectionSolution from './components/SectionSolution';
 import SectionAIEmployees from './components/SectionAIEmployees';
@@ -26,6 +27,7 @@ export default function App() {
 
       <main>
         <SectionHero onOpenBooking={handleOpenBooking} />
+        <SectionAudience />
         <SectionProblems />
         <SectionSolution />
         <SectionAIEmployees onOpenBooking={handleOpenBooking} />

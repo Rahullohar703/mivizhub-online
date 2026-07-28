@@ -77,7 +77,7 @@ export default function SectionHero({ onOpenBooking }) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.06] mb-6"
           >
-            Stop Missing Phone Calls & <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue to-blue-400">Losing Jobs to Competitors.</span>
+            Your Competitors Aren't Better Than You. <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue to-blue-400">They Just Answer Faster.</span>
           </motion.h1>
 
           <motion.p 
@@ -86,7 +86,7 @@ export default function SectionHero({ onOpenBooking }) {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed max-w-3xl mx-auto mb-10"
           >
-            We set up simple software that answers your phones 24/7, replies to texts instantly, and books appointments for you. No technical skills required.
+            We build simple systems that answer your phones 24/7, reply to texts instantly, and book appointments for you. Beat the competition by never missing a lead again.
           </motion.p>
 
           {/* Action CTAs */}
