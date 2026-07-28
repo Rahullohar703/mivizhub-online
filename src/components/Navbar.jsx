@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import Button from './ui/Button';
+import Container from './ui/Container';
 
 export default function Navbar({ onOpenBooking }) {
-  const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
