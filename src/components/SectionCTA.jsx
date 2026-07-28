@@ -12,7 +12,7 @@ export default function SectionCTA({ onOpenBooking }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-cardBg border border-white/5 rounded-3xl p-10 sm:p-16 text-white shadow-2xl relative overflow-hidden"
+            className="bg-cardBg border border-white/5 rounded-3xl p-6 sm:p-10 lg:p-16 text-white shadow-2xl relative overflow-hidden"
           >
             {/* Subtle Radial Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-electricBlue/20 blur-[120px] pointer-events-none rounded-full" />
@@ -23,7 +23,7 @@ export default function SectionCTA({ onOpenBooking }) {
                 Complimentary Operational Strategy Audit
               </span>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
                 Ready To Build Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue to-blue-400">AI Workforce?</span>
               </h2>
 

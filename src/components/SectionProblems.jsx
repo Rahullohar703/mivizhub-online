@@ -36,7 +36,7 @@ export default function SectionProblems() {
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             The Inefficiency Audit
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
             Traditional Operations Are Leaking Profits.
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed">
@@ -55,7 +55,7 @@ export default function SectionProblems() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
-                className="bg-cardBg p-8 lg:p-10 rounded-3xl border border-white/10 shadow-sm hover:shadow-[0_0_20px_rgba(0,102,255,0.15)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                className="bg-cardBg p-6 lg:p-10 rounded-3xl border border-white/10 shadow-sm hover:shadow-[0_0_20px_rgba(0,102,255,0.15)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-8">

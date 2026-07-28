@@ -48,7 +48,7 @@ export default function SectionHero({ onOpenBooking }) {
   return (
     <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 overflow-hidden">
       {/* Background Soft Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-electricBlue/20 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[350px] bg-electricBlue/20 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         
@@ -58,10 +58,14 @@ export default function SectionHero({ onOpenBooking }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cardBg border border-white/10 shadow-sm text-xs font-semibold text-gray-300 tracking-wide"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 py-2 sm:py-1.5 rounded-2xl sm:rounded-full bg-cardBg border border-white/10 shadow-sm text-xs font-semibold text-gray-300 tracking-wide text-center"
           >
-            <span className="w-2 h-2 rounded-full bg-electricBlue status-pulse-green" />
-            <span>Digital Workforce Platform • AI Employees Built For Service Businesses</span>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-electricBlue status-pulse-green" />
+              <span>Digital Workforce Platform</span>
+            </div>
+            <span className="hidden sm:inline">•</span>
+            <span>AI Employees Built For Service Businesses</span>
           </motion.div>
         </div>
 
@@ -71,7 +75,7 @@ export default function SectionHero({ onOpenBooking }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.06] mb-6"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.06] mb-6"
           >
             Hire Digital Employees That <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricBlue to-blue-400">Never Sleep.</span>
           </motion.h1>
@@ -117,7 +121,7 @@ export default function SectionHero({ onOpenBooking }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-3xl bg-[#0C0D12] border border-gray-800 shadow-2xl p-6 lg:p-8 text-white relative overflow-hidden"
+          className="rounded-3xl bg-[#0C0D12] border border-gray-800 shadow-2xl p-4 sm:p-6 lg:p-8 text-white relative overflow-hidden"
         >
           {/* Top Operational Bar */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-gray-800/80">

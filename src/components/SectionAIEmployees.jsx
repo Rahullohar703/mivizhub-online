@@ -98,7 +98,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-electricBlue mb-3 block">
             Digital Employee Catalog
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
             Hire Your Digital Workforce.
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed">
@@ -114,7 +114,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
               <button
                 key={emp.id}
                 onClick={() => setActiveTab(emp.id)}
-                className={`px-6 py-3.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${
+                className={`px-4 py-2 sm:px-6 sm:py-3.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-300 flex items-center gap-2 ${
                   isActive 
                     ? 'bg-electricBlue text-white shadow-[0_0_15px_rgba(0,102,255,0.4)]' 
                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
@@ -135,7 +135,7 @@ export default function SectionAIEmployees({ onOpenBooking }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-3xl border border-white/5 bg-cardBg p-8 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+            className="rounded-3xl border border-white/5 bg-cardBg p-6 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
           >
             {/* Left Info Column (7 Cols) */}
             <div className="lg:col-span-7">
