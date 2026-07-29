@@ -24,10 +24,40 @@ const EMPLOYEES = [
     desc: 'Engages new leads instantly, presents offers, handles objections, and drives deals forward.'
   },
   { 
+    id: 'social', 
+    title: 'SOFI - AI Social Media Manager', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    desc: 'Replies automatically to Instagram, Facebook comments & DMs to capture every lead.'
+  },
+  { 
     id: 'admin', 
     title: 'CARTER - AI Admin / Ops', 
     icon: <HelpCircle className="w-6 h-6" />, 
     desc: 'Automates onboarding, HR tasks, reminders, and workflows to keep operations running smoothly.'
+  },
+  { 
+    id: 'customer_service', 
+    title: 'HOLLY - AI Customer Service', 
+    icon: <HelpCircle className="w-6 h-6" />, 
+    desc: 'Manages support conversations, resolves issues, escalates cases, and updates statuses 24/7.'
+  },
+  { 
+    id: 'recruiter', 
+    title: 'NOVA - AI Recruiter', 
+    icon: <FileText className="w-6 h-6" />, 
+    desc: 'Screens applicants, collects resumes, and pre-qualifies candidates in your hiring pipelines.'
+  },
+  { 
+    id: 'reputation', 
+    title: 'RIO - AI Reputation Manager', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    desc: 'Monitors reviews, auto-replies, and requests new ratings to boost your online presence.'
+  },
+  { 
+    id: 'lead_qualifier', 
+    title: 'ZANE - AI Lead Qualifier', 
+    icon: <HelpCircle className="w-6 h-6" />, 
+    desc: 'Asks screening questions, scores leads, tags them, and moves them through the pipeline.'
   }
 ];
 
@@ -44,7 +74,7 @@ export default function SectionAIEmployees() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {EMPLOYEES.map((emp, idx) => (
             <motion.div
               key={emp.id}

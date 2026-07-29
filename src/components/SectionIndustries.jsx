@@ -17,7 +17,7 @@ export default function SectionIndustries() {
             Who We Serve
           </h2>
           <p className="text-lg text-textMuted">
-            Whether you’re a one-person startup or a 500-employee organization, X-Staff AI transforms your operations instantly.
+            Whether you’re a one-person startup or a 500-employee organization, MivizHub transforms your operations instantly.
           </p>
         </div>
 

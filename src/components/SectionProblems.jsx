@@ -19,7 +19,7 @@ export default function SectionProblems() {
               THE TRUTH <br className="hidden md:block"/> You Don't Need Another Hiring Cycle.
             </h2>
             <p className="text-lg text-textMuted leading-relaxed">
-              You Need Coverage. X-Staff AI installs and manages AI employees that answer, qualify, book, and follow up without interviews, turnover, or staffing fees.
+              You Need Coverage. MivizHub installs and manages AI employees that answer, qualify, book, and follow up without interviews, turnover, or staffing fees.
             </p>
           </motion.div>
 

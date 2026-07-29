@@ -10,6 +10,7 @@ import SectionIndustries from './components/SectionIndustries';
 import SectionHowItWorks from './components/SectionHowItWorks';
 import SectionBenefits from './components/SectionBenefits';
 import SectionSocialProof from './components/SectionSocialProof';
+import SectionPricing from './components/SectionPricing';
 import SectionFAQ from './components/SectionFAQ';
 import SectionCTA from './components/SectionCTA';
 import Footer from './components/Footer';
@@ -37,6 +38,7 @@ export default function App() {
         <SectionHowItWorks />
         <SectionBenefits />
         <SectionSocialProof />
+        <SectionPricing onOpenBooking={handleOpenBooking} />
         <SectionFAQ />
         <SectionCTA onOpenBooking={handleOpenBooking} />
       </main>

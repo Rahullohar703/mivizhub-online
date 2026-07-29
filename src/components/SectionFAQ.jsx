@@ -11,7 +11,7 @@ export default function SectionFAQ() {
     },
     {
       q: 'Is this just an AI app or ChatGPT?',
-      a: 'No. Most “AI apps” are tools you still have to learn, set up, and babysit. X-Staff AI delivers managed AI Employees—we design the workflow, build it, connect it to your systems, and keep improving it.'
+      a: 'No. Most “AI apps” are tools you still have to learn, set up, and babysit. MivizHub delivers managed AI Employees—we design the workflow, build it, connect it to your systems, and keep improving it.'
     },
     {
       q: 'Do you install everything for me?',

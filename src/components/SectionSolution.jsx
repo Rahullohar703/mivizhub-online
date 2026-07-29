@@ -34,7 +34,7 @@ export default function SectionSolution() {
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0,transparent_70%)]" />
           
           <div className="text-center relative z-10 p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">X-Staff AI Employees: WINNER</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">MivizHub Employees: WINNER</h3>
             <ul className="text-left text-gray-300 font-medium tracking-wide space-y-2 inline-block">
               <li>✓ Cost 70–90% less</li>
               <li>✓ Train in hours, not weeks</li>
