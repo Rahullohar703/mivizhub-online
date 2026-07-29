@@ -13,7 +13,7 @@ export default function Navbar({ onOpenBooking }) {
           
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="MivizHub Logo" className="w-9 h-9 object-contain" />
+            <img src="/logo-256.png" alt="MivizHub Logo" className="w-9 h-9 object-contain" />
             <span className="font-heading font-bold text-xl tracking-tight">
               <span className="text-textMain">Miviz</span><span className="text-[#31c0de]">Hub</span>
             </span>

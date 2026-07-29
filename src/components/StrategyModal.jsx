@@ -48,7 +48,7 @@ export default function StrategyModal({ isOpen, onClose }) {
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-[#ECECEC]">
           <div className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="MivizHub Logo" className="w-7 h-7 object-contain" />
+            <img src="/logo-256.png" alt="MivizHub Logo" className="w-7 h-7 object-contain" />
             <div>
               <h3 className="text-lg font-bold text-[#111111]">Book Free Strategy Call</h3>
               <p className="text-xs text-[#666666]">Design Your Custom AI Workforce</p>
