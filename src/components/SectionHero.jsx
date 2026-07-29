@@ -17,10 +17,10 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-8 relative z-10 mx-auto max-w-4xl">
+          <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-6 relative z-10 mx-auto max-w-5xl px-2">
             <span className="text-white drop-shadow-sm">Build Your AI Workforce.</span>
-            <br />
-            <span className="text-gradient-punchy drop-shadow-sm">Without Hiring More Staff.</span>
+            <br className="hidden md:block" />
+            <span className="text-gradient-punchy drop-shadow-sm"> Without Hiring More Staff.</span>
           </h1>
         </motion.div>
 
@@ -30,7 +30,7 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mx-auto mb-12"
         >
-          <p className="text-lg md:text-xl text-textMuted leading-relaxed mb-8">
+          <p className="text-xl sm:text-2xl text-textMuted leading-relaxed mb-10 max-w-3xl mx-auto px-4">
             We build and install AI Employees that answer calls, qualify leads, follow up with customers, and book appointments—so you can grow your business without growing your payroll.
           </p>
           <div className="inline-flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base font-bold text-textMain bg-surface/50 border border-surfaceBorder rounded-full px-6 py-3 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
