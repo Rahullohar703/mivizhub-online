@@ -23,16 +23,18 @@ export default function Navbar({ onOpenBooking }) {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#employees" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Employees</a>
-            <a href="#industries" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Industries</a>
-            <a href="#how-it-works" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">How it Works</a>
-            <a href="#faq" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">FAQ</a>
+            <a href="#why-ai" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Why AI Staffing?</a>
+            <a href="#employees" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">AI Employees</a>
+            <a href="#pricing" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Pricing</a>
+            <a href="#how-it-works" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">How it works</a>
+            <a href="#demo" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Demo</a>
+            <a href="#faq" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">FAQs</a>
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
             <Button onClick={onOpenBooking} variant="primary">
-              Book a Free Chat
+              BOOK A DEMO
             </Button>
           </div>
 
@@ -59,14 +61,16 @@ export default function Navbar({ onOpenBooking }) {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-100 shadow-lg px-6 py-8 flex flex-col gap-6"
         >
-          <a href="#employees" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Employees</a>
-          <a href="#industries" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Industries</a>
-          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">How it Works</a>
-          <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">FAQ</a>
+          <a href="#why-ai" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Why AI Staffing?</a>
+          <a href="#employees" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">AI Employees</a>
+          <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Pricing</a>
+          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">How it works</a>
+          <a href="#demo" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Demo</a>
+          <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">FAQs</a>
           
           <div className="pt-4 mt-2 border-t border-gray-100">
             <Button onClick={() => { setIsMobileMenuOpen(false); onOpenBooking(); }} variant="primary" className="w-full">
-              Book a Free Chat
+              BOOK A DEMO
             </Button>
           </div>
         </motion.div>

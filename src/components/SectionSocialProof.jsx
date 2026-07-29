@@ -20,13 +20,13 @@ export default function SectionSocialProof() {
             </svg>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-textMain leading-snug mb-8">
-            "Before MivizHub, I was working 12 hour days and still losing jobs because I couldn't get to the phone fast enough. Now I just check my calendar in the morning and go."
+            "X-Staff AI has completely changed our business. The AI Receptionist answers every call, books jobs, and handles customer questions better than our old VA. We added an extra $12,800 in monthly revenue within 60 days because we no longer miss calls. Best investment we’ve made."
           </h2>
           <div className="flex items-center justify-center gap-4">
             <div className="w-12 h-12 rounded-full bg-gray-200" />
             <div className="text-left">
-              <div className="font-bold text-textMain">Mike R.</div>
-              <div className="text-sm text-textMuted">Owner, Elite Plumbing</div>
+              <div className="font-bold text-textMain">Lisa R.</div>
+              <div className="text-sm text-textMuted">Real Estate Broker</div>
             </div>
           </div>
         </motion.div>

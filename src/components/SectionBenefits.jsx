@@ -16,16 +16,19 @@ export default function SectionBenefits() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
-              Get your evenings back.
+              Why AI Staffing?
             </h2>
             <p className="text-lg text-gray-400 leading-relaxed mb-8">
-              The real benefit isn't just booking more jobs. It's being able to sit down for dinner with your family without your phone ringing, knowing your virtual employee is handling it.
+              Staffing agencies and recruiters hate us because we eliminate their fees. Business owners love us because we save them a ton of money and help them scale.
             </p>
             <ul className="space-y-4">
               {[
-                'No more answering calls on the roof.',
-                'No more midnight paperwork.',
-                'No more lost leads on weekends.'
+                '24/7 Availability: Your Al workforce never sleeps',
+                'Instant Responses: Engage leads immediately',
+                'Zero Payroll Issues: No HR drama',
+                'Scales Instantly: Handle 10x volume easily',
+                'High ROI: Costs pennies on the dollar',
+                'No Human Error: Consistent execution'
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-3 text-gray-300">
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -44,11 +47,11 @@ export default function SectionBenefits() {
           >
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0,transparent_70%)]" />
             <div className="relative z-10">
-              <div className="text-[4rem] font-extrabold tracking-tighter mb-2">
-                100%
+              <div className="text-[3rem] font-extrabold tracking-tighter mb-2">
+                70-90%
               </div>
               <p className="text-xl text-gray-400 font-medium">
-                Peace of mind.
+                Cheaper than human staff.
               </p>
             </div>
           </motion.div>

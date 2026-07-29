@@ -7,27 +7,27 @@ import { Phone, MessageSquare, FileText, HelpCircle } from 'lucide-react';
 const EMPLOYEES = [
   { 
     id: 'receptionist', 
-    title: 'The Phone Answerer', 
+    title: 'INGRID - AI Receptionist', 
     icon: <Phone className="w-6 h-6" />, 
-    desc: 'Answers 24/7, takes messages, and books jobs directly on your calendar.'
+    desc: 'Handles inbound calls, answers questions, routes callers, and books appointments instantly.'
   },
   { 
-    id: 'estimator', 
-    title: 'The Fast Quoter', 
+    id: 'website', 
+    title: 'VERA - AI Website Assistant', 
     icon: <FileText className="w-6 h-6" />, 
-    desc: 'Reads job details from customers and creates accurate quotes in seconds.'
+    desc: 'Engages visitors, answers questions, captures leads, recommends services, and guides navigation.'
   },
   { 
     id: 'sales', 
-    title: 'The Text Replier', 
+    title: 'SEAN - AI Sales Rep', 
     icon: <MessageSquare className="w-6 h-6" />, 
-    desc: 'Instantly texts back website leads so they don\'t hire your competitor.'
+    desc: 'Engages new leads instantly, presents offers, handles objections, and drives deals forward.'
   },
   { 
-    id: 'support', 
-    title: 'The Customer Helper', 
+    id: 'admin', 
+    title: 'CARTER - AI Admin / Ops', 
     icon: <HelpCircle className="w-6 h-6" />, 
-    desc: 'Answers simple questions ("Are you open?") automatically.'
+    desc: 'Automates onboarding, HR tasks, reminders, and workflows to keep operations running smoothly.'
   }
 ];
 
@@ -37,10 +37,10 @@ export default function SectionAIEmployees() {
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
-            Meet your new team.
+            Top Roles AI Employees Replace
           </h2>
           <p className="text-lg text-textMuted leading-relaxed">
-            Choose the help you need. We handle all the training and setup.
+            These AI Employees do the work of multiple human workers — instantly and flawlessly.
           </p>
         </div>
 

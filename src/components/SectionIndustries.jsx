@@ -5,9 +5,8 @@ import Section from './ui/Section';
 
 export default function SectionIndustries() {
   const industries = [
-    'Roofing', 'Plumbing', 'HVAC', 'Landscaping', 
-    'Home Cleaning', 'Pest Control', 'Electricians', 
-    'General Contractors', 'Pool Maintenance'
+    'Mom & Pop Shops', 'Solopreneurs', 'Startups', 'Small & Mid-Size', 
+    'Corporate Orgs'
   ];
 
   return (
@@ -15,10 +14,10 @@ export default function SectionIndustries() {
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-textMain mb-4">
-            Built for local service businesses.
+            Who We Serve
           </h2>
           <p className="text-lg text-textMuted">
-            If you drive a truck to a customer's house, this is for you.
+            Whether you’re a one-person startup or a 500-employee organization, X-Staff AI transforms your operations instantly.
           </p>
         </div>
 

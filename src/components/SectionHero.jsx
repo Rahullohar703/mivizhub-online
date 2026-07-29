@@ -16,8 +16,8 @@ export default function SectionHero({ onOpenBooking }) {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-textMain leading-[1.05] mb-8">
-            You don’t need another employee. <br className="hidden md:block" />
-            <span className="text-textMuted font-medium tracking-tight">You need someone who never sleeps.</span>
+            The Future of Staffing is Here. <br className="hidden md:block" />
+            <span className="text-textMuted font-medium tracking-tight">We are the world's first disruptive AI Staffing agency providing AI employees not humans.</span>
           </h1>
         </motion.div>
 
@@ -28,7 +28,8 @@ export default function SectionHero({ onOpenBooking }) {
           className="max-w-2xl mx-auto mb-12"
         >
           <p className="text-lg md:text-xl text-textMuted leading-relaxed">
-            We provide virtual team members for your business. They answer the phone, reply to texts, and book jobs 24/7. No hiring, no payroll, no headaches.
+            The companies who adopt AI Employees now will own the next decade. Those who don’t… will become a cautionary tale. <br/><br/>
+            <strong>Deploy in 24-72 Hours | 5x-20x ROI | Zero Risk</strong>
           </p>
         </motion.div>
 
@@ -39,7 +40,7 @@ export default function SectionHero({ onOpenBooking }) {
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
           <Button onClick={onOpenBooking} variant="primary" className="w-full sm:w-auto text-base px-8 py-4">
-            Book a Free Chat
+            BOOK A DEMO
           </Button>
           <a href="#how-it-works" className="w-full sm:w-auto text-base font-medium text-textMuted hover:text-textMain transition-colors px-8 py-4 text-center">
             See How It Works

@@ -16,7 +16,7 @@ export default function SectionTrust() {
     <section className="py-12 bg-offWhite border-b border-gray-100">
       <Container>
         <p className="text-center text-sm font-medium text-textMuted mb-8 tracking-wide">
-          TRUSTED BY LOCAL BUILDERS, CONTRACTORS, AND AGENCIES
+          TRUSTED BY INNOVATIVE AGENCIES AND ENTERPRISES GLOBALLY
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-40 grayscale">

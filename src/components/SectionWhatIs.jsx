@@ -5,9 +5,9 @@ import Section from './ui/Section';
 
 export default function SectionWhatIs() {
   const steps = [
-    { title: 'Answers the phone', desc: 'When a customer calls, it answers with a friendly voice.' },
-    { title: 'Takes messages & quotes', desc: 'It asks the right questions and can even generate simple quotes.' },
-    { title: 'Books your calendar', desc: 'It puts the appointment straight onto your schedule. You just wake up and look at your calendar.' },
+    { title: 'AI Bots & Workflows', desc: 'Multi-step AI workflows that run your entire back office.' },
+    { title: 'Phone Agents & Email + SMS', desc: 'Engage leads immediately. Zero wait times means higher conversion rates.' },
+    { title: 'Data Processors & Web Assistants', desc: 'Intelligent software systems & automations uniquely designed for your business.' },
   ];
 
   return (
@@ -17,10 +17,10 @@ export default function SectionWhatIs() {
           
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
-              What exactly is a virtual employee?
+              What AI Employees Actually Are
             </h2>
             <p className="text-lg text-textMuted leading-relaxed mb-8">
-              It’s a system that acts exactly like a front-desk receptionist, but it works 24/7 and never calls in sick. 
+              They are not robots sitting at a desk. They are intelligent software systems & automations uniquely designed for your business. They don’t "look" like employees. They behave like them — only better. 
             </p>
           </div>
 

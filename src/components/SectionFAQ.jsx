@@ -6,20 +6,20 @@ import Section from './ui/Section';
 export default function SectionFAQ() {
   const faqs = [
     {
-      q: 'Do my customers know it’s an AI?',
-      a: 'The voice and text are so natural that most people never know. It pauses, uses conversational tone, and answers intelligently.'
+      q: 'What is an AI Employee?',
+      a: 'An AI Employee is simply a set of AI software, apps, workflows and automations custom-designed around your business to perform a specific job role—like answering calls, booking appointments, following up with leads, or handling admin tasks—consistently and fast.'
     },
     {
-      q: 'Is it hard to set up?',
-      a: 'No. We handle 100% of the setup. We just interview you about your business for 30 minutes, and we build it.'
+      q: 'Is this just an AI app or ChatGPT?',
+      a: 'No. Most “AI apps” are tools you still have to learn, set up, and babysit. X-Staff AI delivers managed AI Employees—we design the workflow, build it, connect it to your systems, and keep improving it.'
     },
     {
-      q: 'Will it mess up my calendar?',
-      a: 'We program it with strict rules based on how you already schedule jobs. It will only book when and where you allow it to.'
+      q: 'Do you install everything for me?',
+      a: 'Yes. We do the installs, setup, integrations, testing, and go-live, then we manage, maintain and optimize performance over time.'
     },
     {
-      q: 'What happens if it doesn’t know the answer?',
-      a: 'It will politely tell the customer that it needs to check with you, take a detailed message, and text you immediately.'
+      q: 'Do I need to fire my staff?',
+      a: 'No. Do not fire your staff. AI Employees work best alongside your team. They remove repetitive work so your people can focus on higher-value tasks (customers, quality, sales, operations).'
     }
   ];
 
@@ -30,7 +30,7 @@ export default function SectionFAQ() {
       <Container className="max-w-3xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-textMain">
-            Common questions.
+            Frequently Asked Questions
           </h2>
         </div>
 

@@ -16,10 +16,10 @@ export default function SectionProblems() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
-              The true cost of <br className="hidden md:block"/> missing the phone.
+              THE TRUTH <br className="hidden md:block"/> You Don't Need Another Hiring Cycle.
             </h2>
             <p className="text-lg text-textMuted leading-relaxed">
-              When you’re on a roof, talking to a client, or under a sink, you can’t answer the phone. When you don't answer, that customer simply calls the next guy on Google.
+              You Need Coverage. X-Staff AI installs and manages AI employees that answer, qualify, book, and follow up without interviews, turnover, or staffing fees.
             </p>
           </motion.div>
 
@@ -30,14 +30,16 @@ export default function SectionProblems() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-offWhite p-12 rounded-[2rem] border border-gray-100 flex flex-col justify-center"
           >
-            <div className="text-[5rem] md:text-[7rem] font-extrabold tracking-tighter text-textMain leading-none mb-4">
-              42<span className="text-brandAccent">%</span>
+            <div className="text-[3rem] md:text-[4rem] font-extrabold tracking-tighter text-textMain leading-none mb-4">
+              The Old Way is Dead.
             </div>
             <h3 className="text-xl font-semibold text-textMain mb-2">
-              If you don't answer, they leave.
+              Traditional Hiring
             </h3>
             <p className="text-textMuted leading-relaxed">
-              Nearly half of all inbound sales leads will go to whichever business replies to them first. 
+              • "Candidate pipeline" takes 4 weeks<br/>
+              • Costs $3,000–$7,000/mo per head<br/>
+              • Requires constant management
             </p>
           </motion.div>
 

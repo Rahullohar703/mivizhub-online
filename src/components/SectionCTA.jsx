@@ -17,13 +17,13 @@ export default function SectionCTA({ onOpenBooking }) {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-8">
-            Ready to hire your new best employee?
+            READY TO GIVE US A TRY?
           </h2>
           <p className="text-xl text-gray-400 mb-12">
-            Book a free 15-minute chat to see exactly how this works for your business.
+            Don't wait until your competitors are running a full AI team. Most companies never go back. This is the last hiring decision you’ll ever need to make.
           </p>
           <Button onClick={onOpenBooking} variant="primary" className="bg-white text-black hover:bg-gray-100 px-10 py-5 text-lg shadow-xl">
-            Book your free chat
+            BOOK A DEMO
           </Button>
         </motion.div>
 
