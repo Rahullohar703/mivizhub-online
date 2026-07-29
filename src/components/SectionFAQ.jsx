@@ -6,57 +6,37 @@ import Section from './ui/Section';
 export default function SectionFAQ() {
   const faqs = [
     {
-      q: 'What is an AI Employee?',
-      a: 'An AI Employee is simply a set of AI software, apps, workflows and automations custom-designed around your business to perform a specific job role—like answering calls, booking appointments, following up with leads, or handling admin tasks—consistently and fast.'
+      q: 'Do I need to understand technology to use this?',
+      a: 'Absolutely not. We are a completely done-for-you service. We handle all the setup, programming, and maintenance. You simply receive the booked appointments and qualified leads.'
     },
     {
-      q: 'Is this just an AI app or ChatGPT?',
-      a: 'No. Most “AI apps” are tools you still have to learn, set up, and babysit. MivizHub delivers managed AI Employees—we design the workflow, build it, connect it to your systems, and keep improving it.'
+      q: 'How long does it take to set up?',
+      a: 'Most AI Employees are fully customized and deployed within 48 to 72 hours.'
     },
     {
-      q: 'Do you install everything for me?',
-      a: 'Yes. We do the installs, setup, integrations, testing, and go-live, then we manage, maintain and optimize performance over time.'
+      q: 'What if my business is unique?',
+      a: 'During our discovery call, we learn your specific business rules, pricing structures, and FAQ. Your AI Employee is custom-trained to sound and act exactly how you want it to.'
     },
     {
-      q: 'Do I need to fire my staff?',
-      a: 'No. Do not fire your staff. AI Employees work best alongside your team. They remove repetitive work so your people can focus on higher-value tasks (customers, quality, sales, operations).'
+      q: 'Will this replace my current staff?',
+      a: 'It can, but it doesn\'t have to. Many of our clients use MivizHub to handle the repetitive front-line work (like answering basic calls), freeing up their human staff to focus on complex, revenue-generating tasks.'
     },
     {
-      q: 'Who manages the AI Employees?',
-      a: 'We do. MivizHub installs and manages the AI Employees and continuously optimizes them so you can focus on running the business—not troubleshooting tech.'
-    },
-    {
-      q: 'Do I have to replace my current CRM?',
-      a: 'No. We can integrate with your current CRMs and connect them into our Command Center so your AI Employees can work inside your existing workflow.'
-    },
-    {
-      q: 'What kind of tasks can AI Employees handle?',
-      a: 'Common roles include: AI Receptionist (answers calls, routes to the right person, captures info), Missed Call Rescue (instant text-back, re-engages, books appointments), AI Appointment Setter (qualifies leads, schedules/reschedules, sends confirmations), AI Follow-Up Specialist (nurtures leads, reminders, reactivation, quote follow-ups), AI Review Request Assistant (automated review requests + follow-up sequences), AI Admin Assistant (FAQs, status updates, intake questions, basic support), Sales SDR (responds to inbound, outreach sequences, books meetings, CRM notes), Social Media (drafts posts, captions, content calendar, comment/DM replies), Marketing (email/SMS campaigns, ad copy variations, landing page copy, lead magnets), Reputation Management (monitors reviews, flags issues, routes unhappy customers to resolution).'
-    },
-    {
-      q: 'Will the AI talk to my customers directly?',
-      a: 'Yes—if you want it to. We can set it up for SMS, chat, email, and voice depending on your needs and comfort level.'
-    },
-    {
-      q: 'What if the AI can’t answer something?',
-      a: 'We build guardrails. If the AI hits something outside the rules, it can: Ask a clarifying question, Route to a human, Create a ticket/notification, Log the conversation for review.'
-    },
-    {
-      q: 'Will this make my business look “too automated”?',
-      a: 'Only if it’s done poorly. We build it to feel natural, fast, and helpful—and we use your tone, your scripts, and your customer service rules.'
+      q: 'Can it integrate with my current software?',
+      a: 'Yes. We can connect your AI Employee to most major CRM platforms, calendars, and booking software so it can schedule appointments directly for you without you lifting a finger.'
     }
   ];
 
   const [open, setOpen] = useState(0);
 
   return (
-    <Section id="faq" className="bg-background relative border-y border-surfaceBorder">
+    <Section id="faq" className="bg-background relative">
       <div className="absolute inset-0 bg-gradient-to-b from-surface/50 to-background pointer-events-none" />
       <Container className="max-w-3xl">
         <div className="text-center mb-10 md:mb-16 relative z-10">
-          <div className="text-sm font-bold tracking-widest text-brandAccent mb-4">STILL NOT SURE?</div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-textMain tracking-tight mb-4">
-            Frequently Asked Questions
+          <div className="text-sm font-bold tracking-widest text-brandAccent mb-4">FAQ</div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6 pb-2">
+            Common Questions from <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent to-brandPurple">Business Owners</span>
           </h2>
           <p className="text-lg text-textMuted max-w-2xl mx-auto">
             Find quick answers to the most common questions about our AI employees, how they work, and how they fit into your business.

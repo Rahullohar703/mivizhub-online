@@ -13,7 +13,7 @@ export default function SectionWarning() {
   ];
 
   return (
-    <Section id="warning" className="bg-background relative border-y border-surfaceBorder overflow-hidden py-24">
+    <Section id="warning" className="bg-background relative overflow-hidden py-24">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.05),transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -31,15 +31,15 @@ export default function SectionWarning() {
             </div>
             
             <h2 className="text-3xl md:text-5xl font-extrabold text-textMain tracking-tight leading-[1.1] mb-6">
-              Your Competitors Are Hiring AI Employees <span className="text-red-500">Right Now</span>
+              Your Competitors Are Upgrading Their Staff
             </h2>
             
             <p className="text-lg md:text-xl text-textMuted leading-relaxed mb-6 font-medium">
-              This is NOT hype. It’s happening. If your competitor installs even one AI Employee before you… <span className="text-white font-bold">they win.</span>
+              The businesses that adopt an AI workforce today are the ones who will dominate their local markets.
             </p>
             
             <p className="text-lg text-textMuted leading-relaxed mb-12">
-              They answer every call. They follow up faster. They convert more leads. They reduce overhead.
+              Those who wait will continue to struggle with high overhead, missed calls, and slow response times. Don't get left behind paying for expensive, stressful traditional hiring.
             </p>
             
             <div className="pt-8 border-t border-surfaceBorder/50">

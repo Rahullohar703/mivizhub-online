@@ -17,9 +17,10 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter leading-[1.05] mb-8 relative z-10">
-            <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">The Future of Staffing is</span> <span className="text-gradient-punchy drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">Here.</span> <br className="hidden md:block" />
-            <span className="text-xl md:text-3xl text-textMuted font-medium tracking-tight mt-6 block">We are the world's first disruptive AI Staffing agency providing AI employees not humans.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-8 relative z-10 mx-auto max-w-4xl">
+            <span className="text-white drop-shadow-sm">Build Your AI Workforce.</span>
+            <br />
+            <span className="text-gradient-punchy drop-shadow-sm">Without Hiring More Staff.</span>
           </h1>
         </motion.div>
 
@@ -30,14 +31,14 @@ export default function SectionHero({ onOpenBooking }) {
           className="max-w-2xl mx-auto mb-12"
         >
           <p className="text-lg md:text-xl text-textMuted leading-relaxed mb-8">
-            The companies who adopt AI Employees now will own the next decade. Those who don’t… will become a cautionary tale.
+            We build and install AI Employees that answer calls, qualify leads, follow up with customers, and book appointments—so you can grow your business without growing your payroll.
           </p>
           <div className="inline-flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base font-bold text-textMain bg-surface/50 border border-surfaceBorder rounded-full px-6 py-3 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-            <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-brandAccent animate-pulse" /> Deploy in 24-72 Hours</span>
+            <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-brandAccent animate-pulse" /> Up and running in 48 hours</span>
             <span className="hidden md:block text-surfaceBorder">|</span>
-            <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-brandPurple animate-pulse" /> 5x-20x ROI</span>
+            <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-brandPurple animate-pulse" /> A fraction of payroll costs</span>
             <span className="hidden md:block text-surfaceBorder">|</span>
-            <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> Zero Risk</span>
+            <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> Zero technical skills required</span>
           </div>
         </motion.div>
 
@@ -47,8 +48,8 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <Button onClick={onOpenBooking} variant="primary" className="w-full sm:w-auto text-base md:text-lg px-10 py-5 font-bold tracking-wide">
-            BOOK A DEMO
+          <Button onClick={onOpenBooking} variant="primary" className="w-full sm:w-auto text-base md:text-lg px-10 py-5 font-bold tracking-wide uppercase">
+            Book a Strategy Call
           </Button>
           <a href="#how-it-works" className="w-full sm:w-auto text-base font-medium text-textMuted hover:text-white transition-colors px-8 py-4 text-center">
             See How It Works

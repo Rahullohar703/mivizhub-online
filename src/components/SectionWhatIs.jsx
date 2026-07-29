@@ -5,9 +5,9 @@ import Section from './ui/Section';
 
 export default function SectionWhatIs() {
   const steps = [
-    { title: 'AI Bots & Workflows', desc: 'Multi-step AI workflows that run your entire back office.' },
-    { title: 'Phone Agents & Email + SMS', desc: 'Engage leads immediately. Zero wait times means higher conversion rates.' },
-    { title: 'Data Processors & Web Assistants', desc: 'Intelligent software systems & automations uniquely designed for your business.' },
+    { title: 'Flawless Phone Coverage', desc: 'Answers every single phone call immediately. Zero wait times, even if five people call your business at the exact same moment.' },
+    { title: 'Smart Lead Filtering', desc: 'Asks the right questions up front, ensuring you only spend your valuable time talking to serious, paying customers.' },
+    { title: 'Seamless Scheduling', desc: 'Books consultations directly into your calendar based on your availability, ending the endless back-and-forth emails.' },
   ];
 
   return (
@@ -16,11 +16,11 @@ export default function SectionWhatIs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
-              What AI Employees Actually Are
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6 pb-2">
+              What exactly is an <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-brandAccent">AI Employee?</span>
             </h2>
             <p className="text-lg text-textMuted leading-relaxed mb-8">
-              They are not robots sitting at a desk. They are intelligent software systems & automations uniquely designed for your business. They don’t "look" like employees. They behave like them — only better. 
+              Think of it as a digital team member that handles repetitive work just like a human receptionist or administrator would—only it works 24/7, never misses a call, and never needs training. It is an intelligent safety net designed to give your human team their time back.
             </p>
           </div>
 

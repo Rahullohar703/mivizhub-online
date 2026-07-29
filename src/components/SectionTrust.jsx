@@ -13,7 +13,7 @@ export default function SectionTrust() {
   ];
 
   return (
-    <section className="py-12 bg-surface border-y border-surfaceBorder relative">
+    <section className="py-12 bg-background relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.05),transparent_50%)] pointer-events-none" />
       <Container>
         <p className="text-center text-sm font-medium text-textMuted mb-8 tracking-wide">

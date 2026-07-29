@@ -12,22 +12,20 @@ export default function SectionProblems() {
           
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain leading-[1.1] mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#EC4899]">THE TRUTH.</span> <br className="hidden md:block"/> You Don't Need Another Hiring Cycle.
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#EC4899]">A Better Way</span> <br className="hidden md:block"/> to Scale Your Coverage.
             </h2>
             <p className="text-xl text-textMuted leading-relaxed mb-8">
-              You Need Coverage. MivizHub installs and manages AI employees that answer, qualify, book, and follow up without interviews, turnover, or staffing fees.
+              Stop settling for limited coverage and expensive hiring cycles. See how a digital workforce compares to traditional staffing.
             </p>
             
-            <div className="bg-surface/50 p-6 rounded-2xl border border-surfaceBorder mb-6">
-              <h3 className="text-xl font-bold text-textMain mb-4">Instead of Human staff, hire AI employees:</h3>
+            <div className="bg-surface/30 p-6 rounded-2xl mb-6">
+              <h3 className="text-xl font-bold text-textMain mb-4">MivizHub AI Employee</h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  'No placement fees',
-                  'No hourly upcharges',
-                  'No turnover replacements',
-                  'No drama',
-                  'No missed shifts',
-                  'No endless recruiting'
+                  'Available 24/7',
+                  'Lower ongoing cost',
+                  'Ready in days',
+                  'Consistent performance'
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-textMain font-medium">
                     <div className="w-2 h-2 rounded-full bg-[#00F0FF] shadow-[0_0_10px_rgba(0,240,255,0.8)]" />
@@ -47,20 +45,20 @@ export default function SectionProblems() {
           >
             <div className="relative z-10">
               <div className="text-[3rem] md:text-[4.5rem] font-extrabold tracking-tighter text-textMain leading-[1.1] mb-6">
-                The Old Way<br/>is Dead.
+                Traditional<br/>Employee
               </div>
-              <h3 className="text-xl font-bold text-[#EC4899] mb-4 uppercase tracking-wider">
-                Traditional Hiring
-              </h3>
               <ul className="space-y-3 text-lg text-textMuted font-medium">
                 <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span> "Candidate pipeline" takes 4 weeks
+                  <span className="text-red-500 font-bold">✕</span> Limited business hours
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span> Costs $3,000–$7,000/mo per head
+                  <span className="text-red-500 font-bold">✕</span> Ongoing payroll
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-red-500 font-bold">✕</span> Requires constant management
+                  <span className="text-red-500 font-bold">✕</span> Recruitment & training
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-500 font-bold">✕</span> Time off and turnover
                 </li>
               </ul>
             </div>

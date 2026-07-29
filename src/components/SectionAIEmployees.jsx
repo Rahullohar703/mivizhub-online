@@ -7,71 +7,59 @@ import { Phone, MessageSquare, FileText, HelpCircle } from 'lucide-react';
 const EMPLOYEES = [
   { 
     id: 'receptionist', 
-    title: 'INGRID - AI Receptionist', 
+    title: 'AI Receptionist', 
     icon: <Phone className="w-6 h-6" />, 
-    desc: 'Handles inbound calls, answers questions, routes callers, and books appointments instantly.'
-  },
-  { 
-    id: 'website', 
-    title: 'VERA - AI Website Assistant', 
-    icon: <FileText className="w-6 h-6" />, 
-    desc: 'Engages visitors, answers questions, captures leads, recommends services, and guides navigation.'
-  },
-  { 
-    id: 'sales', 
-    title: 'SEAN - AI Sales Rep', 
-    icon: <MessageSquare className="w-6 h-6" />, 
-    desc: 'Engages new leads instantly, presents offers, handles objections, and drives deals forward.'
-  },
-  { 
-    id: 'social', 
-    title: 'SOFI - AI Social Media Manager', 
-    icon: <MessageSquare className="w-6 h-6" />, 
-    desc: 'Replies automatically to Instagram, Facebook comments & DMs to capture every lead.'
-  },
-  { 
-    id: 'admin', 
-    title: 'CARTER - AI Admin / Ops', 
-    icon: <HelpCircle className="w-6 h-6" />, 
-    desc: 'Automates onboarding, HR tasks, reminders, and workflows to keep operations running smoothly.'
-  },
-  { 
-    id: 'customer_service', 
-    title: 'HOLLY - AI Customer Service', 
-    icon: <HelpCircle className="w-6 h-6" />, 
-    desc: 'Manages support conversations, resolves issues, escalates cases, and updates statuses 24/7.'
-  },
-  { 
-    id: 'recruiter', 
-    title: 'NOVA - AI Recruiter', 
-    icon: <FileText className="w-6 h-6" />, 
-    desc: 'Screens applicants, collects resumes, and pre-qualifies candidates in your hiring pipelines.'
-  },
-  { 
-    id: 'reputation', 
-    title: 'RIO - AI Reputation Manager', 
-    icon: <MessageSquare className="w-6 h-6" />, 
-    desc: 'Monitors reviews, auto-replies, and requests new ratings to boost your online presence.'
+    subtitle: 'Never miss another call.',
+    desc: 'Answers calls, takes detailed messages, and books appointments while you are out in the field.'
   },
   { 
     id: 'lead_qualifier', 
-    title: 'ZANE - AI Lead Qualifier', 
+    title: 'AI Lead Qualifier', 
     icon: <HelpCircle className="w-6 h-6" />, 
-    desc: 'Asks screening questions, scores leads, tags them, and moves them through the pipeline.'
+    subtitle: 'Speak only with serious buyers.',
+    desc: 'Screens new inquiries and filters out tire-kickers before they ever waste your time.'
+  },
+  { 
+    id: 'appointment_setter', 
+    title: 'AI Appointment Setter', 
+    icon: <FileText className="w-6 h-6" />, 
+    subtitle: 'Keep your calendar full.',
+    desc: 'Follows up with interested prospects automatically and gets them committed to a consultation.'
+  },
+  { 
+    id: 'customer_support', 
+    title: 'AI Customer Support', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    subtitle: 'Resolve inquiries instantly.',
+    desc: 'Handles basic, repetitive questions about pricing, hours, and services instantly.'
+  },
+  { 
+    id: 'reactivation', 
+    title: 'AI Reactivation Agent', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    subtitle: 'Turn old leads into new revenue.',
+    desc: 'Quietly reaches out to old leads and previous clients to generate new business out of thin air.'
+  },
+  { 
+    id: 'admin', 
+    title: 'AI Operations Assistant', 
+    icon: <HelpCircle className="w-6 h-6" />, 
+    subtitle: 'Eliminate administrative bottlenecks.',
+    desc: 'Automates your internal reminders, invoicing prompts, and routine paperwork workflows.'
   }
 ];
 
 export default function SectionAIEmployees() {
   return (
-    <Section id="employees" className="bg-background relative border-t border-surfaceBorder">
+    <Section id="employees" className="bg-background relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(147,51,234,0.1)_0%,transparent_50%)] pointer-events-none" />
       <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
-            Top Roles AI Employees Replace
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6 pb-2">
+            Take These Roles Off <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandPurple to-[#EC4899]">Your Plate Today</span>
           </h2>
           <p className="text-lg text-textMuted leading-relaxed">
-            These AI Employees do the work of multiple human workers — instantly and flawlessly.
+            Stop doing the busywork. We can deploy AI staff for these specific areas of your business so your human team can focus on the work that actually makes money.
           </p>
         </div>
 
@@ -88,9 +76,10 @@ export default function SectionAIEmployees() {
               <div className="w-12 h-12 rounded-2xl bg-surface border border-surfaceBorder flex items-center justify-center text-brandAccent mb-6 group-hover:scale-110 group-hover:bg-brandAccent/10 transition-all">
                 {emp.icon}
               </div>
-              <h3 className="text-2xl font-bold text-textMain mb-3 group-hover:text-brandAccent transition-colors">
+              <h3 className="text-2xl font-bold text-textMain mb-1 group-hover:text-brandAccent transition-colors">
                 {emp.title}
               </h3>
+              <p className="text-brandAccent font-medium text-sm italic mb-4">{emp.subtitle}</p>
               <p className="text-textMuted leading-relaxed">
                 {emp.desc}
               </p>

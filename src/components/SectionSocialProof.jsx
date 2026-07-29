@@ -6,44 +6,32 @@ import Section from './ui/Section';
 export default function SectionSocialProof() {
   const testimonials = [
     {
-      text: "MivizHub has completely changed our business. The AI Receptionist answers every call, books jobs, and handles customer questions better than our old VA. We added an extra $12,800 in monthly revenue within 60 days because we no longer miss calls. Best investment we’ve made.",
-      name: "Lisa R",
-      role: "Home Services"
+      text: "[INSERT REAL TESTIMONIAL 1: Focus on time saved or a specific outcome, e.g., 'The AI booked 5 jobs while I was sleeping...']",
+      name: "Client Name",
+      role: "Industry"
     },
     {
-      text: "Our AI Appointment Setter from MivizHub is insane. It pre-qualifies leads, schedules showings, and follows up automatically. My agents are spending their time closing, not chasing cold leads. This feels like having a 5-person inside-sales team for less than the cost of one part-timer.",
-      name: "Jacob M",
-      role: "Real Estate Broker"
+      text: "[INSERT REAL TESTIMONIAL 2: Focus on reduced stress, e.g., 'I don't have to constantly check my phone on the job site anymore...']",
+      name: "Client Name",
+      role: "Industry"
     },
     {
-      text: "I was skeptical at first… but the AI Sales Closer is real. It handles inbound leads, sends examples, answers FAQs, and books paid consultations. We saw a 37% increase in booked appointments in the first month.",
-      name: "Samantha W",
-      role: "MedSpa Owner"
-    },
-    {
-      text: "Our AI Support Agent handles 80% of messages instantly, and the AI Social Media Manager posts daily. This is the future of staffing.",
-      name: "Carlos & Dana",
-      role: "E-Commerce Owners"
-    },
-    {
-      text: "My AI Assistant writes emails, sends reminders, creates content, qualifies clients, and keeps my calendar full. MivizHub gave me back 15+ hours a week.",
-      name: "Coach Mike",
-      role: "Consultant"
-    },
-    {
-      text: "The AI Receptionist handles new patient inquiries, insurance questions, reminders, and follow-ups. Our no-show rate dropped by 22%.",
-      name: "Dr. Nina",
-      role: "Dental Office"
+      text: "[INSERT REAL TESTIMONIAL 3: Focus on overhead savings or hiring relief, e.g., 'We canceled our job listing for a receptionist immediately...']",
+      name: "Client Name",
+      role: "Industry"
     }
   ];
 
   return (
-    <Section id="social-proof" className="bg-background relative border-y border-surfaceBorder">
+    <Section id="social-proof" className="bg-background relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(147,51,234,0.05),transparent_50%)] pointer-events-none" />
       <Container className="relative z-10 text-center">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-textMain mb-4 tracking-tight">TESTIMONIALS</h2>
-          <p className="text-xl text-textMuted">What others are saying</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 pb-2">
+            Hear From Business Owners <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-brandAccent">Like You</span>
+          </h2>
+          <p className="text-xl text-textMuted">Real relief from companies using MivizHub AI Employees to simplify their operations.</p>
+          <p className="text-sm text-brandAccent/60 italic mt-4">(Note: Replace these with actual client testimonials before launch)</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

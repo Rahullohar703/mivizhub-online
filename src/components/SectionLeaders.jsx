@@ -5,7 +5,7 @@ import Section from './ui/Section';
 
 export default function SectionLeaders() {
   return (
-    <Section id="leaders" className="bg-background relative border-y border-surfaceBorder py-20">
+    <Section id="leaders" className="bg-background relative py-20">
       <div className="absolute inset-0 bg-gradient-to-t from-surface to-background pointer-events-none" />
       <Container className="relative z-10 text-center">
         <motion.div 
@@ -16,10 +16,10 @@ export default function SectionLeaders() {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-textMain tracking-tight mb-6">
-            What <span className="text-gradient-primary">Global Leaders</span> Are Saying About AI
+            The Shift in Business Operations
           </h2>
           <p className="text-lg md:text-xl text-textMuted leading-relaxed mb-12">
-            From CEOs to policymakers, decision-makers across industries recognize AI as a transformational force in modern business.
+            Industry leaders agree that integrating AI employees into your daily operations is the easiest way to regain your competitive advantage.
           </p>
           
           <div className="card-base p-8 border-brandAccent/20">
