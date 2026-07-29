@@ -18,7 +18,7 @@ export default function SectionHero({ onOpenBooking }) {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter leading-[1.05] mb-8">
-            <span className="text-gradient-dark">The Future of Staffing is Here.</span> <br className="hidden md:block" />
+            <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">The Future of Staffing is</span> <span className="text-gradient-punchy drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">Here.</span> <br className="hidden md:block" />
             <span className="text-xl md:text-3xl text-textMuted font-medium tracking-tight mt-6 block">We are the world's first disruptive AI Staffing agency providing AI employees not humans.</span>
           </h1>
         </motion.div>
