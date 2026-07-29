@@ -7,9 +7,7 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brandAccent to-brandPurple text-white flex items-center justify-center font-bold text-lg shadow-[0_0_10px_rgba(79,70,229,0.5)]">
-              M
-            </div>
+            <img src="/logo.png" alt="MivizHub Logo" className="w-8 h-8 object-contain" />
             <span className="font-heading font-bold text-xl tracking-tight text-textMain">
               MivizHub
             </span>
