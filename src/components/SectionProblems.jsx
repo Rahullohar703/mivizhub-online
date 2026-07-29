@@ -10,12 +10,7 @@ export default function SectionProblems() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain leading-[1.1] mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#EC4899]">THE TRUTH.</span> <br className="hidden md:block"/> You Don't Need Another Hiring Cycle.
             </h2>
@@ -41,7 +36,7 @@ export default function SectionProblems() {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
