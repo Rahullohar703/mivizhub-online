@@ -3,7 +3,7 @@ import Container from './ui/Container';
 
 export default function Footer() {
   return (
-    <footer className="bg-background pt-12 pb-6 md:py-12 border-t border-surfaceBorder pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
+    <footer className="bg-background pt-12 pb-8 md:py-12 border-t border-surfaceBorder">
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
