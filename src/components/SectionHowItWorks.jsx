@@ -32,9 +32,8 @@ export default function SectionHowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="card-base p-8 relative overflow-hidden group"
+              className="card-base p-8 relative overflow-hidden group bg-[radial-gradient(circle_at_bottom_right,rgba(79,70,229,0.1)_0%,transparent_60%)]"
             >
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brandAccent/10 rounded-full blur-[40px] group-hover:bg-brandAccent/20 transition-all duration-500 pointer-events-none" />
               <div className="text-4xl font-heading font-extrabold text-surfaceBorder group-hover:text-brandAccent/40 transition-colors mb-6">{step.num}</div>
               <h3 className="text-xl font-bold text-textMain mb-3">{step.title}</h3>
               <p className="text-textMuted leading-relaxed">{step.desc}</p>

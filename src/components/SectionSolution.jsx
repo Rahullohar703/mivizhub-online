@@ -29,11 +29,8 @@ export default function SectionSolution() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="max-w-4xl mx-auto h-[300px] md:h-[400px] card-base flex items-center justify-center relative overflow-hidden group"
+          className="max-w-4xl mx-auto h-[300px] md:h-[400px] card-base flex items-center justify-center relative overflow-hidden group bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.15)_0%,transparent_60%)]"
         >
-          {/* Subtle noise/gradient background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brandAccent/20 rounded-full blur-[100px] group-hover:bg-brandAccent/30 transition-all duration-700 pointer-events-none" />
-          
           <div className="text-center relative z-10 p-8">
             <h3 className="text-3xl font-extrabold text-gradient-dark mb-8">MivizHub Employees: <span className="text-brandAccent">WINNER</span></h3>
             <ul className="text-left text-textMain font-medium tracking-wide space-y-4 inline-block text-lg">

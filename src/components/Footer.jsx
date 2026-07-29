@@ -3,11 +3,11 @@ import Container from './ui/Container';
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-12 border-t border-gray-100">
+    <footer className="bg-background py-12 border-t border-surfaceBorder">
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-brandBlack text-white flex items-center justify-center font-bold text-lg">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brandAccent to-brandPurple text-white flex items-center justify-center font-bold text-lg shadow-[0_0_10px_rgba(79,70,229,0.5)]">
               M
             </div>
             <span className="font-heading font-bold text-xl tracking-tight text-textMain">

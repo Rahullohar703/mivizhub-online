@@ -20,11 +20,10 @@ export default function SectionWarning() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="card-base p-8 md:p-16 border-red-500/20 relative"
+            className="card-base p-8 md:p-16 border-red-500/20 relative bg-[radial-gradient(ellipse_at_top_right,rgba(239,68,68,0.05)_0%,transparent_50%)]"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] pointer-events-none" />
             
             <div className="flex items-center gap-3 text-red-500 font-bold tracking-widest mb-6">
               <AlertTriangle className="w-6 h-6 animate-pulse" />

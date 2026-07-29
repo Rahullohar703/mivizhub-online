@@ -7,7 +7,7 @@ import Section from './ui/Section';
 export default function SectionCTA({ onOpenBooking }) {
   return (
     <Section className="bg-background text-white overflow-hidden py-32 md:py-48 relative border-t border-surfaceBorder">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brandAccent/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.15)_0%,transparent_70%)] pointer-events-none" />
       <Container className="text-center relative z-10">
         
         <motion.div

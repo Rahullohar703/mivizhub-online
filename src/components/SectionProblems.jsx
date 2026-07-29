@@ -13,8 +13,8 @@ export default function SectionProblems() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain leading-[1.1] mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#EC4899]">THE TRUTH.</span> <br className="hidden md:block"/> You Don't Need Another Hiring Cycle.
@@ -46,11 +46,10 @@ export default function SectionProblems() {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="card-base p-10 md:p-14 flex flex-col justify-center relative overflow-hidden group border-[#EC4899]/30 hover:border-[#EC4899]/60 hover:shadow-[0_0_40px_rgba(236,72,153,0.15)] transition-all"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="card-base p-10 md:p-14 flex flex-col justify-center relative overflow-hidden group border-[#EC4899]/30 hover:border-[#EC4899]/60 hover:shadow-[0_0_40px_rgba(236,72,153,0.15)] transition-all bg-[radial-gradient(ellipse_at_top_right,rgba(236,72,153,0.1)_0%,transparent_60%)]"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#EC4899]/10 rounded-full blur-[80px] group-hover:bg-[#EC4899]/20 transition-all duration-700 pointer-events-none" />
             <div className="relative z-10">
               <div className="text-[3rem] md:text-[4.5rem] font-extrabold tracking-tighter text-textMain leading-[1.1] mb-6">
                 The Old Way<br/>is Dead.

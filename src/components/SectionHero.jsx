@@ -7,7 +7,7 @@ import Section from './ui/Section';
 export default function SectionHero({ onOpenBooking }) {
   return (
     <Section id="hero" className="pt-40 pb-24 md:pt-56 md:pb-40 bg-background overflow-hidden relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brandPurple/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.15)_0%,transparent_60%)] pointer-events-none" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brandAccent/50 to-transparent" />
       <Container className="relative z-10 text-center flex flex-col items-center">
         
@@ -17,7 +17,7 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter leading-[1.05] mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter leading-[1.05] mb-8 relative z-10">
             <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">The Future of Staffing is</span> <span className="text-gradient-punchy drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">Here.</span> <br className="hidden md:block" />
             <span className="text-xl md:text-3xl text-textMuted font-medium tracking-tight mt-6 block">We are the world's first disruptive AI Staffing agency providing AI employees not humans.</span>
           </h1>
