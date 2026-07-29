@@ -7,13 +7,13 @@ export default function Navbar({ onOpenBooking }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-surfaceBorder transition-all duration-300">
       <Container>
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-brandBlack text-white flex items-center justify-center font-bold text-lg">
+            <div className="w-8 h-8 rounded-lg bg-brandAccent text-white flex items-center justify-center font-bold text-lg shadow-[0_0_15px_rgba(79,70,229,0.5)]">
               M
             </div>
             <span className="font-heading font-bold text-xl tracking-tight text-textMain">
@@ -59,7 +59,7 @@ export default function Navbar({ onOpenBooking }) {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-100 shadow-lg px-6 py-8 flex flex-col gap-6"
+          className="md:hidden absolute top-20 left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-surfaceBorder shadow-2xl px-6 py-8 flex flex-col gap-6"
         >
           <a href="#why-ai" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Why AI Staffing?</a>
           <a href="#employees" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">AI Employees</a>
@@ -68,7 +68,7 @@ export default function Navbar({ onOpenBooking }) {
           <a href="#demo" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Demo</a>
           <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">FAQs</a>
           
-          <div className="pt-4 mt-2 border-t border-gray-100">
+          <div className="pt-4 mt-2 border-t border-surfaceBorder">
             <Button onClick={() => { setIsMobileMenuOpen(false); onOpenBooking(); }} variant="primary" className="w-full">
               BOOK A DEMO
             </Button>

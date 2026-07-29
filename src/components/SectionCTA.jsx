@@ -6,7 +6,8 @@ import Section from './ui/Section';
 
 export default function SectionCTA({ onOpenBooking }) {
   return (
-    <Section className="bg-[#111111] text-white overflow-hidden py-32 md:py-48">
+    <Section className="bg-background text-white overflow-hidden py-32 md:py-48 relative border-t border-surfaceBorder">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brandAccent/20 rounded-full blur-[150px] pointer-events-none" />
       <Container className="text-center relative z-10">
         
         <motion.div
@@ -16,13 +17,13 @@ export default function SectionCTA({ onOpenBooking }) {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-8">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8 text-gradient-dark">
             READY TO GIVE US A TRY?
           </h2>
-          <p className="text-xl text-gray-400 mb-12">
+          <p className="text-xl text-textMuted mb-12">
             Don't wait until your competitors are running a full AI team. Most companies never go back. This is the last hiring decision you’ll ever need to make.
           </p>
-          <Button onClick={onOpenBooking} variant="primary" className="bg-white text-black hover:bg-gray-100 px-10 py-5 text-lg shadow-xl">
+          <Button onClick={onOpenBooking} variant="primary" className="text-lg px-12 py-6 font-bold tracking-widest shadow-[0_0_30px_rgba(79,70,229,0.5)] hover:shadow-[0_0_50px_rgba(79,70,229,0.8)]">
             BOOK A DEMO
           </Button>
         </motion.div>

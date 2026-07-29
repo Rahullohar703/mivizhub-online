@@ -5,9 +5,9 @@ export default function Button({ children, onClick, variant = 'primary', classNa
   const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 rounded-full text-sm";
   
   const variants = {
-    primary: "bg-brandBlack text-white hover:bg-gray-800 shadow-sm px-6 py-3",
-    secondary: "bg-white text-textMain border border-gray-200 hover:border-gray-300 hover:bg-gray-50 shadow-sm px-6 py-3",
-    ghost: "text-textMuted hover:text-textMain px-4 py-2"
+    primary: "bg-brandAccent text-white shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] px-6 py-3 border border-brandAccent/50 relative overflow-hidden group",
+    secondary: "bg-surface/50 backdrop-blur text-white border border-surfaceBorder hover:border-textMuted px-6 py-3",
+    ghost: "text-textMuted hover:text-white px-4 py-2"
   };
 
   return (

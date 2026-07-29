@@ -100,10 +100,11 @@ export default function SectionPricing({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="pricing" className="bg-white">
+    <Section id="pricing" className="bg-background relative">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brandAccent/10 rounded-full blur-[120px] pointer-events-none" />
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain mb-6">
             Hire AI Employees That Scale With You
           </h2>
           <p className="text-lg text-textMuted leading-relaxed">
@@ -119,10 +120,10 @@ export default function SectionPricing({ onOpenBooking }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`relative bg-offWhite p-8 rounded-[2rem] border ${plan.popular ? 'border-textMain shadow-2xl scale-105' : 'border-gray-200'} flex flex-col`}
+              className={`relative card-base p-8 flex flex-col ${plan.popular ? 'border-brandAccent shadow-[0_0_30px_rgba(79,70,229,0.2)] md:scale-105 z-10' : 'border-surfaceBorder hover:border-textMuted/50'}`}
             >
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-textMain text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brandAccent to-brandPurple text-white px-6 py-1.5 rounded-full text-sm font-bold tracking-widest shadow-lg">
                   MOST POPULAR
                 </div>
               )}
@@ -137,8 +138,8 @@ export default function SectionPricing({ onOpenBooking }) {
                 </div>
               </div>
 
-              <div className="mb-8 p-4 bg-white rounded-xl border border-gray-100">
-                <div className="font-bold text-lg text-textMain mb-4">{plan.employees}</div>
+              <div className="mb-8 p-6 bg-surface/50 rounded-2xl border border-surfaceBorder/50">
+                <div className="font-bold text-lg text-brandAccent mb-4">{plan.employees}</div>
                 <ul className="space-y-3">
                   {plan.features.map((feature, fidx) => (
                     <li key={fidx} className="flex items-start gap-3 text-sm text-textMuted">
@@ -149,12 +150,12 @@ export default function SectionPricing({ onOpenBooking }) {
                 </ul>
               </div>
 
-              <div className="mb-8 p-4 bg-white rounded-xl border border-gray-100 flex-grow">
+              <div className="mb-8 p-6 bg-surface/50 rounded-2xl border border-surfaceBorder/50 flex-grow">
                 <div className="font-bold text-textMain mb-4">{plan.crmTitle}</div>
                 <ul className="space-y-3">
                   {plan.crmFeatures.map((feature, fidx) => (
                     <li key={fidx} className="flex items-start gap-3 text-sm text-textMuted">
-                      <Check className="w-5 h-5 text-textMain shrink-0" />
+                      <Check className="w-5 h-5 text-brandPurple shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}

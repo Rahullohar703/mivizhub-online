@@ -13,6 +13,8 @@ import SectionSocialProof from './components/SectionSocialProof';
 import SectionPricing from './components/SectionPricing';
 import SectionFAQ from './components/SectionFAQ';
 import SectionCTA from './components/SectionCTA';
+import SectionWarning from './components/SectionWarning';
+import SectionLeaders from './components/SectionLeaders';
 import Footer from './components/Footer';
 import StrategyModal from './components/StrategyModal';
 
@@ -23,7 +25,7 @@ export default function App() {
   const handleCloseBooking = () => setIsBookingOpen(false);
 
   return (
-    <div className="min-h-screen bg-offWhite font-sans antialiased text-textMain selection:bg-brandBlack selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white overflow-x-hidden">
       
       <Navbar onOpenBooking={handleOpenBooking} />
 
@@ -38,6 +40,8 @@ export default function App() {
         <SectionHowItWorks />
         <SectionBenefits />
         <SectionSocialProof />
+        <SectionWarning />
+        <SectionLeaders />
         <SectionPricing onOpenBooking={handleOpenBooking} />
         <SectionFAQ />
         <SectionCTA onOpenBooking={handleOpenBooking} />

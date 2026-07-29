@@ -63,7 +63,8 @@ const EMPLOYEES = [
 
 export default function SectionAIEmployees() {
   return (
-    <Section id="employees" className="bg-offWhite">
+    <Section id="employees" className="bg-background relative border-t border-surfaceBorder">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brandPurple/10 rounded-full blur-[100px] pointer-events-none" />
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
@@ -82,12 +83,12 @@ export default function SectionAIEmployees() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="card-base p-8 md:p-10 hover:-translate-y-1 hover:shadow-lg transition-all"
+              className="card-base p-8 md:p-10 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(79,70,229,0.3)] transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-gray-100 flex items-center justify-center text-brandBlack mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-surface border border-surfaceBorder flex items-center justify-center text-brandAccent mb-6 group-hover:scale-110 group-hover:bg-brandAccent/10 transition-all">
                 {emp.icon}
               </div>
-              <h3 className="text-2xl font-bold text-textMain mb-3">
+              <h3 className="text-2xl font-bold text-textMain mb-3 group-hover:text-brandAccent transition-colors">
                 {emp.title}
               </h3>
               <p className="text-textMuted leading-relaxed">

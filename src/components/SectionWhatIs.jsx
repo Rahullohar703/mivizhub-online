@@ -11,7 +11,7 @@ export default function SectionWhatIs() {
   ];
 
   return (
-    <Section id="what-is" className="bg-white">
+    <Section id="what-is" className="bg-background">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -24,7 +24,7 @@ export default function SectionWhatIs() {
             </p>
           </div>
 
-          <div className="relative pl-8 border-l border-gray-200 space-y-12 py-4">
+          <div className="relative pl-8 border-l border-surfaceBorder space-y-12 py-4">
             {steps.map((step, idx) => (
               <motion.div 
                 key={idx}
@@ -34,7 +34,7 @@ export default function SectionWhatIs() {
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
                 className="relative"
               >
-                <div className="absolute -left-[39.5px] top-1 w-5 h-5 rounded-full bg-white border-4 border-brandBlack" />
+                <div className="absolute -left-[39.5px] top-1 w-5 h-5 rounded-full bg-brandAccent border-4 border-background shadow-[0_0_10px_rgba(79,70,229,0.8)]" />
                 <h3 className="text-xl font-bold text-textMain mb-2">{step.title}</h3>
                 <p className="text-textMuted leading-relaxed">{step.desc}</p>
               </motion.div>

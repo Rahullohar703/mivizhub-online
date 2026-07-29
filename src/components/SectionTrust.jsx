@@ -13,13 +13,14 @@ export default function SectionTrust() {
   ];
 
   return (
-    <section className="py-12 bg-offWhite border-b border-gray-100">
+    <section className="py-12 bg-surface border-y border-surfaceBorder relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.05),transparent_50%)] pointer-events-none" />
       <Container>
         <p className="text-center text-sm font-medium text-textMuted mb-8 tracking-wide">
           TRUSTED BY INNOVATIVE AGENCIES AND ENTERPRISES GLOBALLY
         </p>
         
-        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-40 grayscale">
+        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-60">
           {icons.map((item, idx) => (
             <motion.div 
               key={idx}
