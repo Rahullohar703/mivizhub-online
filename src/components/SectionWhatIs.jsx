@@ -20,7 +20,7 @@ export default function SectionWhatIs() {
               What exactly is an <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-brandAccent">AI Employee?</span>
             </h2>
             <p className="text-lg text-textMuted leading-relaxed mb-8">
-              Think of it as a digital team member that handles repetitive work just like a human receptionist or administrator would—only it works 24/7, never misses a call, and never needs training. It is an intelligent safety net designed to give your human team their time back.
+              Think of it as a digital team member that handles repetitive work just like a human receptionist or administrator would only it works 24/7, never misses a call, and never needs training. It is an intelligent safety net designed to give your human team their time back.
             </p>
           </div>
 
