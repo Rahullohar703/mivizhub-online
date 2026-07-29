@@ -15,7 +15,7 @@ export default function SectionWarning() {
   return (
     <Section id="warning" className="bg-background relative border-y border-surfaceBorder overflow-hidden py-24">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.05),transparent_70%)] pointer-events-none" />
-      <Container>
+      <Container className="relative z-10">
         <div className="max-w-4xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

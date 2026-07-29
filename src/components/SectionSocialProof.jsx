@@ -40,7 +40,7 @@ export default function SectionSocialProof() {
   return (
     <Section id="social-proof" className="bg-background relative border-y border-surfaceBorder">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(147,51,234,0.05),transparent_50%)] pointer-events-none" />
-      <Container className="text-center">
+      <Container className="relative z-10 text-center">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-textMain mb-4 tracking-tight">TESTIMONIALS</h2>
           <p className="text-xl text-textMuted">What others are saying</p>

@@ -7,7 +7,7 @@ export default function SectionSolution() {
   return (
     <Section id="solution" className="bg-surface relative border-y border-surfaceBorder">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.1),transparent_50%)] pointer-events-none" />
-      <Container>
+      <Container className="relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

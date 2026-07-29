@@ -102,7 +102,7 @@ export default function SectionPricing({ onOpenBooking }) {
   return (
     <Section id="pricing" className="bg-background relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(79,70,229,0.15)_0%,transparent_60%)] pointer-events-none" />
-      <Container>
+      <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain mb-6">
             Hire AI Employees That Scale With You

@@ -65,7 +65,7 @@ export default function SectionAIEmployees() {
   return (
     <Section id="employees" className="bg-background relative border-t border-surfaceBorder">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(147,51,234,0.1)_0%,transparent_50%)] pointer-events-none" />
-      <Container>
+      <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain leading-[1.1] mb-6">
             Top Roles AI Employees Replace

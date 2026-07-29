@@ -7,7 +7,7 @@ export default function SectionProblems() {
   return (
     <Section id="problem" className="bg-background relative">
       <div className="absolute inset-0 bg-gradient-to-b from-surface to-background pointer-events-none" />
-      <Container>
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           <div>
