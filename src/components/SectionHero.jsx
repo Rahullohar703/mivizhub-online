@@ -17,10 +17,9 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-6 relative z-10 mx-auto max-w-5xl px-4">
-            <span className="text-white drop-shadow-sm">Build Your AI Workforce. </span>
-            <br className="hidden sm:block" />
-            <span className="text-gradient-punchy drop-shadow-sm">Without Hiring More Staff.</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tighter leading-[1.05] mb-6 relative z-10 mx-auto max-w-6xl px-4">
+            <span className="block text-white drop-shadow-sm mb-1 md:mb-0">Build Your AI Workforce.</span>
+            <span className="block text-gradient-punchy drop-shadow-sm">Without Hiring More Staff.</span>
           </h1>
         </motion.div>
 
@@ -30,8 +29,8 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mx-auto mb-12"
         >
-          <p className="text-xl sm:text-2xl text-textMuted leading-relaxed mb-10 max-w-3xl mx-auto px-4">
-            We build and install AI Employees that answer calls, qualify leads, follow up with customers, and book appointments so you can grow your business without growing your payroll.
+          <p className="text-xl sm:text-2xl text-textMuted leading-relaxed mb-10 max-w-2xl mx-auto px-4">
+            We install AI Employees that handle your calls, leads, and appointments so you can grow without growing your payroll.
           </p>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-6 text-sm md:text-base font-bold text-textMain bg-surface/50 border border-surfaceBorder rounded-2xl md:rounded-full px-6 py-5 md:py-3 shadow-lg max-w-fit mx-auto text-left md:text-center">
             <span className="flex items-center gap-3"><div className="w-2.5 h-2.5 rounded-full bg-brandAccent animate-pulse" /> Up and running in 48 hours</span>
