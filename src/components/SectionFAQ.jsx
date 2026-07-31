@@ -55,18 +55,15 @@ export default function SectionFAQ() {
                   {open === idx ? '−' : '+'}
                 </span>
               </button>
-              <AnimatePresence>
-                {open === idx && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="px-6 pb-6 text-textMuted leading-relaxed"
-                  >
+              <div 
+                className={`grid transition-all duration-300 ease-in-out ${open === idx ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-6 text-textMuted leading-relaxed">
                     {faq.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

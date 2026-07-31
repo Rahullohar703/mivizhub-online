@@ -29,10 +29,10 @@ export default function SectionSolution() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="max-w-4xl mx-auto h-[300px] md:h-[400px] card-base flex items-center justify-center relative overflow-hidden group bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.15)_0%,transparent_60%)]"
+          className="max-w-4xl mx-auto card-base flex flex-col items-center justify-center relative overflow-hidden group bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.15)_0%,transparent_60%)] py-12 md:py-16 px-6"
         >
-          <div className="text-center relative z-10 p-8">
-            <h3 className="text-3xl font-extrabold text-gradient-dark mb-8"><span className="text-brandAccent">★</span> The Done For You Advantage</h3>
+          <div className="text-center relative z-10 w-full max-w-2xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-gradient-dark mb-8"><span className="text-brandAccent">★</span> The Done For You Advantage</h3>
             <ul className="text-left text-textMain font-medium tracking-wide space-y-4 inline-block text-lg">
               <li className="flex items-center gap-3"><div className="w-5 h-5 rounded-full bg-brandAccent/20 flex items-center justify-center text-brandAccent text-sm font-bold">✓</div> Custom built for your specific business rules</li>
               <li className="flex items-center gap-3"><div className="w-5 h-5 rounded-full bg-brandAccent/20 flex items-center justify-center text-brandAccent text-sm font-bold">✓</div> Integrates directly with your existing calendar and CRM</li>
