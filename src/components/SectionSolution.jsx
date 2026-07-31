@@ -13,7 +13,7 @@ export default function SectionSolution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6 pb-2">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent to-brandPurple">MivizHub?</span>
