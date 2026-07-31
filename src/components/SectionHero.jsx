@@ -17,9 +17,6 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full mx-auto"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-brandAccent/10 border border-brandAccent/20 text-brandAccent text-xs sm:text-sm font-bold tracking-widest uppercase mb-8">
-            The AI Workforce Platform for Construction Businesses
-          </div>
           <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold tracking-tighter leading-tight md:leading-[1.05] mb-6 relative z-10 mx-auto max-w-7xl px-4">
             <span className="text-white drop-shadow-sm">Build Your AI Workforce. </span>
             <span className="text-gradient-punchy drop-shadow-sm">Without Hiring More Staff.</span>
