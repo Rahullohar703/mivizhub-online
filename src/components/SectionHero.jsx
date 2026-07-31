@@ -33,7 +33,7 @@ export default function SectionHero({ onOpenBooking }) {
           className="w-full max-w-4xl mx-auto mb-12"
         >
           <p className="text-xl sm:text-2xl text-textMuted leading-relaxed mb-10 max-w-2xl mx-auto px-4">
-            We install AI Employees that reduce your workload, answer customer enquiries, follow up with leads, and keep your business moving—without hiring more staff.
+            We install AI Employees that reduce your workload, answer customer enquiries, follow up with leads, and keep your business moving without hiring more staff.
           </p>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-6 text-sm md:text-base font-bold text-textMain bg-surface/50 border border-surfaceBorder rounded-2xl md:rounded-full px-6 py-5 md:py-3 shadow-lg max-w-fit mx-auto text-left md:text-center">
             <span className="flex items-center gap-3"><div className="w-2.5 h-2.5 rounded-full bg-brandAccent animate-pulse" /> Up and running in 48 hours</span>

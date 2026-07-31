@@ -7,7 +7,7 @@ export default function SectionFAQ() {
   const faqs = [
     {
       q: 'Do I need to understand technology to use this?',
-      a: 'Absolutely not. We are a completely done-for-you service. We handle all the setup, programming, and maintenance. You simply receive the booked appointments and qualified leads.'
+      a: 'Absolutely not. We are a completely done for you service. We handle all the setup, programming, and maintenance. You simply receive the booked appointments and qualified leads.'
     },
     {
       q: 'How long does it take to set up?',
