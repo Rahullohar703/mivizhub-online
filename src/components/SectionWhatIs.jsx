@@ -4,9 +4,13 @@ import Container from './ui/Container';
 import Section from './ui/Section';
 
 export default function SectionWhatIs() {
-  const steps = [
-    { title: 'Flawless Phone Coverage', desc: 'Answers every single phone call immediately. Zero wait times, even if five people call your business at the exact same moment.' },
-    { title: 'Seamless Scheduling', desc: 'Books consultations directly into your calendar based on your availability, ending the endless back-and-forth emails.' },
+  const features = [
+    'Answer every incoming enquiry',
+    'Book meetings and site visits',
+    'Follow up with prospects automatically',
+    'Qualify potential customers',
+    'Answer common customer questions',
+    'Update your CRM and notify your team'
   ];
 
   return (
@@ -23,21 +27,23 @@ export default function SectionWhatIs() {
             </p>
           </div>
 
-          <div className="relative pl-8 border-l border-surfaceBorder space-y-12 py-4">
-            {steps.map((step, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                className="relative"
-              >
-                <div className="absolute -left-[39.5px] top-1 w-5 h-5 rounded-full bg-brandAccent border-4 border-background shadow-[0_0_10px_rgba(79,70,229,0.8)]" />
-                <h3 className="text-xl font-bold text-textMain mb-2">{step.title}</h3>
-                <p className="text-textMuted leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
+          <div className="relative space-y-6 py-4 pl-0 md:pl-8 md:border-l border-surfaceBorder">
+            <h3 className="text-2xl font-bold text-white mb-6">Your AI Employee Can...</h3>
+            <ul className="space-y-4">
+              {features.map((item, idx) => (
+                <motion.li 
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="flex items-center gap-3 text-lg text-textMuted font-medium"
+                >
+                  <div className="w-2 h-2 rounded-full bg-brandAccent flex-shrink-0" />
+                  {item}
+                </motion.li>
+              ))}
+            </ul>
           </div>
 
         </div>

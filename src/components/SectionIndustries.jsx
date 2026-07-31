@@ -5,12 +5,12 @@ import Section from './ui/Section';
 
 export default function SectionIndustries() {
   const industries = [
-    { name: 'General Contracting', desc: 'Handle consultation requests and site visit bookings.' },
-    { name: 'Commercial Construction', desc: 'Never miss project requests or stakeholder enquiries.' },
-    { name: 'Real Estate Development', desc: 'Automate showing requests and follow up with investors.' },
-    { name: 'Architecture & Design', desc: 'Qualify design consultations automatically.' },
-    { name: 'Civil Engineering', desc: 'Book site assessments directly into your dispatch system.' },
-    { name: 'Project Management', desc: 'Quickly route technical queries to the right department.' }
+    { name: 'Construction Companies', desc: 'Handle consultation requests and site visit bookings.' },
+    { name: 'Builders & Developers', desc: 'Never miss project requests or stakeholder enquiries.' },
+    { name: 'General Contractors', desc: 'Automate showing requests and follow up with investors.' },
+    { name: 'Architecture Firms', desc: 'Qualify design consultations automatically.' },
+    { name: 'Interior Design Firms', desc: 'Book site assessments directly into your dispatch system.' },
+    { name: 'Engineering Consultants', desc: 'Quickly route technical queries to the right department.' }
   ];
 
   return (
@@ -19,10 +19,10 @@ export default function SectionIndustries() {
       <Container className="relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 pb-2">
-            Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#00F0FF]">AI industry.</span>
+            Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#00F0FF]">Modern Construction Businesses</span>
           </h2>
           <p className="text-lg text-textMuted">
-            Our AI workforce is tailored to handle the exact conversations your clients expect.
+            Whether you manage residential projects, commercial developments, design services, or construction operations, our AI Employees help your team respond faster, stay organized, and focus on delivering great projects instead of repetitive administrative work.
           </p>
         </div>
 

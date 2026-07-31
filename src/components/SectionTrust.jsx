@@ -15,8 +15,8 @@ export default function SectionTrust() {
     <section className="py-12 bg-background relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.05),transparent_50%)] pointer-events-none" />
       <Container>
-        <p className="text-center text-sm font-medium text-textMuted mb-8 tracking-wide">
-          trusted by enterprises xyz
+        <p className="text-center text-sm font-medium text-textMuted mb-8 tracking-wide uppercase">
+          Trusted by construction companies and growing businesses
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-60">

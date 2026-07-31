@@ -6,46 +6,46 @@ import { Phone, MessageSquare, FileText, HelpCircle } from 'lucide-react';
 
 const EMPLOYEES = [
   { 
-    id: 'sales_growth', 
-    title: 'Sales & Growth', 
+    id: 'receptionist', 
+    title: 'AI Receptionist', 
     icon: <Phone className="w-6 h-6" />, 
-    subtitle: 'Close more pipeline.',
-    desc: 'Automates follow-ups, qualifies new leads, and pushes stalled prospects to book a site visit.'
+    subtitle: 'Answers every enquiry, routes calls, and books appointments.',
+    desc: 'Never miss another call while you are out in the field.'
   },
   { 
-    id: 'cx', 
-    title: 'Customer Experience', 
-    icon: <MessageSquare className="w-6 h-6" />, 
-    subtitle: 'Zero missed calls.',
-    desc: 'Answers every single client inquiry, handles basic questions about pricing and availability 24/7.'
-  },
-  { 
-    id: 'operations', 
-    title: 'Operations', 
-    icon: <FileText className="w-6 h-6" />, 
-    subtitle: 'Smooth project delivery.',
-    desc: 'Automates internal reminders, subcontractor scheduling, and routine paperwork workflows.'
-  },
-  { 
-    id: 'revenue_finance', 
-    title: 'Revenue & Finance', 
+    id: 'sales_coordinator', 
+    title: 'AI Sales Coordinator', 
     icon: <HelpCircle className="w-6 h-6" />, 
-    subtitle: 'Faster cash flow.',
-    desc: 'Chases unpaid invoices, reconciles ledgers, and handles basic billing questions automatically.'
+    subtitle: 'Follows up with prospects, schedules meetings, and keeps opportunities moving.',
+    desc: 'Systematically nurtures your leads so your pipeline stays full.'
   },
   { 
-    id: 'estimating', 
-    title: 'Estimating Support', 
+    id: 'estimation_assistant', 
+    title: 'AI Estimation Assistant', 
     icon: <FileText className="w-6 h-6" />, 
-    subtitle: 'Faster turnarounds.',
-    desc: 'Gathers initial project scope from clients to speed up your quoting and estimating process.'
+    subtitle: 'Collects project information, qualifies enquiries, and prepares your team before consultations.',
+    desc: 'Speeds up your quoting process by gathering scope upfront.'
   },
   { 
-    id: 'marketing', 
-    title: 'Marketing & Outreach', 
+    id: 'customer_support', 
+    title: 'AI Customer Support', 
     icon: <MessageSquare className="w-6 h-6" />, 
-    subtitle: 'Consistent lead flow.',
-    desc: 'Quietly reaches out to old leads and previous clients to generate new business out of thin air.'
+    subtitle: 'Answers common questions, shares project updates, and handles routine customer communication.',
+    desc: 'Provides 24/7 support without taking up your team\'s time.'
+  },
+  { 
+    id: 'operations_coordinator', 
+    title: 'AI Operations Coordinator', 
+    icon: <FileText className="w-6 h-6" />, 
+    subtitle: 'Organizes internal requests, reminders, and recurring administrative tasks.',
+    desc: 'Eliminates administrative bottlenecks and keeps your back-office running smoothly.'
+  },
+  { 
+    id: 'project_coordinator', 
+    title: 'AI Project Coordinator', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    subtitle: 'Keeps clients informed, schedules inspections or site visits, and manages communication between teams.',
+    desc: 'Ensures everyone is on the same page from kickoff to handover.'
   }
 ];
 
