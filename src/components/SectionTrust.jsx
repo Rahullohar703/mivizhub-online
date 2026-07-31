@@ -5,11 +5,10 @@ import { HardHat, Home, Wrench, Building2, Hammer } from 'lucide-react';
 
 export default function SectionTrust() {
   const icons = [
-    { name: 'Builders', icon: <HardHat className="w-6 h-6" /> },
+    { name: 'General Contractors', icon: <HardHat className="w-6 h-6" /> },
     { name: 'Real Estate', icon: <Home className="w-6 h-6" /> },
-    { name: 'Plumbers', icon: <Wrench className="w-6 h-6" /> },
     { name: 'Commercial', icon: <Building2 className="w-6 h-6" /> },
-    { name: 'Contractors', icon: <Hammer className="w-6 h-6" /> },
+    { name: 'Construction', icon: <Hammer className="w-6 h-6" /> },
   ];
 
   return (
@@ -17,7 +16,7 @@ export default function SectionTrust() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.05),transparent_50%)] pointer-events-none" />
       <Container>
         <p className="text-center text-sm font-medium text-textMuted mb-8 tracking-wide">
-          TRUSTED BY INNOVATIVE AGENCIES AND ENTERPRISES GLOBALLY
+          trusted by enterprises xyz
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-60">

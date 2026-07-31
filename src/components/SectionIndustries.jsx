@@ -5,14 +5,12 @@ import Section from './ui/Section';
 
 export default function SectionIndustries() {
   const industries = [
-    { name: 'Architects', desc: 'Handle consultation requests and site visit bookings.' },
-    { name: 'Builders & Contractors', desc: 'Never miss homeowner enquiries or project requests.' },
-    { name: 'Interior Designers', desc: 'Qualify design consultations automatically.' },
-    { name: 'Real Estate', desc: 'Automate showing requests and follow up with new buyers.' },
-    { name: 'Home Services', desc: 'Book repair and estimate appointments directly into your dispatch system.' },
-    { name: 'Manufacturers', desc: 'Quickly route wholesale and technical support queries to the right department.' },
-    { name: 'DG Set Dealers', desc: 'Respond instantly to rental, sales, and service enquiries.' },
-    { name: 'Local Service Providers', desc: 'Capture every single Google or Yelp inquiry immediately.' }
+    { name: 'General Contracting', desc: 'Handle consultation requests and site visit bookings.' },
+    { name: 'Commercial Construction', desc: 'Never miss project requests or stakeholder enquiries.' },
+    { name: 'Real Estate Development', desc: 'Automate showing requests and follow up with investors.' },
+    { name: 'Architecture & Design', desc: 'Qualify design consultations automatically.' },
+    { name: 'Civil Engineering', desc: 'Book site assessments directly into your dispatch system.' },
+    { name: 'Project Management', desc: 'Quickly route technical queries to the right department.' }
   ];
 
   return (
@@ -21,7 +19,7 @@ export default function SectionIndustries() {
       <Container className="relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 pb-2">
-            Built for Businesses That Can't Afford to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#00F0FF]">Miss Enquiries.</span>
+            Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent via-brandPurple to-[#00F0FF]">AI industry.</span>
           </h2>
           <p className="text-lg text-textMuted">
             Our AI workforce is tailored to handle the exact conversations your clients expect.

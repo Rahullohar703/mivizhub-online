@@ -6,7 +6,6 @@ import Section from './ui/Section';
 export default function SectionWhatIs() {
   const steps = [
     { title: 'Flawless Phone Coverage', desc: 'Answers every single phone call immediately. Zero wait times, even if five people call your business at the exact same moment.' },
-    { title: 'Smart Lead Filtering', desc: 'Asks the right questions up front, ensuring you only spend your valuable time talking to serious, paying customers.' },
     { title: 'Seamless Scheduling', desc: 'Books consultations directly into your calendar based on your availability, ending the endless back-and-forth emails.' },
   ];
 

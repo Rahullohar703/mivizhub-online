@@ -6,46 +6,46 @@ import { Phone, MessageSquare, FileText, HelpCircle } from 'lucide-react';
 
 const EMPLOYEES = [
   { 
-    id: 'receptionist', 
-    title: 'AI Receptionist', 
+    id: 'sales_growth', 
+    title: 'Sales & Growth', 
     icon: <Phone className="w-6 h-6" />, 
-    subtitle: 'Never miss another call.',
-    desc: 'Answers calls, takes detailed messages, and books appointments while you are out in the field.'
+    subtitle: 'Close more pipeline.',
+    desc: 'Automates follow-ups, qualifies new leads, and pushes stalled prospects to book a site visit.'
   },
   { 
-    id: 'lead_qualifier', 
-    title: 'AI Lead Qualifier', 
-    icon: <HelpCircle className="w-6 h-6" />, 
-    subtitle: 'Speak only with serious buyers.',
-    desc: 'Screens new inquiries and filters out tire-kickers before they ever waste your time.'
+    id: 'cx', 
+    title: 'Customer Experience', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    subtitle: 'Zero missed calls.',
+    desc: 'Answers every single client inquiry, handles basic questions about pricing and availability 24/7.'
   },
   { 
-    id: 'appointment_setter', 
-    title: 'AI Appointment Setter', 
+    id: 'operations', 
+    title: 'Operations', 
     icon: <FileText className="w-6 h-6" />, 
-    subtitle: 'Keep your calendar full.',
-    desc: 'Follows up with interested prospects automatically and gets them committed to a consultation.'
+    subtitle: 'Smooth project delivery.',
+    desc: 'Automates internal reminders, subcontractor scheduling, and routine paperwork workflows.'
   },
   { 
-    id: 'customer_support', 
-    title: 'AI Customer Support', 
-    icon: <MessageSquare className="w-6 h-6" />, 
-    subtitle: 'Resolve inquiries instantly.',
-    desc: 'Handles basic, repetitive questions about pricing, hours, and services instantly.'
-  },
-  { 
-    id: 'reactivation', 
-    title: 'AI Reactivation Agent', 
-    icon: <MessageSquare className="w-6 h-6" />, 
-    subtitle: 'Turn old leads into new revenue.',
-    desc: 'Quietly reaches out to old leads and previous clients to generate new business out of thin air.'
-  },
-  { 
-    id: 'admin', 
-    title: 'AI Operations Assistant', 
+    id: 'revenue_finance', 
+    title: 'Revenue & Finance', 
     icon: <HelpCircle className="w-6 h-6" />, 
-    subtitle: 'Eliminate administrative bottlenecks.',
-    desc: 'Automates your internal reminders, invoicing prompts, and routine paperwork workflows.'
+    subtitle: 'Faster cash flow.',
+    desc: 'Chases unpaid invoices, reconciles ledgers, and handles basic billing questions automatically.'
+  },
+  { 
+    id: 'estimating', 
+    title: 'Estimating Support', 
+    icon: <FileText className="w-6 h-6" />, 
+    subtitle: 'Faster turnarounds.',
+    desc: 'Gathers initial project scope from clients to speed up your quoting and estimating process.'
+  },
+  { 
+    id: 'marketing', 
+    title: 'Marketing & Outreach', 
+    icon: <MessageSquare className="w-6 h-6" />, 
+    subtitle: 'Consistent lead flow.',
+    desc: 'Quietly reaches out to old leads and previous clients to generate new business out of thin air.'
   }
 ];
 
@@ -55,11 +55,14 @@ export default function SectionAIEmployees() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(147,51,234,0.1)_0%,transparent_50%)] pointer-events-none" />
       <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
+          <p className="text-[11px] uppercase tracking-[0.18em] mb-3 text-brandAccent">
+            YOUR AI WORKFORCE · CONSTRUCTION
+          </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6 pb-2">
-            Take These Roles Off <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandPurple to-[#EC4899]">Your Plate Today</span>
+            9 Departments.<br className="sm:hidden"/> 110 AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandPurple to-[#EC4899]">Employees.</span>
           </h2>
           <p className="text-lg text-textMuted leading-relaxed">
-            Stop doing the busywork. We can deploy AI staff for these specific areas of your business so your human team can focus on the work that actually makes money.
+            Without a single new hire. We deploy purpose-built AI agents into your construction business to run lead qualification, scheduling, customer support, and operations. Continuously. Automatically.
           </p>
         </div>
 
