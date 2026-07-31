@@ -33,7 +33,6 @@ export default function App() {
         <SectionHero onOpenBooking={handleOpenBooking} />
         <SectionTrust />
         <SectionProblems />
-        <SectionSolution />
         <SectionWhatIs />
         <SectionAIEmployees />
         <SectionIndustries />
