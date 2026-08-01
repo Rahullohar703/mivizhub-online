@@ -17,7 +17,7 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full mx-auto"
         >
-          <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold tracking-tighter leading-tight md:leading-[1.05] mb-6 relative z-10 mx-auto max-w-7xl px-4">
+          <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] font-extrabold tracking-tighter leading-tight md:leading-[1.05] mb-6 relative z-10 mx-auto max-w-7xl px-4">
             <span className="text-white drop-shadow-sm">Your Next Best Employee </span>
             <span className="text-gradient-punchy drop-shadow-sm">Isn't Human.</span>
           </h1>
@@ -29,7 +29,7 @@ export default function SectionHero({ onOpenBooking }) {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-4xl mx-auto mb-12"
         >
-          <p className="text-xl sm:text-2xl text-textMuted leading-relaxed mb-10 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-2xl text-textMuted leading-relaxed mb-10 max-w-2xl mx-auto px-4">
             We build and manage AI Employees that answer calls, qualify leads, follow up with customers, and automate repetitive work so your business grows without growing your payroll.
           </p>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-6 text-sm md:text-base font-bold text-textMain bg-surface/50 border border-surfaceBorder rounded-2xl md:rounded-full px-6 py-5 md:py-3 shadow-lg max-w-fit mx-auto text-left md:text-center">
