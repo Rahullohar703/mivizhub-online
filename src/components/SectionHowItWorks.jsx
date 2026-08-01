@@ -5,9 +5,9 @@ import Section from './ui/Section';
 
 export default function SectionHowItWorks() {
   const steps = [
-    { num: '01', title: 'The Breakdown', desc: 'We hop on a call to learn exactly how you want your phones answered, your leads handled, and your calendar booked.' },
-    { num: '02', title: 'The Build', desc: 'We custom-build your AI Employee based entirely on your specific business rules, pricing, and services.' },
-    { num: '03', title: 'The Relief', desc: 'We flip the switch. Your new digital team member takes over the front desk, your calendar gets booked, and you finally get a breather.' }
+    { num: '01', title: 'Strategy', desc: 'We hop on a call to learn exactly how you want your phones answered, your leads handled, and your calendar booked.' },
+    { num: '02', title: 'Development', desc: 'We custom-build your AI Employee based entirely on your specific business rules, pricing, and services.' },
+    { num: '03', title: 'Launch & Optimization', desc: 'We flip the switch. Your new digital team member takes over the front desk, your calendar gets booked, and you finally get a breather.' }
   ];
 
   return (

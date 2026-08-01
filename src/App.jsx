@@ -3,18 +3,15 @@ import Navbar from './components/Navbar';
 import SectionHero from './components/SectionHero';
 import SectionTrust from './components/SectionTrust';
 import SectionProblems from './components/SectionProblems';
-import SectionSolution from './components/SectionSolution';
-import SectionWhatIs from './components/SectionWhatIs';
-import SectionAIEmployees from './components/SectionAIEmployees';
+import SectionDigitalWorkforce from './components/SectionDigitalWorkforce';
+import SectionAdvantages from './components/SectionAdvantages';
 import SectionIndustries from './components/SectionIndustries';
+import SectionServices from './components/SectionServices';
 import SectionHowItWorks from './components/SectionHowItWorks';
-import SectionBenefits from './components/SectionBenefits';
-import SectionSocialProof from './components/SectionSocialProof';
-import SectionPricing from './components/SectionPricing';
+import SectionCaseStudies from './components/SectionCaseStudies';
+import SectionCredentials from './components/SectionCredentials';
 import SectionFAQ from './components/SectionFAQ';
 import SectionCTA from './components/SectionCTA';
-import SectionWarning from './components/SectionWarning';
-import SectionLeaders from './components/SectionLeaders';
 import Footer from './components/Footer';
 import StrategyModal from './components/StrategyModal';
 
@@ -33,16 +30,13 @@ export default function App() {
         <SectionHero onOpenBooking={handleOpenBooking} />
         <SectionTrust />
         <SectionProblems />
-        <SectionSolution />
-        <SectionWhatIs />
-        <SectionAIEmployees />
+        <SectionDigitalWorkforce />
+        <SectionAdvantages />
         <SectionIndustries />
+        <SectionServices />
         <SectionHowItWorks />
-        <SectionBenefits />
-        <SectionSocialProof />
-        <SectionWarning />
-        <SectionLeaders />
-        <SectionPricing onOpenBooking={handleOpenBooking} />
+        <SectionCaseStudies />
+        <SectionCredentials />
         <SectionFAQ />
         <SectionCTA onOpenBooking={handleOpenBooking} />
       </main>

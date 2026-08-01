@@ -18,7 +18,7 @@ export default function SectionCTA({ onOpenBooking }) {
             In a free 30-minute strategy call, we'll identify where AI Employees can save you time, reduce costs, and help you capture more business without adding more people to your payroll.
           </p>
           <Button onClick={onOpenBooking} variant="primary" className="text-lg px-12 py-6 font-bold tracking-widest shadow-[0_0_30px_rgba(79,70,229,0.5)] hover:shadow-[0_0_50px_rgba(79,70,229,0.8)]">
-            Book a Free AI Workforce Strategy Call
+            Book a Strategy Call
           </Button>
         </div>
 
