@@ -6,7 +6,7 @@ import Section from './ui/Section';
 
 export default function SectionHero({ onOpenBooking }) {
   return (
-    <Section id="hero" className="pt-32 pb-24 md:pt-40 md:pb-40 bg-background overflow-hidden relative">
+    <Section id="hero" className="pt-48 pb-24 md:pt-56 md:pb-40 bg-background overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.15)_0%,transparent_60%)] pointer-events-none" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brandAccent/50 to-transparent" />
       <Container className="relative z-10 text-center flex flex-col items-center">
