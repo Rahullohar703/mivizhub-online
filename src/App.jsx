@@ -16,7 +16,11 @@ import Footer from './components/Footer';
 
 export default function App() {
   const handleOpenBooking = () => {
-    window.location.href = "https://calendly.com/mivizhub/30min";
+    window.open(
+      "https://calendly.com/mivizhub/30min",
+      "_blank",
+      "width=1000,height=800,noopener,noreferrer"
+    );
   };
 
   return (
