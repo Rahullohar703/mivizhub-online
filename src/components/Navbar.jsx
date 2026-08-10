@@ -12,19 +12,19 @@ export default function Navbar({ onOpenBooking }) {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <span className="font-heading font-extrabold text-2xl tracking-tight">
               <span className="text-textMain">Miviz</span><span className="text-[#31c0de]">Hub</span>
             </span>
-          </div>
+          </a>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#why-ai" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Why AI Staffing?</a>
-            <a href="#employees" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">AI Employees</a>
-            <a href="#pricing" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Pricing</a>
+            <a href="#problem" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Why AI Staffing?</a>
+            <a href="#digital-workforce" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">AI Employees</a>
+            <a href="#advantages" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Advantages</a>
             <a href="#how-it-works" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">How it works</a>
-            <a href="#demo" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Demo</a>
+            <a href="#case-studies" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Case Studies</a>
             <a href="#faq" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">FAQs</a>
           </div>
 
@@ -58,11 +58,11 @@ export default function Navbar({ onOpenBooking }) {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-20 left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-surfaceBorder shadow-2xl px-6 py-8 flex flex-col gap-6"
         >
-          <a href="#why-ai" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Why AI Staffing?</a>
-          <a href="#employees" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">AI Employees</a>
-          <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Pricing</a>
+          <a href="#problem" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Why AI Staffing?</a>
+          <a href="#digital-workforce" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">AI Employees</a>
+          <a href="#advantages" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Advantages</a>
           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">How it works</a>
-          <a href="#demo" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Demo</a>
+          <a href="#case-studies" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Case Studies</a>
           <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">FAQs</a>
           
           <div className="pt-4 mt-2 border-t border-surfaceBorder">
