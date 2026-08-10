@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import SectionHero from './components/SectionHero';
 import SectionTrust from './components/SectionTrust';
@@ -13,13 +13,11 @@ import SectionCredentials from './components/SectionCredentials';
 import SectionFAQ from './components/SectionFAQ';
 import SectionCTA from './components/SectionCTA';
 import Footer from './components/Footer';
-import StrategyModal from './components/StrategyModal';
 
 export default function App() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  const handleOpenBooking = () => setIsBookingOpen(true);
-  const handleCloseBooking = () => setIsBookingOpen(false);
+  const handleOpenBooking = () => {
+    window.location.href = "https://calendly.com/mivizhub/30min";
+  };
 
   return (
     <div className="bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white">
@@ -43,10 +41,6 @@ export default function App() {
 
       <Footer onOpenBooking={handleOpenBooking} />
 
-      <StrategyModal 
-        isOpen={isBookingOpen} 
-        onClose={handleCloseBooking} 
-      />
 
     </div>
   );
