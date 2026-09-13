@@ -22,23 +22,12 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#08080a] font-sans antialiased text-textMain selection:bg-[#31c0de] selection:text-black min-h-screen relative overflow-x-hidden">
-      {/* Background Architectural Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern opacity-30 pointer-events-none z-0" />
-      <div className="fixed inset-0 bg-radial-vignette opacity-80 pointer-events-none z-0" />
+    <div className="bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white min-h-screen">
       
-      {/* Ambient Color Glows at Strategic Scroll Depths */}
-      <div className="fixed -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] glow-cyan opacity-40 blur-[120px] pointer-events-none z-0" />
-      <div className="fixed top-[30%] -left-60 w-[700px] h-[500px] glow-indigo opacity-30 blur-[140px] pointer-events-none z-0" />
-      <div className="fixed top-[60%] -right-60 w-[700px] h-[500px] glow-purple opacity-25 blur-[140px] pointer-events-none z-0" />
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] glow-cyan opacity-35 blur-[120px] pointer-events-none z-0" />
-
       {/* Navigation */}
-      <div className="relative z-20">
-        <Navbar onOpenBooking={handleOpenBooking} />
-      </div>
+      <Navbar onOpenBooking={handleOpenBooking} />
 
-      <main id="main-content" className="relative z-10">
+      <main id="main-content">
         {/* 1. Hero Section */}
         <SectionHero onOpenBooking={handleOpenBooking} />
 

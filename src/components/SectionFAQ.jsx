@@ -37,12 +37,8 @@ export default function SectionFAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <Section id="faq" className="py-20 bg-transparent border-t border-white/10 relative overflow-hidden">
-      
-      {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[350px] bg-indigo-500/6 blur-[140px] rounded-full pointer-events-none -z-10" />
-
-      <Container className="max-w-3xl relative z-10">
+    <Section id="faq" className="py-20 bg-[#09090b] border-t border-white/10">
+      <Container className="max-w-3xl">
         
         {/* Header */}
         <div className="text-center mb-12">
@@ -60,13 +56,13 @@ export default function SectionFAQ() {
         {/* FAQ Accordion */}
         <div className="space-y-3">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="card-base overflow-hidden border-white/10 hover:border-white/20 transition-all">
+            <div key={idx} className="bg-[#121216] border border-white/10 rounded-xl overflow-hidden">
               <button 
                 onClick={() => setOpen(open === idx ? -1 : idx)}
                 className="w-full text-left px-6 py-5 font-bold text-base sm:text-lg text-white hover:text-[#31c0de] transition-colors flex justify-between items-center gap-4"
               >
                 <span>{faq.q}</span>
-                <span className="text-xl text-[#31c0de] flex-shrink-0 font-bold">
+                <span className="text-xl font-mono text-gray-400 flex-shrink-0">
                   {open === idx ? '−' : '+'}
                 </span>
               </button>

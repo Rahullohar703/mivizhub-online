@@ -33,12 +33,8 @@ export default function SectionCredentials() {
   ];
 
   return (
-    <Section id="credentials" className="py-16 bg-transparent border-t border-white/10 relative overflow-hidden">
-      
-      {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-[#31c0de]/5 blur-[130px] rounded-full pointer-events-none -z-10" />
-
-      <Container className="relative z-10">
+    <Section id="credentials" className="py-16 bg-[#0c0c10] border-t border-white/10">
+      <Container>
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Peace of Mind
@@ -53,7 +49,7 @@ export default function SectionCredentials() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {points.map((pt, idx) => (
-            <div key={idx} className="card-base p-5 flex items-start gap-4 hover:border-white/30 transition-all">
+            <div key={idx} className="bg-[#121216] border border-white/10 rounded-xl p-5 flex items-start gap-4">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
                 {pt.icon}
               </div>

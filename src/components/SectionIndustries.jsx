@@ -141,12 +141,8 @@ export default function SectionIndustries() {
   const current = details[activeTab];
 
   return (
-    <Section id="industries" className="py-20 bg-transparent border-t border-white/10 relative overflow-hidden">
-      
-      {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#31c0de]/8 blur-[150px] rounded-full pointer-events-none -z-10" />
-
-      <Container className="relative z-10">
+    <Section id="industries" className="py-20 bg-[#09090b] border-t border-white/10">
+      <Container>
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -180,7 +176,7 @@ export default function SectionIndustries() {
         </div>
 
         {/* Tab Content Box */}
-        <div className="max-w-4xl mx-auto card-base p-6 sm:p-9 shadow-2xl relative">
+        <div className="max-w-4xl mx-auto bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-9 shadow-lg">
           <div className="mb-6 pb-6 border-b border-white/10">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
               {current.title}

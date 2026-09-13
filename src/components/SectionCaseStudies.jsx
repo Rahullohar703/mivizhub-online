@@ -31,12 +31,8 @@ export default function SectionCaseStudies() {
   ];
 
   return (
-    <Section id="case-studies" className="py-20 bg-transparent border-t border-white/10 relative overflow-hidden">
-      
-      {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[350px] bg-emerald-500/8 blur-[140px] rounded-full pointer-events-none -z-10" />
-
-      <Container className="relative z-10">
+    <Section id="case-studies" className="py-20 bg-[#0c0c10] border-t border-white/10">
+      <Container>
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
@@ -56,10 +52,10 @@ export default function SectionCaseStudies() {
           {caseStudies.map((study, idx) => (
             <div
               key={idx}
-              className="card-base p-6 sm:p-7 flex flex-col justify-between hover:border-white/30 transition-all"
+              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
             >
               <div>
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/5">
                   <span className="text-sm font-bold text-white">
                     {study.industry}
                   </span>
@@ -78,23 +74,22 @@ export default function SectionCaseStudies() {
                   </span>
                 </div>
 
-                {/* Before / After 1-Liners with Tinted Visual Contrast */}
+                {/* Before / After 1-Liners */}
                 <div className="space-y-3 text-xs sm:text-sm">
-                  <div className="bg-rose-950/20 border border-rose-500/20 p-3.5 rounded-xl">
-                    <span className="text-rose-400 font-bold block mb-1 text-xs uppercase tracking-wider">Before:</span>
+                  <div className="bg-[#181820] p-3 rounded-xl border border-white/5">
+                    <span className="text-rose-400 font-bold block mb-0.5 text-xs uppercase tracking-wider">Before:</span>
                     <p className="text-gray-300 leading-snug">{study.before}</p>
                   </div>
 
-                  <div className="bg-[#31c0de]/5 border border-[#31c0de]/25 p-3.5 rounded-xl shadow-sm shadow-cyan-950/20">
-                    <span className="text-[#31c0de] font-bold block mb-1 text-xs uppercase tracking-wider">With MivizHub:</span>
+                  <div className="bg-[#181820] p-3 rounded-xl border border-white/5">
+                    <span className="text-[#31c0de] font-bold block mb-0.5 text-xs uppercase tracking-wider">With MivizHub:</span>
                     <p className="text-gray-200 leading-snug">{study.after}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 mt-5 border-t border-white/5 text-[11px] text-gray-400 font-medium flex items-center justify-between">
-                <span>Verified client workflow</span>
-                <span className="text-emerald-400">● Live</span>
+              <div className="pt-4 mt-5 border-t border-white/5 text-[11px] text-gray-500 font-medium">
+                Verified client workflow
               </div>
             </div>
           ))}

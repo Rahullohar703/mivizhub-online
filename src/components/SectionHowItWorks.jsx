@@ -22,12 +22,8 @@ export default function SectionHowItWorks() {
   ];
 
   return (
-    <Section id="how-it-works" className="py-20 bg-transparent border-t border-white/10 relative overflow-hidden">
-      
-      {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[350px] bg-indigo-500/8 blur-[140px] rounded-full pointer-events-none -z-10" />
-
-      <Container className="relative z-10">
+    <Section id="how-it-works" className="py-20 bg-[#0c0c10] border-t border-white/10">
+      <Container>
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -47,10 +43,10 @@ export default function SectionHowItWorks() {
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="card-base p-7 flex flex-col justify-between hover:border-white/30 transition-all relative group"
+              className="bg-[#121216] border border-white/10 rounded-2xl p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-[#31c0de] font-bold flex items-center justify-center text-lg mb-6 shadow-inner group-hover:border-[#31c0de]/40 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-[#31c0de] font-mono font-bold flex items-center justify-center text-xl mb-6">
                   0{step.num}
                 </div>
                 
