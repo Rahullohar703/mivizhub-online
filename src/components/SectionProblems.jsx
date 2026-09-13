@@ -5,8 +5,12 @@ import { ArrowDown } from 'lucide-react';
 
 export default function SectionProblems() {
   return (
-    <Section id="problem" className="bg-[#0b0b0e] py-20 border-t border-white/10">
-      <Container>
+    <Section id="problem" className="bg-transparent py-20 border-t border-white/10 relative overflow-hidden">
+      
+      {/* Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-indigo-500/5 blur-[140px] rounded-full pointer-events-none -z-10" />
+
+      <Container className="relative z-10">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-14">
@@ -22,14 +26,14 @@ export default function SectionProblems() {
           </p>
         </div>
 
-        {/* The Two Problems: High Contrast & Concise */}
+        {/* The Two Problems: High Contrast & Elevated Glass */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
           
           {/* Problem 1 */}
-          <div className="bg-[#121216] p-6 sm:p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div className="card-base p-6 sm:p-7 flex flex-col justify-between hover:border-rose-500/40 transition-all">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono font-bold text-gray-400 bg-white/5 px-2.5 py-1 rounded border border-white/5">
+                <span className="text-xs font-bold text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10">
                   Headache #1
                 </span>
                 <span className="text-xs font-semibold text-rose-400">Customer Flow</span>
@@ -51,10 +55,10 @@ export default function SectionProblems() {
           </div>
 
           {/* Problem 2 */}
-          <div className="bg-[#121216] p-6 sm:p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div className="card-base p-6 sm:p-7 flex flex-col justify-between hover:border-amber-500/40 transition-all">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono font-bold text-gray-400 bg-white/5 px-2.5 py-1 rounded border border-white/5">
+                <span className="text-xs font-bold text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10">
                   Headache #2
                 </span>
                 <span className="text-xs font-semibold text-amber-400">Daily Workload</span>
@@ -78,7 +82,7 @@ export default function SectionProblems() {
         </div>
 
         {/* The Solution Bridge: Plain English */}
-        <div className="text-center max-w-3xl mx-auto bg-[#14141a] border border-white/10 rounded-2xl p-7 sm:p-9 shadow-lg">
+        <div className="text-center max-w-3xl mx-auto card-base p-7 sm:p-9 shadow-xl relative overflow-hidden">
           <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-[#31c0de] mb-3">
             <ArrowDown className="w-4 h-4" />
           </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
 import Button from './ui/Button';
-import { Check, X, ArrowRight } from 'lucide-react';
+import { Check, X, ArrowRight, PhoneCall, MessageSquare, Clock, Sparkles, Bot, Zap, CheckCircle2 } from 'lucide-react';
 
 export default function SectionAIStaffing({ onOpenBooking }) {
   const roles = [
@@ -33,8 +33,13 @@ export default function SectionAIStaffing({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="ai-staffing" className="py-20 bg-[#0c0c10] border-t border-white/10">
-      <Container>
+    <Section id="ai-staffing" className="py-20 bg-transparent border-t border-white/10 relative overflow-hidden">
+      
+      {/* Ambient Lighting Spotlights */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[750px] h-[400px] bg-[#31c0de]/10 blur-[140px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-96 -right-20 w-[400px] h-[400px] bg-purple-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+
+      <Container className="relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
@@ -49,12 +54,12 @@ export default function SectionAIStaffing({ onOpenBooking }) {
           </p>
         </div>
 
-        {/* 4 Core AI Roles - Clean, Scannable Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-14">
+        {/* 4 Core AI Roles - Elevated Glass Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-12">
           {roles.map((role, idx) => (
             <div 
               key={idx} 
-              className="bg-[#121216] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-[#31c0de]/30 transition-colors"
+              className="card-base p-6 flex flex-col justify-between hover:border-[#31c0de]/50 transition-all"
             >
               <div>
                 <span className="text-[11px] font-bold text-[#31c0de] bg-[#31c0de]/10 px-2.5 py-0.5 rounded border border-[#31c0de]/20 inline-block mb-3 uppercase tracking-wider">
@@ -77,8 +82,123 @@ export default function SectionAIStaffing({ onOpenBooking }) {
           ))}
         </div>
 
+        {/* Visual Graphic: Live AI Employee Operations Console */}
+        <div className="max-w-5xl mx-auto mb-14 bg-[#121218]/90 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-2xl relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#31c0de] animate-pulse" />
+              <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <Bot className="w-4 h-4 text-[#31c0de]" />
+                Live AI Operations Console (Multi-Channel In Action)
+              </h4>
+            </div>
+            <span className="text-xs font-semibold text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded-full border border-[#31c0de]/20 self-start sm:self-auto">
+              Active 24/7/365 • Zero Delays
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            {/* Live Feed 1: Voice Phone AI */}
+            <div className="bg-[#181824] border border-white/10 rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] font-bold text-gray-400 uppercase flex items-center gap-1.5">
+                    <PhoneCall className="w-3.5 h-3.5 text-indigo-400" />
+                    Phone Channel (Live)
+                  </span>
+                  <div className="flex items-center gap-0.5">
+                    <span className="w-1 h-3 bg-emerald-400 rounded-full animate-pulse" />
+                    <span className="w-1 h-4 bg-emerald-400 rounded-full animate-pulse delay-75" />
+                    <span className="w-1 h-2 bg-emerald-400 rounded-full animate-pulse delay-150" />
+                  </div>
+                </div>
+
+                <div className="space-y-2 mb-3 text-xs">
+                  <div className="bg-white/5 p-2 rounded text-gray-300">
+                    <span className="text-gray-500 font-bold block text-[10px]">CALLER:</span>
+                    "Do you guys have an estimator available tomorrow morning?"
+                  </div>
+                  <div className="bg-[#31c0de]/10 border border-[#31c0de]/20 p-2 rounded text-gray-200">
+                    <span className="text-[#31c0de] font-bold block text-[10px]">AI RECEPTIONIST:</span>
+                    "Yes, 9:30 AM is open! I've placed you on the schedule."
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-white/5 flex items-center gap-1.5 text-[11px] text-emerald-400 font-semibold">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Answered in 1 ring • Calendar locked</span>
+              </div>
+            </div>
+
+            {/* Live Feed 2: Speed to Lead SMS */}
+            <div className="bg-[#181824] border border-white/10 rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] font-bold text-gray-400 uppercase flex items-center gap-1.5">
+                    <MessageSquare className="w-3.5 h-3.5 text-[#31c0de]" />
+                    Speed-To-Lead (SMS)
+                  </span>
+                  <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+                    38s Response
+                  </span>
+                </div>
+
+                <div className="space-y-2 mb-3 text-xs">
+                  <div className="bg-white/5 p-2 rounded text-gray-300">
+                    <span className="text-gray-500 font-bold block text-[10px]">WEB INQUIRY (11:42 PM):</span>
+                    "Emergency pipe leak, need pricing for replacement."
+                  </div>
+                  <div className="bg-[#31c0de]/10 border border-[#31c0de]/20 p-2 rounded text-gray-200">
+                    <span className="text-[#31c0de] font-bold block text-[10px]">AI SPEED-TO-LEAD:</span>
+                    "Hi Dan! Received your inquiry. We can dispatch a technician immediately."
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-white/5 flex items-center gap-1.5 text-[11px] text-[#31c0de] font-semibold">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Customer secured before competitor</span>
+              </div>
+            </div>
+
+            {/* Live Feed 3: Quote Follow-Up */}
+            <div className="bg-[#181824] border border-white/10 rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] font-bold text-gray-400 uppercase flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-amber-400" />
+                    Quote Nurture
+                  </span>
+                  <span className="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">
+                    Auto Check-In
+                  </span>
+                </div>
+
+                <div className="space-y-2 mb-3 text-xs">
+                  <div className="bg-white/5 p-2 rounded text-gray-300">
+                    <span className="text-gray-500 font-bold block text-[10px]">AI FOLLOW-UP DISPATCHED:</span>
+                    "Hi Sarah, following up on the $6,200 remodel proposal sent Tuesday."
+                  </div>
+                  <div className="bg-emerald-500/10 border border-emerald-500/20 p-2 rounded text-emerald-200">
+                    <span className="text-emerald-400 font-bold block text-[10px]">CLIENT REPLY:</span>
+                    "Thanks for checking in! Everything looks great, let's proceed."
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-white/5 flex items-center gap-1.5 text-[11px] text-emerald-400 font-semibold">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Stalled $6,200 proposal converted</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         {/* Practical Comparison: In-House Staff vs. MivizHub AI Employees */}
-        <div className="max-w-4xl mx-auto mb-12 bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
+        <div className="card-base max-w-4xl mx-auto mb-12 p-6 sm:p-8">
           <div className="text-center mb-6">
             <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-1">
               Simple Comparison
@@ -144,7 +264,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#14141a] border border-white/10 rounded-2xl p-6 sm:p-7 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div className="card-base p-6 sm:p-7 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
           <div>
             <h4 className="text-lg font-bold text-white mb-1">
               Want to see what an AI employee can handle for your business?

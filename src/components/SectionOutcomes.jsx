@@ -32,8 +32,12 @@ export default function SectionOutcomes() {
   ];
 
   return (
-    <Section id="outcomes" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container>
+    <Section id="outcomes" className="py-20 bg-transparent border-t border-white/10 relative overflow-hidden">
+      
+      {/* Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[350px] bg-[#31c0de]/8 blur-[140px] rounded-full pointer-events-none -z-10" />
+
+      <Container className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -49,31 +53,42 @@ export default function SectionOutcomes() {
           </p>
         </div>
 
-        {/* 4 Outcome Cards Grid with Big Clear Stats */}
+        {/* 4 Outcome Cards Grid with Big Clear Stats & Mini Visual Progress Bars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {outcomes.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
-            >
-              <div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#31c0de] mb-1 tracking-tight">
-                  {item.stat}
-                </div>
-                <div className="text-xs font-bold tracking-wider uppercase text-gray-400 mb-4">
-                  {item.label}
-                </div>
+          {outcomes.map((item, idx) => {
+            const barWidths = ["100%", "85%", "75%", "70%"];
+            return (
+              <div
+                key={idx}
+                className="card-base p-6 sm:p-7 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all"
+              >
+                <div>
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#31c0de] mb-1 tracking-tight">
+                    {item.stat}
+                  </div>
+                  <div className="text-xs font-bold tracking-wider uppercase text-gray-400 mb-2">
+                    {item.label}
+                  </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
-                  {item.headline}
-                </h3>
+                  {/* Visual Progress Bar */}
+                  <div className="w-full h-1 bg-white/5 rounded-full mb-4 overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-[#31c0de] to-[#4F46E5] rounded-full" 
+                      style={{ width: barWidths[idx] || "80%" }} 
+                    />
+                  </div>
 
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                  {item.desc}
-                </p>
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                    {item.headline}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </Container>
