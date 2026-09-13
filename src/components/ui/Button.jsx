@@ -1,23 +1,20 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 export default function Button({ children, onClick, variant = 'primary', className = '' }) {
-  const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 rounded-full text-sm";
+  const baseStyles = "inline-flex items-center justify-center font-semibold transition-all duration-150 rounded-xl text-sm focus:outline-none";
   
   const variants = {
-    primary: "bg-brandAccent text-white shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] px-6 py-3 border border-brandAccent/50 relative overflow-hidden group",
-    secondary: "bg-surface/50 backdrop-blur text-white border border-surfaceBorder hover:border-textMuted px-6 py-3",
-    ghost: "text-textMuted hover:text-white px-4 py-2"
+    primary: "bg-[#4F46E5] hover:bg-[#4338CA] text-white shadow-md shadow-indigo-900/30 px-6 py-3 border border-indigo-400/30 active:scale-[0.99]",
+    secondary: "bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-3 active:scale-[0.99]",
+    ghost: "text-gray-400 hover:text-white px-4 py-2"
   };
 
   return (
-    <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+    <button
       onClick={onClick}
       className={`${baseStyles} ${variants[variant]} ${className}`}
     >
       {children}
-    </motion.button>
+    </button>
   );
 }

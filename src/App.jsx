@@ -3,11 +3,13 @@ import Navbar from './components/Navbar';
 import SectionHero from './components/SectionHero';
 import SectionTrust from './components/SectionTrust';
 import SectionProblems from './components/SectionProblems';
-import SectionDigitalWorkforce from './components/SectionDigitalWorkforce';
-import SectionAdvantages from './components/SectionAdvantages';
-import SectionIndustries from './components/SectionIndustries';
 import SectionServices from './components/SectionServices';
+import SectionDifferentiator from './components/SectionDifferentiator';
+import SectionMarketing from './components/SectionMarketing';
+import SectionAIStaffing from './components/SectionAIStaffing';
+import SectionIndustries from './components/SectionIndustries';
 import SectionHowItWorks from './components/SectionHowItWorks';
+import SectionOutcomes from './components/SectionOutcomes';
 import SectionCaseStudies from './components/SectionCaseStudies';
 import SectionCredentials from './components/SectionCredentials';
 import SectionFAQ from './components/SectionFAQ';
@@ -20,27 +22,57 @@ export default function App() {
   };
 
   return (
-    <div className="bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white">
+    <div className="bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white min-h-screen">
       
+      {/* Navigation */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
-      <main>
+      <main id="main-content">
+        {/* 1. Hero Section */}
         <SectionHero onOpenBooking={handleOpenBooking} />
+
+        {/* 2. Platform & Partner Trust Bar */}
         <SectionTrust />
+
+        {/* 3. The Problem Section: Growing a business shouldn't mean doing everything yourself */}
         <SectionProblems />
-        <SectionDigitalWorkforce />
-        <SectionAdvantages />
-        <SectionIndustries />
+
+        {/* 4. Core Services: Marketing & Growth & AI Staffing Overview */}
         <SectionServices />
+
+        {/* 5. Core Differentiator: Bring In More Business. Handle More Business. */}
+        <SectionDifferentiator />
+
+        {/* 6. Dedicated Marketing & Growth Deep Dive */}
+        <SectionMarketing onOpenBooking={handleOpenBooking} />
+
+        {/* 7. Dedicated AI Staffing Deep Dive */}
+        <SectionAIStaffing onOpenBooking={handleOpenBooking} />
+
+        {/* 8. Who We Help: Broad Industry Categories */}
+        <SectionIndustries />
+
+        {/* 9. Simple 3-Step Process */}
         <SectionHowItWorks />
+
+        {/* 10. Outcomes: More Leads, More Time, Lower Overhead, More Growth */}
+        <SectionOutcomes />
+
+        {/* 11. Case Studies: Problem -> Solution -> Outcome */}
         <SectionCaseStudies />
+
+        {/* 12. Credentials & Trust Standards */}
         <SectionCredentials />
+
+        {/* 13. Frequently Asked Questions */}
         <SectionFAQ />
+
+        {/* 14. Final Call to Action */}
         <SectionCTA onOpenBooking={handleOpenBooking} />
       </main>
 
+      {/* Footer */}
       <Footer onOpenBooking={handleOpenBooking} />
-
 
     </div>
   );

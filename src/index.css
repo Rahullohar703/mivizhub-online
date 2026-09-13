@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -17,55 +17,48 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   font-family: var(--font-body);
-  background-color: #050505;
+  background-color: #09090b;
   color: #f4f4f5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior-y: none;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #050505;
+  background-color: #09090b;
   color: #f4f4f5;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: none;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-/* Subtle, Apple-like gradients but for dark mode - made brighter to reduce heaviness */
-.text-gradient-dark {
-  background: linear-gradient(180deg, #FFFFFF 0%, #D4D4D8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Crisp, professional text utility classes - NO rainbow neon */
+.text-brand-cyan {
+  color: #31c0de;
 }
 
-.text-gradient-primary {
-  background: linear-gradient(135deg, #4F46E5 0%, #9333EA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text-brand-indigo {
+  color: #6366f1;
 }
 
-.text-gradient-punchy {
-  background: linear-gradient(135deg, #00F0FF 0%, #4F46E5 50%, #EC4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Base Card - Fast performance, no blur */
+/* Base Card - Clean executive look, solid contrast, no blurry neon */
 .card-base {
-  background: rgba(20, 20, 22, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.5);
-  border-radius: 1.5rem;
-  transition: all 0.3s ease;
+  background: #121216;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-base:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px -1px rgba(79, 70, 229, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.7);
 }
+

@@ -1,45 +1,73 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
 
 export default function SectionHowItWorks() {
   const steps = [
-    { num: '01', title: 'Strategy', desc: 'We hop on a call to learn exactly how you want your phones answered, your leads handled, and your calendar booked.' },
-    { num: '02', title: 'Development', desc: 'We custom-build your AI Employee based entirely on your specific business rules, pricing, and services.' },
-    { num: '03', title: 'Launch & Optimization', desc: 'We flip the switch. Your new digital team member takes over the front desk, your calendar gets booked, and you finally get a breather.' }
+    {
+      num: "1",
+      title: "15-Minute Intro Call",
+      desc: "We learn about your business, your services, and how you want your phone answered. No technical questions."
+    },
+    {
+      num: "2",
+      title: "We Build Everything For You",
+      desc: "We build your marketing campaigns, train your AI receptionist, and connect your calendar. Zero work for you."
+    },
+    {
+      num: "3",
+      title: "Your Phone Rings & Jobs Get Booked",
+      desc: "Leads come in, your AI assistant answers every call in 1 ring, and appointments show up on your schedule."
+    }
   ];
 
   return (
-    <Section id="how-it-works" className="bg-background relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(79,70,229,0.05),transparent_50%)] pointer-events-none" />
+    <Section id="how-it-works" className="py-20 bg-[#0c0c10] border-t border-white/10">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6 pb-2">
-            How We Install Your New <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-brandAccent">AI Team Member</span>
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            Simple 3-Step Process
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+            How Getting Started Works
           </h2>
-          <p className="text-lg text-textMuted">
-            You do not need to be technical. We handle everything from the initial setup to the ongoing maintenance. You just answer the qualified calls.
+          <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto">
+            You don't need any technical skills. We handle 100% of the setup, training, and ongoing management.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* 3 Step Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {steps.map((step, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="card-base p-8 relative overflow-hidden group bg-[radial-gradient(circle_at_bottom_right,rgba(79,70,229,0.1)_0%,transparent_60%)]"
+              className="bg-[#121216] border border-white/10 rounded-2xl p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
             >
-              <div className="text-4xl font-heading font-extrabold text-surfaceBorder group-hover:text-brandAccent/40 transition-colors mb-6">{step.num}</div>
-              <h3 className="text-xl font-bold text-textMain mb-3">{step.title}</h3>
-              <p className="text-textMuted leading-relaxed">{step.desc}</p>
-            </motion.div>
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-[#31c0de] font-mono font-bold flex items-center justify-center text-xl mb-6">
+                  0{step.num}
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {step.title}
+                </h3>
+
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-white/5 text-xs font-semibold text-gray-400">
+                Step 0{idx + 1} of 03 • Done For You
+              </div>
+            </div>
           ))}
         </div>
+
       </Container>
     </Section>
   );
 }
+

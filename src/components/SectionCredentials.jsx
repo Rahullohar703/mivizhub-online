@@ -1,44 +1,67 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { ShieldCheck, Server, UserCheck, RefreshCw, Layers } from 'lucide-react';
+import { UserCheck, FileText, Phone, Shield, Wrench } from 'lucide-react';
 
 export default function SectionCredentials() {
-  const credentials = [
-    { name: "Built with Enterprise AI", icon: <Server className="w-6 h-6 text-brandPurple" /> },
-    { name: "Secure Infrastructure", icon: <ShieldCheck className="w-6 h-6 text-[#00F0FF]" /> },
-    { name: "Human Oversight", icon: <UserCheck className="w-6 h-6 text-[#EC4899]" /> },
-    { name: "Continuous Optimization", icon: <RefreshCw className="w-6 h-6 text-brandPurple" /> },
-    { name: "CRM Integrations", icon: <Layers className="w-6 h-6 text-[#00F0FF]" /> }
+  const points = [
+    { 
+      title: "Real Human Account Support", 
+      desc: "You get a dedicated account manager you can call or text whenever you need adjustments.",
+      icon: <UserCheck className="w-5 h-5 text-[#31c0de]" />
+    },
+    { 
+      title: "Keep Your Existing Phone Number", 
+      desc: "Zero disruption to your clients. We plug directly into your current business line or forward missed calls.",
+      icon: <Phone className="w-5 h-5 text-[#31c0de]" />
+    },
+    { 
+      title: "Clear Monthly Reports", 
+      desc: "Simple, honest summaries of calls answered, leads generated, and appointments booked.",
+      icon: <FileText className="w-5 h-5 text-[#31c0de]" />
+    },
+    { 
+      title: "Safe, Secure & Private", 
+      desc: "Your client lists and customer records are completely protected, private, and never shared.",
+      icon: <Shield className="w-5 h-5 text-[#31c0de]" />
+    },
+    { 
+      title: "Done-For-You Maintenance", 
+      desc: "We update pricing, service packages, and calendar availability whenever your business changes.",
+      icon: <Wrench className="w-5 h-5 text-[#31c0de]" />
+    }
   ];
 
   return (
-    <Section id="credentials" className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.03),transparent_70%)] pointer-events-none" />
-      <Container className="relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain">
-            Why Businesses Trust MivizHub
+    <Section id="credentials" className="py-16 bg-[#0c0c10] border-t border-white/10">
+      <Container>
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            Peace of Mind
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+            A True Partner, Not Just a Software Tool
           </h2>
+          <p className="text-sm sm:text-base text-gray-300">
+            We don't hand you a login and expect you to figure it out. We do the heavy lifting for you.
+          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-          {credentials.map((cred, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="flex items-center gap-4 bg-surface/40 px-6 py-4 rounded-xl border border-surfaceBorder hover:border-brandPurple/30 transition-colors shadow-sm"
-            >
-              {cred.icon}
-              <span className="text-lg font-bold text-textMain">{cred.name}</span>
-            </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {points.map((pt, idx) => (
+            <div key={idx} className="bg-[#121216] border border-white/10 rounded-xl p-5 flex items-start gap-4">
+              <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
+                {pt.icon}
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-white mb-1">{pt.title}</h4>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{pt.desc}</p>
+              </div>
+            </div>
           ))}
         </div>
       </Container>
     </Section>
   );
 }
+

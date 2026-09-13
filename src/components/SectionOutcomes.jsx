@@ -1,53 +1,83 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-
-const OUTCOMES = [
-  { value: "< 3.2s", label: "Average Call Answer Time", detail: "Zero callers placed on hold or sent to voicemail." },
-  { value: "24 / 7", label: "Continuous Availability", detail: "After-hours inquiries captured instantly." },
-  { value: "48 Hours", label: "Deployment & Onboarding", detail: "Turnkey activation with your phone & CRM." },
-  { value: "15+ Hours", label: "Weekly Saved / Staff", detail: "Administrative tasks automated completely." }
-];
+import Container from './ui/Container';
+import Section from './ui/Section';
+import { Check } from 'lucide-react';
 
 export default function SectionOutcomes() {
+  const outcomes = [
+    {
+      stat: "100%",
+      label: "Zero Missed Calls",
+      headline: "Every customer gets answered on the 1st ring.",
+      desc: "Whether a customer calls at 2 PM or 10 PM on a Saturday, they get a polite, helpful assistant that takes down details and books their appointment."
+    },
+    {
+      stat: "< 60s",
+      label: "Speed to Lead",
+      headline: "Beat your competitors to the punch.",
+      desc: "Web and social inquiries get an immediate phone call or text confirmation within 60 seconds, securing the customer before they look elsewhere."
+    },
+    {
+      stat: "15+ hrs",
+      label: "Time Saved Every Week",
+      headline: "Stop doing late-night office work.",
+      desc: "No more playing phone tag, texting back and forth for dates, or manual appointment coordination. Your calendar fills up automatically."
+    },
+    {
+      stat: "70%",
+      label: "Lower Overhead",
+      headline: "Grow without massive hiring costs.",
+      desc: "Get 24/7 front-office coverage and a steady pipeline of customer inquiries for a fraction of what a single full-time employee costs."
+    }
+  ];
+
   return (
-    <section className="bg-white py-24 lg:py-36 border-b border-gray-200/80 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <Section id="outcomes" className="py-20 bg-[#09090b] border-t border-white/10">
+      <Container>
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-blue-600 mb-3 block">
-            Measurable Performance
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            The Measurable Results
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
-            Proven Results For High-Growth Service Firms.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+            What Happens When You Fix Marketing <br className="hidden sm:inline" />
+            and Staffing Together?
           </h2>
+          <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto">
+            Real, measurable improvements you will see in your business within the first 30 days.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {OUTCOMES.map((item, idx) => (
-            <motion.div
+        {/* 4 Outcome Cards Grid with Big Clear Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {outcomes.map((item, idx) => (
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="p-8 rounded-3xl bg-gray-50 border border-gray-200 text-center flex flex-col justify-between"
+              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
             >
               <div>
-                <div className="text-5xl font-extrabold text-gray-900 tracking-tight mb-3">
-                  {item.value}
+                <div className="text-3xl sm:text-4xl font-extrabold text-[#31c0de] mb-1 tracking-tight">
+                  {item.stat}
                 </div>
-                <div className="text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
+                <div className="text-xs font-bold tracking-wider uppercase text-gray-400 mb-4">
                   {item.label}
                 </div>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  {item.detail}
+
+                <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                  {item.headline}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  {item.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
+

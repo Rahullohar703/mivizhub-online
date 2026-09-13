@@ -1,73 +1,82 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
 
 export default function SectionFAQ() {
   const faqs = [
     {
-      q: 'Do I need to understand technology to use this?',
-      a: 'Absolutely not. We are a completely done for you service. We handle all the setup, programming, and maintenance. You simply receive the booked appointments and qualified leads.'
+      q: 'What kind of work can an AI employee handle for my business?',
+      a: 'Beyond answering incoming phone calls in 1 ring, our AI employees handle 60-second SMS/email follow-ups with new web leads, nurture unclosed estimates so quotes don\'t go cold, answer routine customer FAQs 24/7, book appointments into your Google or Outlook calendar, and sync notes directly into your CRM.'
     },
     {
-      q: 'How long does it take to set up?',
-      a: 'Most AI Employees are fully customized and deployed within 48 to 72 hours.'
+      q: 'Does the AI only work on phone calls, or texts and emails too?',
+      a: 'It works across all your customer channels: live voice calls, two-way SMS text messages, website chat, and email. You can deploy an AI employee for whichever tasks take up the most time for your business.'
     },
     {
-      q: 'What if my business is unique?',
-      a: 'During our discovery call, we learn your specific business rules, pricing structures, and FAQ. Your AI Employee is custom-trained to sound and act exactly how you want it to.'
+      q: 'What does the voice AI sound like on the phone? Does it sound robotic?',
+      a: 'It sounds remarkably natural, conversational, and polite. It answers with your company name, understands colloquial phrasing, and answers questions using the exact services and pricing rules you specify. If a caller has an emergency, it can transfer them directly to your cell phone or send you an instant alert.'
     },
     {
-      q: 'Will this replace my current staff?',
-      a: 'It can, but it doesn\'t have to. Many of our clients use MivizHub to handle the repetitive front-line work (like answering basic calls), freeing up their human staff to focus on complex, revenue-generating tasks.'
+      q: 'Do I or my staff have to learn any complicated computer software?',
+      a: 'No. MivizHub is 100% done-for-you. We set up the marketing campaigns, train your AI assistant on your services and pricing, connect your Google or Outlook calendar, and monitor everything daily. You don’t need to touch any code or learn any dashboards.'
     },
     {
-      q: 'Can it integrate with my current software?',
-      a: 'Yes. We can connect your AI Employee to most major CRM platforms, calendars, and booking software so it can schedule appointments directly for you without you lifting a finger.'
+      q: 'Can I hire you for just Marketing, or just AI Staffing?',
+      a: 'Yes, absolutely. If you already have plenty of leads and just need help answering calls and booking estimates, you can hire us strictly for AI Staffing. If your front office is fine but you need more customer quote requests, you can hire us strictly for Marketing. You can also combine both for a complete growth engine.'
+    },
+    {
+      q: 'What happens if a customer asks a question the AI doesn\'t know?',
+      a: 'If a caller asks a complex question that isn\'t in its knowledge base, the AI politely says: "Let me have the owner or a senior technician follow up with you on that." It takes down their question and phone number, and texts you the summary immediately so you can call them back.'
+    },
+    {
+      q: 'How much does this cost compared to hiring an employee?',
+      a: 'A traditional full-time office receptionist costs $45,000 to $55,000 per year in salary, payroll taxes, workers comp, and benefits — and they only work 40 hours a week. MivizHub covers your business 24/7/365 for a fraction of that cost, with zero turnover or management headaches.'
     }
   ];
 
   const [open, setOpen] = useState(0);
 
   return (
-    <Section id="faq" className="bg-background relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-surface/50 to-background pointer-events-none" />
+    <Section id="faq" className="py-20 bg-[#09090b] border-t border-white/10">
       <Container className="max-w-3xl">
-        <div className="text-center mb-10 md:mb-16 relative z-10">
-          <div className="text-sm font-bold tracking-widest text-brandAccent mb-4">FAQ</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6 pb-2">
-            Common Questions from <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandAccent to-brandPurple">Business Owners</span>
+        
+        {/* Header */}
+        <div className="text-center mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            Clear Answers
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+            Frequently Asked Questions
           </h2>
-          <p className="text-lg text-textMuted max-w-2xl mx-auto">
-            Find quick answers to the most common questions about our AI employees, how they work, and how they fit into your business.
+          <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
+            Everything you need to know in plain English. No corporate buzzwords.
           </p>
         </div>
 
-        <div className="space-y-4 relative z-10">
+        {/* FAQ Accordion */}
+        <div className="space-y-3">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="card-base overflow-hidden">
+            <div key={idx} className="bg-[#121216] border border-white/10 rounded-xl overflow-hidden">
               <button 
                 onClick={() => setOpen(open === idx ? -1 : idx)}
-                className="w-full text-left px-6 py-6 font-bold text-lg text-textMain hover:text-brandAccent transition-colors flex justify-between items-center"
+                className="w-full text-left px-6 py-5 font-bold text-base sm:text-lg text-white hover:text-[#31c0de] transition-colors flex justify-between items-center gap-4"
               >
-                {faq.q}
-                <span className={`text-2xl transition-transform duration-300 ${open === idx ? 'rotate-180 text-brandAccent' : 'text-textMuted'}`}>
+                <span>{faq.q}</span>
+                <span className="text-xl font-mono text-gray-400 flex-shrink-0">
                   {open === idx ? '−' : '+'}
                 </span>
               </button>
-              <div 
-                className={`grid transition-all duration-300 ease-in-out ${open === idx ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-              >
-                <div className="overflow-hidden">
-                  <div className="px-6 pb-6 text-textMuted leading-relaxed">
-                    {faq.a}
-                  </div>
+              {open === idx && (
+                <div className="px-6 pb-6 text-sm sm:text-base text-gray-300 leading-relaxed border-t border-white/5 pt-4">
+                  {faq.a}
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
+
       </Container>
     </Section>
   );
 }
+

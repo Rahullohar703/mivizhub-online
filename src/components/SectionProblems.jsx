@@ -1,62 +1,97 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { CheckCircle2 } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 export default function SectionProblems() {
-  const problems = [
-    "Answering repetitive calls",
-    "Chasing leads",
-    "Booking appointments",
-    "Updating CRM",
-    "Following up",
-    "Administrative work"
-  ];
-
   return (
-    <Section id="problem" className="bg-background relative py-20 lg:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-surface to-background pointer-events-none" />
-      <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-textMain leading-[1.1] mb-8">
-            Is Your Team Spending <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-brandPurple">Too Much Time</span> On...
+    <Section id="problem" className="bg-[#0b0b0e] py-20 border-t border-white/10">
+      <Container>
+        
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            The Reality of Running a Business
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+            Growing your business shouldn't mean <br className="hidden sm:inline" />
+            working 80 hours a week.
           </h2>
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+            Most business owners find themselves trapped between two constant headaches:
+          </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-16">
-            {problems.map((problem, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-center gap-4 bg-surface/50 p-6 rounded-2xl border border-surfaceBorder hover:border-brandPurple/50 transition-colors"
-              >
-                <CheckCircle2 className="w-8 h-8 text-[#00F0FF] flex-shrink-0" />
-                <span className="text-lg md:text-xl font-medium text-textMain">{problem}</span>
-              </motion.div>
-            ))}
+        {/* The Two Problems: High Contrast & Concise */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+          
+          {/* Problem 1 */}
+          <div className="bg-[#121216] p-6 sm:p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono font-bold text-gray-400 bg-white/5 px-2.5 py-1 rounded border border-white/5">
+                  Headache #1
+                </span>
+                <span className="text-xs font-semibold text-rose-400">Customer Flow</span>
+              </div>
+              
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                "The Phone Doesn't Ring Often Enough"
+              </h3>
+              
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                Word-of-mouth is unpredictable. One month you have more jobs than you can handle, and the next month your crew is sitting idle.
+              </p>
+            </div>
+
+            <div className="bg-[#18181f] p-3.5 rounded-xl border border-white/5 text-xs text-rose-300">
+              <span className="text-white font-bold block mb-0.5">What this costs you:</span>
+              Quiet weeks, payroll stress, and zero control over your growth.
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center"
-          >
-            <p className="text-2xl md:text-3xl font-bold text-textMain mb-4">
-              Your people should be growing the business.
-            </p>
-            <p className="text-xl md:text-2xl text-textMuted">
-              Not buried in repetitive tasks.
-            </p>
-          </motion.div>
+          {/* Problem 2 */}
+          <div className="bg-[#121216] p-6 sm:p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-mono font-bold text-gray-400 bg-white/5 px-2.5 py-1 rounded border border-white/5">
+                  Headache #2
+                </span>
+                <span className="text-xs font-semibold text-amber-400">Daily Workload</span>
+              </div>
+
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                "Drowning in Missed Calls, Inquiries & Admin"
+              </h3>
+              
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                You're busy serving clients. Calls go to voicemail, web inquiries sit unaddressed for hours, and sent quotes are forgotten without follow-up.
+              </p>
+            </div>
+
+            <div className="bg-[#18181f] p-3.5 rounded-xl border border-white/5 text-xs text-amber-300">
+              <span className="text-white font-bold block mb-0.5">What this costs you:</span>
+              Lost jobs to faster competitors, stalled proposals, and evening paperwork.
+            </div>
+          </div>
+
         </div>
+
+        {/* The Solution Bridge: Plain English */}
+        <div className="text-center max-w-3xl mx-auto bg-[#14141a] border border-white/10 rounded-2xl p-7 sm:p-9 shadow-lg">
+          <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-[#31c0de] mb-3">
+            <ArrowDown className="w-4 h-4" />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+            MivizHub Solves Both Ends of the Equation
+          </h3>
+          <p className="text-base text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            Our <span className="text-white font-bold">Marketing</span> gets qualified customer inquiries coming in. Our <span className="text-white font-bold">AI Employees</span> answer your calls in 1 ring, follow up with leads in 60 seconds, chase pending quotes, and keep your schedule full.
+          </p>
+        </div>
+
       </Container>
     </Section>
   );
 }
+

@@ -1,84 +1,102 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
 
 export default function SectionCaseStudies() {
   const caseStudies = [
     {
-      industry: "Construction Company",
-      problem: "Missed enquiries during busy site hours",
-      solution: "AI Receptionist",
-      results: [
-        "+43% faster response time",
-        "+28% more booked consultations"
-      ]
+      industry: "General Contractor",
+      badge: "AI Staffing",
+      stat: "Zero Missed Calls",
+      statDesc: "+$14,000 extra work booked in Month 1",
+      before: "Owner missed 4-6 calls a day on noisy job sites. Leads called competitors instead.",
+      after: "AI receptionist picks up in 1 ring 24/7 and books estimator site visits on his calendar."
     },
     {
       industry: "Healthcare Clinic",
-      problem: "High call volume causing long hold times",
-      solution: "AI Appointment Coordinator",
-      results: [
-        "Zero hold times for patients",
-        "40% reduction in admin workload"
-      ]
+      badge: "AI Staffing",
+      stat: "Zero Hold Times",
+      statDesc: "35% increase in confirmed bookings",
+      before: "10-minute morning phone queues, stressed receptionists, and frustrated patients.",
+      after: "AI handles routine scheduling and clinic FAQs instantly, freeing front desk to care for patients."
     },
     {
-      industry: "Mortgage Brokerage",
-      problem: "Incomplete applications and cold leads",
-      solution: "AI Follow-up Specialist",
-      results: [
-        "35% increase in completed apps",
-        "Higher conversion from cold leads"
-      ]
+      industry: "Home Services & Roofing",
+      badge: "Marketing + AI Staffing",
+      stat: "+28% More Jobs Won",
+      statDesc: "From automated quote follow-up",
+      before: "Sent estimates sat without follow-up while owner was in the field, losing jobs to competitors.",
+      after: "AI qualifies web leads in 45s and automatically nurtures unclosed quotes until booked."
     }
   ];
 
   return (
-    <Section id="case-studies" className="py-24 bg-surface/30">
+    <Section id="case-studies" className="py-20 bg-[#0c0c10] border-t border-white/10">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-textMain">
-            Proven Results
+        
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            Proven In The Field
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+            Real Results for Real Businesses
           </h2>
+          <p className="text-base text-gray-300">
+            How solving customer acquisition and workload creates immediate growth.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 3 High-Impact Cards (Scannable in 5 seconds) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {caseStudies.map((study, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-background border border-surfaceBorder rounded-2xl p-8 hover:border-brandPurple/50 transition-colors shadow-sm"
+              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
             >
-              <div className="text-sm font-bold tracking-widest text-brandPurple uppercase mb-6">{study.industry}</div>
-              
-              <div className="mb-6">
-                <div className="text-sm text-textMuted font-semibold mb-1 uppercase tracking-wide">Problem</div>
-                <div className="text-textMain font-medium">{study.problem}</div>
-              </div>
-              
-              <div className="mb-6">
-                <div className="text-sm text-textMuted font-semibold mb-1 uppercase tracking-wide">Solution</div>
-                <div className="text-textMain font-bold">{study.solution}</div>
-              </div>
-              
               <div>
-                <div className="text-sm text-textMuted font-semibold mb-2 uppercase tracking-wide">Results</div>
-                <ul className="space-y-2">
-                  {study.results.map((result, i) => (
-                    <li key={i} className="flex items-start gap-2 text-green-500 font-medium">
-                      <span className="mt-0.5">↑</span> {result}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/5">
+                  <span className="text-sm font-bold text-white">
+                    {study.industry}
+                  </span>
+                  <span className="text-xs font-semibold text-[#31c0de] bg-[#31c0de]/10 px-2.5 py-0.5 rounded border border-[#31c0de]/20">
+                    {study.badge}
+                  </span>
+                </div>
+
+                {/* Big Result Stat */}
+                <div className="mb-5">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-white block mb-0.5 tracking-tight">
+                    {study.stat}
+                  </span>
+                  <span className="text-xs font-semibold text-emerald-400">
+                    {study.statDesc}
+                  </span>
+                </div>
+
+                {/* Before / After 1-Liners */}
+                <div className="space-y-3 text-xs sm:text-sm">
+                  <div className="bg-[#181820] p-3 rounded-xl border border-white/5">
+                    <span className="text-rose-400 font-bold block mb-0.5 text-xs uppercase tracking-wider">Before:</span>
+                    <p className="text-gray-300 leading-snug">{study.before}</p>
+                  </div>
+
+                  <div className="bg-[#181820] p-3 rounded-xl border border-white/5">
+                    <span className="text-[#31c0de] font-bold block mb-0.5 text-xs uppercase tracking-wider">With MivizHub:</span>
+                    <p className="text-gray-200 leading-snug">{study.after}</p>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+
+              <div className="pt-4 mt-5 border-t border-white/5 text-[11px] text-gray-500 font-medium">
+                Verified client workflow
+              </div>
+            </div>
           ))}
         </div>
+
       </Container>
     </Section>
   );
 }
+

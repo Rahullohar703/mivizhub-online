@@ -19,25 +19,27 @@ export default function Navbar({ onOpenBooking }) {
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#problem" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Why AI Staffing?</a>
-            <a href="#digital-workforce" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">AI Employees</a>
-            <a href="#advantages" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Advantages</a>
-            <a href="#how-it-works" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">How it works</a>
-            <a href="#case-studies" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Case Studies</a>
-            <a href="#faq" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">FAQs</a>
+          <div className="hidden md:flex items-center gap-7">
+            <a href="#hero" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Home</a>
+            <a href="#marketing" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Marketing</a>
+            <a href="#ai-staffing" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">AI Staffing</a>
+            <a href="#how-it-works" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">How It Works</a>
+            <a href="#industries" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Industries</a>
+            <a href="#differentiator" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">About</a>
+            <a href="#faq" className="text-sm font-medium text-textMuted hover:text-textMain transition-colors">FAQ</a>
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <Button onClick={onOpenBooking} variant="primary">
-              BOOK A DEMO
+            <Button onClick={onOpenBooking} variant="primary" className="px-6 py-2.5 font-semibold text-sm">
+              Get Started
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 -mr-2 text-textMain"
+            className="md:hidden p-2 -mr-2 text-textMain focus:outline-none"
+            aria-label="Toggle navigation menu"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,18 +58,19 @@ export default function Navbar({ onOpenBooking }) {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-20 left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-surfaceBorder shadow-2xl px-6 py-8 flex flex-col gap-6"
+          className="md:hidden absolute top-20 left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-surfaceBorder shadow-2xl px-6 py-8 flex flex-col gap-5"
         >
-          <a href="#problem" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Why AI Staffing?</a>
-          <a href="#digital-workforce" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">AI Employees</a>
-          <a href="#advantages" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Advantages</a>
-          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">How it works</a>
-          <a href="#case-studies" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">Case Studies</a>
-          <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-textMain">FAQs</a>
+          <a href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">Home</a>
+          <a href="#marketing" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">Marketing & Growth</a>
+          <a href="#ai-staffing" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">AI Staffing</a>
+          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">How It Works</a>
+          <a href="#industries" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">Industries</a>
+          <a href="#differentiator" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">About</a>
+          <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-textMain">FAQ</a>
           
           <div className="pt-4 mt-2 border-t border-surfaceBorder">
-            <Button onClick={() => { setIsMobileMenuOpen(false); onOpenBooking(); }} variant="primary" className="w-full">
-              BOOK A DEMO
+            <Button onClick={() => { setIsMobileMenuOpen(false); onOpenBooking(); }} variant="primary" className="w-full py-3">
+              Get Started
             </Button>
           </div>
         </motion.div>

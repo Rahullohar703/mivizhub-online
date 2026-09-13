@@ -1,94 +1,259 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { HardHat, HeartPulse, Home } from 'lucide-react';
+import { HardHat, Factory, HeartPulse, Briefcase, ShoppingBag, Building2, Check, Bot } from 'lucide-react';
 
 export default function SectionIndustries() {
   const [activeTab, setActiveTab] = useState('Construction');
 
-  const tabs = [
-    { name: 'Construction', icon: <HardHat className="w-5 h-5" /> },
-    { name: 'Healthcare', icon: <HeartPulse className="w-5 h-5" /> },
-    { name: 'Mortgage', icon: <Home className="w-5 h-5" /> }
+  const industries = [
+    { id: 'Construction', name: 'Construction & Trades', icon: <HardHat className="w-4 h-4" /> },
+    { id: 'Industrial & Manufacturing', name: 'Manufacturing & Industrial', icon: <Factory className="w-4 h-4" /> },
+    { id: 'Healthcare & Wellness', name: 'Healthcare & Clinics', icon: <HeartPulse className="w-4 h-4" /> },
+    { id: 'Professional Services', name: 'Professional Services', icon: <Briefcase className="w-4 h-4" /> },
+    { id: 'E-commerce', name: 'E-commerce & Retail', icon: <ShoppingBag className="w-4 h-4" /> },
+    { id: 'Other Growing Businesses', name: 'Other Growing Businesses', icon: <Building2 className="w-4 h-4" /> }
   ];
 
-  const industryData = {
-    Construction: [
-      { role: "AI Receptionist", desc: "Handles all incoming calls and routes them appropriately." },
-      { role: "AI Estimation Assistant", desc: "Collects preliminary data for quick quotes." },
-      { role: "AI Project Coordinator", desc: "Follows up on material deliveries and subcontractor schedules." },
-      { role: "AI Site Visit Scheduler", desc: "Automatically books and confirms site visits." },
-      { role: "AI Customer Support", desc: "Answers client queries about project status 24/7." }
-    ],
-    Healthcare: [
-      { role: "AI Receptionist", desc: "Manages high call volumes without putting patients on hold." },
-      { role: "AI Appointment Coordinator", desc: "Schedules, reschedules, and cancels appointments seamlessly." },
-      { role: "AI Patient Follow-up", desc: "Checks in post-visit and gathers preliminary feedback." },
-      { role: "AI Billing Assistant", desc: "Answers basic billing questions and routes complex issues." },
-      { role: "AI Patient Support", desc: "Provides general clinic information and FAQs." }
-    ],
-    Mortgage: [
-      { role: "AI Loan Intake Assistant", desc: "Gathers initial applicant information automatically." },
-      { role: "AI Follow-up Specialist", desc: "Chases leads who haven't completed their applications." },
-      { role: "AI Appointment Setter", desc: "Books consultations with loan officers." },
-      { role: "AI Document Collection", desc: "Reminds clients of missing documents for their file." },
-      { role: "AI Customer Support", desc: "Answers common questions about rates and processes." }
-    ]
+  const details = {
+    'Construction': {
+      title: 'Construction, Remodeling & Trade Contractors',
+      desc: 'Never miss high-paying jobs while your hands are full on the job site.',
+      marketing: [
+        'Google Local Services ads that deliver qualified quote and estimate requests',
+        'Top rankings on Google Maps across your entire local service territory'
+      ],
+      agents: [
+        {
+          name: 'AI Site Receptionist',
+          badge: 'Voice & Calls',
+          task: 'Answers incoming calls in 1 ring on noisy job sites, screens emergency repairs, and books estimator site visits.'
+        },
+        {
+          name: 'AI Quote Follow-Up Agent',
+          badge: 'Revenue Recovery',
+          task: 'Follows up with homeowners on pending bids via text and email so proposals never get forgotten.'
+        }
+      ]
+    },
+    'Industrial & Manufacturing': {
+      title: 'Industrial Supply & Custom Fabrication',
+      desc: 'Win commercial contracts and stop drowning in manual order status emails.',
+      marketing: [
+        'Targeted B2B outreach to commercial procurement officers & facility managers',
+        'High-intent search campaigns for specific fabrication and industrial keywords'
+      ],
+      agents: [
+        {
+          name: 'AI RFQ & Spec Intake Agent',
+          badge: 'Lead Intake',
+          task: 'Extracts technical project requirements from incoming RFQs and alerts estimators with structured specs.'
+        },
+        {
+          name: 'AI Operations Coordinator',
+          badge: 'Operations & ERP',
+          task: 'Answers routine order status, delivery, and inventory inquiries 24/7 without burdening shop-floor staff.'
+        }
+      ]
+    },
+    'Healthcare & Wellness': {
+      title: 'Dental, Medical, Chiropractic & Clinics',
+      desc: 'Eliminate front-desk phone hold times and keep appointment books completely full.',
+      marketing: [
+        'Targeted local patient acquisition campaigns for high-value treatments & care',
+        'Automated 5-star Google review campaigns sent to satisfied patients'
+      ],
+      agents: [
+        {
+          name: 'AI Patient Appointment Coordinator',
+          badge: 'Voice & Booking',
+          task: 'Answers patient calls with zero hold times, books appointments, and manages routine rescheduling 24/7.'
+        },
+        {
+          name: 'AI Patient Recall Assistant',
+          badge: 'Patient Care & SMS',
+          task: 'Sends automated appointment reminder texts to eliminate no-shows and re-engages patients due for check-ups.'
+        }
+      ]
+    },
+    'Professional Services': {
+      title: 'Law Firms, Accountants & Consultants',
+      desc: 'Book high-value consultations without low-level administrative overhead.',
+      marketing: [
+        'High-authority Google Search campaigns targeting high-retainer prospective clients',
+        'Targeted executive outreach and referral acquisition campaigns'
+      ],
+      agents: [
+        {
+          name: 'AI Intake & Lead Qualifier',
+          badge: 'Pre-Qualification',
+          task: 'Screens incoming inquiries on budget, urgency, and case fit before booking partner calendar slots.'
+        },
+        {
+          name: 'AI Document & Onboarding Assistant',
+          badge: 'Client Onboarding',
+          task: 'Collects intake documents, signs agreements, and sends consultation prep checklists automatically.'
+        }
+      ]
+    },
+    'E-commerce': {
+      title: 'E-commerce, Brands & Distributors',
+      desc: 'Scale online sales while keeping customer support instant and 24/7.',
+      marketing: [
+        'High-ROI performance advertising focused on measurable return on ad spend',
+        'Post-purchase email and SMS flows that turn one-time buyers into repeat clients'
+      ],
+      agents: [
+        {
+          name: 'AI Customer Support Specialist',
+          badge: '24/7 Support',
+          task: 'Resolves shipping inquiries, returns, and product FAQs instantly across web chat, SMS, and email.'
+        },
+        {
+          name: 'AI Cart Recovery & Reactivation Agent',
+          badge: 'Revenue Recovery',
+          task: 'Follows up with abandoned checkout shoppers and sends personalized re-order reminders based on past orders.'
+        }
+      ]
+    },
+    'Other Growing Businesses': {
+      title: 'Any Growing Business With Inbound Customers',
+      desc: 'Our system adapts to any business that needs more leads and automated front-office operations.',
+      marketing: [
+        'Custom lead generation campaigns tailored to your exact customer profile',
+        'Transparent monthly tracking on every phone call, lead, and dollar spent'
+      ],
+      agents: [
+        {
+          name: 'AI Front-Desk & Voice Assistant',
+          badge: 'Voice & Phone',
+          task: 'Custom-trained on your services, pricing, and business rules to handle incoming inquiries 24/7.'
+        },
+        {
+          name: 'AI Speed-to-Lead & Follow-Up Agent',
+          badge: 'Lead Follow-Up',
+          task: 'Reaches new web inquiries within 60 seconds and keeps your sales pipeline moving without manual chasing.'
+        }
+      ]
+    }
   };
 
+  const current = details[activeTab];
+
   return (
-    <Section id="industries" className="bg-background relative py-20 lg:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.05),transparent_70%)] pointer-events-none" />
-      <Container className="relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">
-            AI Workforce Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-brandPurple">Modern Businesses</span>
+    <Section id="industries" className="py-20 bg-[#09090b] border-t border-white/10">
+      <Container>
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
+            Who We Help
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+            Built for Growing Businesses Across Multiple Industries
           </h2>
-          <p className="text-xl text-textMuted">
-            Built for growing businesses. Swap the data, and the AI adapts to your niche.
+          <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
+            Click your industry to see how marketing drives customers in, and which dedicated AI employees handle the work.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {tabs.map((tab) => (
+        {/* Tab Buttons */}
+        <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto mb-10">
+          {industries.map((tab) => (
             <button
-              key={tab.name}
-              onClick={() => setActiveTab(tab.name)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all ${
-                activeTab === tab.name 
-                  ? 'bg-brandPurple text-white shadow-lg shadow-brandPurple/25' 
-                  : 'bg-surface/50 text-textMuted hover:text-textMain hover:bg-surface/80 border border-surfaceBorder'
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                activeTab === tab.id 
+                  ? 'bg-[#4F46E5] text-white shadow-lg shadow-indigo-600/30' 
+                  : 'bg-[#181820] text-gray-200 hover:text-white border border-white/10 hover:border-white/20'
               }`}
             >
               {tab.icon}
-              {tab.name}
+              <span>{tab.name}</span>
             </button>
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
-            >
-              {industryData[activeTab].map((employee, idx) => (
-                <div key={idx} className="bg-surface/30 border border-surfaceBorder p-6 rounded-2xl flex items-start gap-4 hover:border-brandPurple/50 transition-colors">
-                  <div className="w-3 h-3 mt-1.5 rounded-full bg-[#00F0FF] flex-shrink-0 shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
-                  <div>
-                    <h3 className="text-lg font-bold text-textMain mb-1">{employee.role}</h3>
-                    <p className="text-textMuted">{employee.desc}</p>
-                  </div>
+        {/* Tab Content Box */}
+        <div className="max-w-4xl mx-auto bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-9 shadow-lg">
+          <div className="mb-6 pb-6 border-b border-white/10">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+              {current.title}
+            </h3>
+            <p className="text-sm text-gray-300">
+              {current.desc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Column 1: Marketing */}
+            <div className="bg-[#181820] border border-white/5 p-5 rounded-xl flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block">
+                    1. Marketing & Growth Engine
+                  </span>
+                  <span className="text-[10px] font-semibold text-indigo-300 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
+                    Brings Business In
+                  </span>
                 </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+
+                <div className="space-y-3">
+                  {current.marketing.map((item, i) => (
+                    <div key={i} className="bg-[#121216] border border-white/5 rounded-lg p-3 flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm text-gray-200 leading-snug">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Column 2: Specific AI Staff Deployed */}
+            <div className="bg-[#181820] border border-white/5 p-5 rounded-xl flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block">
+                    2. Dedicated AI Employees Deployed
+                  </span>
+                  <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                    24/7 Coverage
+                  </span>
+                </div>
+
+                <div className="space-y-3">
+                  {current.agents.map((agent, i) => (
+                    <div key={i} className="bg-[#121216] border border-white/5 rounded-lg p-3">
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <span className="text-xs sm:text-sm font-bold text-white flex items-center gap-1.5">
+                          <Bot className="w-3.5 h-3.5 text-[#31c0de]" />
+                          {agent.name}
+                        </span>
+                        <span className="text-[10px] font-semibold text-gray-400 bg-white/5 px-1.5 py-0.5 rounded border border-white/10">
+                          {agent.badge}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-snug">
+                        {agent.task}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Reassurance */}
+          <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400 text-center sm:text-left">
+            <span>We configure and train each AI employee for your specific services and software.</span>
+            <span className="text-[#31c0de] font-semibold">Zero technical setup required</span>
+          </div>
+
         </div>
+
       </Container>
     </Section>
   );
