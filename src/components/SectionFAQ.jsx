@@ -38,36 +38,36 @@ export default function SectionFAQ() {
 
   return (
     <Section id="faq" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container className="max-w-3xl">
+      <Container className="max-w-5xl">
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Clear Answers
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
             Everything you need to know in plain English. No corporate buzzwords.
           </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-3">
+        {/* FAQ Accordion - Wide & Breathable */}
+        <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-[#121216] border border-white/10 rounded-xl overflow-hidden">
+            <div key={idx} className="bg-[#121216] border border-white/10 rounded-2xl overflow-hidden shadow-md">
               <button 
                 onClick={() => setOpen(open === idx ? -1 : idx)}
-                className="w-full text-left px-6 py-5 font-bold text-base sm:text-lg text-white hover:text-[#31c0de] transition-colors flex justify-between items-center gap-4"
+                className="w-full text-left px-7 py-6 font-bold text-base sm:text-xl text-white hover:text-[#31c0de] transition-colors flex justify-between items-center gap-4"
               >
                 <span>{faq.q}</span>
-                <span className="text-xl font-mono text-gray-400 flex-shrink-0">
+                <span className="text-2xl font-mono text-gray-400 flex-shrink-0">
                   {open === idx ? '−' : '+'}
                 </span>
               </button>
               {open === idx && (
-                <div className="px-6 pb-6 text-sm sm:text-base text-gray-300 leading-relaxed border-t border-white/5 pt-4">
+                <div className="px-7 pb-7 text-sm sm:text-base text-gray-300 leading-relaxed border-t border-white/5 pt-5">
                   {faq.a}
                 </div>
               )}

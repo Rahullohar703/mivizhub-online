@@ -40,38 +40,38 @@ export default function SectionMarketing({ onOpenBooking }) {
       <Container>
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Service 01: Marketing & Growth
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
             Bring More Customers In.
           </h2>
-          <p className="text-base text-gray-300">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
             We manage your entire marketing system so you get a predictable flow of quote requests without burning money on useless clicks.
           </p>
         </div>
 
-        {/* 3 Clean, Lightweight Cards (Zero Wall of Text) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        {/* 3 Clean, Wide Expansive Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-indigo-500/40 transition-colors"
+              className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-indigo-500/40 transition-colors shadow-xl"
             >
               <div>
-                <span className="text-xs font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20 inline-block mb-3">
+                <span className="text-xs font-mono font-bold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-block mb-4">
                   Step {pillar.step}
                 </span>
 
-                <h3 className="text-xl font-bold text-white mb-2">{pillar.title}</h3>
-                <p className="text-sm text-gray-300 leading-relaxed mb-5">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{pillar.title}</h3>
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
                   {pillar.desc}
                 </p>
 
-                <div className="space-y-2 pt-4 border-t border-white/10">
+                <div className="space-y-3 pt-5 border-t border-white/10">
                   {pillar.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-200">
+                    <div key={pIdx} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200">
                       <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                       <span>{pt}</span>
                     </div>
@@ -83,19 +83,19 @@ export default function SectionMarketing({ onOpenBooking }) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#14141a] border border-white/10 rounded-2xl p-6 sm:p-7 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div className="bg-[#14141a] border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
-            <h4 className="text-lg font-bold text-white mb-1">
+            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
               Want a steady flow of quote requests?
             </h4>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm sm:text-base text-gray-300">
               Let's review your market and show you what it will take to get consistent leads.
             </p>
           </div>
           <Button 
             onClick={onOpenBooking} 
             variant="primary" 
-            className="px-6 py-3.5 flex-shrink-0 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl border-0 shadow-lg shadow-indigo-600/30"
+            className="px-8 py-4 flex-shrink-0 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl border-0 shadow-lg shadow-indigo-600/30 text-sm sm:text-base"
           >
             Book a Marketing Review
           </Button>

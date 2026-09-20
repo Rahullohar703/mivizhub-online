@@ -36,39 +36,38 @@ export default function SectionOutcomes() {
       <Container>
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-5xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             The Measurable Results
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            What Happens When You Fix Marketing <br className="hidden sm:inline" />
-            and Staffing Together?
+            What Happens When You Fix Marketing and Staffing Together?
           </h2>
-          <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-200 max-w-3xl mx-auto">
             Real, measurable improvements you will see in your business within the first 30 days.
           </p>
         </div>
 
-        {/* 4 Outcome Cards Grid with Big Clear Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {/* 4 Outcome Cards Grid with Big Clear Stats - Wide & Expansive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {outcomes.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
+              className="bg-[#121216] border border-white/10 rounded-3xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-xl"
             >
               <div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#31c0de] mb-1 tracking-tight">
+                <div className="text-4xl sm:text-5xl font-extrabold text-[#31c0de] mb-1 tracking-tight">
                   {item.stat}
                 </div>
                 <div className="text-xs font-bold tracking-wider uppercase text-gray-400 mb-4">
                   {item.label}
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2.5 leading-snug">
                   {item.headline}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                <p className="text-sm text-gray-300 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

@@ -35,7 +35,7 @@ export default function SectionCaseStudies() {
       <Container>
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Proven In The Field
           </span>
@@ -47,48 +47,48 @@ export default function SectionCaseStudies() {
           </p>
         </div>
 
-        {/* 3 High-Impact Cards (Scannable in 5 seconds) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* 3 High-Impact Cards - Wide & Expansive */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {caseStudies.map((study, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
+              className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
             >
               <div>
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/5">
-                  <span className="text-sm font-bold text-white">
+                <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/5">
+                  <span className="text-base font-bold text-white">
                     {study.industry}
                   </span>
-                  <span className="text-xs font-semibold text-[#31c0de] bg-[#31c0de]/10 px-2.5 py-0.5 rounded border border-[#31c0de]/20">
+                  <span className="text-xs font-semibold text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded-full border border-[#31c0de]/20">
                     {study.badge}
                   </span>
                 </div>
 
                 {/* Big Result Stat */}
-                <div className="mb-5">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-white block mb-0.5 tracking-tight">
+                <div className="mb-6">
+                  <span className="text-3xl sm:text-4xl font-extrabold text-white block mb-1 tracking-tight">
                     {study.stat}
                   </span>
-                  <span className="text-xs font-semibold text-emerald-400">
+                  <span className="text-xs sm:text-sm font-semibold text-emerald-400">
                     {study.statDesc}
                   </span>
                 </div>
 
                 {/* Before / After 1-Liners */}
-                <div className="space-y-3 text-xs sm:text-sm">
-                  <div className="bg-[#181820] p-3 rounded-xl border border-white/5">
-                    <span className="text-rose-400 font-bold block mb-0.5 text-xs uppercase tracking-wider">Before:</span>
-                    <p className="text-gray-300 leading-snug">{study.before}</p>
+                <div className="space-y-4 text-xs sm:text-sm">
+                  <div className="bg-[#181820] p-4 rounded-xl border border-white/5">
+                    <span className="text-rose-400 font-bold block mb-1 text-xs uppercase tracking-wider">Before:</span>
+                    <p className="text-gray-300 leading-relaxed">{study.before}</p>
                   </div>
 
-                  <div className="bg-[#181820] p-3 rounded-xl border border-white/5">
-                    <span className="text-[#31c0de] font-bold block mb-0.5 text-xs uppercase tracking-wider">With MivizHub:</span>
-                    <p className="text-gray-200 leading-snug">{study.after}</p>
+                  <div className="bg-[#181820] p-4 rounded-xl border border-white/5">
+                    <span className="text-[#31c0de] font-bold block mb-1 text-xs uppercase tracking-wider">With MivizHub:</span>
+                    <p className="text-gray-200 leading-relaxed">{study.after}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 mt-5 border-t border-white/5 text-[11px] text-gray-500 font-medium">
+              <div className="pt-5 mt-6 border-t border-white/5 text-xs text-gray-500 font-medium">
                 Verified client workflow
               </div>
             </div>

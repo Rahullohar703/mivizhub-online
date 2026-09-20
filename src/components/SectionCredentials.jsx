@@ -35,7 +35,7 @@ export default function SectionCredentials() {
   return (
     <Section id="credentials" className="py-16 bg-[#0c0c10] border-t border-white/10">
       <Container>
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Peace of Mind
           </span>
@@ -47,15 +47,15 @@ export default function SectionCredentials() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto">
           {points.map((pt, idx) => (
-            <div key={idx} className="bg-[#121216] border border-white/10 rounded-xl p-5 flex items-start gap-4">
-              <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
+            <div key={idx} className="bg-[#121216] border border-white/10 rounded-2xl p-7 flex items-start gap-5 shadow-lg hover:border-[#31c0de]/40 transition-colors">
+              <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex-shrink-0">
                 {pt.icon}
               </div>
               <div>
-                <h4 className="text-base font-bold text-white mb-1">{pt.title}</h4>
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{pt.desc}</p>
+                <h4 className="text-lg font-bold text-white mb-2">{pt.title}</h4>
+                <p className="text-sm text-gray-300 leading-relaxed">{pt.desc}</p>
               </div>
             </div>
           ))}

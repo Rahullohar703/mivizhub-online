@@ -37,40 +37,40 @@ export default function SectionAIStaffing({ onOpenBooking }) {
       <Container>
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Service 02: AI Staffing & Digital Workforce
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
             Digital Employees That Never Sleep.
           </h2>
-          <p className="text-base text-gray-300">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
             We build, train, and manage dedicated AI employees that handle phone calls, qualify leads, follow up on quotes, and support customers 24/7.
           </p>
         </div>
 
-        {/* 4 Core AI Roles - Clean, Scannable Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-14">
+        {/* 4 Core AI Roles - Wide, Crisp, Scannable Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
           {roles.map((role, idx) => (
             <div 
               key={idx} 
-              className="bg-[#121216] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-[#31c0de]/30 transition-colors"
+              className="bg-[#121216] border border-white/10 rounded-3xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-xl"
             >
               <div>
-                <span className="text-[11px] font-bold text-[#31c0de] bg-[#31c0de]/10 px-2.5 py-0.5 rounded border border-[#31c0de]/20 inline-block mb-3 uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded-full border border-[#31c0de]/20 inline-block mb-4 uppercase tracking-wider">
                   {role.badge}
                 </span>
                 
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {role.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-4">
+                <p className="text-sm text-gray-300 leading-relaxed mb-6">
                   {role.desc}
                 </p>
               </div>
 
-              <div className="bg-[#181820] p-2.5 rounded-xl border border-white/5 text-xs text-emerald-300 font-semibold">
+              <div className="bg-[#181820] p-3 rounded-xl border border-white/5 text-xs sm:text-sm text-emerald-300 font-semibold">
                 ✓ {role.stat}
               </div>
             </div>
@@ -78,63 +78,63 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         </div>
 
         {/* Practical Comparison: In-House Staff vs. MivizHub AI Employees */}
-        <div className="max-w-4xl mx-auto mb-12 bg-[#121216] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
-          <div className="text-center mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-1">
+        <div className="max-w-6xl mx-auto mb-16 bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-2">
               Simple Comparison
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white">
               Hiring In-House Office Staff vs. MivizHub AI Employees
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Traditional Hire */}
-            <div className="bg-[#181820] border border-white/5 rounded-xl p-5">
-              <span className="text-sm font-bold text-rose-400 block mb-3 pb-2 border-b border-white/5">
+            <div className="bg-[#181820] border border-white/5 rounded-2xl p-6 sm:p-8">
+              <span className="text-base font-bold text-rose-400 block mb-4 pb-3 border-b border-white/5">
                 Traditional Office Staff
               </span>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300">
-                <li className="flex items-center gap-2">
-                  <X className="w-4 h-4 text-rose-400 flex-shrink-0" />
-                  <span>$45,000 - $60,000/yr salary per person + taxes</span>
+              <ul className="space-y-3 text-sm text-gray-300">
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
+                  <span>$45,000 - $60,000/yr salary per person + taxes & benefits</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <X className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
                   <span>Only 40 hours/week (evenings & weekends missed)</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <X className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
                   <span>Handles 1 inquiry at a time (busy signals & hold times)</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <X className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
                   <span>Requires weeks of training, sick leave & can quit</span>
                 </li>
               </ul>
             </div>
 
             {/* MivizHub AI Employee */}
-            <div className="bg-[#181824] border-2 border-[#31c0de]/30 rounded-xl p-5 shadow-lg shadow-cyan-950/20">
-              <span className="text-sm font-bold text-[#31c0de] block mb-3 pb-2 border-b border-white/10">
+            <div className="bg-[#181824] border-2 border-[#31c0de]/40 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-cyan-950/20">
+              <span className="text-base font-bold text-[#31c0de] block mb-4 pb-3 border-b border-white/10">
                 Your MivizHub AI Employees
               </span>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-gray-200">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <ul className="space-y-3 text-sm text-gray-200">
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span>Fraction of the cost with zero payroll tax or benefits</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span>24/7/365 coverage across calls, SMS, email & chat</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span>Handles unlimited inquiries at once (zero wait times)</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                   <span>100% custom-trained, integrated, and managed for you</span>
                 </li>
               </ul>
@@ -144,19 +144,19 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#14141a] border border-white/10 rounded-2xl p-6 sm:p-7 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <div className="bg-[#14141a] border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
-            <h4 className="text-lg font-bold text-white mb-1">
+            <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
               Want to see what an AI employee can handle for your business?
             </h4>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm sm:text-base text-gray-300">
               Book a quick 15-minute call. We'll show you voice demos, lead workflows, and follow-up automations.
             </p>
           </div>
           <Button 
             onClick={onOpenBooking} 
             variant="primary" 
-            className="px-6 py-3.5 flex-shrink-0 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl border-0 shadow-lg shadow-indigo-600/30"
+            className="px-8 py-4 flex-shrink-0 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl border-0 shadow-lg shadow-indigo-600/30 text-sm sm:text-base"
           >
             Explore AI Staffing
           </Button>

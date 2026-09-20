@@ -7,7 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#050505",
+        background: "#09090b",
+        foreground: "#f4f4f5",
+        primary: "#31c0de", // Cyan accent for the tubelight lamp glow
+        muted: "rgba(255, 255, 255, 0.08)",
+        border: "rgba(255, 255, 255, 0.12)",
         surface: "#0a0a0a",
         surfaceBorder: "#1f1f22",
         textMain: "#f4f4f5",

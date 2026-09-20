@@ -9,25 +9,27 @@ export default function SectionCTA({ onOpenBooking }) {
     <Section id="contact" className="py-24 bg-[#0c0c10] border-t border-white/10 text-center relative">
       <Container>
         
-        <div className="max-w-3xl mx-auto bg-[#14141a] border border-white/10 rounded-3xl p-8 sm:p-14 shadow-2xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-3">
+        <div className="max-w-6xl mx-auto bg-gradient-to-b from-[#141824] to-[#0e121c] border border-white/10 rounded-3xl p-10 sm:p-20 shadow-2xl relative overflow-hidden">
+          {/* Subtle ambient lighting */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.15)_0%,transparent_70%)] pointer-events-none" />
+
+          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-3 relative z-10">
             Take The Next Step
           </span>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-            Ready to Grow Without <br className="hidden sm:inline" />
-            Doing Everything Yourself?
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto relative z-10">
+            Ready to Grow Without Doing Everything Yourself?
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-200 mb-8 max-w-xl mx-auto leading-relaxed">
-            Whether you need more customers, 24/7 phone answering, or both — we set up everything for you.
+          <p className="text-base sm:text-xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed relative z-10">
+            Whether you need more customers, 24/7 phone answering, or both — we set up, train, and manage everything for you.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <Button 
               onClick={onOpenBooking} 
               variant="primary" 
-              className="w-full sm:w-auto text-base sm:text-lg px-8 py-4 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl shadow-lg shadow-indigo-600/30 border-0 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto text-base sm:text-lg px-9 py-4 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl shadow-lg shadow-indigo-600/30 border-0 flex items-center justify-center gap-2 hover:scale-[1.02] transition-all"
             >
               <span>Book a Free 15-Minute Intro Call</span>
               <ArrowRight className="w-4 h-4" />
@@ -35,14 +37,14 @@ export default function SectionCTA({ onOpenBooking }) {
             
             <button 
               onClick={onOpenBooking}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl px-7 py-4 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl px-8 py-4 transition-all"
             >
               <PhoneCall className="w-4 h-4 text-[#31c0de]" />
               <span>Talk to Our Team</span>
             </button>
           </div>
 
-          <p className="text-xs sm:text-sm text-gray-400 mt-6 font-medium">
+          <p className="text-xs sm:text-sm text-gray-400 mt-8 font-medium relative z-10">
             Quick 15-minute phone call • Zero high-pressure sales • Direct answers to your questions
           </p>
         </div>

@@ -26,40 +26,40 @@ export default function SectionHowItWorks() {
       <Container>
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Simple 3-Step Process
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
             How Getting Started Works
           </h2>
-          <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
             You don't need any technical skills. We handle 100% of the setup, training, and ongoing management.
           </p>
         </div>
 
-        {/* 3 Step Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* 3 Step Cards - Wide & Expansive */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-2xl p-7 flex flex-col justify-between hover:border-white/20 transition-colors"
+              className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-[#31c0de] font-mono font-bold flex items-center justify-center text-xl mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-[#31c0de] font-mono font-bold flex items-center justify-center text-2xl mb-6 shadow-md">
                   0{step.num}
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
                   {step.title}
                 </h3>
 
-                <p className="text-sm text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                   {step.desc}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/5 text-xs font-semibold text-gray-400">
+              <div className="pt-6 mt-6 border-t border-white/5 text-xs sm:text-sm font-semibold text-gray-400">
                 Step 0{idx + 1} of 03 • Done For You
               </div>
             </div>
