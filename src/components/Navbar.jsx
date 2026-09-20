@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, TrendingUp, Users, Layers, Briefcase, ListOrdered, HelpCircle, PhoneCall } from 'lucide-react';
+import { Home, TrendingUp, Users, Layers, Briefcase, Tag, ListOrdered, HelpCircle, PhoneCall } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function Navbar({ onOpenBooking }) {
@@ -14,6 +14,7 @@ export default function Navbar({ onOpenBooking }) {
     { name: 'Why Both', url: '#differentiator', icon: Layers },
     { name: 'Industries', url: '#industries', icon: Briefcase },
     { name: 'Process', url: '#how-it-works', icon: ListOrdered },
+    { name: 'Pricing', url: '#pricing', icon: Tag },
     { name: 'FAQ', url: '#faq', icon: HelpCircle },
   ];
 

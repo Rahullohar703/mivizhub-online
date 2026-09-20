@@ -12,6 +12,7 @@ import SectionHowItWorks from './components/SectionHowItWorks';
 import SectionOutcomes from './components/SectionOutcomes';
 import SectionCaseStudies from './components/SectionCaseStudies';
 import SectionCredentials from './components/SectionCredentials';
+import SectionPricing from './components/SectionPricing';
 import SectionFAQ from './components/SectionFAQ';
 import SectionCTA from './components/SectionCTA';
 import Footer from './components/Footer';
@@ -64,10 +65,13 @@ export default function App() {
         {/* 12. Credentials & Trust Standards */}
         <SectionCredentials />
 
-        {/* 13. Frequently Asked Questions */}
+        {/* 13. Transparent Pricing: Presence ($250) & Growth ($500) */}
+        <SectionPricing onOpenBooking={handleOpenBooking} />
+
+        {/* 14. Frequently Asked Questions */}
         <SectionFAQ />
 
-        {/* 14. Final Call to Action */}
+        {/* 15. Final Call to Action */}
         <SectionCTA onOpenBooking={handleOpenBooking} />
       </main>
 
