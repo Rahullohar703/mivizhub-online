@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import Button from './ui/Button';
+import { ArrowFillButton } from './ui/arrow-fill-button';
 import { Check, X, ArrowRight } from 'lucide-react';
 
 export default function SectionAIStaffing({ onOpenBooking }) {
@@ -153,13 +153,17 @@ export default function SectionAIStaffing({ onOpenBooking }) {
               Book a quick 15-minute call. We'll show you voice demos, lead workflows, and follow-up automations.
             </p>
           </div>
-          <Button 
+          <ArrowFillButton 
+            btnText="Explore AI Staffing" 
             onClick={onOpenBooking} 
-            variant="primary" 
-            className="px-8 py-4 flex-shrink-0 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl border-0 shadow-lg shadow-indigo-600/30 text-sm sm:text-base"
-          >
-            Explore AI Staffing
-          </Button>
+            bgColor="#10141e"
+            textColor="#ffffff"
+            fillBgColor="#31c0de"
+            fillTextColor="#09090b"
+            arrowColor="#09090b"
+            hoverArrowColor="#09090b"
+            className="border-cyan-500/30 shadow-lg shadow-cyan-500/20"
+          />
         </div>
 
       </Container>

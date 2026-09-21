@@ -1,16 +1,15 @@
-import React from 'react'
-import { Home, User, Briefcase, FileText } from 'lucide-react'
-import { NavBar } from "@/components/ui/tubelight-navbar"
+"use client";
 
-export function NavBarDemo() {
-  const navItems = [
-    { name: 'Home', url: '#', icon: Home },
-    { name: 'About', url: '#', icon: User },
-    { name: 'Projects', url: '#', icon: Briefcase },
-    { name: 'Resume', url: '#', icon: FileText }
-  ]
+import ArrowFillButton from "./arrow-fill-button";
 
-  return <NavBar items={navItems} />
+export default function ArrowFillButtonDemo() {
+  return (
+    <div className="flex min-h-64 w-full items-center justify-center p-12">
+      <ArrowFillButton
+        btnText="Hover me"
+        href="https://vault.hyperiux.com"
+        onClick={(event) => event.preventDefault()}
+      />
+    </div>
+  );
 }
-
-export default NavBarDemo

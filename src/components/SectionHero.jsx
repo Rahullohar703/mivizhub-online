@@ -3,6 +3,8 @@ import Button from './ui/Button';
 import Container from './ui/Container';
 import Section from './ui/Section';
 import { Phone, Calendar, ArrowRight, Check } from 'lucide-react';
+import { AntiMetalButton } from './ui/anti-metal-button';
+import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function SectionHero({ onOpenBooking }) {
   return (
@@ -29,22 +31,26 @@ export default function SectionHero({ onOpenBooking }) {
           We build and manage AI Employees that answer calls, qualify leads, follow up with customers, and automate repetitive work so your business grows without growing your payroll.
         </p>
 
-        {/* CTAs: Clean, large, boomer-friendly */}
+        {/* CTAs: Clean, large, boomer-friendly with AntiMetalButton and ArrowFillButton */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-6">
-          <Button 
+          <AntiMetalButton 
             onClick={onOpenBooking} 
-            variant="primary" 
-            className="w-full sm:w-auto text-base sm:text-lg px-8 py-4 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl shadow-lg shadow-indigo-600/30 border-0 transition-all hover:scale-[1.02]"
-          >
-            Book a Free 15-Minute Intro Call
-          </Button>
-          <a 
+            label="Book a Free 15-Minute Intro Call"
+            size="lg"
+            className="w-full sm:w-auto shadow-xl shadow-blue-500/25"
+          />
+
+          <ArrowFillButton 
+            btnText="See Our 2 Simple Services" 
             href="#services" 
-            className="w-full sm:w-auto text-base font-semibold text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl px-7 py-4 text-center transition-all flex items-center justify-center gap-2"
-          >
-            <span>See Our 2 Simple Services</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+            bgColor="#121622"
+            textColor="#f4f4f5"
+            fillBgColor="#31c0de"
+            fillTextColor="#09090b"
+            arrowColor="#09090b"
+            hoverArrowColor="#09090b"
+            className="w-full sm:w-auto border-white/15 hover:border-white/30"
+          />
         </div>
 
         {/* Reassurance text */}

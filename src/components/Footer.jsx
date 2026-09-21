@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from './ui/Container';
+import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function Footer({ onOpenBooking }) {
   return (
@@ -64,12 +65,19 @@ export default function Footer({ onOpenBooking }) {
                 <a href="#contact" className="hover:text-textMain transition-colors">Contact Team</a>
               </li>
             </ul>
-            <button 
-              onClick={onOpenBooking}
-              className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full bg-surface border border-surfaceBorder text-textMain hover:border-brandAccent/60 transition-all"
-            >
-              Get Started
-            </button>
+            <div className="pt-2">
+              <ArrowFillButton 
+                btnText="Get Started" 
+                onClick={onOpenBooking} 
+                bgColor="#141824"
+                textColor="#ffffff"
+                fillBgColor="#31c0de"
+                fillTextColor="#09090b"
+                arrowColor="#09090b"
+                hoverArrowColor="#09090b"
+                className="border-white/10"
+              />
+            </div>
           </div>
 
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import Button from './ui/Button';
+import { ArrowFillButton } from './ui/arrow-fill-button';
 import { Check, ArrowRight } from 'lucide-react';
 
 export default function SectionMarketing({ onOpenBooking }) {
@@ -92,13 +92,17 @@ export default function SectionMarketing({ onOpenBooking }) {
               Let's review your market and show you what it will take to get consistent leads.
             </p>
           </div>
-          <Button 
+          <ArrowFillButton 
+            btnText="Book a Marketing Review" 
             onClick={onOpenBooking} 
-            variant="primary" 
-            className="px-8 py-4 flex-shrink-0 font-bold bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl border-0 shadow-lg shadow-indigo-600/30 text-sm sm:text-base"
-          >
-            Book a Marketing Review
-          </Button>
+            bgColor="#10141e"
+            textColor="#ffffff"
+            fillBgColor="#4F46E5"
+            fillTextColor="#ffffff"
+            arrowColor="#ffffff"
+            hoverArrowColor="#ffffff"
+            className="border-indigo-500/30 shadow-lg shadow-indigo-600/20"
+          />
         </div>
 
       </Container>
