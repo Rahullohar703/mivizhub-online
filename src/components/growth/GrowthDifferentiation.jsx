@@ -39,8 +39,8 @@ export default function GrowthDifferentiation() {
 
   return (
     <Section id="differentiation" className="py-24 bg-gradient-to-b from-[#080b12] via-[#0b101c] to-[#090b12] border-b border-white/10 relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Ambient background glow (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(49,192,222,0.1)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
         
         {/* Section Header */}
@@ -61,8 +61,8 @@ export default function GrowthDifferentiation() {
         <div className="max-w-5xl mx-auto">
           <div className="rounded-3xl bg-[#11131a] border border-white/10 overflow-hidden shadow-2xl">
             
-            {/* Table Header */}
-            <div className="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 bg-[#0d0f17]">
+            {/* Table Header (hidden on mobile for clean card presentation) */}
+            <div className="hidden md:grid md:grid-cols-12 border-b border-white/10 bg-[#0d0f17]">
               <div className="md:col-span-4 p-5 sm:p-6 text-xs font-semibold uppercase tracking-wider text-gray-400 flex items-center">
                 Feature Breakdown
               </div>

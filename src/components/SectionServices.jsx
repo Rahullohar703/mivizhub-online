@@ -1,7 +1,8 @@
 import React from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
+import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function SectionServices() {
   const marketingItems = [
@@ -17,7 +18,7 @@ export default function SectionServices() {
   ];
 
   return (
-    <Section id="services" className="py-20 bg-gradient-to-b from-[#0c1222] via-[#090d18] to-[#0c101c] border-t border-white/10 relative overflow-hidden">
+    <Section id="services" className="py-20 scroll-mt-24 bg-gradient-to-b from-[#0c1222] via-[#090d18] to-[#0c101c] border-t border-white/10 relative overflow-hidden">
       {/* Subtle cyan ambient spotlight */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.07)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
@@ -74,13 +75,18 @@ export default function SectionServices() {
               </div>
             </div>
 
-            <a
+            <ArrowFillButton
               href="#marketing"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-[#4F46E5] hover:bg-[#4338CA] transition-colors shadow-lg shadow-indigo-600/25"
-            >
-              <span>Explore Marketing Engine</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              btnText="Explore Marketing Engine"
+              size="lg"
+              bgColor="#4F46E5"
+              textColor="#ffffff"
+              fillBgColor="#38bdf8"
+              fillTextColor="#070b16"
+              arrowColor="#070b16"
+              hoverArrowColor="#070b16"
+              className="w-full justify-center shadow-xl shadow-indigo-600/30 border-indigo-400/30"
+            />
           </div>
 
           {/* SERVICE 02: AI Staffing */}
@@ -119,13 +125,18 @@ export default function SectionServices() {
               </div>
             </div>
 
-            <a
+            <ArrowFillButton
               href="#ai-staffing"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-white/10 hover:bg-white/15 border border-white/15 transition-colors shadow-lg"
-            >
-              <span>Explore AI Staffing Workforce</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              btnText="Explore AI Staffing Workforce"
+              size="lg"
+              bgColor="#121622"
+              textColor="#ffffff"
+              fillBgColor="#31c0de"
+              fillTextColor="#09090b"
+              arrowColor="#09090b"
+              hoverArrowColor="#09090b"
+              className="w-full justify-center border-white/15 hover:border-cyan-500/40 shadow-lg"
+            />
           </div>
 
         </div>

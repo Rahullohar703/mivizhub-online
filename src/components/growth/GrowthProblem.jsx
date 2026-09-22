@@ -40,8 +40,8 @@ export default function GrowthProblem() {
 
   return (
     <Section id="problem" className="py-24 bg-gradient-to-b from-[#080b12] via-[#0e1526] to-[#0a0d17] border-t border-b border-white/10 relative overflow-hidden">
-      {/* Ambient background highlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Ambient background highlight (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.12)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
         
         {/* Section Header */}

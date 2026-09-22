@@ -49,8 +49,8 @@ export default function GrowthMethodology() {
 
   return (
     <Section id="methodology" className="py-24 bg-gradient-to-b from-[#090c14] via-[#0d1424] to-[#080b12] border-b border-white/10 relative overflow-hidden">
-      {/* Ambient blueprint lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Ambient blueprint lighting (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(49,192,222,0.12)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
         
         {/* Section Header */}

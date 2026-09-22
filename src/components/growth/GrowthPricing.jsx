@@ -86,9 +86,9 @@ export default function GrowthPricing({ onOpenBooking }) {
 
   return (
     <Section id="pricing" className="py-24 bg-gradient-to-b from-[#0b0e18] via-[#0f182c] to-[#090c14] border-b border-white/10 relative overflow-hidden">
-      {/* Background radial spotlight over Growth plan */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[450px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background radial spotlight over Growth plan (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[450px] bg-[radial-gradient(ellipse_at_center,rgba(49,192,222,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10">
         

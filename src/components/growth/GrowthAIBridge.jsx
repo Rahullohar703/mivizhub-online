@@ -47,8 +47,8 @@ export default function GrowthAIBridge() {
 
   return (
     <Section id="ai-bridge" className="py-24 bg-gradient-to-b from-[#090b12] via-[#140e24] to-[#090b12] border-b border-white/10 relative overflow-hidden">
-      {/* Background radial purple/cyan lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-gradient-to-r from-blue-600/10 via-purple-600/15 to-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background radial purple/cyan lighting (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10">
         

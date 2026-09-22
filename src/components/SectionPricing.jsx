@@ -155,7 +155,7 @@ export default function SectionPricing({ onOpenBooking }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto items-stretch">
           
           {/* ================= CARD 1: $250/mo — Presence ================= */}
-          <div className="group bg-[#0e121a]/90 backdrop-blur-xl border border-white/10 hover:border-white/20 rounded-3xl p-7 sm:p-10 flex flex-col justify-between transition-all duration-300 shadow-xl relative hover:-translate-y-1">
+          <div className="group bg-[#0e121a]/95 border border-white/10 hover:border-white/20 rounded-3xl p-7 sm:p-10 flex flex-col justify-between transition-all duration-300 shadow-xl relative hover:-translate-y-1">
             <div>
               {/* Header Info */}
               <div className="flex items-center justify-between mb-4">
@@ -293,7 +293,7 @@ export default function SectionPricing({ onOpenBooking }) {
 
 
           {/* ================= CARD 2: $500/mo — Growth (Featured) ================= */}
-          <div className="group bg-[#111625]/95 backdrop-blur-xl border border-[#31c0de]/40 hover:border-[#31c0de]/80 rounded-3xl p-7 sm:p-10 flex flex-col justify-between transition-all duration-300 shadow-2xl relative hover:-translate-y-1">
+          <div className="group bg-[#111625]/98 border border-[#31c0de]/40 hover:border-[#31c0de]/80 rounded-3xl p-7 sm:p-10 flex flex-col justify-between transition-all duration-300 shadow-2xl relative hover:-translate-y-1">
             {/* Ambient card glow */}
             <div className="absolute top-0 right-0 left-0 h-40 bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.18)_0%,transparent_70%)] pointer-events-none rounded-t-3xl" />
 

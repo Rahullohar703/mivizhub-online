@@ -14,19 +14,18 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Note: Never apply global scroll-behavior: smooth on html root as it causes wheel/touch lag */
   scroll-padding-top: 5.5rem;
   font-family: var(--font-body);
-  background-color: #09090b;
+  background-color: #080b12;
   color: #f4f4f5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #09090b;
+  background-color: #080b12;
   color: #f4f4f5;
   -webkit-overflow-scrolling: touch;
   font-size: 16px;

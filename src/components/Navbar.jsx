@@ -59,7 +59,7 @@ export default function Navbar({ onOpenBooking }) {
   };
 
   return (
-    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 flex flex-col items-center px-4 pointer-events-none">
+    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 flex flex-col items-center px-4 pointer-events-none transform-gpu will-change-transform">
       
       {/* Floating Modern Pill Container */}
       <nav 

@@ -76,8 +76,8 @@ export default function GrowthFinalCTA({ onOpenBooking, onSelectPlan }) {
 
   return (
     <Section className="py-28 bg-gradient-to-b from-[#080a12] via-[#0d162b] to-[#04060a] border-t border-white/10 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-sky-600/15 via-indigo-600/15 to-purple-600/15 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background ambient lighting (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.14)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10">
         

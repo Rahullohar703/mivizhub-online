@@ -41,8 +41,8 @@ export default function GrowthHowWeWork() {
 
   return (
     <Section id="how-we-work" className="py-24 bg-gradient-to-b from-[#0a0d17] via-[#080c14] to-[#0b0e18] border-b border-white/10 relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Ambient background glow (hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(8,145,178,0.12)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
         
         {/* Section Header */}
@@ -67,7 +67,7 @@ export default function GrowthHowWeWork() {
             return (
               <div
                 key={pillar.title}
-                className="rounded-3xl bg-[#0f1422]/90 border border-white/10 p-7 sm:p-8 flex flex-col justify-between hover:border-cyan-500/30 transition-all shadow-xl group backdrop-blur-sm"
+                className="rounded-3xl bg-[#0f1422]/90 border border-white/10 p-7 sm:p-8 flex flex-col justify-between hover:border-cyan-500/30 transition-all shadow-xl group"
               >
                 <div>
                   {/* Step and Icon */}

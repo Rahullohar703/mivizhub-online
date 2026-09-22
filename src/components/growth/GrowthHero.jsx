@@ -70,15 +70,15 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
 
   return (
     <section id="hero" className="pt-32 pb-24 md:pt-40 md:pb-32 bg-[#080b12] text-textMain relative overflow-hidden">
-      {/* Radiant atmospheric lighting for visual richness */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.2)_0%,transparent_65%)] pointer-events-none" />
-      <div className="absolute top-48 -right-20 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-96 -left-20 w-[450px] h-[450px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Radiant atmospheric lighting for visual richness (100% hardware-accelerated, zero blur overhead) */}
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.18)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute top-48 -right-20 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-96 -left-20 w-[450px] h-[450px] bg-[radial-gradient(circle_at_center,rgba(49,192,222,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10 flex flex-col items-center text-center">
         
         {/* Editorial Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm shadow-sm">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 shadow-sm">
           <span className="w-2 h-2 rounded-full bg-[#31c0de] animate-pulse" />
           <span className="text-xs sm:text-sm font-semibold text-gray-200 tracking-wide">
             Done-For-You Marketing & Growth • Flat Monthly Pricing
@@ -118,7 +118,7 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
         <div className="w-full max-w-5xl mx-auto text-left">
           
           {/* Timeline Stage Switcher Ribbon */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6">
             {['month1', 'month2', 'month3'].map((key, i) => {
               const isActive = activeTimeline === key;
               const step = timelineData[key];
@@ -127,7 +127,7 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
                   key={key}
                   type="button"
                   onClick={() => setActiveTimeline(key)}
-                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2.5 ${
+                  className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 sm:gap-2.5 ${
                     isActive
                       ? 'bg-gradient-to-r from-[#31c0de] to-blue-600 text-white shadow-lg shadow-cyan-500/30 scale-[1.02]'
                       : 'bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-white/20'
@@ -138,14 +138,15 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
                   }`}>
                     0{i + 1}
                   </span>
-                  <span>{step.tab}</span>
+                  <span className="hidden sm:inline">{step.tab}</span>
+                  <span className="sm:hidden">{step.tab.split(':')[0]}</span>
                 </button>
               );
             })}
           </div>
 
           {/* Luminous Glass Showcase Card */}
-          <div className="bg-gradient-to-b from-[#111728]/90 via-[#0d1220]/90 to-[#090d18]/95 border border-cyan-500/25 rounded-3xl p-6 sm:p-10 shadow-[0_20px_70px_-15px_rgba(0,0,0,0.8)] backdrop-blur-xl relative overflow-hidden">
+          <div className="bg-gradient-to-b from-[#111728]/95 via-[#0d1220]/95 to-[#090d18]/98 border border-cyan-500/25 rounded-3xl p-6 sm:p-10 shadow-[0_20px_70px_-15px_rgba(0,0,0,0.8)] relative overflow-hidden">
             
             {/* Luminous Top Edge Glow */}
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#31c0de]/80 to-transparent" />

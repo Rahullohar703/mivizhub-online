@@ -141,7 +141,7 @@ export default function SectionIndustries() {
   const current = details[activeTab];
 
   return (
-    <Section id="industries" className="py-20 bg-gradient-to-b from-[#0d0f1e] via-[#0f1524] to-[#0a0e19] border-t border-white/10 relative overflow-hidden">
+    <Section id="industries" className="py-20 scroll-mt-24 bg-gradient-to-b from-[#0d0f1e] via-[#0f1524] to-[#0a0e19] border-t border-white/10 relative overflow-hidden">
       {/* Subtle blue-slate ambient spotlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.07)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
@@ -161,20 +161,37 @@ export default function SectionIndustries() {
 
         {/* Tab Buttons */}
         <div className="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto mb-12">
-          {industries.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2.5 px-5 py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all ${
-                activeTab === tab.id 
-                  ? 'bg-[#4F46E5] text-white shadow-lg shadow-indigo-600/30' 
-                  : 'bg-[#131828]/80 text-gray-200 hover:text-white border border-white/10 hover:border-white/20'
-              }`}
-            >
-              {tab.icon}
-              <span>{tab.name}</span>
-            </button>
-          ))}
+          {industries.map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`group relative overflow-hidden flex items-center gap-2.5 px-5 py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ease-out transform-gpu cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d0f1e] ${
+                  isActive 
+                    ? 'bg-gradient-to-r from-[#4F46E5] to-[#4338CA] text-white shadow-xl shadow-indigo-600/35 border border-indigo-400/40 -translate-y-0.5 scale-[1.02] hover:shadow-[0_8px_30px_rgba(79,70,229,0.5)] hover:-translate-y-1 hover:scale-[1.04] active:scale-95' 
+                    : 'bg-[#121727]/90 text-gray-300 border border-white/10 hover:text-white hover:border-cyan-400/50 hover:bg-[#18223a] hover:shadow-[0_8px_25px_rgba(49,192,222,0.2)] hover:-translate-y-1 hover:scale-[1.03] active:scale-95'
+                }`}
+              >
+                {/* Subtle shine sweep on hover */}
+                <span 
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" 
+                  aria-hidden="true" 
+                />
+
+                <span 
+                  className={`inline-flex items-center justify-center transition-all duration-300 ${
+                    isActive 
+                      ? 'text-white scale-110 group-hover:scale-125 group-hover:rotate-6' 
+                      : 'text-[#31c0de] group-hover:scale-125 group-hover:rotate-6 group-hover:text-cyan-300'
+                  }`}
+                >
+                  {tab.icon}
+                </span>
+                <span className="relative z-10 transition-colors duration-200">{tab.name}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Tab Content Box - Wide & Spacious */}

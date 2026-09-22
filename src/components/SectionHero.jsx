@@ -8,10 +8,10 @@ import { ArrowFillButton } from './ui/arrow-fill-button';
 export default function SectionHero({ onOpenBooking }) {
   return (
     <Section id="hero" className="pt-32 pb-16 md:pt-40 md:pb-24 bg-[#080b12] text-textMain relative overflow-hidden">
-      {/* Clean, subtle ambient glow */}
+      {/* Clean, subtle ambient glow (hardware-accelerated, zero blur overhead) */}
       <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.12)_0%,rgba(59,130,246,0.04)_40%,transparent_75%)] pointer-events-none" />
-      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 -right-48 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(49,192,222,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/3 -right-48 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
       
       <Container className="relative z-10 flex flex-col items-center text-center">
         
@@ -58,7 +58,7 @@ export default function SectionHero({ onOpenBooking }) {
 
         {/* Clean, Expansive 2-Pillar Bar (Wide, Unboxed & Modern) */}
         <div className="w-full max-w-6xl mx-auto">
-          <div className="bg-[#0e1322]/85 border border-white/10 rounded-2xl p-7 sm:p-10 backdrop-blur-md shadow-2xl">
+          <div className="bg-[#0e1322]/95 border border-white/10 rounded-2xl p-7 sm:p-10 shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
               
               {/* Service 1 */}

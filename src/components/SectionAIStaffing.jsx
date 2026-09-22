@@ -33,7 +33,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="ai-staffing" className="py-20 bg-gradient-to-b from-[#0a1220] via-[#140e26] to-[#0d0f1e] border-t border-white/10 relative overflow-hidden">
+    <Section id="ai-staffing" className="py-20 scroll-mt-24 bg-gradient-to-b from-[#0a1220] via-[#140e26] to-[#0d0f1e] border-t border-white/10 relative overflow-hidden">
       {/* Subtle high-tech violet spotlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.08)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">

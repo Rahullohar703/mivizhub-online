@@ -36,7 +36,7 @@ export default function SectionMarketing({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="marketing" className="py-20 bg-gradient-to-b from-[#0e101f] via-[#0d1829] to-[#0a1220] border-t border-white/10 relative overflow-hidden">
+    <Section id="marketing" className="py-20 scroll-mt-24 bg-gradient-to-b from-[#0e101f] via-[#0d1829] to-[#0a1220] border-t border-white/10 relative overflow-hidden">
       {/* Subtle cyan-indigo ambient spotlight */}
       <div className="absolute top-0 right-1/3 w-[650px] h-[320px] bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.08)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
