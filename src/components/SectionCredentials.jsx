@@ -33,8 +33,10 @@ export default function SectionCredentials() {
   ];
 
   return (
-    <Section id="credentials" className="py-16 bg-[#0c0c10] border-t border-white/10">
-      <Container>
+    <Section id="credentials" className="py-16 bg-gradient-to-b from-[#0a101e] via-[#0c1322] to-[#090e1a] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle charcoal-blue ambient spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
             Peace of Mind
@@ -49,7 +51,7 @@ export default function SectionCredentials() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto">
           {points.map((pt, idx) => (
-            <div key={idx} className="bg-[#121216] border border-white/10 rounded-2xl p-7 flex items-start gap-5 shadow-lg hover:border-[#31c0de]/40 transition-colors">
+            <div key={idx} className="bg-[#0f1422]/90 border border-white/10 rounded-2xl p-7 flex items-start gap-5 shadow-lg hover:border-[#31c0de]/40 transition-colors">
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex-shrink-0">
                 {pt.icon}
               </div>

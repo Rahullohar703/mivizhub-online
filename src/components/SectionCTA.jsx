@@ -3,15 +3,14 @@ import Button from './ui/Button';
 import Container from './ui/Container';
 import Section from './ui/Section';
 import { PhoneCall, ArrowRight } from 'lucide-react';
-import { AntiMetalButton } from './ui/anti-metal-button';
 import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function SectionCTA({ onOpenBooking }) {
   return (
-    <Section id="contact" className="py-24 bg-[#0c0c10] border-t border-white/10 text-center relative">
+    <Section id="contact" className="py-24 bg-gradient-to-b from-[#080c16] via-[#0e182e] to-[#05070d] border-t border-white/10 text-center relative overflow-hidden">
       <Container>
         
-        <div className="max-w-6xl mx-auto bg-gradient-to-b from-[#141824] to-[#0e121c] border border-white/10 rounded-3xl p-10 sm:p-20 shadow-2xl relative overflow-hidden">
+        <div className="max-w-6xl mx-auto bg-gradient-to-b from-[#12192a]/95 via-[#0d1422]/95 to-[#090e18]/95 border border-white/15 rounded-3xl p-10 sm:p-20 shadow-2xl relative overflow-hidden">
           {/* Subtle ambient lighting */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.15)_0%,transparent_70%)] pointer-events-none" />
 
@@ -28,22 +27,19 @@ export default function SectionCTA({ onOpenBooking }) {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-            <AntiMetalButton 
+            <ArrowFillButton 
               onClick={onOpenBooking} 
-              label="Book a Free 15-Minute Intro Call"
+              btnText="Book a Free 15-Minute Intro Call"
               size="lg"
-              className="w-full sm:w-auto shadow-xl shadow-blue-500/25"
+              variant="primary"
+              className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
             />
 
             <ArrowFillButton 
               btnText="Talk to Our Team" 
               onClick={onOpenBooking} 
-              bgColor="#121622"
-              textColor="#f4f4f5"
-              fillBgColor="#31c0de"
-              fillTextColor="#09090b"
-              arrowColor="#09090b"
-              hoverArrowColor="#09090b"
+              size="lg"
+              variant="secondary"
               className="w-full sm:w-auto border-white/15 hover:border-white/30"
             />
           </div>

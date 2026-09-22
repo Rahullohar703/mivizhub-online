@@ -32,8 +32,10 @@ export default function SectionOutcomes() {
   ];
 
   return (
-    <Section id="outcomes" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container>
+    <Section id="outcomes" className="py-20 bg-gradient-to-b from-[#080d1a] via-[#0a1828] to-[#091220] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle emerald/cyan ambient spotlight */}
+      <div className="absolute top-0 left-1/3 w-[650px] h-[320px] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.07)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-5xl mx-auto mb-14">
@@ -53,7 +55,7 @@ export default function SectionOutcomes() {
           {outcomes.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-3xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-xl"
+              className="bg-[#0e1626]/90 border border-white/10 rounded-3xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-xl"
             >
               <div>
                 <div className="text-4xl sm:text-5xl font-extrabold text-[#31c0de] mb-1 tracking-tight">

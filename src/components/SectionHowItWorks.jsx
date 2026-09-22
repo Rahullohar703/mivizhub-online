@@ -22,8 +22,10 @@ export default function SectionHowItWorks() {
   ];
 
   return (
-    <Section id="how-it-works" className="py-20 bg-[#0c0c10] border-t border-white/10">
-      <Container>
+    <Section id="how-it-works" className="py-20 bg-gradient-to-b from-[#0a0e19] via-[#0c1426] to-[#080d1a] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle tech midnight ambient spotlight */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
@@ -43,10 +45,10 @@ export default function SectionHowItWorks() {
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
+              className="bg-[#0f1728]/90 border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
             >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-[#31c0de] font-mono font-bold flex items-center justify-center text-2xl mb-6 shadow-md">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-[#31c0de] font-heading font-extrabold flex items-center justify-center text-2xl mb-6 shadow-md">
                   0{step.num}
                 </div>
                 

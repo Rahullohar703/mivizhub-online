@@ -4,7 +4,7 @@ import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function Footer({ onOpenBooking }) {
   return (
-    <footer className="bg-background pt-16 pb-12 border-t border-surfaceBorder relative">
+    <footer className="bg-[#05070d] pt-16 pb-12 border-t border-white/10 relative">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-surfaceBorder/60">
           

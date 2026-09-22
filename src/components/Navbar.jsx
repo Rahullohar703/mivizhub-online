@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TrendingUp, Users, Layers, Briefcase, Tag, ListOrdered, HelpCircle, ArrowRight, Home } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { AntiMetalButton } from '@/components/ui/anti-metal-button';
+import { ArrowFillButton } from '@/components/ui/arrow-fill-button';
 
 
 export default function Navbar({ onOpenBooking }) {
@@ -142,11 +142,12 @@ export default function Navbar({ onOpenBooking }) {
 
         {/* Action Button & Mobile Menu Toggle */}
         <div className="flex items-center gap-2">
-          <AntiMetalButton
+          <ArrowFillButton
             onClick={handleCtaClick}
-            label={isGrowthPage ? "Get Started" : "Book a call"}
+            btnText={isGrowthPage ? "Get Started" : "Book a call"}
             size="sm"
-            className="hidden sm:inline-flex rounded-full shadow-md shadow-blue-500/10"
+            variant="primary"
+            className="hidden sm:inline-flex shadow-md shadow-blue-500/20"
           />
 
 
@@ -220,10 +221,12 @@ export default function Navbar({ onOpenBooking }) {
             })}
             
             <div className="pt-3 mt-1 border-t border-white/10 flex justify-center">
-              <AntiMetalButton 
+              <ArrowFillButton 
                 onClick={() => { setIsMobileMenuOpen(false); handleCtaClick(); }} 
-                label={isGrowthPage ? "Get Started" : "Book a call"}
-                className="w-full h-11 rounded-xl"
+                btnText={isGrowthPage ? "Get Started" : "Book a call"}
+                size="default"
+                variant="primary"
+                className="w-full"
               />
             </div>
           </motion.div>

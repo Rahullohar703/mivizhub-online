@@ -36,8 +36,10 @@ export default function SectionMarketing({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="marketing" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container>
+    <Section id="marketing" className="py-20 bg-gradient-to-b from-[#0e101f] via-[#0d1829] to-[#0a1220] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle cyan-indigo ambient spotlight */}
+      <div className="absolute top-0 right-1/3 w-[650px] h-[320px] bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
@@ -57,7 +59,7 @@ export default function SectionMarketing({ onOpenBooking }) {
           {pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-indigo-500/40 transition-colors shadow-xl"
+              className="bg-[#101726]/90 border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-indigo-500/40 transition-colors shadow-xl"
             >
               <div>
                 <span className="text-xs font-mono font-bold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 inline-block mb-4">
@@ -83,7 +85,7 @@ export default function SectionMarketing({ onOpenBooking }) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#14141a] border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
+        <div className="bg-[#10172a]/90 border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
             <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
               Want a steady flow of quote requests?

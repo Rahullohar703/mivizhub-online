@@ -12,7 +12,7 @@ export default function SectionTrust() {
   ];
 
   return (
-    <section className="py-10 bg-[#09090b] border-b border-white/5">
+    <section className="py-10 bg-gradient-to-b from-[#080b12] to-[#0a0f1d] border-b border-white/5">
       <Container>
         <p className="text-center text-xs font-semibold text-gray-400 mb-6 tracking-wider uppercase">
           Integrates With the Tools and Platforms You Already Use

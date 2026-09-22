@@ -1,132 +1,122 @@
 import React from 'react';
 import Container from '../ui/Container';
 import Section from '../ui/Section';
-import { Compass, Hammer, Magnet, CheckCircle, LineChart, ArrowDown } from 'lucide-react';
+import { Compass, Hammer, Magnet, CheckCircle, LineChart } from 'lucide-react';
 
 export default function GrowthMethodology() {
   const stages = [
     {
       num: "01",
-      title: "UNDERSTAND",
+      title: "Understand",
+      subtitle: "Research & Audit",
+      desc: "Audit your offer, interview customer motivations, and identify gaps competitors leave wide open.",
       icon: Compass,
-      elements: ["Business", "Audience", "Market", "Competitors"],
-      accent: "#60a5fa"
+      deliverable: "Strategic Growth Blueprint"
     },
     {
       num: "02",
-      title: "BUILD",
+      title: "Build",
+      subtitle: "Digital Foundation",
+      desc: "Develop a modern website, optimize your Google Business Profile, and install tracking analytics.",
       icon: Hammer,
-      elements: ["Website", "SEO", "Google", "Content", "Social"],
-      accent: "#31c0de"
+      deliverable: "High-Converting Web Setup"
     },
     {
       num: "03",
-      title: "ATTRACT",
+      title: "Attract",
+      subtitle: "Search & Visibility",
+      desc: "Publish weekly SEO articles and strategic social posts to pull ready-to-buy prospects from search engines.",
       icon: Magnet,
-      elements: ["Search", "Social", "Content", "Ads"],
-      accent: "#2dd4bf"
+      deliverable: "Top 3 Local Map Rankings"
     },
     {
       num: "04",
-      title: "CONVERT",
+      title: "Convert",
+      subtitle: "Inbound Capture",
+      desc: "Direct phone routing, WhatsApp pings, and streamlined quote forms that capture leads in under 30 seconds.",
       icon: CheckCircle,
-      elements: ["Landing Pages", "Forms", "WhatsApp", "Follow-Up"],
-      accent: "#818cf8"
+      deliverable: "Direct Customer Inquiries"
     },
     {
       num: "05",
-      title: "OPTIMIZE",
+      title: "Scale",
+      subtitle: "Optimization & ROI",
+      desc: "Review keyword rankings and ad attribution data every month to double down on what produces revenue.",
       icon: LineChart,
-      elements: ["Data", "Insights", "Improvements", "Growth"],
-      accent: "#34d399"
+      deliverable: "Compounding Monthly ROI"
     }
   ];
 
   return (
-    <Section id="methodology" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container>
+    <Section id="methodology" className="py-24 bg-gradient-to-b from-[#090c14] via-[#0d1424] to-[#080b12] border-b border-white/10 relative overflow-hidden">
+      {/* Ambient blueprint lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-5xl mx-auto text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            The Delivery Framework
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#31c0de] block mb-3">
+            The Delivery Blueprint
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            One System. From Visibility to Opportunity.
+            One Cohesive System.<br />
+            <span className="text-[#31c0de]">From Zero Visibility to Daily Inbound Calls.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-            A cohesive continuous cycle turning cold audience curiosity into warm commercial relationships.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            A continuous growth engine turning cold searches into high-intent quotes and repeat customer business.
           </p>
         </div>
 
-        {/* Desktop Horizontal / Mobile Vertical Pipeline Flow */}
-        <div className="relative max-w-6xl mx-auto">
+        {/* 5-Stage Innovation Pipeline */}
+        <div className="relative max-w-6xl mx-auto mb-14">
           
-          {/* Subtle horizontal connecting line on desktop */}
-          <div className="hidden lg:block absolute top-[58px] left-[10%] right-[10%] h-[2px] bg-white/10 -z-0" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 relative z-10">
-            {stages.map((stage, idx) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+            {stages.map((stage) => {
               const Icon = stage.icon;
-              const isLast = idx === stages.length - 1;
 
               return (
-                <div key={stage.title} className="flex flex-col relative group">
-                  
-                  {/* Card Container matching Home style */}
-                  <div className="h-full rounded-2xl bg-[#121216] border border-white/10 hover:border-white/20 p-6 flex flex-col justify-between transition-colors shadow-xl">
-                    
-                    <div>
-                      {/* Top Step + Icon */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs font-mono text-gray-400 font-bold bg-white/5 px-2.5 py-1 rounded">
-                          {stage.num}
-                        </span>
-                        <div 
-                          className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center"
-                          style={{ color: stage.accent }}
-                        >
-                          <Icon className="w-5 h-5" />
-                        </div>
-                      </div>
-
-                      <h3 className="text-lg font-bold text-white mb-4 tracking-wide">
-                        {stage.title}
-                      </h3>
-
-                      {/* Elements Chain */}
-                      <div className="space-y-2">
-                        {stage.elements.map((elem) => (
-                          <div 
-                            key={elem}
-                            className="flex items-center gap-2 text-xs text-gray-200 font-semibold py-1.5 px-2.5 rounded-lg bg-[#18181f] border border-white/5"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: stage.accent }} />
-                            <span>{elem}</span>
-                          </div>
-                        ))}
+                <div key={stage.title} className="h-full rounded-2xl bg-[#11131a] border border-white/10 hover:border-white/20 p-5 sm:p-6 flex flex-col justify-between transition-all shadow-xl group">
+                  <div>
+                    {/* Top Row: Step number and clean icon */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs font-bold text-gray-400 bg-white/5 px-2.5 py-1 rounded">
+                        {stage.num}
+                      </span>
+                      
+                      <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#31c0de]">
+                        <Icon className="w-4 h-4" />
                       </div>
                     </div>
 
-                    <div className="mt-5 pt-3 border-t border-white/10 text-xs font-mono text-gray-400 flex items-center justify-between font-medium">
-                      <span>Phase {stage.num}</span>
-                      <span className="text-[#31c0de] font-bold">Active</span>
-                    </div>
+                    <span className="text-xs font-semibold text-[#31c0de] uppercase tracking-wider block mb-1">
+                      {stage.subtitle}
+                    </span>
 
+                    <h3 className="text-lg font-bold text-white mb-2 tracking-tight">
+                      {stage.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-5">
+                      {stage.desc}
+                    </p>
                   </div>
 
-                  {/* Mobile Down Arrow Connector */}
-                  {!isLast && (
-                    <div className="lg:hidden flex justify-center py-2 text-[#31c0de]/60">
-                      <ArrowDown className="w-5 h-5" />
-                    </div>
-                  )}
-
+                  {/* Deliverable Badge */}
+                  <div className="pt-3 border-t border-white/5 text-xs">
+                    <span className="text-gray-400 block text-[11px] mb-0.5">MILESTONE:</span>
+                    <span className="text-white font-semibold">{stage.deliverable}</span>
+                  </div>
                 </div>
               );
             })}
           </div>
+        </div>
 
+        {/* Reassurance Footer Banner */}
+        <div className="max-w-4xl mx-auto text-center p-5 rounded-2xl bg-[#11131a] border border-white/10">
+          <p className="text-xs sm:text-sm text-gray-300 font-medium">
+            Every stage connects directly: research informs your website, content powers your SEO, and SEO drives customer inquiries.
+          </p>
         </div>
 
       </Container>

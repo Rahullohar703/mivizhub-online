@@ -33,8 +33,10 @@ export default function SectionAIStaffing({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="ai-staffing" className="py-20 bg-[#0c0c10] border-t border-white/10">
-      <Container>
+    <Section id="ai-staffing" className="py-20 bg-gradient-to-b from-[#0a1220] via-[#140e26] to-[#0d0f1e] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle high-tech violet spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
@@ -54,7 +56,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
           {roles.map((role, idx) => (
             <div 
               key={idx} 
-              className="bg-[#121216] border border-white/10 rounded-3xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-xl"
+              className="bg-[#131122]/90 border border-white/10 rounded-3xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-xl"
             >
               <div>
                 <span className="text-[11px] font-bold text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded-full border border-[#31c0de]/20 inline-block mb-4 uppercase tracking-wider">
@@ -70,7 +72,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
                 </p>
               </div>
 
-              <div className="bg-[#181820] p-3 rounded-xl border border-white/5 text-xs sm:text-sm text-emerald-300 font-semibold">
+              <div className="bg-[#0d0b17] p-3 rounded-xl border border-white/5 text-xs sm:text-sm text-emerald-300 font-semibold">
                 ✓ {role.stat}
               </div>
             </div>
@@ -78,7 +80,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         </div>
 
         {/* Practical Comparison: In-House Staff vs. MivizHub AI Employees */}
-        <div className="max-w-6xl mx-auto mb-16 bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
+        <div className="max-w-6xl mx-auto mb-16 bg-[#131122]/90 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
           <div className="text-center mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-2">
               Simple Comparison
@@ -91,7 +93,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Traditional Hire */}
-            <div className="bg-[#181820] border border-white/5 rounded-2xl p-6 sm:p-8">
+            <div className="bg-[#0e0c18] border border-white/5 rounded-2xl p-6 sm:p-8">
               <span className="text-base font-bold text-rose-400 block mb-4 pb-3 border-b border-white/5">
                 Traditional Office Staff
               </span>
@@ -116,7 +118,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
             </div>
 
             {/* MivizHub AI Employee */}
-            <div className="bg-[#181824] border-2 border-[#31c0de]/40 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-cyan-950/20">
+            <div className="bg-[#18122c] border-2 border-[#31c0de]/40 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-cyan-950/20">
               <span className="text-base font-bold text-[#31c0de] block mb-4 pb-3 border-b border-white/10">
                 Your MivizHub AI Employees
               </span>
@@ -144,7 +146,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#14141a] border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
+        <div className="bg-[#131122]/90 border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
             <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
               Want to see what an AI employee can handle for your business?

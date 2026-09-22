@@ -141,8 +141,10 @@ export default function SectionIndustries() {
   const current = details[activeTab];
 
   return (
-    <Section id="industries" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container>
+    <Section id="industries" className="py-20 bg-gradient-to-b from-[#0d0f1e] via-[#0f1524] to-[#0a0e19] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle blue-slate ambient spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.07)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-5xl mx-auto mb-14">
@@ -166,7 +168,7 @@ export default function SectionIndustries() {
               className={`flex items-center gap-2.5 px-5 py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all ${
                 activeTab === tab.id 
                   ? 'bg-[#4F46E5] text-white shadow-lg shadow-indigo-600/30' 
-                  : 'bg-[#181820] text-gray-200 hover:text-white border border-white/10 hover:border-white/20'
+                  : 'bg-[#131828]/80 text-gray-200 hover:text-white border border-white/10 hover:border-white/20'
               }`}
             >
               {tab.icon}
@@ -176,7 +178,7 @@ export default function SectionIndustries() {
         </div>
 
         {/* Tab Content Box - Wide & Spacious */}
-        <div className="max-w-6xl mx-auto bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
+        <div className="max-w-6xl mx-auto bg-[#111728]/90 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
           <div className="mb-8 pb-8 border-b border-white/10">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               {current.title}
@@ -189,7 +191,7 @@ export default function SectionIndustries() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Column 1: Marketing */}
-            <div className="bg-[#181820] border border-white/5 p-7 rounded-2xl flex flex-col justify-between shadow-lg">
+            <div className="bg-[#0c101c] border border-white/5 p-7 rounded-2xl flex flex-col justify-between shadow-lg">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block">
@@ -202,7 +204,7 @@ export default function SectionIndustries() {
 
                 <div className="space-y-4">
                   {current.marketing.map((item, i) => (
-                    <div key={i} className="bg-[#121216] border border-white/5 rounded-xl p-4 flex items-start gap-3">
+                    <div key={i} className="bg-[#111624] border border-white/5 rounded-xl p-4 flex items-start gap-3">
                       <Check className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-gray-200 leading-snug">{item}</span>
                     </div>
@@ -212,7 +214,7 @@ export default function SectionIndustries() {
             </div>
 
             {/* Column 2: Specific AI Staff Deployed */}
-            <div className="bg-[#181820] border border-white/5 p-7 rounded-2xl flex flex-col justify-between shadow-lg">
+            <div className="bg-[#0c101c] border border-white/5 p-7 rounded-2xl flex flex-col justify-between shadow-lg">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block">
@@ -225,7 +227,7 @@ export default function SectionIndustries() {
 
                 <div className="space-y-4">
                   {current.agents.map((agent, i) => (
-                    <div key={i} className="bg-[#121216] border border-white/5 rounded-xl p-4">
+                    <div key={i} className="bg-[#111624] border border-white/5 rounded-xl p-4">
                       <div className="flex items-center justify-between gap-2 mb-2">
                         <span className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
                           <UserCheck className="w-4 h-4 text-[#31c0de]" />

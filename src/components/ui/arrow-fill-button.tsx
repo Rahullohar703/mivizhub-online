@@ -11,9 +11,12 @@ const ANIMATION_DURATION_MS = 450;
 
 export interface ArrowFillButtonOwnProps {
   btnText?: string;
+  label?: string; // alias for btnText
   children?: React.ReactNode;
   href?: string;
   className?: string;
+  size?: "sm" | "default" | "lg";
+  variant?: "default" | "primary" | "secondary";
   bgColor?: string;
   textColor?: string;
   fillBgColor?: string;
@@ -30,29 +33,102 @@ export type ArrowFillButtonProps = ArrowFillButtonOwnProps & Omit<ComponentProps
 
 export function ArrowFillButton({
   btnText,
+  label,
   children,
   href = DEFAULT_HREF,
   className = "",
+  size = "default",
+  variant = "default",
 
-  bgColor = "#141824",
-  textColor = "#ffffff",
-
-  fillBgColor = "#31c0de",
-  fillTextColor = "#09090b",
-
-  hoverFillBgColor = "#31c0de",
-  hoverFillTextColor = "#09090b",
-
+  bgColor,
+  textColor,
+  fillBgColor,
+  fillTextColor,
+  hoverFillBgColor,
+  hoverFillTextColor,
   arrowColor,
   hoverArrowColor,
 
   ...props
 }: ArrowFillButtonProps) {
-  const displayText = btnText || (typeof children === "string" ? children : "Hover Me");
+  const displayText = btnText || label || (typeof children === "string" ? children : "Hover Me");
   const [isReady, setIsReady] = useState(false);
   const [isCompactLayout, setIsCompactLayout] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const releaseTimeoutRef = useRef<number | null>(null);
+
+  const sizeConfig = {
+    sm: {
+      height: "h-9 min-h-[36px]",
+      padding: "pl-4 pr-11",
+      fontSize: "text-xs",
+      iconCircle: "1.65rem",
+      iconRight: "0.25rem",
+      iconSize: "size-3.5",
+    },
+    default: {
+      height: "h-11 min-h-[44px]",
+      padding: "pl-5 sm:pl-6 pr-14 sm:pr-16",
+      fontSize: "text-sm",
+      iconCircle: "2.1rem",
+      iconRight: "0.35rem",
+      iconSize: "size-4",
+    },
+    lg: {
+      height: "h-12 sm:h-[52px] min-h-[48px] sm:min-h-[52px]",
+      padding: "pl-6 sm:pl-7 pr-16 sm:pr-18",
+      fontSize: "text-sm sm:text-base",
+      iconCircle: "2.35rem",
+      iconRight: "0.4rem",
+      iconSize: "size-4 sm:size-4.5",
+    },
+  }[size] || {
+    height: "h-11 min-h-[44px]",
+    padding: "pl-5 sm:pl-6 pr-14 sm:pr-16",
+    fontSize: "text-sm",
+    iconCircle: "2.1rem",
+    iconRight: "0.35rem",
+    iconSize: "size-4",
+  };
+
+  const variantDefaults = {
+    primary: {
+      bgColor: "#2563eb",
+      textColor: "#ffffff",
+      fillBgColor: "#38bdf8",
+      fillTextColor: "#070b16",
+      arrowColor: "#070b16",
+      hoverArrowColor: "#070b16",
+      className: "border-blue-400/40 shadow-xl shadow-blue-600/30",
+    },
+    secondary: {
+      bgColor: "#121622",
+      textColor: "#f4f4f5",
+      fillBgColor: "#31c0de",
+      fillTextColor: "#09090b",
+      arrowColor: "#09090b",
+      hoverArrowColor: "#09090b",
+      className: "border-white/15 hover:border-white/30 shadow-md",
+    },
+    default: {
+      bgColor: "#141824",
+      textColor: "#ffffff",
+      fillBgColor: "#31c0de",
+      fillTextColor: "#09090b",
+      arrowColor: "#09090b",
+      hoverArrowColor: "#09090b",
+      className: "border-white/15 hover:border-white/30 shadow-md",
+    },
+  }[variant];
+
+  const finalBgColor = bgColor ?? variantDefaults.bgColor;
+  const finalTextColor = textColor ?? variantDefaults.textColor;
+  const finalFillBgColor = fillBgColor ?? variantDefaults.fillBgColor;
+  const finalFillTextColor = fillTextColor ?? variantDefaults.fillTextColor;
+  const finalHoverFillBgColor = hoverFillBgColor ?? finalFillBgColor;
+  const finalHoverFillTextColor = hoverFillTextColor ?? finalFillTextColor;
+  const finalArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
+  const finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
 
   const usesUtilityBackground =
     className.includes("bg-") ||
@@ -156,18 +232,21 @@ export function ArrowFillButton({
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerCancel}
-      className={`group relative inline-flex h-11 sm:h-12 min-h-[44px] sm:min-h-[48px] w-fit min-w-fit max-w-none cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[var(--btn-bg)] pl-6 sm:pl-7 pr-16 sm:pr-18 whitespace-nowrap font-bold text-sm sm:text-base leading-none [text-rendering:geometricPrecision] [--icon-circle:2.1rem] sm:[--icon-circle:2.35rem] [--icon-right:0.35rem] sm:[--icon-right:0.4rem] [--circle-inset-y:calc((100%-var(--icon-circle))/2)] shadow-md transition-all active:scale-[0.98] select-none ${
+      className={`group relative inline-flex ${sizeConfig.height} w-fit min-w-fit max-w-none cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[var(--btn-bg)] ${sizeConfig.padding} whitespace-nowrap font-bold ${sizeConfig.fontSize} leading-none [text-rendering:geometricPrecision] shadow-md transition-all active:scale-[0.98] select-none ${
         usesUtilityBackground ? "" : "bg-[var(--btn-bg)]"
-      } text-[var(--btn-text)] ${className}`}
+      } text-[var(--btn-text)] ${variantDefaults.className} ${className}`}
       style={{
-        "--btn-bg": bgColor,
-        "--btn-text": textColor,
-        "--btn-fill-bg": fillBgColor,
-        "--btn-fill-text": fillTextColor,
-        "--btn-fill-bg-hover": hoverFillBgColor,
-        "--btn-fill-text-hover": hoverFillTextColor,
-        "--btn-arrow": arrowColor || fillTextColor,
-        "--btn-arrow-hover": hoverArrowColor || hoverFillTextColor,
+        "--btn-bg": finalBgColor,
+        "--btn-text": finalTextColor,
+        "--btn-fill-bg": finalFillBgColor,
+        "--btn-fill-text": finalFillTextColor,
+        "--btn-fill-bg-hover": finalHoverFillBgColor,
+        "--btn-fill-text-hover": finalHoverFillTextColor,
+        "--btn-arrow": finalArrowColor,
+        "--btn-arrow-hover": finalHoverArrowColor,
+        "--icon-circle": sizeConfig.iconCircle,
+        "--icon-right": sizeConfig.iconRight,
+        "--circle-inset-y": "calc((100% - var(--icon-circle)) / 2)",
       } as CSSProperties & Record<string, string | number>}
     >
       <span className="relative z-[1] pb-px">{displayText}</span>
@@ -181,7 +260,7 @@ export function ArrowFillButton({
       {/* Inverted Color Text revealed on hover */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[2] flex items-center pl-6 sm:pl-7 pr-16 sm:pr-18 text-[var(--btn-fill-text)] [clip-path:inset(var(--circle-inset-y)_var(--icon-right)_var(--circle-inset-y)_calc(100%-var(--icon-right)-var(--icon-circle)))] transition-all duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:text-[var(--btn-fill-text-hover)] group-hover:[clip-path:inset(0_0_0_0)] group-data-[pressed=true]:text-[var(--btn-fill-text-hover)] group-data-[pressed=true]:[clip-path:inset(0_0_0_0)]"
+        className={`pointer-events-none absolute inset-0 z-[2] flex items-center ${sizeConfig.padding} text-[var(--btn-fill-text)] [clip-path:inset(var(--circle-inset-y)_var(--icon-right)_var(--circle-inset-y)_calc(100%-var(--icon-right)-var(--icon-circle)))] transition-all duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:text-[var(--btn-fill-text-hover)] group-hover:[clip-path:inset(0_0_0_0)] group-data-[pressed=true]:text-[var(--btn-fill-text-hover)] group-data-[pressed=true]:[clip-path:inset(0_0_0_0)]`}
       >
         <span className="relative z-[1] pb-px whitespace-nowrap">{displayText}</span>
       </div>
@@ -192,12 +271,12 @@ export function ArrowFillButton({
         aria-hidden="true"
       >
         <ArrowRight
-          className="absolute left-1/2 top-1/2 size-4 sm:size-4.5 translate-x-[-170%] -translate-y-1/2 origin-center scale-0 text-current transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 group-hover:scale-100 group-data-[pressed=true]:-translate-x-1/2 group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-100"
+          className={`absolute left-1/2 top-1/2 ${sizeConfig.iconSize} translate-x-[-170%] -translate-y-1/2 origin-center scale-0 text-current transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 group-hover:scale-100 group-data-[pressed=true]:-translate-x-1/2 group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-100`}
           strokeWidth={2.5}
         />
 
         <ArrowRight
-          className="absolute left-1/2 top-1/2 size-4 sm:size-4.5 -translate-x-1/2 -translate-y-1/2 origin-center text-current transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:translate-x-[70%] group-hover:-translate-y-1/2 group-hover:scale-0 group-data-[pressed=true]:translate-x-[70%] group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-0"
+          className={`absolute left-1/2 top-1/2 ${sizeConfig.iconSize} -translate-x-1/2 -translate-y-1/2 origin-center text-current transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:translate-x-[70%] group-hover:-translate-y-1/2 group-hover:scale-0 group-data-[pressed=true]:translate-x-[70%] group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-0`}
           strokeWidth={2.5}
         />
       </span>

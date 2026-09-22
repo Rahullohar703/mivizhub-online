@@ -31,8 +31,10 @@ export default function SectionCaseStudies() {
   ];
 
   return (
-    <Section id="case-studies" className="py-20 bg-[#0c0c10] border-t border-white/10">
-      <Container>
+    <Section id="case-studies" className="py-20 bg-gradient-to-b from-[#091220] via-[#0e172a] to-[#0a101e] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle blue ambient spotlight */}
+      <div className="absolute top-0 right-1/3 w-[650px] h-[320px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.07)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
@@ -52,7 +54,7 @@ export default function SectionCaseStudies() {
           {caseStudies.map((study, idx) => (
             <div
               key={idx}
-              className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
+              className="bg-[#0f1524]/90 border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between pb-4 mb-5 border-b border-white/5">
@@ -76,12 +78,12 @@ export default function SectionCaseStudies() {
 
                 {/* Before / After 1-Liners */}
                 <div className="space-y-4 text-xs sm:text-sm">
-                  <div className="bg-[#181820] p-4 rounded-xl border border-white/5">
+                  <div className="bg-[#090d18] p-4 rounded-xl border border-white/5">
                     <span className="text-rose-400 font-bold block mb-1 text-xs uppercase tracking-wider">Before:</span>
                     <p className="text-gray-300 leading-relaxed">{study.before}</p>
                   </div>
 
-                  <div className="bg-[#181820] p-4 rounded-xl border border-white/5">
+                  <div className="bg-[#090d18] p-4 rounded-xl border border-white/5">
                     <span className="text-[#31c0de] font-bold block mb-1 text-xs uppercase tracking-wider">With MivizHub:</span>
                     <p className="text-gray-200 leading-relaxed">{study.after}</p>
                   </div>

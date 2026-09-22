@@ -17,8 +17,10 @@ export default function SectionServices() {
   ];
 
   return (
-    <Section id="services" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container>
+    <Section id="services" className="py-20 bg-gradient-to-b from-[#0c1222] via-[#090d18] to-[#0c101c] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle cyan ambient spotlight */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.07)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
@@ -37,7 +39,7 @@ export default function SectionServices() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto mb-14">
           
           {/* SERVICE 01: Marketing & Growth */}
-          <div className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-11 flex flex-col justify-between hover:border-indigo-500/40 transition-colors shadow-2xl">
+          <div className="bg-[#0f1524]/90 border border-white/10 rounded-3xl p-8 sm:p-11 flex flex-col justify-between hover:border-indigo-500/40 transition-colors shadow-2xl">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
@@ -82,7 +84,7 @@ export default function SectionServices() {
           </div>
 
           {/* SERVICE 02: AI Staffing */}
-          <div className="bg-[#121216] border border-white/10 rounded-3xl p-8 sm:p-11 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-2xl">
+          <div className="bg-[#0f1524]/90 border border-white/10 rounded-3xl p-8 sm:p-11 flex flex-col justify-between hover:border-[#31c0de]/40 transition-colors shadow-2xl">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded-full border border-[#31c0de]/20">
@@ -129,7 +131,7 @@ export default function SectionServices() {
         </div>
 
         {/* Reassurance Banner */}
-        <div className="text-center max-w-3xl mx-auto bg-[#14141a] border border-white/10 rounded-full py-3.5 px-6">
+        <div className="text-center max-w-3xl mx-auto bg-[#10172a]/90 border border-white/10 rounded-full py-3.5 px-6">
           <p className="text-xs sm:text-sm text-gray-300 font-medium">
             Not sure what you need? In a quick 15-minute call, we'll recommend whether you need marketing, staffing, or both.
           </p>

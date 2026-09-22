@@ -2,71 +2,49 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../ui/Container';
 import Section from '../ui/Section';
-import { Check, Info, ArrowRight, Sparkles, ShieldCheck, Zap } from 'lucide-react';
+import { 
+  Check, Info, ArrowRight, Sparkles, ShieldCheck, Zap, 
+  Globe, FileText, Share2, Target, BarChart3, MessageSquare, Bot 
+} from 'lucide-react';
 import { ArrowFillButton } from '../ui/arrow-fill-button';
 
 const TOOLTIP_DETAILS = {
-  // Presence: Foundation
+  // Presence
   "Professional Website / Landing Page": "Conversion-focused structure, messaging, responsive design and clear paths for visitors to take action.",
   "Google Business Profile": "Profile setup and optimization designed to strengthen local visibility, credibility and customer discovery.",
   "GSC + GA4 Setup": "Track search visibility, website traffic, user behavior and key conversion actions from the start.",
   "Lead Capture & Contact Forms": "Clean, high-converting forms engineered to convert visitors into direct phone, email, and inquiry leads.",
   "Technical SEO Foundation": "Essential indexing, metadata, sitemap, robots, site structure and technical SEO setup.",
-
-  // Presence: Search & Content
   "Keyword & Topic Research": "Identify relevant search opportunities based on your market, audience, competitors and customer intent.",
   "2–3 SEO Articles / month": "Search-intent, keyword and competitor-informed content designed to build your organic search footprint.",
   "On-Page SEO": "Optimized meta tags, heading hierarchy, image alts, and semantic markup for every page.",
-  "Internal Linking & Content Structure": "Strategic architecture connecting topics together to boost search crawling and user flow.",
-
-  // Presence: Social
-  "4 Strategic Social Posts / month": "Content developed around your audience, positioning, niche, competitors and relevant industry conversations — not generic templates.",
+  "4 Strategic Social Posts / month": "Content developed around your audience, positioning, niche, competitors and relevant industry conversations.",
   "LinkedIn + Instagram + Facebook": "Targeted distribution tailored for the platforms where your prospective buyers spend their time.",
-  "Niche & Competitor Research": "Research your niche and competitors to identify relevant topics, positioning opportunities and content gaps.",
-  "Copy + Creative Direction": "Messaging and creative concepts aligned with your offer, audience and campaign objective.",
   "Content Scheduling": "Full hands-off management so content posts reliably without manual effort.",
 
-  // Growth: Strategy & Research
+  // Growth
   "Competitor & Market Research": "Analyze competitors, positioning, content, offers and market gaps to identify opportunities.",
-  "Audience & Offer Analysis": "Understand who you're targeting, what they care about, and how your offer can be positioned effectively.",
   "Monthly Growth Strategy": "A monthly plan connecting content, SEO, social and paid acquisition around measurable objectives.",
-  "Search & Content Opportunities": "Continuous discovery of emerging search terms and buyer questions in your vertical.",
-
-  // Growth: Content Engine
-  "4–6 SEO Articles / month": "Search-intent, keyword and competitor-informed content designed to build topical authority and capture relevant searches.",
-  "8–12 Strategic Social Posts / month": "Content based on your niche, audience, positioning, competitors, industry trends and buying intent.",
-  "Platform-Specific Content": "Adapt content to the format, audience and behavior of each relevant platform.",
-  "Short-Form Content / Reels": "Short-form concepts designed around attention, education, credibility and engagement.",
-  "LinkedIn Thought Leadership": "Industry-focused content designed to establish expertise and keep your brand visible to relevant decision-makers.",
-
-  // Growth: Paid Acquisition
+  "4–6 SEO Articles / month": "Topical authority and search-intent articles designed to rank for commercial buying queries.",
+  "8–12 Strategic Social Posts / month": "High-cadence content covering thought leadership, client education, and case studies.",
   "Google & Meta Ads": "Campaign strategy, setup, targeting, tracking and ongoing optimization across relevant paid channels.",
-  "Campaign Setup & Management": "Build, launch, monitor and continuously optimize campaigns based on performance.",
-  "Ad Copy & Creative Direction": "Messaging and creative concepts aligned with your offer, audience and campaign objective.",
-  "Audience & Keyword Targeting": "Target relevant audiences and search intent based on your market and campaign goals.",
-  "Landing Page Optimization": "Improve messaging, structure and calls-to-action to create a clearer path from click to inquiry.",
-
-  // Growth: Lead Generation
   "Conversion Landing Pages": "Dedicated high-converting pages built specifically to turn paid ad traffic into scheduled calls.",
-  "Lead Forms & WhatsApp": "Instant multi-channel capture allowing leads to connect via their preferred communication method.",
-  "Lead Tracking": "End-to-end attribution showing exactly which ad and keyword produced each customer.",
-  "Lead Qualification": "Capture key information and help distinguish relevant inquiries from low-intent leads.",
+  "Lead Tracking & Attribution": "End-to-end attribution showing exactly which ad and keyword produced each customer inquiry.",
   "Follow-Up Automation": "Automated responses and follow-ups designed to reduce missed opportunities and keep prospects engaged.",
-  "Retargeting": "Reconnect with relevant visitors and audiences who previously interacted with your business."
 };
 
-function FeatureItem({ label, activeTooltip, onToggleTooltip, hasTooltip = true }) {
+function FeatureBullet({ label, activeTooltip, onToggleTooltip }) {
   const tooltipText = TOOLTIP_DETAILS[label];
   const isTooltipOpen = activeTooltip === label;
 
   return (
-    <li className="flex items-start justify-between gap-2 text-sm text-gray-200 group/item relative">
+    <li className="flex items-start justify-between gap-2 text-xs sm:text-sm text-gray-200 group/item relative">
       <div className="flex items-start gap-2.5">
         <Check className="w-4 h-4 text-[#31c0de] flex-shrink-0 mt-0.5" strokeWidth={2.5} />
         <span className="leading-snug">{label}</span>
       </div>
 
-      {hasTooltip && tooltipText && (
+      {tooltipText && (
         <div className="relative flex-shrink-0">
           <button
             type="button"
@@ -82,7 +60,6 @@ function FeatureItem({ label, activeTooltip, onToggleTooltip, hasTooltip = true 
             <Info className="w-3.5 h-3.5" />
           </button>
 
-          {/* Crisp, Lightweight Tooltip (Zero lag) */}
           {isTooltipOpen && (
             <div className="absolute right-0 bottom-full mb-2 w-64 sm:w-72 bg-[#1a1a24] border border-white/20 rounded-xl p-3.5 shadow-2xl text-xs text-gray-200 z-50 pointer-events-none">
               <div className="font-bold text-white mb-1 flex items-center gap-1.5">
@@ -108,40 +85,44 @@ export default function GrowthPricing({ onOpenBooking }) {
   };
 
   return (
-    <Section id="pricing" className="py-20 bg-[#0b0b0e] border-t border-white/10">
-      <Container>
+    <Section id="pricing" className="py-24 bg-gradient-to-b from-[#0b0e18] via-[#0f182c] to-[#090c14] border-b border-white/10 relative overflow-hidden">
+      {/* Background radial spotlight over Growth plan */}
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[450px] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <Container className="relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            Transparent Productized Pricing
+          <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#31c0de] block mb-3">
+            Transparent Pricing
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Choose Where Your Business Is Today.
+            Two Clear Plans. Zero Long Contracts.
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
-            Start by establishing your foundation, or build on it with an active customer acquisition system.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Choose the phase that fits your business today. Upgrade, downgrade, or cancel anytime.
           </p>
         </div>
 
-        {/* Two Pricing Cards Side-by-Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-14 items-stretch">
+        {/* Pricing Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           
-          {/* CARD 1: $250/mo — Presence */}
-          <div className="bg-[#121216] border border-white/10 hover:border-white/20 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-2xl transition-colors">
+          {/* PLAN 1: $250/mo Presence */}
+          <div className="bg-[#11131a] border border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl hover:border-white/20 transition-all relative">
             <div>
               {/* Header Info */}
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold bg-white/5 px-3 py-1 rounded">
-                  ESTABLISH
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#38bdf8] bg-[#38bdf8]/10 px-3 py-1 rounded border border-[#38bdf8]/20">
+                  Foundation Plan
                 </span>
                 <span className="text-xs font-semibold text-gray-400">
-                  Digital Foundation
+                  Establish Credibility
                 </span>
               </div>
 
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-5xl font-extrabold font-heading text-white">
+                <span className="text-5xl sm:text-6xl font-extrabold text-white">
                   $250
                 </span>
                 <span className="text-gray-400 text-base font-semibold">/ month</span>
@@ -151,115 +132,90 @@ export default function GrowthPricing({ onOpenBooking }) {
                 Presence
               </h3>
 
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-2 font-normal">
-                Establish a credible, search-ready digital presence built around your business and market.
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6 font-normal">
+                Build your digital foundation so your business looks credible, ranks on Google, and gets found locally.
               </p>
 
-              <p className="text-xs text-gray-400 mb-8 leading-relaxed font-medium">
-                Built around your niche, audience, positioning, and competitive landscape.
-              </p>
-
-              <div className="w-full h-px bg-white/10 mb-8" />
-
-              {/* Feature Groups */}
-              <div className="space-y-6 mb-8">
-                
-                {/* Group 1: Digital Foundation */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold mb-3">
-                    DIGITAL FOUNDATION
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Professional Website / Landing Page" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Google Business Profile" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="GSC + GA4 Setup" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Lead Capture & Contact Forms" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Technical SEO Foundation" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+              {/* Tangible Visual Deliverable Highlights */}
+              <div className="grid grid-cols-2 gap-2.5 p-4 rounded-2xl bg-[#090b10] border border-white/10 mb-8">
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <Globe className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
+                  <span>Custom Website</span>
                 </div>
-
-                {/* Group 2: Search & Content */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold mb-3">
-                    SEARCH & CONTENT
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Keyword & Topic Research" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="2–3 SEO Articles / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="On-Page SEO" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Internal Linking & Content Structure" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <ShieldCheck className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
+                  <span>Google Profile</span>
                 </div>
-
-                {/* Group 3: Social Presence */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold mb-3">
-                    SOCIAL PRESENCE
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="4 Strategic Social Posts / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="LinkedIn + Instagram + Facebook" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Niche & Competitor Research" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Copy + Creative Direction" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Content Scheduling" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <FileText className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
+                  <span>2–3 SEO Articles/mo</span>
                 </div>
-
-                {/* Group 4: Optimization */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold mb-3">
-                    OPTIMIZATION
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Website & Content Updates" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                    <FeatureItem label="SEO Monitoring" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                    <FeatureItem label="Monthly Performance Report" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                    <FeatureItem label="Next-Step Recommendations" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                  </ul>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <Share2 className="w-4 h-4 text-[#38bdf8] flex-shrink-0" />
+                  <span>4 Social Posts/mo</span>
                 </div>
+              </div>
 
+              {/* Core Feature Breakdown */}
+              <div className="space-y-4 mb-8">
+                <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  WHAT'S INCLUDED:
+                </div>
+                <ul className="space-y-2.5">
+                  <FeatureBullet label="Professional Website / Landing Page" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Google Business Profile" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Technical SEO Foundation" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="GSC + GA4 Setup" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Lead Capture & Contact Forms" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Keyword & Topic Research" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="2–3 SEO Articles / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="On-Page SEO" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="4 Strategic Social Posts / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="LinkedIn + Instagram + Facebook" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Content Scheduling" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                </ul>
               </div>
             </div>
 
-            {/* Card Footer / CTA */}
+            {/* Card Footer CTA */}
             <div className="pt-6 border-t border-white/10">
-              <button
+              <ArrowFillButton
+                btnText="Build My Presence"
                 onClick={() => onOpenBooking('Presence ($250/mo)')}
-                className="w-full py-4 px-6 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-base transition-all flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99] group shadow-md"
-              >
-                <span>Build My Presence</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-              <p className="text-center text-xs text-gray-400 mt-2.5 font-medium">
-                Build your digital foundation.
+                size="lg"
+                variant="secondary"
+                className="w-full justify-center"
+              />
+              <p className="text-center text-xs text-gray-400 mt-3 font-medium">
+                Best for businesses establishing their online footprint.
               </p>
             </div>
           </div>
 
-          {/* CARD 2: $500/mo — Growth (MOST POPULAR) */}
-          <div className="relative bg-[#121216] border-2 border-[#31c0de] rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-[0_10px_40px_rgba(49,192,222,0.15)] transition-colors">
+          {/* PLAN 2: $500/mo Growth (MOST POPULAR) */}
+          <div className="relative bg-[#10141e] border-2 border-[#31c0de] rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-[0_12px_50px_rgba(49,192,222,0.18)] transition-all">
             
-            {/* Most Popular Badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-[#31c0de] text-[#09090b] text-xs font-bold tracking-widest uppercase shadow-md">
+            {/* Popular Ribbon */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#31c0de] text-[#09090b] text-xs font-bold tracking-wider uppercase shadow-lg shadow-cyan-500/30">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>MOST POPULAR</span>
+                <span>MOST POPULAR • FULL ENGINE</span>
               </span>
             </div>
 
             <div>
               {/* Header Info */}
-              <div className="flex items-center justify-between mb-4 mt-1">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#31c0de] font-bold bg-[#31c0de]/10 px-3 py-1 rounded border border-[#31c0de]/20">
-                  ACCELERATE
+              <div className="flex items-center justify-between mb-4 mt-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded border border-[#31c0de]/20">
+                  Accelerator Plan
                 </span>
                 <span className="text-xs font-semibold text-[#31c0de]">
-                  Full Customer Engine
+                  Active Customer Pipeline
                 </span>
               </div>
 
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-5xl font-extrabold font-heading text-white">
+                <span className="text-5xl sm:text-6xl font-extrabold text-white">
                   $500
                 </span>
                 <span className="text-gray-400 text-base font-semibold">/ month</span>
@@ -269,138 +225,96 @@ export default function GrowthPricing({ onOpenBooking }) {
                 Growth
               </h3>
 
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-2 font-normal">
-                Turn your digital presence into a customer acquisition system.
+              <p className="text-sm sm:text-base text-gray-200 leading-relaxed mb-6 font-normal">
+                Turn your digital presence into an active client acquisition engine with paid ads, aggressive content, and lead generation.
               </p>
 
-              <p className="text-xs text-[#31c0de] mb-8 leading-relaxed font-bold">
-                Everything in Presence, plus an active strategy for attracting and converting opportunities.
-              </p>
-
-              <div className="w-full h-px bg-white/10 mb-8" />
-
-              {/* Feature Groups */}
-              <div className="space-y-6 mb-8">
-                
-                {/* Group 1: Strategy & Research */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#31c0de] font-bold mb-3">
-                    STRATEGY & RESEARCH
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Competitor & Market Research" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Audience & Offer Analysis" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Monthly Growth Strategy" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Search & Content Opportunities" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+              {/* Tangible Visual Deliverables Highlight */}
+              <div className="grid grid-cols-2 gap-2.5 p-4 rounded-2xl bg-[#090e18] border border-[#31c0de]/30 mb-8">
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <Zap className="w-4 h-4 text-[#31c0de] flex-shrink-0" />
+                  <span>Everything in Presence</span>
                 </div>
-
-                {/* Group 2: Content Engine */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#31c0de] font-bold mb-3">
-                    CONTENT ENGINE
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="4–6 SEO Articles / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="8–12 Strategic Social Posts / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Platform-Specific Content" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Short-Form Content / Reels" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="LinkedIn Thought Leadership" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <Target className="w-4 h-4 text-[#31c0de] flex-shrink-0" />
+                  <span>Google & Meta Ads</span>
                 </div>
-
-                {/* Group 3: Paid Acquisition */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#31c0de] font-bold mb-3">
-                    PAID ACQUISITION
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Google & Meta Ads" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Campaign Setup & Management" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Ad Copy & Creative Direction" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Audience & Keyword Targeting" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Landing Page Optimization" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <FileText className="w-4 h-4 text-[#31c0de] flex-shrink-0" />
+                  <span>4–6 SEO Articles/mo</span>
                 </div>
-
-                {/* Group 4: Lead Generation */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#31c0de] font-bold mb-3">
-                    LEAD GENERATION
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Conversion Landing Pages" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Lead Forms & WhatsApp" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Lead Tracking" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Lead Qualification" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Follow-Up Automation" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                    <FeatureItem label="Retargeting" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
-                  </ul>
+                <div className="flex items-center gap-2 text-xs font-semibold text-white">
+                  <Share2 className="w-4 h-4 text-[#31c0de] flex-shrink-0" />
+                  <span>8–12 Social Posts/mo</span>
                 </div>
+              </div>
 
-                {/* Group 5: Growth Intelligence */}
-                <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#31c0de] font-bold mb-3">
-                    GROWTH INTELLIGENCE
-                  </h4>
-                  <ul className="space-y-2.5">
-                    <FeatureItem label="Performance Analysis" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                    <FeatureItem label="Traffic & Search Insights" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                    <FeatureItem label="Campaign & Lead Metrics" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                    <FeatureItem label="Monthly Growth Recommendations" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} hasTooltip={false} />
-                  </ul>
+              {/* Core Feature Breakdown */}
+              <div className="space-y-4 mb-8">
+                <div className="text-xs font-semibold uppercase tracking-wider text-[#31c0de]">
+                  GROWTH ENGINE ACCELERATORS:
                 </div>
-
+                <ul className="space-y-2.5">
+                  <FeatureBullet label="Competitor & Market Research" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Monthly Growth Strategy" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="4–6 SEO Articles / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="8–12 Strategic Social Posts / month" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Google & Meta Ads" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Conversion Landing Pages" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Lead Tracking & Attribution" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                  <FeatureBullet label="Follow-Up Automation" activeTooltip={activeTooltip} onToggleTooltip={handleToggleTooltip} />
+                </ul>
               </div>
             </div>
 
-            {/* Card Footer / CTA */}
+            {/* Card Footer CTA */}
             <div className="pt-6 border-t border-white/10">
-              <button
+              <ArrowFillButton
+                btnText="Start Growing"
                 onClick={() => onOpenBooking('Growth ($500/mo)')}
-                className="w-full py-4 px-6 rounded-xl bg-[#4F46E5] hover:bg-[#4338CA] text-white font-bold text-base shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99] group"
-              >
-                <span>Start Growing</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-              <p className="text-center text-xs text-[#31c0de] mt-2.5 font-bold">
-                Turn visibility into opportunities.
+                size="lg"
+                variant="primary"
+                className="w-full justify-center shadow-xl shadow-cyan-500/30"
+              />
+              <p className="text-center text-xs text-[#31c0de] mt-3 font-semibold">
+                Best for businesses ready to generate active customer inquiries.
               </p>
             </div>
           </div>
 
         </div>
 
-        {/* Reassurance Line */}
-        <div className="text-center max-w-xl mx-auto mb-12">
+        {/* Reassurance Guarantee Line */}
+        <div className="text-center max-w-xl mx-auto mb-14">
           <p className="text-sm text-gray-400 font-medium">
-            No long-term complexity. Start with the level your business needs and scale when you're ready.
+            No long contracts or hidden setup fees. Pause or cancel anytime with zero friction.
           </p>
         </div>
 
         {/* Transition Bridge to AI Workforce */}
-        <div className="max-w-4xl mx-auto rounded-2xl bg-[#121216] border border-white/10 p-7 sm:p-9 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-1">
-              BUILD → GROW → AUTOMATE
-            </span>
-            <h3 className="text-xl font-bold text-white mb-1">
-              Need more than marketing?
-            </h3>
-            <p className="text-sm text-gray-300">
-              Automate what happens after the lead arrives.
-            </p>
+        <div className="max-w-4xl mx-auto rounded-3xl bg-[#12141e] border border-white/15 p-7 sm:p-9 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 flex-shrink-0">
+              <Bot className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-0.5 font-mono">
+                BUILD → GROW → AUTOMATE
+              </span>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-0.5">
+                Need more than marketing?
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-300">
+                Deploy 24/7 AI staff to answer calls and qualify leads instantly.
+              </p>
+            </div>
           </div>
 
           <ArrowFillButton
             btnText="Explore AI Workforce"
             href="/"
-            bgColor="#1a1a24"
-            textColor="#ffffff"
-            fillBgColor="#31c0de"
-            fillTextColor="#09090b"
-            arrowColor="#09090b"
-            hoverArrowColor="#09090b"
+            size="default"
+            variant="secondary"
             className="flex-shrink-0 border-white/15 hover:border-white/30"
           />
         </div>

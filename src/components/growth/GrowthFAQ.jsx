@@ -39,8 +39,8 @@ export default function GrowthFAQ() {
   };
 
   return (
-    <Section id="faq" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container className="max-w-5xl">
+    <Section id="faq" className="py-24 bg-gradient-to-b from-[#090b12] via-[#0b101c] to-[#080a12] border-b border-white/10 relative overflow-hidden">
+      <Container className="max-w-5xl relative z-10">
         
         {/* Header matching Home SectionFAQ */}
         <div className="text-center mb-14">

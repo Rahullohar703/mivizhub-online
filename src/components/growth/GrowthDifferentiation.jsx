@@ -1,92 +1,114 @@
 import React from 'react';
 import Container from '../ui/Container';
 import Section from '../ui/Section';
-import { Search, Target, Share2, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, XCircle, Sparkles } from 'lucide-react';
 
 export default function GrowthDifferentiation() {
-  const blocks = [
+  const comparisonRows = [
     {
-      title: "Research Before Creation",
-      desc: "We study your niche, competitors, audience and search behavior before creating content.",
-      icon: Search,
-      badge: "In-Depth Discovery",
-      detail: "Avoid blind guessing. Every piece of copy targets verified intent and buyer behavior."
+      feature: "Monthly Pricing",
+      traditional: "$3,000 – $5,000/mo + hefty setup fees",
+      mivizhub: "$250 or $500/mo flat (Zero surprises)",
     },
     {
-      title: "Strategy Before Posting",
-      desc: "Every piece of content has a purpose — visibility, authority, engagement, education or conversion.",
-      icon: Target,
-      badge: "Commercial Intent",
-      detail: "Zero vanity metrics. Every article and post moves prospects closer to a buying decision."
+      feature: "Contract Terms",
+      traditional: "6 to 12-month lock-in contracts",
+      mivizhub: "Zero lock-in. Cancel or pause anytime.",
     },
     {
-      title: "One Idea. Multiple Channels.",
-      desc: "A strong idea can become an article, LinkedIn post, Instagram content, Google Business content and more.",
-      icon: Share2,
-      badge: "Compound Distribution",
-      detail: "Repurpose high-performing concepts natively across all channels to maximize reach and ROI."
+      feature: "Strategy & Copy",
+      traditional: "Generic, junior outsourced template text",
+      mivizhub: "In-depth competitor, audience & niche research",
     },
     {
-      title: "Continuous Optimization",
-      desc: "We review performance and continuously improve what we're doing based on what the data tells us.",
-      icon: TrendingUp,
-      badge: "Data-Driven Iteration",
-      detail: "Monthly reviews ensure campaigns, keywords, and landing pages sharpen over time."
+      feature: "Performance Focus",
+      traditional: "Vanity metrics (impressions, follower counts)",
+      mivizhub: "Commercial inquiries (direct calls, quote requests)",
+    },
+    {
+      feature: "Speed to Launch",
+      traditional: "3 to 6 weeks of bureaucratic meetings",
+      mivizhub: "Live & indexed in days with weekly delivery cadence",
+    },
+    {
+      feature: "Complete Ecosystem",
+      traditional: "Charges extra for websites, SEO, and social",
+      mivizhub: "All-in-one: Web, Local SEO, Content & Distribution",
     },
   ];
 
   return (
-    <Section id="differentiation" className="py-20 bg-[#0b0b0e] border-t border-white/10">
-      <Container>
+    <Section id="differentiation" className="py-24 bg-gradient-to-b from-[#080b12] via-[#0b101c] to-[#090b12] border-b border-white/10 relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <Container className="relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-5xl mx-auto text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            The Mivizhub Distinction
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#31c0de] block mb-3">
+            The MivizHub Advantage
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Not Generic Marketing. Built Around Your Business.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+            Not Generic Agency Marketing.<br />
+            <span className="text-[#31c0de]">Engineered For Small Business Growth.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-            We don't create content simply to fill a calendar. We build each activity around your market, audience, positioning and business objectives.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Traditional agencies charge thousands for vanity reports. We provide a streamlined productized growth engine focused on tangible business results.
           </p>
         </div>
 
-        {/* 4 Feature Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {blocks.map((b) => {
-            const Icon = b.icon;
-            return (
-              <div
-                key={b.title}
-                className="rounded-3xl bg-[#121216] border border-white/10 hover:border-white/20 p-8 sm:p-10 flex flex-col justify-between transition-colors shadow-xl"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-xs font-mono font-bold text-[#31c0de] px-3 py-1 rounded-full bg-[#31c0de]/10 border border-[#31c0de]/20">
-                      {b.badge}
-                    </span>
-                    <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#31c0de]">
-                      <Icon className="w-5 h-5" />
-                    </div>
+        {/* Agency Comparison Table */}
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-3xl bg-[#11131a] border border-white/10 overflow-hidden shadow-2xl">
+            
+            {/* Table Header */}
+            <div className="grid grid-cols-1 md:grid-cols-12 border-b border-white/10 bg-[#0d0f17]">
+              <div className="md:col-span-4 p-5 sm:p-6 text-xs font-semibold uppercase tracking-wider text-gray-400 flex items-center">
+                Feature Breakdown
+              </div>
+              <div className="md:col-span-4 p-5 sm:p-6 text-xs font-semibold uppercase tracking-wider text-rose-400 border-t md:border-t-0 md:border-l border-white/10 flex items-center gap-2">
+                <XCircle className="w-4 h-4 text-rose-400" />
+                <span>Traditional Agency</span>
+              </div>
+              <div className="md:col-span-4 p-5 sm:p-6 text-xs font-semibold uppercase tracking-wider text-[#31c0de] border-t md:border-t-0 md:border-l border-white/10 bg-[#121c29] flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[#31c0de]" />
+                <span>MivizHub Growth</span>
+              </div>
+            </div>
+
+            {/* Comparison Rows */}
+            <div className="divide-y divide-white/10 text-sm">
+              {comparisonRows.map((row, idx) => (
+                <div key={idx} className="grid grid-cols-1 md:grid-cols-12 hover:bg-white/[0.02] transition-colors">
+                  
+                  {/* Feature Label */}
+                  <div className="md:col-span-4 p-4 sm:p-5 font-semibold text-white flex items-center">
+                    {row.feature}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-3">
-                    {b.title}
-                  </h3>
+                  {/* Traditional Agency */}
+                  <div className="md:col-span-4 p-4 sm:p-5 text-xs sm:text-sm text-gray-400 md:border-l border-white/10 flex items-center gap-2.5">
+                    <XCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                    <span>{row.traditional}</span>
+                  </div>
 
-                  <p className="text-base text-gray-300 font-normal leading-relaxed mb-6">
-                    {b.desc}
-                  </p>
-                </div>
+                  {/* MivizHub Advantage */}
+                  <div className="md:col-span-4 p-4 sm:p-5 text-xs sm:text-sm text-gray-100 font-medium md:border-l border-white/10 bg-[#121c29]/50 flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span className="font-semibold text-white">{row.mivizhub}</span>
+                  </div>
 
-                <div className="bg-[#18181f] p-3.5 rounded-xl border border-white/5 flex items-center gap-2.5 text-xs text-gray-300 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-[#31c0de] flex-shrink-0" />
-                  <span>{b.detail}</span>
                 </div>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+
+            {/* Table Footer Note */}
+            <div className="p-4 sm:p-5 bg-[#0d0f17] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
+              <span>All plans include setup, technical management, and hosting optimization.</span>
+              <span className="text-[#31c0de] font-semibold">Transparent flat pricing • Zero hidden fees</span>
+            </div>
+
+          </div>
         </div>
 
       </Container>

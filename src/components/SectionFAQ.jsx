@@ -37,8 +37,10 @@ export default function SectionFAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <Section id="faq" className="py-20 bg-[#09090b] border-t border-white/10">
-      <Container className="max-w-5xl">
+    <Section id="faq" className="py-20 bg-gradient-to-b from-[#090e1a] via-[#0d1424] to-[#080c16] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle slate ambient spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <Container className="max-w-5xl relative z-10">
         
         {/* Header */}
         <div className="text-center mb-14">
@@ -56,7 +58,7 @@ export default function SectionFAQ() {
         {/* FAQ Accordion - Wide & Breathable */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-[#121216] border border-white/10 rounded-2xl overflow-hidden shadow-md">
+            <div key={idx} className="bg-[#0f1524]/90 border border-white/10 rounded-2xl overflow-hidden shadow-md">
               <button 
                 onClick={() => setOpen(open === idx ? -1 : idx)}
                 className="w-full text-left px-7 py-6 font-bold text-base sm:text-xl text-white hover:text-[#31c0de] transition-colors flex justify-between items-center gap-4"
