@@ -5,15 +5,18 @@ import { HardHat, Factory, HeartPulse, Briefcase, ShoppingBag, Building2, Check,
 
 export default function SectionIndustries() {
   const [activeTab, setActiveTab] = useState('Construction');
+  const scrollContainerRef = useRef(null);
   const tabRefs = useRef({});
 
   const handleSelectTab = (id) => {
     setActiveTab(id);
-    if (tabRefs.current[id]) {
-      tabRefs.current[id].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
+    const container = scrollContainerRef.current;
+    const btn = tabRefs.current[id];
+    if (container && btn) {
+      const targetScroll = btn.offsetLeft - (container.clientWidth / 2) + (btn.clientWidth / 2);
+      container.scrollTo({
+        left: Math.max(0, targetScroll),
+        behavior: 'smooth'
       });
     }
   };
@@ -183,7 +186,10 @@ export default function SectionIndustries() {
             <span>Swipe across to view all 6 industries</span>
           </div>
 
-          <div className="flex items-center sm:justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-0 sm:flex-wrap py-2 snap-x snap-mandatory">
+          <div 
+            ref={scrollContainerRef}
+            className="flex items-center sm:justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-0 sm:flex-wrap py-2 snap-x snap-mandatory"
+          >
             {industries.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
