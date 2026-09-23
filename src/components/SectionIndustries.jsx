@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
 import { HardHat, Factory, HeartPulse, Briefcase, ShoppingBag, Building2, Check, UserCheck } from 'lucide-react';
 
 export default function SectionIndustries() {
   const [activeTab, setActiveTab] = useState('Construction');
+  const tabRefs = useRef({});
+
+  const handleSelectTab = (id) => {
+    setActiveTab(id);
+    if (tabRefs.current[id]) {
+      tabRefs.current[id].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  };
 
   const industries = [
     { id: 'Construction', name: 'Construction & Trades', icon: <HardHat className="w-4 h-4" /> },
@@ -159,39 +171,52 @@ export default function SectionIndustries() {
           </p>
         </div>
 
-        {/* Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto mb-12">
-          {industries.map((tab) => {
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`group relative overflow-hidden flex items-center gap-2.5 px-5 py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ease-out transform-gpu cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d0f1e] ${
-                  isActive 
-                    ? 'bg-gradient-to-r from-[#4F46E5] to-[#4338CA] text-white shadow-xl shadow-indigo-600/35 border border-indigo-400/40 -translate-y-0.5 scale-[1.02] hover:shadow-[0_8px_30px_rgba(79,70,229,0.5)] hover:-translate-y-1 hover:scale-[1.04] active:scale-95' 
-                    : 'bg-[#121727]/90 text-gray-300 border border-white/10 hover:text-white hover:border-cyan-400/50 hover:bg-[#18223a] hover:shadow-[0_8px_25px_rgba(49,192,222,0.2)] hover:-translate-y-1 hover:scale-[1.03] active:scale-95'
-                }`}
-              >
-                {/* Subtle shine sweep on hover */}
-                <span 
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" 
-                  aria-hidden="true" 
-                />
+        {/* Tab Buttons: Sleek horizontal swipe chip bar on mobile, centered flex grid on desktop */}
+        <div className="relative max-w-6xl mx-auto mb-10 -mx-4 px-4 sm:mx-auto sm:px-0">
+          {/* Subtle mobile edge fade indicators */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0d0f1e] to-transparent z-10 sm:hidden" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0d0f1e] to-transparent z-10 sm:hidden" />
 
-                <span 
-                  className={`inline-flex items-center justify-center transition-all duration-300 ${
+          {/* Micro swipe hint for mobile */}
+          <div className="flex items-center justify-center gap-1.5 text-[11px] font-semibold text-gray-400 mb-2.5 sm:hidden">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#31c0de] animate-pulse" />
+            <span>Swipe across to view all 6 industries</span>
+          </div>
+
+          <div className="flex items-center sm:justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-0 sm:flex-wrap py-2 snap-x snap-mandatory">
+            {industries.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  ref={(el) => (tabRefs.current[tab.id] = el)}
+                  onClick={() => handleSelectTab(tab.id)}
+                  className={`group relative overflow-hidden flex-shrink-0 snap-center flex items-center gap-2 sm:gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 ease-out transform-gpu cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d0f1e] ${
                     isActive 
-                      ? 'text-white scale-110 group-hover:scale-125 group-hover:rotate-6' 
-                      : 'text-[#31c0de] group-hover:scale-125 group-hover:rotate-6 group-hover:text-cyan-300'
+                      ? 'bg-gradient-to-r from-[#4F46E5] to-[#4338CA] text-white shadow-xl shadow-indigo-600/35 border border-indigo-400/40 -translate-y-0.5 scale-[1.02] hover:shadow-[0_8px_30px_rgba(79,70,229,0.5)] hover:-translate-y-1 hover:scale-[1.04] active:scale-95' 
+                      : 'bg-[#121727]/90 text-gray-300 border border-white/10 hover:text-white hover:border-cyan-400/50 hover:bg-[#18223a] hover:shadow-[0_8px_25px_rgba(49,192,222,0.2)] hover:-translate-y-1 hover:scale-[1.03] active:scale-95'
                   }`}
                 >
-                  {tab.icon}
-                </span>
-                <span className="relative z-10 transition-colors duration-200">{tab.name}</span>
-              </button>
-            );
-          })}
+                  {/* Subtle shine sweep on hover */}
+                  <span 
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" 
+                    aria-hidden="true" 
+                  />
+
+                  <span 
+                    className={`inline-flex items-center justify-center transition-all duration-300 ${
+                      isActive 
+                        ? 'text-white scale-110 group-hover:scale-125 group-hover:rotate-6' 
+                        : 'text-[#31c0de] group-hover:scale-125 group-hover:rotate-6 group-hover:text-cyan-300'
+                    }`}
+                  >
+                    {tab.icon}
+                  </span>
+                  <span className="relative z-10 transition-colors duration-200">{tab.name}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Tab Content Box - Wide & Spacious */}
