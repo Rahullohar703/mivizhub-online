@@ -109,14 +109,14 @@ export default function GrowthPricing({ onOpenBooking }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           
           {/* PLAN 1: $250/mo Presence */}
-          <div className="bg-[#11131a] border border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl hover:border-white/20 transition-all relative">
+          <div className="bg-[#11131a] border border-white/10 rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-xl hover:border-white/20 transition-all relative">
             <div>
               {/* Header Info */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#38bdf8] bg-[#38bdf8]/10 px-3 py-1 rounded border border-[#38bdf8]/20">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between items-start gap-2 sm:gap-4 mb-4">
+                <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-[#38bdf8] bg-[#38bdf8]/10 px-3 py-1 rounded border border-[#38bdf8]/20 whitespace-nowrap">
                   Foundation Plan
                 </span>
-                <span className="text-xs font-semibold text-gray-400">
+                <span className="text-xs font-semibold text-gray-400 whitespace-nowrap">
                   Establish Credibility
                 </span>
               </div>
@@ -193,11 +193,11 @@ export default function GrowthPricing({ onOpenBooking }) {
           </div>
 
           {/* PLAN 2: $500/mo Growth (MOST POPULAR) */}
-          <div className="relative bg-[#10141e] border-2 border-[#31c0de] rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-[0_12px_50px_rgba(49,192,222,0.18)] transition-all">
+          <div className="relative bg-[#10141e] border-2 border-[#31c0de] rounded-3xl p-6 sm:p-10 pt-7 sm:pt-10 flex flex-col justify-between shadow-[0_12px_50px_rgba(49,192,222,0.18)] transition-all">
             
             {/* Popular Ribbon */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#31c0de] text-[#09090b] text-xs font-bold tracking-wider uppercase shadow-lg shadow-cyan-500/30">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#31c0de] text-[#09090b] text-xs font-bold tracking-wider uppercase shadow-lg shadow-cyan-500/30 whitespace-nowrap">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>MOST POPULAR • FULL ENGINE</span>
               </span>
@@ -205,11 +205,11 @@ export default function GrowthPricing({ onOpenBooking }) {
 
             <div>
               {/* Header Info */}
-              <div className="flex items-center justify-between mb-4 mt-2">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded border border-[#31c0de]/20">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between items-start gap-2 sm:gap-4 mb-4 mt-1 sm:mt-0">
+                <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-[#31c0de] bg-[#31c0de]/10 px-3 py-1 rounded border border-[#31c0de]/20 whitespace-nowrap">
                   Accelerator Plan
                 </span>
-                <span className="text-xs font-semibold text-[#31c0de]">
+                <span className="text-xs font-semibold text-[#31c0de] whitespace-nowrap">
                   Active Customer Pipeline
                 </span>
               </div>
