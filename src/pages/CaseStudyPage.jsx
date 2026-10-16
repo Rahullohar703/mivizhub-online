@@ -110,6 +110,11 @@ export default function CaseStudyPage({ onOpenBooking }) {
                     <span className="text-xs text-gray-500 flex items-center gap-1 font-medium">
                       <MapPin size={13} /> {study.location}
                     </span>
+                    {study.privacyNote && (
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">
+                        🔒 Confidential / Client Identity Protected
+                      </span>
+                    )}
                   </div>
 
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3 leading-snug">

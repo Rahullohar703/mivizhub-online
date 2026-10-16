@@ -16,7 +16,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [slug]);
 
-  const study = CASE_STUDIES.find((s) => s.slug === slug);
+  const study = CASE_STUDIES.find((s) => s.slug === slug || s.legacySlug === slug);
 
   if (!study) {
     navigate('/casestudy', { replace: true });
@@ -73,6 +73,11 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
             <span className="text-xs sm:text-sm text-gray-500 flex items-center gap-1 font-medium">
               <MapPin size={13} /> {study.location}
             </span>
+            {study.privacyNote && (
+              <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">
+                🔒 Client Anonymized for Privacy
+              </span>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
