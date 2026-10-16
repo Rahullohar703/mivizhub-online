@@ -18,6 +18,10 @@ import SectionFAQ from './components/SectionFAQ';
 import SectionCTA from './components/SectionCTA';
 import Footer from './components/Footer';
 import GrowthPage from './pages/GrowthPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
+import CaseStudyPage from './pages/CaseStudyPage';
+import CaseStudyDetailPage from './pages/CaseStudyDetailPage';
 
 function HomePage({ onOpenBooking }) {
   useEffect(() => {
@@ -89,6 +93,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage onOpenBooking={handleOpenBooking} />} />
         <Route path="/growth" element={<GrowthPage onOpenBooking={handleOpenBooking} />} />
+        <Route path="/blog" element={<BlogPage onOpenBooking={handleOpenBooking} />} />
+        <Route path="/blog/:slug" element={<BlogPostPage onOpenBooking={handleOpenBooking} />} />
+        <Route path="/casestudy" element={<CaseStudyPage onOpenBooking={handleOpenBooking} />} />
+        <Route path="/casestudies" element={<Navigate to="/casestudy" replace />} />
+        <Route path="/casestudy/:slug" element={<CaseStudyDetailPage onOpenBooking={handleOpenBooking} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer onOpenBooking={handleOpenBooking} />

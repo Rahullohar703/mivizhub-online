@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from './ui/Container';
 import Section from './ui/Section';
 
@@ -90,11 +91,24 @@ export default function SectionCaseStudies() {
                 </div>
               </div>
 
-              <div className="pt-5 mt-6 border-t border-white/5 text-xs text-gray-500 font-medium">
-                Verified client workflow
+              <div className="pt-5 mt-6 border-t border-white/5 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <span>Verified client workflow</span>
+                <Link to="/casestudy" className="text-[#31c0de] hover:underline font-semibold flex items-center gap-1">
+                  Read Breakdown →
+                </Link>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Case Studies CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/casestudy"
+            className="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-3 rounded-full transition-all hover:border-[#31c0de]/50"
+          >
+            Explore All Client Case Studies & Verified Metrics →
+          </Link>
         </div>
 
       </Container>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp, Users, Layers, Briefcase, Tag, ListOrdered, HelpCircle, ArrowRight, Home } from 'lucide-react';
+import { TrendingUp, Users, Layers, Briefcase, Tag, ListOrdered, HelpCircle, ArrowRight, Home, BookOpen, Award } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ArrowFillButton } from '@/components/ui/arrow-fill-button';
 
@@ -9,37 +9,47 @@ import { ArrowFillButton } from '@/components/ui/arrow-fill-button';
 export default function Navbar({ onOpenBooking }) {
   const location = useLocation();
   const isGrowthPage = location.pathname === '/growth';
+  const isBlogPage = location.pathname.startsWith('/blog');
+  const isCaseStudyPage = location.pathname.startsWith('/casestudy');
+  const isHomePage = location.pathname === '/';
   
-  const [activeTab, setActiveTab] = useState(isGrowthPage ? 'Marketing & Growth' : 'AI Workforce');
+  const [activeTab, setActiveTab] = useState(
+    isGrowthPage ? 'Marketing & Growth' :
+    isBlogPage ? 'Blog' :
+    isCaseStudyPage ? 'Case Studies' : 'AI Workforce'
+  );
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Sync activeTab whenever route changes
   useEffect(() => {
     if (location.pathname === '/growth') {
       setActiveTab('Marketing & Growth');
+    } else if (location.pathname.startsWith('/blog')) {
+      setActiveTab('Blog');
+    } else if (location.pathname.startsWith('/casestudy')) {
+      setActiveTab('Case Studies');
     } else {
       setActiveTab('AI Workforce');
     }
   }, [location.pathname]);
 
-  // Home navigation items (Pricing removed as requested: pricing is on /growth)
+  // Main navigation items
   const homeNavItems = [
-    { name: 'AI Workforce', url: '#ai-staffing', isRoute: false, icon: Users },
+    { name: 'AI Workforce', url: isHomePage ? '#ai-staffing' : '/', isRoute: !isHomePage, icon: Users },
     { name: 'Marketing & Growth', url: '/growth', isRoute: true, icon: TrendingUp },
-    { name: 'Why Both', url: '#differentiator', isRoute: false, icon: Layers },
-    { name: 'Industries', url: '#industries', isRoute: false, icon: Briefcase },
-    { name: 'Process', url: '#how-it-works', isRoute: false, icon: ListOrdered },
-    { name: 'FAQ', url: '#faq', isRoute: false, icon: HelpCircle },
+    { name: 'Case Studies', url: '/casestudy', isRoute: true, icon: Award },
+    { name: 'Blog', url: '/blog', isRoute: true, icon: BookOpen },
+    { name: 'Process', url: isHomePage ? '#how-it-works' : '/#how-it-works', isRoute: false, icon: ListOrdered },
+    { name: 'FAQ', url: isHomePage ? '#faq' : '/#faq', isRoute: false, icon: HelpCircle },
   ];
 
   // Growth navigation items (Includes Pricing)
   const growthNavItems = [
     { name: 'AI Workforce', url: '/', isRoute: true, icon: Users },
     { name: 'Marketing & Growth', url: '/growth', isRoute: true, icon: TrendingUp },
-    { name: 'How We Work', url: '#how-we-work', isRoute: false, icon: Layers },
+    { name: 'Case Studies', url: '/casestudy', isRoute: true, icon: Award },
+    { name: 'Blog', url: '/blog', isRoute: true, icon: BookOpen },
     { name: 'Pricing', url: '#pricing', isRoute: false, icon: Tag },
-    { name: 'Methodology', url: '#methodology', isRoute: false, icon: ListOrdered },
-    { name: 'Why Us', url: '#differentiation', isRoute: false, icon: Briefcase },
     { name: 'FAQ', url: '#faq', isRoute: false, icon: HelpCircle },
   ];
 

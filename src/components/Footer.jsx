@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from './ui/Container';
 import { ArrowFillButton } from './ui/arrow-fill-button';
 
@@ -10,39 +11,39 @@ export default function Footer({ onOpenBooking }) {
           
           {/* Brand Col */}
           <div className="md:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <span className="font-heading font-extrabold text-2xl tracking-tight">
                 <span className="text-textMain">Miviz</span><span className="text-[#31c0de]">Hub</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm text-textMuted max-w-sm leading-relaxed mb-4">
               Marketing brings more business in. AI staffing helps get the work done. Scale operations and accelerate revenue without the payroll burden.
             </p>
             <div className="text-xs text-textMuted font-medium">
-              Marketing & Growth • AI Staffing Solutions
+              Marketing & Growth • Autonomous AI Staffing
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
             <h5 className="text-xs font-bold uppercase tracking-widest text-textMain mb-4">
-              Services & Platform
+              Platform & Resources
             </h5>
             <ul className="space-y-2 text-sm text-textMuted">
               <li>
-                <a href="#marketing" className="hover:text-textMain transition-colors">Marketing & Growth</a>
+                <Link to="/growth" className="hover:text-textMain transition-colors">Marketing & Growth</Link>
               </li>
               <li>
-                <a href="#ai-staffing" className="hover:text-textMain transition-colors">AI Staffing</a>
+                <Link to="/casestudy" className="hover:text-[#31c0de] transition-colors font-medium">Case Studies</Link>
               </li>
               <li>
-                <a href="#differentiator" className="hover:text-textMain transition-colors">Core Differentiator</a>
+                <Link to="/blog" className="hover:text-[#31c0de] transition-colors font-medium">Growth & AI Blog</Link>
               </li>
               <li>
-                <a href="#industries" className="hover:text-textMain transition-colors">Industries We Help</a>
+                <a href="/#ai-staffing" className="hover:text-textMain transition-colors">AI Workforce</a>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-textMain transition-colors">How It Works</a>
+                <a href="/#how-it-works" className="hover:text-textMain transition-colors">How It Works</a>
               </li>
             </ul>
           </div>
