@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Award, ArrowRight, CheckCircle2, Building2, MapPin, PhoneCall, TrendingUp, Bot, Sparkles } from 'lucide-react';
+import { Award, ArrowRight, CheckCircle2, Building2, MapPin, PhoneCall, TrendingUp, Bot, Sparkles, Zap, Clock } from 'lucide-react';
 import Container from '../components/ui/Container';
 import { CASE_STUDIES, CASE_STUDY_CATEGORIES, CASE_STUDY_INDUSTRIES } from '../data/caseStudies';
 import SEOHead from '../components/SEOHead';
@@ -120,124 +120,153 @@ export default function CaseStudyPage({ onOpenBooking }) {
 
       {/* Case Studies List */}
       <Container className="max-w-5xl mt-12 sm:mt-16">
-        <div className="space-y-10">
-          {filteredStudies.map((study) => (
-            <div
-              key={study.id}
-              className="bg-white border-2 border-gray-200 hover:border-gray-900 rounded-2xl p-6 sm:p-9 transition-all shadow-sm group"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                {/* Left Column: Client, Headline, Problem & Solution */}
-                <div className="lg:col-span-8">
-                  <div className="flex flex-wrap items-center gap-2.5 mb-3">
-                    <span className="text-xs font-bold px-3 py-1 rounded bg-gray-900 text-white">
+        <div className="space-y-8 sm:space-y-10">
+          {filteredStudies.map((study) => {
+            const highlightStat = study.stats.find((s) => s.highlight) || study.stats[0];
+            const roiBadge = study.planTier?.roiMultiple 
+              ? study.planTier.roiMultiple.split(' ')[0] + " ROI"
+              : highlightStat.value;
+
+            return (
+              <Link
+                key={study.id}
+                to={`/casestudy/${study.slug}`}
+                className="group relative block bg-white border-2 border-gray-200 hover:border-gray-900 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-900/5 hover:-translate-y-1 overflow-hidden cursor-pointer"
+              >
+                {/* Top Subtle Gradient Accent on Hover */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:via-emerald-500 group-hover:to-cyan-600 transition-all duration-300" />
+
+                {/* Top Meta Bar */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pt-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-bold px-3 py-1 rounded-md bg-gray-900 text-white">
                       {study.serviceCategory || "Growth Service"}
                     </span>
                     {study.planTier && (
-                      <span className="text-xs font-bold px-2.5 py-0.5 rounded bg-cyan-100 text-cyan-900 border border-cyan-300">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-cyan-100 text-cyan-900 border border-cyan-300/80 flex items-center gap-1">
+                        <Zap size={12} className="text-cyan-700 fill-cyan-700" />
                         {study.planTier.shortName} • {study.planTier.price.split(' ')[0]}
                       </span>
                     )}
-                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-gray-100 text-gray-800 border border-gray-300 flex items-center gap-1.5">
-                      <Building2 size={13} /> {study.industry}
-                    </span>
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-50 text-cyan-900 border border-cyan-200">
-                      {study.badge}
+                    <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-800 border border-gray-300 flex items-center gap-1.5">
+                      <Building2 size={13} className="text-gray-500" /> {study.industry}
                     </span>
                     <span className="text-xs text-gray-500 flex items-center gap-1 font-medium">
-                      <MapPin size={13} /> {study.location}
+                      <MapPin size={13} className="text-gray-400" /> {study.location}
                     </span>
                     {study.privacyNote && (
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">
+                      <span className="text-xs font-medium px-2 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">
                         🔒 Confidential
                       </span>
                     )}
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3 leading-snug">
-                    <Link to={`/casestudy/${study.slug}`} className="hover:text-cyan-800 transition-colors">
-                      {study.headline}
-                    </Link>
-                  </h2>
-
-                  <p className="text-base text-gray-700 leading-relaxed mb-6">
-                    {study.summary}
-                  </p>
-
-                  {/* Before vs. With MivizHub Box */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-rose-50/70 p-4 rounded-xl border border-rose-200">
-                      <span className="text-rose-900 font-bold text-xs uppercase tracking-wider block mb-1">
-                        The Problem Before:
-                      </span>
-                      <p className="text-sm text-gray-800 leading-relaxed line-clamp-3">
-                        {study.theChallenge.trim()}
-                      </p>
-                    </div>
-
-                    <div className="bg-emerald-50/70 p-4 rounded-xl border border-emerald-200">
-                      <span className="text-emerald-900 font-bold text-xs uppercase tracking-wider block mb-1">
-                        With MivizHub:
-                      </span>
-                      <p className="text-sm text-gray-800 leading-relaxed line-clamp-3">
-                        {study.theSolution.trim()}
-                      </p>
-                    </div>
+                  {/* Primary Standout Outcome Badge */}
+                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 font-extrabold text-xs sm:text-sm group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600 transition-colors">
+                    <TrendingUp size={14} className="stroke-[2.5]" />
+                    <span>{roiBadge}</span>
                   </div>
-
-                  {/* Client Quote */}
-                  <blockquote className="border-l-4 border-cyan-600 pl-4 py-1 italic text-sm sm:text-base text-gray-700 mb-6 bg-gray-50/60 rounded-r-lg">
-                    "{study.quote.text}"
-                    <cite className="block not-italic text-xs sm:text-sm font-bold text-gray-900 mt-2">
-                      — {study.quote.author}, {study.quote.role}
-                    </cite>
-                  </blockquote>
-
-                  <Link
-                    to={`/casestudy/${study.slug}`}
-                    className="inline-flex items-center gap-2 text-base font-bold text-cyan-800 hover:text-cyan-950 hover:underline"
-                  >
-                    Read Full Story & Breakdown <ArrowRight size={18} />
-                  </Link>
                 </div>
 
-                {/* Right Column: Measured Results Card */}
-                <div className="lg:col-span-4 bg-gray-50 border-2 border-gray-200 rounded-xl p-6">
-                  <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-4">
-                    Measured Results:
-                  </span>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  
+                  {/* Left Column: Headline, Summary, Before/After & Quote */}
+                  <div className="lg:col-span-8 space-y-4">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900 group-hover:text-cyan-800 transition-colors leading-snug">
+                      {study.headline}
+                    </h2>
 
-                  <div className="space-y-4">
-                    {study.stats.map((stat, sIdx) => (
-                      <div key={sIdx} className="pb-3 border-b border-gray-200 last:border-b-0 last:pb-0">
-                        <span className={`text-2xl sm:text-3xl font-extrabold block mb-0.5 ${stat.highlight ? "text-emerald-700" : "text-gray-900"}`}>
-                          {stat.value}
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      {study.summary}
+                    </p>
+
+                    {/* Before vs. With MivizHub Visual Contrast Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                      <div className="bg-rose-50/70 p-3.5 sm:p-4 rounded-xl border border-rose-200/90">
+                        <span className="text-rose-900 font-extrabold text-xs tracking-wider uppercase flex items-center gap-1 mb-1">
+                          <span className="inline-block w-2 h-2 rounded-full bg-rose-500" /> The Problem Before:
                         </span>
-                        <span className="text-xs sm:text-sm text-gray-600 font-medium">
-                          {stat.label}
+                        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed line-clamp-3 font-normal">
+                          {study.theChallenge.split('\n\n')[0].replace(/\n/g, ' ').trim()}
+                        </p>
+                      </div>
+
+                      <div className="bg-emerald-50/70 p-3.5 sm:p-4 rounded-xl border border-emerald-200/90">
+                        <span className="text-emerald-900 font-extrabold text-xs tracking-wider uppercase flex items-center gap-1 mb-1">
+                          <span className="inline-block w-2 h-2 rounded-full bg-emerald-600" /> With MivizHub:
+                        </span>
+                        <p className="text-xs sm:text-sm text-gray-800 leading-relaxed line-clamp-3 font-normal">
+                          {study.theSolution.split('\n\n')[0].replace(/\n/g, ' ').trim()}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Client Quote Strip */}
+                    {study.quote && (
+                      <div className="border-l-4 border-cyan-700 pl-3.5 py-1 text-xs sm:text-sm text-gray-700 bg-gray-50/80 rounded-r-lg">
+                        <p className="italic">"{study.quote.text}"</p>
+                        <span className="block not-italic text-xs font-bold text-gray-900 mt-1">
+                          — {study.quote.author}, {study.quote.role}
                         </span>
                       </div>
-                    ))}
+                    )}
                   </div>
 
-                  <div className="pt-5 mt-5 border-t border-gray-200">
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-2">
-                      Growth Tools & Setup:
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {study.technologiesUsed.slice(0, 3).map((tech, tIdx) => (
-                        <span key={tIdx} className="text-xs bg-white text-gray-800 px-2.5 py-1 rounded border border-gray-300 font-medium">
-                          {tech}
-                        </span>
+                  {/* Right Column: Measured Results Scorecard */}
+                  <div className="lg:col-span-4 bg-gray-50 border-2 border-gray-200/90 rounded-xl p-5 group-hover:border-gray-300 transition-colors">
+                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-200">
+                      <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
+                        Verified Results
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded-full border border-emerald-200">
+                        <CheckCircle2 size={11} /> Audited
+                      </span>
+                    </div>
+
+                    <div className="space-y-3.5">
+                      {study.stats.map((stat, sIdx) => (
+                        <div key={sIdx} className="pb-3 border-b border-gray-200 last:border-b-0 last:pb-0">
+                          <span className={`text-2xl sm:text-3xl font-black block tracking-tight ${stat.highlight ? "text-emerald-700" : "text-gray-900"}`}>
+                            {stat.value}
+                          </span>
+                          <span className="text-xs sm:text-sm text-gray-600 font-medium">
+                            {stat.label}
+                          </span>
+                        </div>
                       ))}
                     </div>
+
+                    <div className="pt-4 mt-4 border-t border-gray-200">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 block mb-2">
+                        Included Deliverables:
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {study.technologiesUsed.slice(0, 3).map((tech, tIdx) => (
+                          <span key={tIdx} className="text-xs bg-white text-gray-800 px-2.5 py-1 rounded border border-gray-300 font-medium">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
+
                 </div>
 
-              </div>
-            </div>
-          ))}
+                {/* Bottom Action Footer Bar */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-5 mt-6 border-t border-gray-100">
+                  <span className="text-xs sm:text-sm font-medium text-gray-500 flex items-center gap-1.5">
+                    <Clock size={14} className="text-gray-400" />
+                    <span>4-min read • Full timeline, pricing &amp; implementation</span>
+                  </span>
+
+                  <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold px-4 py-2 rounded-xl bg-gray-900 text-white group-hover:bg-cyan-700 transition-all">
+                    <span>Read Full Case Study</span>
+                    <ArrowRight size={15} className="transform group-hover:translate-x-1.5 transition-transform duration-200" />
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
         {/* High-Converting CTA Box */}
