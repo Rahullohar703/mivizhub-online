@@ -27,7 +27,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
     "publisher": {
       "@type": "Organization",
       "name": "MivizHub",
-      "url": "https://mivizhub.com"
+      "url": "https://www.mivizhub.online"
     },
     "about": {
       "@type": "Organization",
@@ -41,7 +41,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
         title={`${study.clientName} Case Study | MivizHub Results`}
         description={study.summary}
         keywords={[study.industry, study.clientName, "case study", "MivizHub results"]}
-        canonicalUrl={`https://mivizhub.com/casestudy/${study.slug}`}
+        canonicalUrl={`https://www.mivizhub.online/casestudy/${study.slug}`}
         ogType="article"
         jsonLd={jsonLd}
       />

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mivizhub.com/sitemap.xml
+Sitemap: https://www.mivizhub.online/sitemap.xml

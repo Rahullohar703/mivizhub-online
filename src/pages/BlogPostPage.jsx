@@ -37,7 +37,7 @@ export default function BlogPostPage({ onOpenBooking }) {
     "@graph": [
       {
         "@type": "Article",
-        "@id": `https://mivizhub.com/blog/${post.slug}/#article`,
+        "@id": `https://www.mivizhub.online/blog/${post.slug}/#article`,
         "headline": post.title,
         "description": post.metaDescription,
         "datePublished": "2026-10-12T08:00:00+00:00",
@@ -46,19 +46,19 @@ export default function BlogPostPage({ onOpenBooking }) {
           "@type": "Person",
           "name": post.author.name,
           "jobTitle": post.author.role,
-          "url": "https://mivizhub.com"
+          "url": "https://www.mivizhub.online"
         },
         "publisher": {
           "@type": "Organization",
           "name": "MivizHub",
-          "url": "https://mivizhub.com",
+          "url": "https://www.mivizhub.online",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://mivizhub.com/logo-256.png"
+            "url": "https://www.mivizhub.online/logo-256.png"
           }
         },
         "keywords": post.targetKeywords.join(", "),
-        "mainEntityOfPage": `https://mivizhub.com/blog/${post.slug}`
+        "mainEntityOfPage": `https://www.mivizhub.online/blog/${post.slug}`
       },
       {
         "@type": "BreadcrumbList",
@@ -67,19 +67,19 @@ export default function BlogPostPage({ onOpenBooking }) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://mivizhub.com"
+            "item": "https://www.mivizhub.online"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": "https://mivizhub.com/blog"
+            "item": "https://www.mivizhub.online/blog"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": post.title,
-            "item": `https://mivizhub.com/blog/${post.slug}`
+            "item": `https://www.mivizhub.online/blog/${post.slug}`
           }
         ]
       },
@@ -385,7 +385,7 @@ export default function BlogPostPage({ onOpenBooking }) {
         title={post.seoTitle || `${post.title} | MivizHub`}
         description={post.metaDescription}
         keywords={post.targetKeywords}
-        canonicalUrl={`https://mivizhub.com/blog/${post.slug}`}
+        canonicalUrl={`https://www.mivizhub.online/blog/${post.slug}`}
         ogType="article"
         jsonLd={jsonLd}
       />

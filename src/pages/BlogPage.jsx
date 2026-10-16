@@ -25,13 +25,13 @@ export default function BlogPage({ onOpenBooking }) {
     "@type": "Blog",
     "name": "MivizHub Small Business Growth & AI Staffing Blog",
     "description": "Practical guides and playbooks on SEO, marketing, AI receptionists, and scaling small business operations without expanding payroll.",
-    "url": "https://mivizhub.com/blog",
+    "url": "https://www.mivizhub.online/blog",
     "publisher": {
       "@type": "Organization",
       "name": "MivizHub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://mivizhub.com/logo-256.png"
+        "url": "https://www.mivizhub.online/logo-256.png"
       }
     }
   };
@@ -42,7 +42,7 @@ export default function BlogPage({ onOpenBooking }) {
         title="Small Business Growth & AI Staffing Blog | MivizHub"
         description="Actionable, plain-English guides on SEO, 24/7 AI receptionists, speed-to-lead, and scaling your business without adding expensive payroll."
         keywords={["small business growth", "AI receptionist", "small business SEO", "hire AI employees", "automated call answering", "speed to lead"]}
-        canonicalUrl="https://mivizhub.com/blog"
+        canonicalUrl="https://www.mivizhub.online/blog"
         ogType="website"
         jsonLd={jsonLd}
       />

@@ -17,7 +17,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
     "@type": "CollectionPage",
     "name": "MivizHub Client Case Studies & Verified Results",
     "description": "Real business outcomes and ROI case studies from small businesses using MivizHub marketing and AI staffing.",
-    "url": "https://mivizhub.com/casestudy"
+    "url": "https://www.mivizhub.online/casestudy"
   };
 
   return (
@@ -26,7 +26,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
         title="Client Case Studies & Verified Results | MivizHub"
         description="See real results from business owners who eliminated missed calls, boosted customer bookings, and cut overhead with MivizHub marketing and AI staffing."
         keywords={["client case studies", "small business AI results", "AI receptionist ROI", "business growth results"]}
-        canonicalUrl="https://mivizhub.com/casestudy"
+        canonicalUrl="https://www.mivizhub.online/casestudy"
         ogType="website"
         jsonLd={jsonLd}
       />
