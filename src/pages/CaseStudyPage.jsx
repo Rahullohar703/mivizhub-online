@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Award, ArrowRight, CheckCircle2, Building2, MapPin, PhoneCall } from 'lucide-react';
+import { Award, ArrowRight, CheckCircle2, Building2, MapPin, PhoneCall, TrendingUp, Bot, Sparkles } from 'lucide-react';
 import Container from '../components/ui/Container';
-import { CASE_STUDIES, CASE_STUDY_INDUSTRIES } from '../data/caseStudies';
+import { CASE_STUDIES, CASE_STUDY_CATEGORIES, CASE_STUDY_INDUSTRIES } from '../data/caseStudies';
 import SEOHead from '../components/SEOHead';
 
 export default function CaseStudyPage({ onOpenBooking }) {
+  const [selectedCategory, setSelectedCategory] = useState("All Services");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
 
   useEffect(() => {
@@ -13,7 +14,13 @@ export default function CaseStudyPage({ onOpenBooking }) {
   }, []);
 
   const filteredStudies = CASE_STUDIES.filter((study) => {
-    return selectedIndustry === "All Industries" || study.industry === selectedIndustry;
+    const matchesCategory =
+      selectedCategory === "All Services" ||
+      study.serviceCategory === selectedCategory;
+    const matchesIndustry =
+      selectedIndustry === "All Industries" ||
+      study.industry === selectedIndustry;
+    return matchesCategory && matchesIndustry;
   });
 
   const jsonLd = {
@@ -28,8 +35,8 @@ export default function CaseStudyPage({ onOpenBooking }) {
     <div className="bg-white text-gray-900 min-h-screen pt-24 sm:pt-28 pb-20">
       <SEOHead
         title="Client Case Studies & Verified Results | MivizHub"
-        description="See real results from business owners who eliminated missed calls, boosted customer bookings, and cut overhead with MivizHub marketing and AI staffing."
-        keywords={["client case studies", "small business AI results", "AI receptionist ROI", "business growth results"]}
+        description="See real results from business owners who grew local search rankings, cut cost-per-lead, eliminated missed calls, and scaled revenue with MivizHub."
+        keywords={["client case studies", "marketing growth case study", "small business AI results", "SEO case study India", "business growth results"]}
         canonicalUrl="https://www.mivizhub.online/casestudy"
         ogType="website"
         jsonLd={jsonLd}
@@ -46,26 +53,49 @@ export default function CaseStudyPage({ onOpenBooking }) {
             Real Results for Real Businesses
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            See how small and mid-sized business owners solve phone handling, attract qualified customers, and scale their company without hiring more administrative staff.
+            Explore verified case studies across search visibility, website conversion, customer acquisition, and 24/7 AI staff automation.
           </p>
+
+          {/* Primary Solution Tabs: Marketing & Growth vs AI Staffing */}
+          <div className="inline-flex p-1.5 bg-gray-200/80 rounded-2xl mb-8 max-w-xl mx-auto border border-gray-300">
+            {CASE_STUDY_CATEGORIES.map((cat) => {
+              const isActive = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    isActive
+                      ? "bg-gray-900 text-white shadow-md"
+                      : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
+                  }`}
+                >
+                  {cat === "Marketing & Growth" && <TrendingUp size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
+                  {cat === "AI Staffing & Automation" && <Bot size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
+                  {cat === "All Services" && <Sparkles size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
+                  <span>{cat}</span>
+                </button>
+              );
+            })}
+          </div>
 
           {/* Aggregate Stat Bar - Clean, White Cards with Strong Contrast */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
             <div className="bg-white border-2 border-gray-200 rounded-xl p-4 text-center shadow-sm">
-              <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 block mb-0.5">0 Sec</span>
-              <span className="text-xs sm:text-sm text-gray-600 font-medium">Phone Hold Times</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 block mb-0.5">Top 3</span>
+              <span className="text-xs sm:text-sm text-gray-600 font-medium">Google Maps Pack</span>
             </div>
             <div className="bg-white border-2 border-gray-200 rounded-xl p-4 text-center shadow-sm">
-              <span className="text-2xl sm:text-3xl font-extrabold text-emerald-700 block mb-0.5">100%</span>
-              <span className="text-xs sm:text-sm text-gray-600 font-medium">After-Hours Capture</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-emerald-700 block mb-0.5">-69%</span>
+              <span className="text-xs sm:text-sm text-gray-600 font-medium">Paid Cost-Per-Lead</span>
             </div>
             <div className="bg-white border-2 border-gray-200 rounded-xl p-4 text-center shadow-sm">
               <span className="text-2xl sm:text-3xl font-extrabold text-cyan-800 block mb-0.5">+38%</span>
-              <span className="text-xs sm:text-sm text-gray-600 font-medium">Confirmed Bookings</span>
+              <span className="text-xs sm:text-sm text-gray-600 font-medium">Booked Consultations</span>
             </div>
             <div className="bg-white border-2 border-gray-200 rounded-xl p-4 text-center shadow-sm">
-              <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 block mb-0.5">48 Hours</span>
-              <span className="text-xs sm:text-sm text-gray-600 font-medium">Average Setup Time</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 block mb-0.5">&lt; 45s</span>
+              <span className="text-xs sm:text-sm text-gray-600 font-medium">Inbound Response Time</span>
             </div>
           </div>
 
@@ -75,9 +105,9 @@ export default function CaseStudyPage({ onOpenBooking }) {
               <button
                 key={industry}
                 onClick={() => setSelectedIndustry(industry)}
-                className={`text-xs sm:text-sm px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`text-xs sm:text-sm px-3.5 py-1.5 rounded-lg font-medium transition-all ${
                   selectedIndustry === industry
-                    ? "bg-gray-900 text-white shadow-sm"
+                    ? "bg-cyan-800 text-white shadow-sm"
                     : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
                 }`}
               >
@@ -100,9 +130,12 @@ export default function CaseStudyPage({ onOpenBooking }) {
                 
                 {/* Left Column: Client, Headline, Problem & Solution */}
                 <div className="lg:col-span-8">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="text-xs sm:text-sm font-bold px-3 py-1 rounded bg-gray-100 text-gray-900 border border-gray-300 flex items-center gap-1.5">
-                      <Building2 size={14} /> {study.industry}
+                  <div className="flex flex-wrap items-center gap-2.5 mb-3">
+                    <span className="text-xs font-bold px-3 py-1 rounded bg-gray-900 text-white">
+                      {study.serviceCategory || "Growth Service"}
+                    </span>
+                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-gray-100 text-gray-800 border border-gray-300 flex items-center gap-1.5">
+                      <Building2 size={13} /> {study.industry}
                     </span>
                     <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-50 text-cyan-900 border border-cyan-200">
                       {study.badge}
@@ -112,7 +145,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                     </span>
                     {study.privacyNote && (
                       <span className="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-900 border border-amber-200">
-                        🔒 Confidential / Client Identity Protected
+                        🔒 Confidential
                       </span>
                     )}
                   </div>
@@ -127,7 +160,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                     {study.summary}
                   </p>
 
-                  {/* Before vs. With MivizHub Box - High Contrast, Easy to Understand */}
+                  {/* Before vs. With MivizHub Box */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                     <div className="bg-rose-50/70 p-4 rounded-xl border border-rose-200">
                       <span className="text-rose-900 font-bold text-xs uppercase tracking-wider block mb-1">
@@ -160,7 +193,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                     to={`/casestudy/${study.slug}`}
                     className="inline-flex items-center gap-2 text-base font-bold text-cyan-800 hover:text-cyan-950 hover:underline"
                   >
-                    Read Full Story & Details <ArrowRight size={18} />
+                    Read Full Story & Breakdown <ArrowRight size={18} />
                   </Link>
                 </div>
 
@@ -185,7 +218,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
 
                   <div className="pt-5 mt-5 border-t border-gray-200">
                     <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-2">
-                      Services In Place:
+                      Growth Tools & Setup:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {study.technologiesUsed.slice(0, 3).map((tech, tIdx) => (
@@ -202,30 +235,30 @@ export default function CaseStudyPage({ onOpenBooking }) {
           ))}
         </div>
 
-        {/* High-Converting Bottom Banner */}
-        <div className="mt-16 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl p-8 sm:p-12 text-center">
+        {/* High-Converting CTA Box */}
+        <div className="mt-20 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl p-8 sm:p-12 text-center">
           <div className="max-w-2xl mx-auto">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-cyan-800 block mb-2">
-              Ready To Solve Your Operational Bottlenecks?
+              Free Growth & Opportunity Audit
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
-              Get Similar Results For Your Business
+              Ready to Strengthen Your Business Presence?
             </h3>
-            <p className="text-base text-gray-700 mb-8 leading-relaxed">
-              We can deploy a custom AI receptionist to answer every call and put more customers on your calendar in just 48 to 72 hours.
+            <p className="text-base text-gray-700 leading-relaxed mb-6">
+              Let's look at your Google search visibility, website conversion, and customer response speed together on a free 30-minute consultation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
                 onClick={onOpenBooking}
                 className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
               >
-                <PhoneCall size={18} /> Schedule a 30-Minute Consultation
+                <PhoneCall size={18} /> Schedule a Free 30-Min Call
               </button>
               <Link
-                to="/blog"
-                className="text-base font-semibold text-gray-800 hover:text-black px-6 py-3.5 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
+                to="/growth"
+                className="text-base font-semibold text-gray-800 hover:text-black px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
               >
-                Read Our Business Guides →
+                Explore /growth Services →
               </Link>
             </div>
           </div>

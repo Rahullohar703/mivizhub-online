@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Search, Globe, FileText, Share2, Target, 
   CheckCircle2, Sparkles, TrendingUp, ShieldCheck, Activity, Zap 
@@ -96,7 +97,7 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-6">
           <ArrowFillButton
             onClick={() => onSelectPlan ? onSelectPlan('presence') : onOpenBooking('Presence ($250/mo)')}
             btnText="Build My Presence"
@@ -113,6 +114,14 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
             className="w-full sm:w-auto border-white/15 hover:border-white/30"
           />
         </div>
+
+        <Link
+          to="/casestudy"
+          className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-cyan-300 hover:text-white transition-colors mb-16 group"
+        >
+          <span>🏆 See verified client growth case studies & numbers</span>
+          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+        </Link>
 
         {/* REIMAGINED: Sleek Floating Growth Showcase (NOT an ugly heavy box) */}
         <div className="w-full max-w-5xl mx-auto text-left">
