@@ -8,9 +8,23 @@ export const CASE_STUDIES = [
     badge: "Marketing + AI Staffing",
     location: "Austin, Texas",
     privacyNote: "Client name anonymized for competitive privacy & NDA compliance",
+    seoTitle: "Roofing Contractor AI Receptionist & Marketing Case Study | MivizHub",
+    metaDescription: "See how a residential roofing contractor recovered $14,000 in Month 1 by eliminating missed job-site calls with an AI receptionist and local SEO.",
+    targetKeywords: [
+      "roofing contractor marketing case study",
+      "AI receptionist for contractors",
+      "contractor missed calls solution",
+      "roofing lead follow up automation",
+      "small business AI staffing results"
+    ],
     heroImage: "/hero-roofing.jpg",
     headline: "How a Roofing Contractor Recovered $14,000 in Month 1 by Eliminating Missed Job-Site Calls",
     summary: "By deploying a 24/7 AI Receptionist and localized Google search optimization, this Texas roofing specialist captured 100% of emergency storm damage calls and boosted booked estimates by 34%.",
+    keyTakeaways: [
+      "Eliminated over 65% of missed inbound calls by routing job-site phone traffic to a conversational AI receptionist.",
+      "Captured $14,200 in gross profit from 11 additional consultations booked during noisy ladder and roofing hours.",
+      "Automated quote SMS follow-ups increased proposal close rate by +28% without requiring office staff."
+    ],
     stats: [
       { label: "Month 1 Extra Bookings", value: "+$14,000", highlight: true },
       { label: "Missed Calls", value: "Zero (100% Captured)" },
@@ -47,6 +61,20 @@ Within the first 30 days of going live:
       author: "Marcus V.",
       role: "Owner & Master Contractor (Residential Roofing Services)"
     },
+    faq: [
+      {
+        q: "How does the AI handle background noise when the contractor is on a roof?",
+        a: "The AI receptionist operates entirely in the cloud on the contractor's business phone number. Callers hear a crystal-clear, natural conversational voice with zero background noise from nail guns or job-site generators."
+      },
+      {
+        q: "What happens if a homeowner calls with a complicated emergency?",
+        a: "The AI is programmed with strict escalation protocols. It captures the address and urgency, and if emergency active water penetration is reported, it immediately rings the owner's personal cell with a live audio brief."
+      },
+      {
+        q: "How fast can this roofing phone automation system be deployed?",
+        a: "MivizHub completed configuration, phone carrier porting/forwarding, and custom calendar integration in less than 72 hours."
+      }
+    ],
     technologiesUsed: [
       "24/7 AI Voice Receptionist",
       "Twilio SIP & Number Routing",
@@ -64,9 +92,23 @@ Within the first 30 days of going live:
     badge: "AI Staffing Engine",
     location: "Denver, Colorado",
     privacyNote: "Client name anonymized for patient privacy & HIPAA compliance",
+    seoTitle: "Medical Aesthetics AI Receptionist Case Study | MivizHub",
+    metaDescription: "Read how a Denver medical wellness clinic eliminated 10-minute phone hold times and increased confirmed bookings by 38% using HIPAA-compliant AI.",
+    targetKeywords: [
+      "medical clinic AI receptionist case study",
+      "healthcare phone automation ROI",
+      "medical spa booking automation",
+      "HIPAA compliant AI receptionist",
+      "patient scheduling AI assistant"
+    ],
     heroImage: "/hero-clinic.jpg",
     headline: "Eliminating 10-Minute Phone Queues and Boosting Confirmed Clinic Bookings by 38%",
     summary: "A multi-provider aesthetics and wellness clinic was drowning in morning telephone queues that stressed staff and frustrated patients. MivizHub deployed an AI Patient Concierge to handle scheduling and FAQs autonomously.",
+    keyTakeaways: [
+      "Patient hold times dropped from an average of 8.5 minutes down to zero seconds during peak morning hours.",
+      "Aesthetic and wellness consultation bookings increased by +38% through real-time EHR calendar sync.",
+      "Front-desk turnover and staff overtime decreased by 92%, saving over $42,000 annually in administrative overhead."
+    ],
     stats: [
       { label: "Confirmed Bookings", value: "+38%", highlight: true },
       { label: "Average Patient Hold Time", value: "0 Seconds (from 8.5 mins)" },
@@ -101,6 +143,20 @@ Within 60 days of deployment:
       author: "Dr. Elena V., MD",
       role: "Medical Director & Clinic Founder"
     },
+    faq: [
+      {
+        q: "Is the AI Patient Concierge fully HIPAA compliant?",
+        a: "Yes. All voice data, call transcriptions, and patient health information (PHI) are encrypted at rest and in transit adhering to strict HIPAA and SOC 2 Type II data governance standards."
+      },
+      {
+        q: "Can the AI distinguish between an aesthetic inquiry and a medical emergency?",
+        a: "Yes. The AI voice agent is trained on medical triage keywords. Any mention of acute pain, allergic reaction, or shortness of breath immediately bypasses scheduling and transfers the call to the emergency clinical line."
+      },
+      {
+        q: "Does it integrate with existing Electronic Health Record (EHR) systems?",
+        a: "Yes. It connects via secure API to leading EHR and practice management platforms including Athenahealth, Kareo, Jane App, and DrChrono."
+      }
+    ],
     technologiesUsed: [
       "HIPAA-Compliant Voice AI Concierge",
       "EHR Calendar Integration",
@@ -118,9 +174,23 @@ Within 60 days of deployment:
     badge: "Marketing & AI Workforce",
     location: "Chicago, Illinois",
     privacyNote: "Client name anonymized for attorney-client privilege & confidentiality",
+    seoTitle: "Law Firm Intake Automation Case Study | MivizHub Results",
+    metaDescription: "Discover how a Chicago law firm generated $85,000 in new retainers with 24/7 after-hours AI intake screening and calendar scheduling.",
+    targetKeywords: [
+      "law firm intake automation case study",
+      "after hours legal consultation capture",
+      "AI intake for attorneys",
+      "legal speed to lead case study",
+      "law firm retainer pipeline growth"
+    ],
     heroImage: "/hero-legal.jpg",
     headline: "Adding $85,000 to Legal Retainer Pipeline With 24/7 After-Hours Consultation Capture",
     summary: "This Chicago law firm captured after-hours litigation inquiries, qualified prospect eligibility, and scheduled preliminary consultations seamlessly using MivizHub's AI intake system.",
+    keyTakeaways: [
+      "Captured 100% of after-hours and weekend inquiries, which previously comprised over 52% of prospective legal clients.",
+      "Reduced lead response time from 14 hours down to 35 seconds, preventing prospects from calling competing law firms.",
+      "Generated $85,000 in new client retainer agreements within the first 90 days of live operation."
+    ],
     stats: [
       { label: "New Pipeline Added", value: "+$85,000", highlight: true },
       { label: "After-Hours Capture", value: "100% Inquiries Handled" },
@@ -155,6 +225,20 @@ Within 90 days:
       author: "David S., Esq.",
       role: "Managing Partner (Commercial Litigation)"
     },
+    faq: [
+      {
+        q: "How does the AI prevent conflicts of interest?",
+        a: "Before booking any consultation, the AI asks for the legal names of all adverse or opposing parties and compares them against the firm's client database before confirming an appointment."
+      },
+      {
+        q: "Can the AI collect upfront consultation fees?",
+        a: "Yes. The AI can provide a secure payment link via SMS or web to collect paid consultation fees prior to reserving partner calendar slots."
+      },
+      {
+        q: "Does it sync with Clio or other legal CRM software?",
+        a: "Yes. Case notes, call recordings, and contact details automatically sync into Clio, MyCase, PracticePanther, and Lawmatics."
+      }
+    ],
     technologiesUsed: [
       "AI Legal Intake Specialist",
       "Conflict of Interest Screening Logic",
@@ -172,9 +256,23 @@ Within 90 days:
     badge: "Marketing & Growth Engine",
     location: "Atlanta, Georgia",
     privacyNote: "Client name anonymized for client trade privacy & contract compliance",
+    seoTitle: "Commercial HVAC SEO & Dispatch AI Case Study | MivizHub",
+    metaDescription: "Learn how an Atlanta commercial HVAC contractor lowered cost-per-lead by 42% and secured 9 annual maintenance accounts using MivizHub.",
+    targetKeywords: [
+      "commercial HVAC SEO case study",
+      "HVAC lead generation case study",
+      "commercial mechanical contractor marketing",
+      "AI dispatch for commercial service",
+      "cut PPC cost per lead case study"
+    ],
     heroImage: "/hero-hvac.jpg",
     headline: "Cutting Cost-Per-Lead by 42% and Securing 9 Commercial Maintenance Contracts",
     summary: "This Atlanta commercial facilities contractor transitioned from expensive Google PPC ads to MivizHub's productized SEO and automated commercial dispatch system, scaling organic leads by 3.4x.",
+    keyTakeaways: [
+      "Cut blended cost-per-lead by 42% while decreasing dependence on competitive $45+ Google PPC keywords.",
+      "Grew organic search inquiries by 3.4x by targeting technical pain-point queries from warehouse and facility directors.",
+      "Added $114,000 in Annual Recurring Revenue (ARR) across 9 new commercial quarterly maintenance contracts."
+    ],
     stats: [
       { label: "Cost-Per-Lead Reduction", value: "-42%", highlight: true },
       { label: "Organic Search Growth", value: "3.4x Organic Leads" },
@@ -204,6 +302,20 @@ Within 4 months:
       author: "Brett R.",
       role: "VP of Operations (Commercial Mechanical Services)"
     },
+    faq: [
+      {
+        q: "How does organic SEO compete with emergency Google Ads in commercial HVAC?",
+        a: "While residential repairs often rely on paid ads, commercial facility directors research preventative maintenance vendors, chiller specs, and compliance audits through organic Google search where authoritative content wins."
+      },
+      {
+        q: "How does the instant dispatch AI contact commercial leads?",
+        a: "When a web form or service portal ticket is submitted, the AI initiates an outbound phone call within 60 seconds, confirms equipment specifications, and pings the regional dispatch board."
+      },
+      {
+        q: "What CRM systems does this integrate with?",
+        a: "The workflow connects natively with ServiceTitan, BuildOps, HubSpot, and Salesforce."
+      }
+    ],
     technologiesUsed: [
       "Topical Authority Commercial SEO",
       "Instant Dispatch AI Agent",

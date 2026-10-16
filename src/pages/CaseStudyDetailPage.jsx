@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   Building2, MapPin, CheckCircle2, ArrowRight, ArrowLeft, 
-  ChevronRight, Quote, PhoneCall, Check, Award
+  ChevronRight, Quote, PhoneCall, Check, Award, HelpCircle, ChevronDown
 } from 'lucide-react';
 import Container from '../components/ui/Container';
 import { CASE_STUDIES } from '../data/caseStudies';
@@ -11,6 +11,7 @@ import SEOHead from '../components/SEOHead';
 export default function CaseStudyDetailPage({ onOpenBooking }) {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const [activeFaq, setActiveFaq] = useState(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -23,28 +24,103 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
     return null;
   }
 
+  // Schema.org JSON-LD Rich Snippet Data (Article, Breadcrumbs, FAQs, Reviews)
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": study.headline,
-    "description": study.summary,
-    "publisher": {
-      "@type": "Organization",
-      "name": "MivizHub",
-      "url": "https://www.mivizhub.online"
-    },
-    "about": {
-      "@type": "Organization",
-      "name": study.clientName
-    }
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://www.mivizhub.online/casestudy/${study.slug}/#article`,
+        "headline": study.headline,
+        "description": study.metaDescription || study.summary,
+        "datePublished": "2026-10-12T08:00:00+00:00",
+        "dateModified": "2026-10-16T12:00:00+00:00",
+        "author": {
+          "@type": "Person",
+          "name": "Rahul Lohar",
+          "jobTitle": "Founder & Automation Strategist",
+          "url": "https://www.mivizhub.online"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MivizHub",
+          "url": "https://www.mivizhub.online",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.mivizhub.online/logo-256.png"
+          }
+        },
+        "about": {
+          "@type": "Organization",
+          "name": study.clientName
+        },
+        "keywords": (study.targetKeywords || [study.industry, "case study", "MivizHub results"]).join(", "),
+        "mainEntityOfPage": `https://www.mivizhub.online/casestudy/${study.slug}`
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.mivizhub.online"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://www.mivizhub.online/casestudy"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": study.clientName,
+            "item": `https://www.mivizhub.online/casestudy/${study.slug}`
+          }
+        ]
+      },
+      ...(study.faq && study.faq.length > 0 ? [{
+        "@type": "FAQPage",
+        "mainEntity": study.faq.map((item) => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
+      }] : []),
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "Service",
+          "name": `MivizHub ${study.badge}`,
+          "provider": {
+            "@type": "Organization",
+            "name": "MivizHub"
+          }
+        },
+        "author": {
+          "@type": "Person",
+          "name": study.quote.author
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": study.quote.text
+      }
+    ]
   };
 
   return (
     <article className="bg-white text-gray-900 min-h-screen pt-24 sm:pt-28 pb-20">
       <SEOHead
-        title={`${study.clientName} Case Study | MivizHub Results`}
-        description={study.summary}
-        keywords={[study.industry, study.clientName, "case study", "MivizHub results"]}
+        title={study.seoTitle || `${study.clientName} Case Study | MivizHub Results`}
+        description={study.metaDescription || study.summary}
+        keywords={study.targetKeywords || [study.industry, study.clientName, "case study", "MivizHub results"]}
         canonicalUrl={`https://www.mivizhub.online/casestudy/${study.slug}`}
         ogType="article"
         jsonLd={jsonLd}
@@ -90,7 +166,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
         </header>
 
         {/* Key Results Numbers Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 sm:p-8 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl mb-12 shadow-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 sm:p-8 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl mb-8 shadow-sm">
           {study.stats.map((stat, idx) => (
             <div key={idx} className="text-center">
               <span className={`text-2xl sm:text-3xl font-extrabold block mb-1 ${stat.highlight ? "text-emerald-700" : "text-gray-900"}`}>
@@ -102,6 +178,24 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
             </div>
           ))}
         </div>
+
+        {/* Executive Summary Takeaways (Featured Snippet Optimized) */}
+        {study.keyTakeaways && (
+          <div className="mb-12 bg-white border-2 border-emerald-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-center gap-2 mb-4 text-emerald-900 font-extrabold text-lg sm:text-xl">
+              <CheckCircle2 size={24} className="text-emerald-700" />
+              <span>Key Implementation Outcomes:</span>
+            </div>
+            <ul className="space-y-3">
+              {study.keyTakeaways.map((takeaway, tIdx) => (
+                <li key={tIdx} className="flex items-start gap-3 text-base sm:text-lg text-gray-800">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0 mt-2.5" />
+                  <span className="leading-relaxed">{takeaway}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Main Content Sections */}
         <div className="space-y-10">
@@ -176,6 +270,47 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
           </div>
 
         </div>
+
+        {/* Frequently Asked Questions (FAQ Accordion with JSON-LD Schema) */}
+        {study.faq && study.faq.length > 0 && (
+          <section className="mt-14 pt-10 border-t-2 border-gray-200">
+            <div className="flex items-center gap-2.5 mb-6">
+              <HelpCircle className="text-cyan-800" size={26} />
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+                Frequently Asked Questions
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {study.faq.map((item, idx) => {
+                const isOpen = activeFaq === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="border-2 border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm"
+                  >
+                    <button
+                      onClick={() => setActiveFaq(isOpen ? null : idx)}
+                      className="w-full px-6 py-4 text-left font-bold text-base sm:text-lg text-gray-900 hover:bg-gray-50 flex items-center justify-between gap-4 transition-colors"
+                      aria-expanded={isOpen}
+                    >
+                      <span>{item.q}</span>
+                      <ChevronDown
+                        size={20}
+                        className={`text-gray-500 transition-transform duration-200 shrink-0 ${isOpen ? "rotate-180 text-cyan-800" : ""}`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-6 pb-5 pt-1 text-base text-gray-700 leading-relaxed border-t border-gray-100 bg-[#f8fafc]">
+                        {item.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Call to Action Box */}
         <div className="mt-16 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl p-8 sm:p-10 text-center">
