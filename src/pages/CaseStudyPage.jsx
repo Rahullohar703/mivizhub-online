@@ -134,6 +134,11 @@ export default function CaseStudyPage({ onOpenBooking }) {
                     <span className="text-xs font-bold px-3 py-1 rounded bg-gray-900 text-white">
                       {study.serviceCategory || "Growth Service"}
                     </span>
+                    {study.planTier && (
+                      <span className="text-xs font-bold px-2.5 py-0.5 rounded bg-cyan-100 text-cyan-900 border border-cyan-300">
+                        {study.planTier.shortName} • {study.planTier.price.split(' ')[0]}
+                      </span>
+                    )}
                     <span className="text-xs font-bold px-2.5 py-1 rounded bg-gray-100 text-gray-800 border border-gray-300 flex items-center gap-1.5">
                       <Building2 size={13} /> {study.industry}
                     </span>

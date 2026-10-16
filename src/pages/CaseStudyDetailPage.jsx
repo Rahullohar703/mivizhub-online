@@ -179,6 +179,65 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
           ))}
         </div>
 
+        {/* Service Plan & Transparent Investment Context */}
+        {study.planTier && (
+          <div className="mb-10 bg-gradient-to-r from-cyan-50/80 via-white to-sky-50/80 border-2 border-cyan-300 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-cyan-200">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-800 block mb-1">
+                  MivizHub Service Package Deployed:
+                </span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 block">
+                  {study.planTier.name}
+                </span>
+                <span className="text-sm font-semibold text-gray-600">
+                  Pricing: <strong className="text-gray-900">{study.planTier.price}</strong> • {study.planTier.billingCadence || "Flat Monthly • Cancel Anytime"}
+                </span>
+              </div>
+              <Link
+                to="/growth"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-cyan-900 bg-cyan-100 hover:bg-cyan-200 border border-cyan-300 px-4 py-2.5 rounded-xl transition-all shadow-sm self-start sm:self-auto shrink-0"
+              >
+                <span>Compare Plans on /growth</span>
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-5 text-left">
+              <div className="bg-white/80 p-4 rounded-xl border border-cyan-100">
+                <span className="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">Client Investment</span>
+                <span className="text-base sm:text-lg font-extrabold text-gray-900 block">{study.planTier.totalInvestment || study.planTier.price}</span>
+                <span className="text-xs text-gray-500 mt-1 block">Predictable flat fee, zero hidden costs</span>
+              </div>
+              <div className="bg-white/80 p-4 rounded-xl border border-cyan-100">
+                <span className="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">Market Alternative Cost</span>
+                <span className="text-base sm:text-lg font-extrabold text-rose-700 block">{study.planTier.marketAlternative}</span>
+                <span className="text-xs text-gray-500 mt-1 block">Traditional agency / in-house payroll</span>
+              </div>
+              <div className="bg-white/80 p-4 rounded-xl border border-cyan-100">
+                <span className="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">Measured Return on Spend</span>
+                <span className="text-base sm:text-lg font-extrabold text-emerald-700 block">{study.planTier.roiMultiple}</span>
+                <span className="text-xs text-gray-500 mt-1 block">Directly attributed business revenue</span>
+              </div>
+            </div>
+
+            {study.planTier.planFeatures && (
+              <div className="mt-5 pt-4 border-t border-cyan-100">
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-2">
+                  Key Plan Inclusions Utilized:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {study.planTier.planFeatures.map((feat, fIdx) => (
+                    <span key={fIdx} className="text-xs font-semibold bg-white text-gray-800 px-3 py-1 rounded-md border border-cyan-200 flex items-center gap-1.5 shadow-2xs">
+                      <CheckCircle2 size={13} className="text-cyan-700" /> {feat}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Executive Summary Takeaways (Featured Snippet Optimized) */}
         {study.keyTakeaways && (
           <div className="mb-12 bg-white border-2 border-emerald-200 rounded-2xl p-6 sm:p-8 shadow-sm">

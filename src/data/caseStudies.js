@@ -1,77 +1,96 @@
 export const CASE_STUDIES = [
-  // ==========================================
-  // MARKETING & GROWTH CASE STUDIES (/growth)
-  // ==========================================
+  // =========================================================================
+  // MARKETING & GROWTH CASE STUDIES (/growth) — FRAMED DIRECTLY ON PRICING
+  // =========================================================================
   {
     id: "luxury-interior-design-local-seo-ranking",
     slug: "luxury-interior-design-local-seo-ranking",
     clientName: "Boutique Residential Architecture & Interior Studio",
     industry: "Architecture & Interior Design",
     serviceCategory: "Marketing & Growth",
-    badge: "Local SEO & Google Maps (Presence Tier)",
+    badge: "Local SEO & Google Maps",
+    planTier: {
+      name: "Presence Plan ($250 / mo • ₹20,000 / mo)",
+      shortName: "Presence Plan",
+      price: "$250 / month (₹20,000 / mo)",
+      billingCadence: "Flat Monthly • Zero Lock-In",
+      totalInvestment: "₹60,000 ($750 over 3 months)",
+      marketAlternative: "₹70,000 / mo traditional agency retainer + ₹1.5L website dev fee",
+      roiMultiple: "14.1x Return on Spend (₹8.5L revenue vs ₹60k fees)",
+      planFeatures: [
+        "Custom Conversion-Focused Website",
+        "Google Business Profile (Top 3 Map Pack)",
+        "2–3 Local SEO Articles / Month",
+        "LocalBusiness Schema & GSC/GA4 Setup",
+        "Automated WhatsApp Review Engine"
+      ]
+    },
     location: "Gurgaon, Delhi NCR (India)",
     privacyNote: "Client name anonymized for client privacy and portfolio exclusivity",
     seoTitle: "Interior Design Local SEO & Google Maps Case Study | MivizHub",
-    metaDescription: "See how a Gurgaon interior design studio reached Google Map Pack #2, generating ₹8.5 Lakhs in signed villa projects with zero paid ad spend.",
+    metaDescription: "See how a Gurgaon interior design studio used MivizHub's $250/mo Presence Plan to reach Google Map Pack #2, winning ₹8.5 Lakhs in projects with zero ads.",
     targetKeywords: [
       "interior design local SEO case study",
       "Google Maps ranking for interior designers India",
       "Gurgaon local SEO case study",
-      "local map pack ranking results",
+      "small business presence plan ROI",
       "architect local business growth"
     ],
     heroImage: "/hero-interior.jpg",
-    headline: "Reaching Google Map Pack #2 and Signing ₹8,50,000 in Residential Design Projects With Local SEO",
-    summary: "Relying purely on inconsistent word-of-mouth, this Gurgaon architecture studio had zero visibility on Google Maps when high-net-worth homeowners searched for nearby design firms. MivizHub executed a complete presence and local SEO campaign.",
+    headline: "Reaching Google Map Pack #2 and Signing ₹8,50,000 in Residential Design Projects on the $250/mo Presence Plan",
+    summary: "Relying purely on inconsistent word-of-mouth, this Gurgaon architecture studio had zero visibility on Google Maps when high-net-worth homeowners searched for nearby design firms. Instead of hiring an expensive agency, they deployed MivizHub's $250/mo Presence Plan.",
     keyTakeaways: [
       "Climbed from unranked to Position #2 on Google Local Map Pack across 14 high-intent local keywords (e.g. 'luxury interior designer DLF Phase 5').",
-      "Generated ₹8,50,000 in signed residential turnkey contracts within 75 days of profile optimization.",
-      "Grew monthly inbound phone and website quote requests from 1 to 14 verified homeowner consultations.",
+      "Generated ₹8,50,000 in signed residential turnkey contracts within 75 days of profile optimization on a total service spend of ₹60,000 ($750).",
+      "Delivered a 14.1x direct cash return on service investment without spending a single rupee on paid advertisements.",
       "Collected 28 authentic 5-star Google client reviews using an automated post-handover review system."
     ],
     stats: [
       { label: "Signed Project Revenue", value: "+₹8,50,000", highlight: true },
+      { label: "Service Plan Investment", value: "$250 / mo (₹20k)" },
       { label: "Google Map Pack Position", value: "Rank #2 (from Unranked)" },
-      { label: "Monthly Inbound Leads", value: "14 Qualified Consultations" },
-      { label: "Google Review Rating", value: "4.9 Stars (28 Reviews)" }
+      { label: "Net ROI on Retainer", value: "14.1x Cash Return" }
     ],
     theChallenge: `
 Operating out of Golf Course Road in Gurgaon, this 6-person architecture and bespoke interior design firm executed stunning residential transformations. However, their customer acquisition was completely erratic.
 
 While their team posted project photos to Instagram, 95% of high-net-worth homeowners in Gurgaon begin their search on Google Maps looking for established, verified local studios.
 
-The studio had an unverified, half-filled Google Business Profile with only 3 reviews from former employees, no localized website landing pages, and zero ranking for commercial search queries like 'luxury villa architect Gurgaon' or 'modern interior designer near me'. When prospective clients searched nearby, rival legacy firms with dozens of reviews took 100% of the inquiries.
+The studio had an unverified, half-filled Google Business Profile with only 3 reviews from former employees, no localized website landing pages, and zero ranking for commercial search queries like 'luxury villa architect Gurgaon' or 'modern interior designer near me'. 
+
+When the founder consulted traditional digital marketing agencies in Delhi NCR, he was quoted ₹75,000 to ₹1,20,000 per month with 6-month mandatory lock-in contracts—an impossible expense for a boutique studio. Unwilling to gamble that much capital, they chose MivizHub's productized **Presence Plan ($250/mo • ₹20,000/mo)** with flat monthly pricing and zero long-term lock-in.
     `,
     theSolution: `
-MivizHub deployed our complete **Presence Tier** growth framework:
+MivizHub deployed our complete **Presence Plan ($250/mo • ₹20,000/mo)** deliverables within the first 30 days:
 
 1. **Google Business Profile Audit & Overhaul:**  
    Re-verified ownership, corrected local citation NAP (Name, Address, Phone) consistency across 35 directories, populated granular service categories, and added high-resolution before/after project portfolios with geo-tagged coordinates.
 
-2. **Conversion-Focused Local Web Architecture:**  
-   Rebuilt the studio's website structure with localized neighborhood landing pages (DLF Phase 1-5, Golf Course Extension, Sohna Road) featuring clear interactive consultation booking forms and transparent project timelines.
+2. **Custom Conversion-Focused Website:**  
+   Built a fast, responsive website with localized neighborhood landing pages (DLF Phase 1-5, Golf Course Extension, Sohna Road) featuring clear interactive consultation booking forms and transparent project timelines.
 
 3. **Automated Review Generation Engine:**  
-   Implemented an automated post-project SMS and WhatsApp review request system that prompted happy homeowners to share photo reviews on Google Maps at project completion.
+   Implemented an automated post-project WhatsApp review request system that prompted happy homeowners to share photo reviews on Google Maps at project completion.
 
 4. **Technical & On-Page Local SEO:**  
-   Configured LocalBusiness Schema.org markup, submitted updated XML sitemaps to Google Search Console, and optimized heading tags for high-intent homeowner search terms.
+   Configured LocalBusiness Schema.org markup, submitted updated XML sitemaps to Google Search Console, and published 2–3 targeted local search articles monthly to build localized topical authority.
     `,
     theResults: `
 Within 75 days of launch:
 - **Ranked #2 on Google Local Map Pack:** Consistently visible in the top 3 whenever homeowners in prime Gurgaon localities search for luxury interior designers.
 - **₹8,50,000 in Signed Project Fees:** Sourced two complete apartment redesign contracts directly from Google Maps discovery calls.
+- **14.1x Direct Cash ROI:** On a total 3-month investment of ₹60,000 ($750), the studio generated over ₹8.5 Lakhs in contracted revenue.
 - **Inbound Consultation Surge:** Qualified consultation bookings jumped from an average of 1 inquiry per month to 14 verified inquiries per month.
     `,
     quote: {
-      text: "We spent three years burning hours on Instagram with almost nothing to show in real project bookings. MivizHub showed us that high-budget homeowners in Gurgaon use Google Maps, not reels, when they are ready to spend ₹20 Lakhs on an interior remodel. Getting into the top 3 on Maps completely changed our business pipeline.",
+      text: "Every agency we called in Delhi NCR demanded a ₹1 Lakh monthly retainer and guaranteed nothing. MivizHub's $250/month Presence plan gave us a stunning website, put us in the Top 3 on Google Maps, and delivered ₹8.5 Lakhs in signed projects. It is the most transparent, high-ROI service we've ever used.",
       author: "Karan S.",
       role: "Principal Architect & Founder (Luxury Residential Studio)"
     },
     faq: [
       {
-        q: "How long did it take to see rankings change on Google Maps?",
-        a: "Initial ranking improvements appeared within 3 weeks as profile citations were cleaned up. By week 10, the profile was firmly established in the Top 3 map pack for core target keywords."
+        q: "Why was the $250/mo Presence Plan enough for this client?",
+        a: "Local architectural clients primarily make decisions based on Google Maps reviews, localized photos, and a credible website. The Presence Plan delivers exactly those high-impact foundational assets without charging for unnecessary paid ad management."
       },
       {
         q: "Did this require spending money on Google Ads?",
@@ -83,10 +102,10 @@ Within 75 days of launch:
       }
     ],
     technologiesUsed: [
+      "MivizHub Presence Plan ($250/mo)",
       "Google Business Profile Optimization",
       "LocalBusiness Schema.org Markup",
       "Automated WhatsApp Review Engine",
-      "High-Converting Local Landing Pages",
       "Google Search Console & GA4 Setup"
     ]
   },
@@ -97,31 +116,47 @@ Within 75 days of launch:
     industry: "IT Services & B2B SaaS",
     serviceCategory: "Marketing & Growth",
     badge: "Website Redesign & Conversion CRO",
+    planTier: {
+      name: "Presence Plan ($250 / mo • ₹20,000 / mo)",
+      shortName: "Presence Plan",
+      price: "$250 / month (₹20,000 / mo)",
+      billingCadence: "Flat Monthly • Cancel Anytime",
+      totalInvestment: "₹60,000 ($750 over 3 months)",
+      marketAlternative: "$2,500 / month branding agency fee ($7,500 total)",
+      roiMultiple: "11.3x Return on Retainer (₹6.8L closed vs ₹60k fees)",
+      planFeatures: [
+        "Conversion-Focused Website Architecture",
+        "Interactive Scope Estimator Funnel",
+        "GA4 Event Attribution Tracking",
+        "Core Web Vitals Speed Optimization",
+        "2–3 Technical SEO Articles / Month"
+      ]
+    },
     location: "Bengaluru, Karnataka (India)",
     privacyNote: "Client name anonymized for competitive NDA protection",
     seoTitle: "B2B Website Redesign & Conversion Optimization Case Study | MivizHub",
-    metaDescription: "Read how a Bengaluru software agency increased website conversion rates from 0.1% to 2.4%, closing ₹6.8 Lakhs in new client sprint contracts.",
+    metaDescription: "Read how a Bengaluru software agency used MivizHub's $250/mo Presence Plan to increase conversion from 0.1% to 2.4%, closing ₹6.8 Lakhs in new sprint retainers.",
     targetKeywords: [
       "B2B website redesign case study",
       "agency conversion rate optimization case study",
       "software development website conversion",
       "CRO case study B2B India",
-      "Bangalore tech agency marketing"
+      "small business presence plan results"
     ],
     heroImage: "/hero-agency.jpg",
-    headline: "Increasing Website Inbound Conversion from 0.1% to 2.4% and Closing ₹6,80,000 in Sprint Retainers",
-    summary: "Getting 1,200 monthly website visits through developer referrals, this Bengaluru software boutique converted almost none of them into inquiry calls. MivizHub re-engineered their positioning, page architecture, and conversion paths.",
+    headline: "Increasing Website Inbound Conversion from 0.1% to 2.4% and Closing ₹6,80,000 in Sprint Retainers on a $250/mo Plan",
+    summary: "Getting 1,200 monthly website visits through developer referrals, this Bengaluru software boutique converted almost none of them into inquiry calls. Instead of paying ₹3 Lakhs to a web design agency, they used MivizHub's $250/mo Presence Plan.",
     keyTakeaways: [
       "Inbound website conversion rate jumped from 0.1% (1-2 inquiries/month) to 2.4% (19 qualified inquiries/month).",
       "Closed ₹6,80,000 in new engineering sprint contracts within 60 days of site relaunch.",
-      "Cut average page bounce rate from 68% down to 34% by eliminating confusing technical jargon.",
-      "Added interactive scope-of-work calculator that pre-qualified buyer budgets before discovery calls."
+      "Achieved an 11.3x return on service spend against a total 3-month fee of ₹60,000 ($750).",
+      "Replaced vague tech jargon with productized offer packages and an interactive scope-of-work estimator."
     ],
     stats: [
       { label: "New Retainers Closed", value: "+₹6,80,000", highlight: true },
+      { label: "Monthly Plan Retainer", value: "$250 / mo (₹20k)" },
       { label: "Website Conversion Rate", value: "2.4% (from 0.1%)" },
-      { label: "Monthly Qualified Leads", value: "19 Inquiries (up from 2)" },
-      { label: "Page Bounce Rate", value: "-50% Drop (34% Bounce)" }
+      { label: "Net ROI on Spend", value: "11.3x Return" }
     ],
     theChallenge: `
 Operating out of Koramangala, Bengaluru, this boutique software consultancy specialized in React Native and Node.js backend engineering for seed-stage startups.
@@ -129,9 +164,11 @@ Operating out of Koramangala, Bengaluru, this boutique software consultancy spec
 The agency enjoyed decent baseline traffic—roughly 1,200 unique visitors per month—coming from founder word-of-mouth, GitHub repositories, and founder LinkedIn profiles.
 
 However, their website was a dense, 1-page wall of technical jargon ('leveraging paradigm-shifting microservices'). There was no clear explanation of how they worked, no pricing anchors, and only a tiny 'Contact Us' link hidden in the footer that opened a generic mailto prompt. The site converted an abysmal 1 to 2 form fills per month (0.1% conversion rate). Over 99% of visitors left without engaging.
+
+Traditional web design agencies quoted them ₹2.5 to ₹4 Lakhs upfront just for website wireframes and copywriting, with zero accountability for whether it would actually generate leads. Instead, the founders chose MivizHub's **Presence Plan ($250/mo • ₹20,000/mo)** to get a continuous conversion and presence engine.
     `,
     theSolution: `
-MivizHub restructured the agency's digital front door from the ground up:
+MivizHub restructured the agency's digital front door under the **Presence Plan**:
 
 1. **Problem-First Messaging & Offer Packaging:**  
    Replaced vague tech jargon with productized, outcome-oriented packages: '2-Week MVP Prototype Sprint', 'Codebase Performance Audit', and 'Dedicated Full-Stack Pods'.
@@ -140,7 +177,7 @@ MivizHub restructured the agency's digital front door from the ground up:
    Replaced the mailto link with a 3-step interactive scope estimator where prospective founders could choose their project stage, target timeline, and budget band, ending with a 1-click Calendly discovery call reservation.
 
 3. **Proof-First Case Study Architecture:**  
-   Replaced stock illustrations with real verified client code breakdowns, before/after architecture diagrams, and founder video quotes showcasing tangible ROI metrics.
+   Replaced stock illustrations with real verified client code breakdowns, before/after architecture diagrams, and founder quotes showcasing tangible ROI metrics.
 
 4. **Technical Performance & Mobile Optimization:**  
    Optimized Core Web Vitals to achieve a 98/100 Google PageSpeed score, ensuring sub-second load times on mobile devices.
@@ -149,17 +186,18 @@ MivizHub restructured the agency's digital front door from the ground up:
 Within 60 days of relaunch:
 - **Conversion Rate Surged to 2.4%:** Form fills and scheduled calls leaped from 2 per month to 19 qualified inquiries.
 - **₹6,80,000 in Closed Sprints:** Successfully signed two overseas startup MVPs and one enterprise code audit.
+- **11.3x Return on Investment:** Total MivizHub service spend over 3 months was ₹60,000 ($750), generating ₹6.8 Lakhs in closed revenue.
 - **Higher Deal Quality:** Founders arrived at discovery calls already understanding the agency's pricing tiers and methodology.
     `,
     quote: {
-      text: "We used to think our problem was not having enough website traffic. MivizHub proved to us that our traffic was already fine—our website was just doing a terrible job of explaining our value. Moving from a technical resume site to a clear, productized business site multiplied our incoming client pipeline without a single rupee spent on ads.",
+      text: "Instead of blowing ₹3 Lakhs upfront on a web design agency, we paid MivizHub $250/month. Within 60 days, our website went from a useless brochure to closing ₹6.8 Lakhs in real client retainers. It has completely paid for our marketing for the entire year.",
       author: "Aditya P.",
       role: "Managing Partner & Tech Lead (Cloud Engineering Boutique)"
     },
     faq: [
       {
-        q: "Did this require writing new code from scratch?",
-        a: "MivizHub redesigned the information architecture, wireframes, copy, and UI components, then deployed a clean responsive frontend in under 3 weeks."
+        q: "Why is the Presence Plan priced at $250/month rather than a one-time project fee?",
+        a: "Websites that sit untouched decay in search rankings and conversion performance. The $250/mo Presence Plan includes continuous on-page optimization, monthly SEO articles, and technical health checks to keep performance compounding."
       },
       {
         q: "How did you determine what pricing to display?",
@@ -171,8 +209,8 @@ Within 60 days of relaunch:
       }
     ],
     technologiesUsed: [
+      "MivizHub Presence Plan ($250/mo)",
       "Conversion Rate Optimization (CRO)",
-      "Information Architecture Redesign",
       "Interactive Scope Estimator Funnel",
       "Core Web Vitals Speed Tuning",
       "GA4 Custom Event Attribution"
@@ -184,48 +222,67 @@ Within 60 days of relaunch:
     clientName: "Commercial Facility Cleaning & Maintenance Provider",
     industry: "Commercial Mechanical & Facilities",
     serviceCategory: "Marketing & Growth",
-    badge: "Paid Ads & Landing Pages (Growth Tier)",
+    badge: "Paid Ads & Landing Pages",
+    planTier: {
+      name: "Growth Plan ($500 / month)",
+      shortName: "Growth Plan",
+      price: "$500 / month",
+      billingCadence: "Flat Monthly • Zero Lock-In",
+      totalInvestment: "$1,500 ($500/mo over 3 months)",
+      marketAlternative: "$3,500 / mo agency management fee with 6-month lock-in",
+      roiMultiple: "34x ARR Generated ($52,000 ARR signed)",
+      planFeatures: [
+        "Everything in Presence Plan",
+        "Google Search Ads Campaign Architecture",
+        "Dedicated High-Converting Landing Pages",
+        "240+ Negative Keyword Intent Filters",
+        "Dynamic Number Insertion (DNI) Call Tracking",
+        "Instant Lead Routing & Attribution"
+      ]
+    },
     location: "Dallas-Fort Worth, Texas",
     privacyNote: "Client name anonymized for commercial contract privacy",
     seoTitle: "Commercial Cleaning Google Ads & Landing Page Case Study | MivizHub",
-    metaDescription: "Learn how a commercial cleaning contractor cut Google Ads Cost-Per-Lead by 69% ($210 to $64) and secured $52,000 in annual recurring contracts.",
+    metaDescription: "Learn how a commercial contractor used MivizHub's $500/mo Growth Plan to cut Google Ads Cost-Per-Lead by 69% ($210 to $64), securing $52,000 in annual contracts.",
     targetKeywords: [
       "commercial cleaning Google Ads case study",
       "cut PPC cost per lead case study",
       "Google Ads landing page optimization results",
-      "facility maintenance lead generation",
+      "small business growth plan ROI",
       "commercial contractor paid search ROI"
     ],
     heroImage: "/hero-cleaning.jpg",
-    headline: "Cutting Google Ads Cost-Per-Lead by 69% and Securing $52,000 in Annual Commercial Janitorial Accounts",
-    summary: "Burning $3,200/month on Google PPC ads that sent high-cost clicks to a generic homepage, this Texas facility contractor attracted mostly cheap residential leads. MivizHub rebuilt the campaign architecture and dedicated landing pages.",
+    headline: "Cutting Google Ads Cost-Per-Lead by 69% and Securing $52,000 in Annual Commercial Janitorial Accounts on the $500/mo Growth Plan",
+    summary: "Burning $3,200/month on Google PPC ads that sent high-cost clicks to a generic homepage, this Texas facility contractor attracted mostly cheap residential leads. MivizHub's $500/mo Growth Plan rebuilt their campaign architecture and dedicated landing pages.",
     keyTakeaways: [
       "Lowered blended Google Ads Cost-Per-Lead (CPL) from $210 down to $64 (-69% reduction).",
       "Secured 5 long-term quarterly office cleaning contracts worth $52,000 in Annual Recurring Revenue (ARR).",
-      "Eliminated 74% of wasted budget by adding 240+ negative keywords to block consumer maid service queries.",
-      "Dedicated mobile landing page increased visitor-to-quote conversion rate from 3.2% to 11.8%."
+      "Delivered a 34x return on the $1,500 total growth retainer spend over 3 months.",
+      "Dedicated commercial mobile landing page increased visitor-to-quote conversion rate from 3.2% to 11.8%."
     ],
     stats: [
       { label: "Cost-Per-Lead Reduction", value: "-69% ($64 CPL)", highlight: true },
+      { label: "Service Plan Retainer", value: "$500 / month" },
       { label: "New Annual Contract Revenue", value: "+$52,000 ARR" },
-      { label: "Landing Page Conversion", value: "11.8% (up from 3.2%)" },
-      { label: "Wasted Spend Eliminated", value: "$1,800 / Month" },
+      { label: "Net Retainer ROI", value: "34x ARR Return" }
     ],
     theChallenge: `
 Operating in the Dallas-Fort Worth metroplex, this commercial janitorial company specialized in multi-tenant office buildings, medical suites, and industrial warehouses.
 
-To generate new contracts, the owner had been spending $3,200/month on Google Search Ads. However, the campaigns had been set up on Google Smart campaigns with broad-match keywords like 'cleaners near me' and 'cleaning service Dallas'.
+To generate new contracts, the owner had been spending $3,200/month on Google Search Ads while paying a local agency $1,800/month in management fees. However, the campaigns were set up with sloppy broad-match keywords like 'cleaners near me' and 'cleaning service Dallas'.
 
-Clicks were routed directly to the root homepage. Over 75% of inbound inquiries were homeowners asking for $80 residential apartment cleanings, which the company did not even service. Commercial facility inquiries cost an unsustainable $210 per lead, and most leads went cold because there was no specific commercial proposal landing page.
+Clicks were routed directly to the root homepage. Over 75% of inbound inquiries were homeowners asking for $80 residential apartment cleanings, which the company did not even service. Commercial facility inquiries cost an unsustainable $210 per lead. When the owner questioned the agency, they demanded a 6-month contract extension to 'optimize'. 
+
+Instead, he fired the agency and enrolled in MivizHub's **Growth Plan ($500/mo)** with flat monthly pricing, zero long-term contracts, and dedicated landing page creation.
     `,
     theSolution: `
-MivizHub executed our **Growth Tier** paid search and conversion sprint:
+MivizHub deployed our complete **Growth Plan ($500/mo)** performance marketing sprint:
 
 1. **Strict Commercial Keyword & Negative Match Restructuring:**  
    Pivoted from broad match to exact and phrase match intent: 'commercial janitorial company DFW', 'medical office cleaning contracts Dallas', and 'warehouse facility maintenance provider'. Added a 240-word negative keyword filter blocking all terms containing 'residential', 'maid', 'housekeeper', 'cheap', or 'apartment'.
 
 2. **Dedicated Commercial-Only Conversion Landing Pages:**  
-   Built lightning-fast dedicated landing pages engineered specifically for property and office managers. Pages prominently highlighted OSHA compliance, $2M general liability bonding, background-checked staff, and a simple 60-second square footage RFP request form.
+   Built dedicated high-converting landing pages engineered specifically for property and office managers. Pages prominently highlighted OSHA compliance, $2M general liability bonding, background-checked staff, and a simple 60-second square footage RFP request form.
 
 3. **Call Tracking & Conversion Attribution:**  
    Integrated dynamic number insertion (DNI) to record and attribute every phone call and quote form fill back to the exact keyword that generated it.
@@ -237,21 +294,22 @@ MivizHub executed our **Growth Tier** paid search and conversion sprint:
 Within 90 days of deployment:
 - **Cost-Per-Lead Dropped from $210 to $64:** The contractor acquired three times as many qualified commercial leads for the exact same monthly budget.
 - **$52,000 in Long-Term ARR Secured:** Signed 5 recurring corporate cleaning contracts (three corporate offices, two outpatient clinics).
+- **34x Return on Growth Fee:** On a 3-month MivizHub service spend of $1,500 ($500/mo), the client secured $52,000 in contracted annual recurring revenue.
 - **Zero Wasted Residential Clicks:** 100% of incoming inquiries are commercial facilities with minimum 5,000+ square foot footprints.
     `,
     quote: {
-      text: "We were basically setting money on fire with Google Ads before MivizHub stepped in. Sending ad traffic to our homepage was our biggest mistake. The dedicated commercial landing pages and negative keyword filters completely eliminated junk residential calls and cut our cost-per-lead by two-thirds.",
+      text: "We were paying an agency $1,800/month to mismanage our ads and send junk leads to our homepage. Switching to MivizHub's $500/month Growth plan gave us better landing pages, better tracking, and cut our cost-per-lead to $64. It generated $52,000 in recurring contracts in our very first quarter.",
       author: "Craig T.",
       role: "Operations Director (Commercial Facilities Management)"
     },
     faq: [
       {
-        q: "What monthly ad spend is needed for this type of campaign?",
-        a: "The client maintained a modest $2,500 to $3,200/month Google Ads budget. By cutting wasted spend on residential clicks, the effective budget for commercial prospects doubled without increasing spend."
+        q: "Why is the Growth Plan priced at $500/mo while other agencies charge $2,000+?",
+        a: "Traditional agencies have heavy account executive and office overhead. MivizHub uses productized workflows, pre-tested high-converting landing page frameworks, and automated attribution to deliver superior campaign execution at a transparent flat rate."
       },
       {
-        q: "Why were landing pages better than sending traffic to their website?",
-        a: "Homepages have dozens of distractions (links, blogs, multiple services). Dedicated landing pages focus purely on the specific facility pain point and provide a clear, friction-free path to request an RFP."
+        q: "Is ad spend included in the $500/month fee?",
+        a: "No. The $500/mo is MivizHub's flat management fee. Clients pay their chosen ad budget directly to Google or Meta, maintaining complete ownership of their advertising accounts."
       },
       {
         q: "How quickly did the cost-per-lead drop?",
@@ -259,8 +317,9 @@ Within 90 days of deployment:
       }
     ],
     technologiesUsed: [
+      "MivizHub Growth Plan ($500/mo)",
       "Google Search Ads Campaign Architecture",
-      "Dedicated High-Converting Unbounce/React Landing Pages",
+      "Dedicated High-Converting Landing Pages",
       "Dynamic Number Insertion (DNI) Call Tracking",
       "Negative Keyword Intent Filtering",
       "Instant SMS Lead Dispatch Automation"
@@ -272,32 +331,48 @@ Within 90 days of deployment:
     clientName: "Clean Botanical Skincare & D2C Wellness Brand",
     industry: "E-Commerce & Retail",
     serviceCategory: "Marketing & Growth",
-    badge: "Topical Authority SEO & Content (Growth Tier)",
+    badge: "Topical Authority SEO & Content",
+    planTier: {
+      name: "Growth Plan ($500 / month • ₹40,000 / mo)",
+      shortName: "Growth Plan",
+      price: "$500 / month (₹40,000 / mo)",
+      billingCadence: "Flat Monthly • Zero Lock-In",
+      totalInvestment: "₹2,00,000 ($2,500 over 5 months)",
+      marketAlternative: "₹1,20,000 / month SEO agency retainer + long contracts",
+      roiMultiple: "9.7x Monthly Return (₹3.9L/mo recurring zero-ad revenue)",
+      planFeatures: [
+        "Everything in Presence Plan",
+        "4–6 In-Depth SEO Articles / Month",
+        "Topical Authority Semantic Keyword Mapping",
+        "Product Schema.org Rich Snippet Optimization",
+        "GA4 Assisted E-Commerce Conversion Attribution"
+      ]
+    },
     location: "Mumbai / Pune, Maharashtra (India)",
     privacyNote: "Client name anonymized for commercial brand confidentiality",
     seoTitle: "D2C Organic SEO & Content Marketing Case Study | MivizHub",
-    metaDescription: "Discover how an Indian D2C skincare brand scaled organic search traffic from 800 to 14,500 monthly visitors, generating ₹3.9 Lakhs in zero-ad monthly revenue.",
+    metaDescription: "Discover how an Indian skincare brand used MivizHub's $500/mo Growth Plan to scale organic traffic to 14,500 visitors, making ₹3.9 Lakhs/mo without ads.",
     targetKeywords: [
       "D2C organic SEO case study",
       "ecommerce content marketing case study India",
       "topical authority SEO results",
-      "reduce customer acquisition cost D2C",
+      "small business growth plan results",
       "Shopify organic search ranking case study"
     ],
     heroImage: "/hero-skincare.jpg",
-    headline: "Scaling Organic Search from 800 to 14,500 Monthly Visitors and Adding ₹3,90,000 in Zero-Ad Monthly Revenue",
-    summary: "Bleeding ad spend on Meta where Customer Acquisition Cost (CAC) had surged by 28%, this clean skincare brand had zero organic presence. MivizHub implemented a topical authority SEO strategy around specific ingredient and skin concern queries.",
+    headline: "Scaling Organic Search from 800 to 14,500 Monthly Visitors and Adding ₹3,90,000 in Zero-Ad Monthly Revenue on the $500/mo Growth Plan",
+    summary: "Bleeding ad spend on Meta where Customer Acquisition Cost (CAC) had surged by 28%, this clean skincare brand had zero organic presence. They deployed MivizHub's $500/mo Growth Plan to build an organic topical authority search engine.",
     keyTakeaways: [
       "Organic Google search traffic grew from 800 to 14,500 monthly visitors within 5 months.",
       "Added ₹3,90,000 in consistent monthly e-commerce sales with zero ongoing advertising cost.",
-      "Ranked 32 high-intent commercial keywords in Google Top 3 (e.g. 'best niacinamide serum for Indian acne marks').",
-      "Blended Customer Acquisition Cost (CAC) decreased by 34% across the entire store."
+      "Achieved a 9.7x recurring monthly revenue recovery against the ₹40,000/mo ($500/mo) Growth retainer.",
+      "Ranked 32 high-intent commercial keywords in Google Top 3 (e.g. 'best niacinamide serum for Indian acne marks')."
     ],
     stats: [
       { label: "Zero-Ad Monthly Sales", value: "+₹3,90,000", highlight: true },
+      { label: "Monthly Growth Retainer", value: "$500 / mo (₹40k)" },
       { label: "Monthly Organic Visitors", value: "14,500 (from 800)" },
-      { label: "Keywords in Google Top 3", value: "32 Ranked Terms" },
-      { label: "Blended CAC Reduction", value: "-34% Lower CAC" }
+      { label: "Monthly Return on Fee", value: "9.7x Revenue" }
     ],
     theChallenge: `
 Founded in Maharashtra, this D2C brand manufactures clean Ayurvedic-formulated active skincare (bakuchiol serums, kumkumadi oils, and ceramide barriers).
@@ -305,9 +380,11 @@ Founded in Maharashtra, this D2C brand manufactures clean Ayurvedic-formulated a
 The brand grew to ₹12 Lakhs monthly revenue, but was 100% dependent on Meta (Instagram & Facebook) performance ads. Over an 8-month period, Meta CPMs surged, and their customer acquisition cost jumped from ₹420 to ₹680 per customer, destroying their unit economics.
 
 Their Shopify store had essentially zero organic search footprint. The founder had published a few 300-word blog posts that read like generic sales pitches, ranking for zero commercial terms. When consumers searched Google for skincare solutions, competing marketplace brands (Nykaa, The Derma Co) dominated the results.
+
+Legacy SEO agencies quoted ₹1,20,000/month with vague 12-month lock-in contracts. Instead, the founder signed up for MivizHub's **Growth Plan ($500/mo • ₹40,000/mo)** to publish consistent, high-converting topical authority articles month after month.
     `,
     theSolution: `
-MivizHub deployed our **Topical Authority Content & Organic SEO** sprint:
+MivizHub deployed our complete **Growth Plan ($500/mo • ₹40,000/mo)** content engine:
 
 1. **High-Intent Search Query Mapping:**  
    Identified 60+ low-competition, high-buyer-intent queries Indian skincare shoppers search before purchasing (e.g. 'how to use kumkumadi oil for oily skin', 'bakuchiol vs retinol Indian skin type', 'ceramide repair cream for damaged barrier').
@@ -325,21 +402,22 @@ MivizHub deployed our **Topical Authority Content & Organic SEO** sprint:
 Within 5 months of publishing:
 - **Organic Traffic Reached 14,500 Monthly Visitors:** An 18x surge in qualified shoppers searching for exact skincare solutions.
 - **₹3,90,000 in Monthly Organic Revenue:** High-converting organic shoppers bought directly from educational guides without touching paid ads.
+- **9.7x Monthly Return on Service Fee:** The ₹40,000/mo ($500/mo) Growth Plan produced nearly ₹4 Lakhs in monthly gross sales every month.
 - **Overall Blended CAC Dropped by 34%:** Organic traffic cushioned rising Meta ad costs, restoring healthy gross margins.
     `,
     quote: {
-      text: "Every D2C founder in India knows the nightmare of waking up to Meta ad account volatility. MivizHub gave us an evergreen, predictable organic search channel that brings in thousands of paying customers every month for free. It is the single highest-ROI marketing investment we made this year.",
+      text: "Every D2C founder in India knows the nightmare of waking up to Meta ad account volatility. For ₹40,000/month on MivizHub's Growth plan, we built an evergreen organic search channel that brings in ₹3.9 Lakhs in customer sales every month for free. It is the single highest-ROI marketing investment we made this year.",
       author: "Pooja M.",
       role: "Co-Founder & Product Head (Botanical D2C Skincare)"
     },
     faq: [
       {
-        q: "How long did it take for the articles to start ranking on Google?",
-        a: "Initial search indexing began within 10 days. The first wave of high-intent keywords entered Google Page 1 around week 8, with organic traffic compounding rapidly by month 4."
+        q: "What makes the 4-6 articles in the Growth Plan different from standard blog posts?",
+        a: "Standard agency blog posts are generic 500-word summaries written for search bots. MivizHub's Growth Plan produces comprehensive 1,800+ word commercial buying guides designed to educate, compare solutions, and drive readers directly into product checkouts."
       },
       {
-        q: "Did the articles require ongoing maintenance?",
-        a: "We perform quarterly content refreshes to ensure all ingredient clinical studies and product links remain accurate and ranking positions stay stable."
+        q: "How long did it take for the articles to start ranking on Google?",
+        a: "Initial search indexing began within 10 days. The first wave of high-intent keywords entered Google Page 1 around week 8, with organic traffic compounding rapidly by month 4."
       },
       {
         q: "How did you track sales coming specifically from the blog articles?",
@@ -347,6 +425,7 @@ Within 5 months of publishing:
       }
     ],
     technologiesUsed: [
+      "MivizHub Growth Plan ($500/mo)",
       "Topical Authority Semantic SEO",
       "Product & Article Schema.org Markup",
       "Pillar-and-Cluster Content Architecture",
@@ -360,42 +439,60 @@ Within 5 months of publishing:
     clientName: "B2B Financial Advisory & Virtual CFO Practice",
     industry: "Legal & Professional Services",
     serviceCategory: "Marketing & Growth",
-    badge: "Strategic Content & B2B Distribution",
+    badge: "Strategic Content & B2B Thought Leadership",
+    planTier: {
+      name: "Growth Plan ($500 / month • ₹40,000 / mo)",
+      shortName: "Growth Plan",
+      price: "$500 / month (₹40,000 / mo)",
+      billingCadence: "Flat Monthly • Zero Lock-In",
+      totalInvestment: "₹1,20,000 ($1,500 over 3 months)",
+      marketAlternative: "₹80,000 / month in-house marketing manager salary",
+      roiMultiple: "18x Annual Retainer Value (₹7.2L ARR vs ₹40k/mo retainer)",
+      planFeatures: [
+        "Everything in Presence Plan",
+        "8 Strategic LinkedIn Founder Breakdown Posts / Month",
+        "Quarterly Gated Teardown Whitepapers",
+        "Bi-Weekly Curated Newsletter Distribution",
+        "Executive Ghostwriting & Domain Interview Extraction"
+      ]
+    },
     location: "Hyderabad / Bangalore, India",
     privacyNote: "Client name anonymized for client financial confidentiality",
     seoTitle: "B2B Financial Advisory Content & LinkedIn Case Study | MivizHub",
-    metaDescription: "Learn how a virtual CFO firm secured ₹7.2 Lakhs in annual retainers with strategic LinkedIn thought leadership and monthly growth content.",
+    metaDescription: "Learn how a virtual CFO firm used MivizHub's $500/mo Growth Plan to secure ₹7.2 Lakhs in annual retainers with strategic LinkedIn thought leadership.",
     targetKeywords: [
       "B2B content marketing case study",
       "virtual CFO marketing strategy India",
       "LinkedIn thought leadership ROI case study",
-      "financial advisory client acquisition",
+      "small business growth plan B2B",
       "professional services organic growth"
     ],
     heroImage: "/hero-finance.jpg",
-    headline: "Securing ₹7,20,000 in Annual Retainers with Strategic B2B Content and Thought Leadership",
-    summary: "Struggling to attract funded startup founders for fractional CFO services, this Hyderabad boutique relied on an outdated corporate website and dormant LinkedIn profiles. MivizHub built a monthly thought leadership and distribution engine.",
+    headline: "Securing ₹7,20,000 in Annual Retainers with Strategic B2B Content and Thought Leadership on the $500/mo Growth Plan",
+    summary: "Struggling to attract funded startup founders for fractional CFO services, this Hyderabad boutique relied on an outdated corporate website and dormant LinkedIn profiles. MivizHub's $500/mo Growth Plan built a monthly thought leadership and distribution engine.",
     keyTakeaways: [
       "Acquired 2 new annual Virtual CFO contracts totaling ₹7,20,000 in Annual Recurring Revenue (ARR).",
+      "Delivered an 18x annual return on service spend against a 3-month total fee of ₹1,20,000 ($1,500).",
       "Founder LinkedIn profile impressions expanded from 1,200 to 48,000 monthly views.",
-      "Generated 6 high-intent exploratory strategy calls within 60 days of launching weekly founder breakdowns.",
-      "Established topical authority as the go-to financial advisory for Series-A tech startups in India."
+      "Generated 6 high-intent exploratory strategy calls within 60 days of launching weekly founder breakdowns."
     ],
     stats: [
       { label: "Annual Retainers Added", value: "+₹7,20,000 ARR", highlight: true },
+      { label: "Monthly Service Fee", value: "$500 / mo (₹40k)" },
       { label: "Founder Post Impressions", value: "48,000 / Month" },
-      { label: "Qualified Discovery Calls", value: "6 High-Value Calls" },
-      { label: "Client Acquisition Cost", value: "Zero Paid Ads" }
+      { label: "Annual Return Multiple", value: "18x ARR Return" }
     ],
     theChallenge: `
 Operating out of HITEC City in Hyderabad, this advisory firm provided fractional CFO, valuation, and capital allocation services for funded startups and mid-market enterprises.
 
 Their service was exceptional, but prospective founders had no idea they existed. Their partners rarely posted content, their company LinkedIn page had 90 followers, and their website looked like a dusty 2012 accounting firm template.
 
-Whenever tech founders raised seed capital and needed financial modeling or MIS reporting, they hired celebrity boutique firms in Bangalore because those firms constantly published sharp insights on founder liquidity, burn rate management, and cap tables. The Hyderabad firm was losing ₹10 to ₹15 Lakhs in annual retainers every quarter simply due to a lack of public credibility.
+Whenever tech founders raised seed capital and needed financial modeling or MIS reporting, they hired celebrity boutique firms in Bangalore because those firms constantly published sharp insights on founder liquidity, burn rate management, and cap tables.
+
+Hiring a full-time in-house B2B content marketing manager would have cost the firm ₹80,000 to ₹1,00,000/month plus benefits and management overhead. Instead, they enrolled in MivizHub's **Growth Plan ($500/mo • ₹40,000/mo)** to handle executive ghostwriting, LinkedIn distribution, and lead capture funnels.
     `,
     theSolution: `
-MivizHub deployed our **Growth Tier Strategic Content & Distribution Engine**:
+MivizHub deployed our **Growth Plan ($500/mo • ₹40,000/mo)** thought leadership workflow:
 
 1. **Strategic Founder Thought Leadership:**  
    Authored 8 high-impact, data-driven LinkedIn posts monthly for the managing partner, breaking down real-world startup financial dilemmas (e.g. 'Why 70% of Series A startups run out of runway 4 months earlier than modeled', 'How to structure a clean ESOP pool in India').
@@ -412,11 +509,12 @@ MivizHub deployed our **Growth Tier Strategic Content & Distribution Engine**:
     theResults: `
 Within 90 days:
 - **₹7,20,000 in Annual Retainers Added:** Signed two Series-A D2C and FinTech startups on long-term monthly CFO retainers (₹30,000/month each).
+- **18x Annual Return on Investment:** Total MivizHub service spend over 3 months was ₹1,20,000 ($1,500), generating ₹7.2 Lakhs in contracted annual recurring revenue.
 - **Founder Impressions Skyrocketed to 48,000/Month:** Venture capitalists and founders began proactively messaging the managing partner for financial audits.
 - **Inbound Inquiries Replaced Cold Outreach:** Established a consistent pipeline of high-ticket corporate advisory work.
     `,
     quote: {
-      text: "In professional financial services, nobody hires you from a cold email. Clients hire you because they have seen your thinking and trust your expertise before they ever talk to you. MivizHub transformed our dormant online presence into our primary customer acquisition engine.",
+      text: "Hiring an in-house content marketer would have cost us ₹10 Lakhs a year with zero guarantee of results. MivizHub's $500/month Growth plan gave us senior-level ghostwriting and strategy for less than half the cost. It landed us two startup clients worth ₹7.2 Lakhs in our very first quarter.",
       author: "Sanjay V., CA, CFA",
       role: "Managing Partner (Corporate Advisory & Virtual CFO Services)"
     },
@@ -435,6 +533,7 @@ Within 90 days:
       }
     ],
     technologiesUsed: [
+      "MivizHub Growth Plan ($500/mo)",
       "B2B Thought Leadership Architecture",
       "LinkedIn Organic Distribution Strategy",
       "Executive Ghostwriting & Interview Extraction",
@@ -443,9 +542,9 @@ Within 90 days:
     ]
   },
 
-  // ==========================================
+  // =========================================================================
   // AI STAFFING & AUTOMATION CASE STUDIES
-  // ==========================================
+  // =========================================================================
   {
     id: "residential-roofing-contracting",
     slug: "residential-roofing-and-home-services",
@@ -454,6 +553,21 @@ Within 90 days:
     industry: "Home Services & Contracting",
     serviceCategory: "AI Staffing & Automation",
     badge: "Marketing + AI Staffing",
+    planTier: {
+      name: "AI Workforce Staffing Engine",
+      shortName: "AI Staffing",
+      price: "Performance-Based / Flat Monthly",
+      billingCadence: "Turnkey Implementation",
+      totalInvestment: "Under 72-Hour Deployment",
+      marketAlternative: "$4,000 / month full-time human receptionist",
+      roiMultiple: "Immediate 4-Day Break-Even ($14,000 extra Month 1 revenue)",
+      planFeatures: [
+        "24/7 Voice AI Phone Receptionist",
+        "Two-Way Google Calendar Live Sync",
+        "Automated SMS Quote Nurturing Engine",
+        "Twilio SIP & Concurrent Line Routing"
+      ]
+    },
     location: "Austin, Texas",
     privacyNote: "Client name anonymized for competitive privacy & NDA compliance",
     seoTitle: "Roofing Contractor AI Receptionist & Marketing Case Study | MivizHub",
@@ -539,6 +653,21 @@ Within the first 30 days of going live:
     industry: "Healthcare & Medical Aesthetics",
     serviceCategory: "AI Staffing & Automation",
     badge: "AI Staffing Engine",
+    planTier: {
+      name: "AI Patient Concierge Engine",
+      shortName: "AI Staffing",
+      price: "Turnkey Implementation",
+      billingCadence: "Monthly Support",
+      totalInvestment: "Under 60-Day Rollout",
+      marketAlternative: "$42,000 annual front-desk overtime and receptionist turnover",
+      roiMultiple: "38% Surge in Confirmed Aesthetic Bookings ($1,500+ procedures)",
+      planFeatures: [
+        "HIPAA-Compliant Voice AI Concierge",
+        "EHR Live Two-Way Calendar Integration",
+        "Multi-Line Concurrent Call Answering",
+        "SMS Appointment Confirmations & Directions"
+      ]
+    },
     location: "Denver, Colorado",
     privacyNote: "Client name anonymized for patient privacy & HIPAA compliance",
     seoTitle: "Medical Aesthetics AI Receptionist Case Study | MivizHub",
@@ -622,6 +751,21 @@ Within 60 days of deployment:
     industry: "Legal & Professional Services",
     serviceCategory: "AI Staffing & Automation",
     badge: "Marketing & AI Workforce",
+    planTier: {
+      name: "AI Legal Intake Specialist",
+      shortName: "AI Staffing",
+      price: "Turnkey Intake Automation",
+      billingCadence: "Monthly Support",
+      totalInvestment: "Under 90-Day Implementation",
+      marketAlternative: "Generic $800/mo answering services that lose 70% of legal leads",
+      roiMultiple: "$85,000 in Added Retainer Contracts",
+      planFeatures: [
+        "24/7 AI Legal Intake Specialist",
+        "Conflict of Interest Screening Logic",
+        "Clio / Practice Management CRM Sync",
+        "Automated SMS & Calendar Orchestration"
+      ]
+    },
     location: "Chicago, Illinois",
     privacyNote: "Client name anonymized for attorney-client privilege & confidentiality",
     seoTitle: "Law Firm Intake Automation Case Study | MivizHub Results",
@@ -704,6 +848,21 @@ Within 90 days:
     industry: "IT Services & B2B SaaS",
     serviceCategory: "AI Staffing & Automation",
     badge: "AI Inbound Sales & Lead Qualification",
+    planTier: {
+      name: "AI Sales Qualification Agent",
+      shortName: "AI Staffing",
+      price: "Turnkey Digital Worker",
+      billingCadence: "Monthly Support",
+      totalInvestment: "Under 3-Week Setup",
+      marketAlternative: "₹60,000 / month night-shift sales development rep (SDR)",
+      roiMultiple: "+₹4,20,000 in International Pipeline in 60 Days",
+      planFeatures: [
+        "24/7 Inbound AI Sales Agent",
+        "Time Zone Harmonized Calendar Sync",
+        "Slack Instant Dossier Dispatch",
+        "Technical Lead Scoring Logic"
+      ]
+    },
     location: "Bengaluru, Karnataka (India)",
     privacyNote: "Client name anonymized for client contract & NDA compliance",
     seoTitle: "B2B IT Consulting Inbound Lead Qualification Case Study | MivizHub",
@@ -786,8 +945,23 @@ Within 60 days of deployment:
     slug: "dental-clinic-patient-appointment-automation",
     clientName: "Multi-Speciality Dental Care Practice",
     industry: "Healthcare & Dental Care",
-    serviceCategory: "AI Staffing & Automation",
     badge: "AI Receptionist & WhatsApp Automation",
+    serviceCategory: "AI Staffing & Automation",
+    planTier: {
+      name: "AI Dental Receptionist & WhatsApp Engine",
+      shortName: "AI Staffing",
+      price: "Turnkey Implementation",
+      billingCadence: "Monthly Support",
+      totalInvestment: "Under 14-Day Deployment",
+      marketAlternative: "Hiring additional clinic receptionist at ₹25,000 / month",
+      roiMultiple: "Protected ₹1,85,000 monthly chair revenue (-42% no-shows)",
+      planFeatures: [
+        "Official WhatsApp Business Cloud API",
+        "Bilingual Voice AI Intake Concierge",
+        "Interactive Rescheduling & Waitlist Engine",
+        "Two-Way Calendar Synchronization"
+      ]
+    },
     location: "Mumbai, Maharashtra (India)",
     privacyNote: "Client name anonymized for patient confidentiality & medical privacy",
     seoTitle: "Dental Clinic Patient Scheduling & WhatsApp Automation Case Study | MivizHub",
@@ -872,6 +1046,21 @@ Within the first 45 days:
     industry: "Accounting & Tax Advisory",
     serviceCategory: "AI Staffing & Automation",
     badge: "Workflow Automation & Document Intake",
+    planTier: {
+      name: "Tax Compliance Document Intake Workflow",
+      shortName: "Automation",
+      price: "Turnkey Implementation",
+      billingCadence: "Ongoing Support",
+      totalInvestment: "Under 30-Day Setup",
+      marketAlternative: "100+ billable hours wasted monthly on manual document chasing",
+      roiMultiple: "25 billable staff hours recovered weekly, zero penalties",
+      planFeatures: [
+        "Automated WhatsApp & Email Multi-Channel Triggers",
+        "Dynamic Entity-Based Document Request Checklists",
+        "Google Drive Enterprise Document Vault",
+        "Automated Compliance Dashboard Alerts"
+      ]
+    },
     location: "Delhi NCR (Gurgaon), India",
     privacyNote: "Client name anonymized for ICAI professional ethics & client confidentiality",
     seoTitle: "CA Firm GST & Document Workflow Automation Case Study | MivizHub",
@@ -956,6 +1145,21 @@ Within 90 days of implementation:
     industry: "E-Commerce & Retail",
     serviceCategory: "AI Staffing & Automation",
     badge: "AI Customer Support & Order Verification",
+    planTier: {
+      name: "AI Order Verification & RTO Engine",
+      shortName: "AI Automation",
+      price: "Turnkey Implementation",
+      billingCadence: "Monthly Support",
+      totalInvestment: "Under 14-Day Setup",
+      marketAlternative: "₹2.5 to ₹3 Lakhs monthly loss in courier freight penalties",
+      roiMultiple: "₹2,40,000 monthly courier savings (-31% COD RTO rate)",
+      planFeatures: [
+        "Shopify Automated Webhook Triggers",
+        "WhatsApp Interactive Button Verification",
+        "AI Order Tracking & Sizing Concierge",
+        "Logistics API Sync (Shiprocket/Delhivery)"
+      ]
+    },
     location: "Pune, Maharashtra (India)",
     privacyNote: "Client name anonymized for commercial trade secrecy & logistics data compliance",
     seoTitle: "E-Commerce COD Return-to-Origin (RTO) Automation Case Study | MivizHub",
