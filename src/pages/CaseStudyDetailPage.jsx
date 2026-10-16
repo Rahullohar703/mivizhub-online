@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   Building2, MapPin, CheckCircle2, ArrowRight, ArrowLeft, 
@@ -11,6 +11,10 @@ import SEOHead from '../components/SEOHead';
 export default function CaseStudyDetailPage({ onOpenBooking }) {
   const { slug } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [slug]);
 
   const study = CASE_STUDIES.find((s) => s.slug === slug);
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import SectionHero from './components/SectionHero';
 import SectionTrust from './components/SectionTrust';
@@ -89,6 +90,7 @@ export default function App() {
 
   return (
     <div className="bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white min-h-screen">
+      <ScrollToTop />
       <Navbar onOpenBooking={handleOpenBooking} />
       <Routes>
         <Route path="/" element={<HomePage onOpenBooking={handleOpenBooking} />} />

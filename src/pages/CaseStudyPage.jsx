@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Award, ArrowRight, CheckCircle2, Building2, MapPin, PhoneCall } from 'lucide-react';
 import Container from '../components/ui/Container';
@@ -7,6 +7,10 @@ import SEOHead from '../components/SEOHead';
 
 export default function CaseStudyPage({ onOpenBooking }) {
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
   const filteredStudies = CASE_STUDIES.filter((study) => {
     return selectedIndustry === "All Industries" || study.industry === selectedIndustry;

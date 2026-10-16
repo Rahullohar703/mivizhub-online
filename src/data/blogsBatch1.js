@@ -12,7 +12,7 @@ export const BLOGS_BATCH_1 = [
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Small business owners lose 15+ hours every week to administrative busywork. Here are five concrete workflows you can automate today, the exact tools to connect them, and the honest situations where automation is not worth the cost.",
     keyTakeaways: [
@@ -146,7 +146,7 @@ At **MivizHub**, we design, build, and maintain custom workflows and 24/7 AI sta
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Over 80% of sales require 5 follow-up attempts, yet 44% of businesses give up after just one email. Here is how to automate your entire customer follow-up cadence without sounding like a robotic spammer.",
     keyTakeaways: [
@@ -263,7 +263,7 @@ At MivizHub, our **AI Sales Representatives** handle this entire process autonom
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Everyone is talking about AI agents, but how do they actually differ from traditional Zapier-style workflow automation? Here is the plain-English explanation every business owner should understand before investing.",
     keyTakeaways: [
@@ -354,7 +354,7 @@ You do not have to choose between AI agents and workflow automation. The highest
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Behind the tech marketing hype, what can an AI assistant actually accomplish for a local contractor, medical clinic, or professional firm? Here is an honest breakdown of practical capabilities, real limits, and essential human handoffs.",
     keyTakeaways: [
@@ -452,7 +452,7 @@ Whether you operate a home services firm, healthcare practice, or professional a
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "From client onboarding to invoice reconciliation, here are seven core business operations that small and medium companies can automate with AI right now to reclaim 20+ hours per week.",
     keyTakeaways: [
@@ -549,7 +549,7 @@ Do not attempt to automate all seven processes simultaneously. Follow this prior
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Should you hire another administrative coordinator for $50,000/year, or deploy an automated AI system for a fraction of the cost? Here is an honest, transparent comparison of costs, supervision, reliability, and human judgment.",
     keyTakeaways: [
@@ -649,7 +649,7 @@ The smartest business owners don't view this as *Humans vs. Machines*. They buil
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Walking through a concrete, production-ready workflow: from the exact second a prospect hits 'Submit' on your website to CRM entry, instant lead routing, follow-up, and conversion reporting.",
     keyTakeaways: [
@@ -761,7 +761,7 @@ Don't waste days configuring webhooks and troubleshooting error logs. MivizHub d
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Wondering what AI automation actually costs? Here is a transparent breakdown of one-time setup fees, monthly software subscriptions, API usage rates, and maintenance costs.",
     keyTakeaways: [
@@ -852,7 +852,7 @@ We eliminated complex enterprise retainers. Our productized plans start at just 
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "The phrase 'AI Employee' is everywhere, but what does it actually mean for a real-world business? Here is a clear definition, realistic duties you can delegate today, and the critical distinction between software agents and human staff.",
     keyTakeaways: [
@@ -951,7 +951,7 @@ At MivizHub, we build and deploy dedicated AI employees that fit seamlessly into
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "With thousands of new 'AI agencies' popping up overnight, how do you separate seasoned systems architects from inexperienced freelancers using ChatGPT wrappers? Here is your exact evaluation checklist.",
     keyTakeaways: [
@@ -1043,7 +1043,7 @@ At MivizHub, we don't sell speculative tech experiments. We deliver proven, batt
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Should you hire an overseas human virtual assistant for $8/hour or deploy an autonomous AI assistant for a fixed monthly rate? Here is an objective comparison of speed, supervision, costs, and quality.",
     keyTakeaways: [
@@ -1134,7 +1134,7 @@ Skip the hiring websites, interview screening, and training headaches. MivizHub 
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Connecting your calendar, CRM, email, and phone system with AI does not require custom code. Here is how modern app integration works: triggers, actions, data mapping, and error-handling steps.",
     keyTakeaways: [

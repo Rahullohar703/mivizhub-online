@@ -9,6 +9,10 @@ export default function BlogPage({ onOpenBooking }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
+
   const filteredPosts = BLOG_POSTS.filter((post) => {
     const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
     const matchesSearch =
@@ -130,12 +134,28 @@ export default function BlogPage({ onOpenBooking }) {
                 ))}
               </div>
 
-              <Link
-                to={`/blog/${featuredPost.slug}`}
-                className="inline-flex items-center gap-2 text-base font-bold text-white bg-gray-900 hover:bg-black px-6 py-3 rounded-xl transition-all shadow-md"
-              >
-                Read Complete Guide <ArrowRight size={18} />
-              </Link>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-sm shrink-0">
+                    <img
+                      src="/rahul-profile.png"
+                      alt={featuredPost.author.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-sm font-bold text-gray-900 block leading-tight">{featuredPost.author.name}</span>
+                    <span className="text-xs text-gray-600">{featuredPost.author.role}</span>
+                  </div>
+                </div>
+
+                <Link
+                  to={`/blog/${featuredPost.slug}`}
+                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white bg-gray-900 hover:bg-black px-6 py-3 rounded-xl transition-all shadow-md"
+                >
+                  Read Complete Guide <ArrowRight size={18} />
+                </Link>
+              </div>
             </div>
           </div>
         )}

@@ -13,7 +13,7 @@ export const BLOGS_BATCH_2 = [
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "The average small business owner spends 2.5 hours every day sifting through emails. Here is how to automate inbox triage, draft customer replies with AI, and sync inquiries directly to your CRM.",
     keyTakeaways: [
@@ -101,7 +101,7 @@ All you have to do is review it, make any personal adjustments, and hit Send.
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Stop spending Sunday nights copying data between QuickBooks, Google Ads, and spreadsheets. Here is how to automatically compile business numbers into a plain-English 1-page executive summary every Monday morning.",
     keyTakeaways: [
@@ -194,7 +194,7 @@ You don't need a $20,000 enterprise business intelligence tool like Tableau. You
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "The first 48 hours after a client signs determine whether they refer their friends or cancel in frustration. Here is how service companies automate contract signing, questionnaires, and kickoff setups flawlessly.",
     keyTakeaways: [
@@ -276,7 +276,7 @@ Businesses that automate client onboarding report:
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Manual invoice data entry is slow, error-prone, and a waste of your bookkeeper's talent. Here is how modern AI optical character recognition (OCR) extracts line items and syncs vendor bills automatically.",
     keyTakeaways: [
@@ -346,7 +346,7 @@ Automating your invoice processing turns hours of tedious typing into a 10-secon
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "When a customer fails to show up for a scheduled consultation or service visit, you lose money and waste staff time. Here is the exact multi-touch reminder cadence that slashes no-shows by 40%.",
     keyTakeaways: [
@@ -419,7 +419,7 @@ If a client replies that they cannot make it, the automated system immediately r
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Demystifying AI agent workflows: how autonomous agents perceive inputs, reason through multiple steps, query databases, and execute tasks without human supervision.",
     keyTakeaways: [
@@ -506,7 +506,7 @@ Instead of hiring three different staff members to manage emails, dispatch field
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Can an AI agent really sell your product? Here is an honest, reality-tested look at what AI sales agents handle autonomously today, and the exact handoff point where human closers must take over.",
     keyTakeaways: [
@@ -587,7 +587,7 @@ The moment a qualified prospect sits down for their discovery consultation, your
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Nobody likes talking to dumb chatbots that say 'I didn't understand that.' Here is how modern, context-aware AI support agents resolve routine tickets 24/7 while routing complex issues safely to humans.",
     keyTakeaways: [
@@ -658,7 +658,7 @@ If a customer uses words like *"unacceptable"*, *"broken"*, *"manager"*, or disp
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Investing in AI should never be an act of faith. Here is the exact mathematical framework to measure the hard financial return on your AI agents through labor recovery and captured pipeline.",
     keyTakeaways: [
@@ -738,7 +738,7 @@ Monitor these four metrics monthly:
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "AI is powerful, but applying it to the wrong business problem can destroy client trust and waste thousands of dollars. Here are five situations where you should definitely NOT use an AI agent.",
     keyTakeaways: [
@@ -816,7 +816,7 @@ AI cannot take a prospective client to dinner, understand boardroom politics, or
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Marketing agency margins are under pressure from labor costs. Here are five practical automation workflows that allow a 5-person agency to manage 40+ client retainers profitably.",
     keyTakeaways: [
@@ -887,7 +887,7 @@ Agencies deploying these workflows manage **2.5x more client accounts per accoun
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Tax season burnout is not inevitable. Here are the core administrative bottlenecks CPA and accounting firms can automate to reclaim 15+ hours per week per staff accountant.",
     keyTakeaways: [
@@ -957,7 +957,7 @@ When junior accountants are not bogged down in data entry, your firm can take on
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Recruiters lose qualified candidates because manual screening takes days. Here is how leading staffing firms automate resume parsing, pre-screening via SMS, and calendar bookings in under 5 minutes.",
     keyTakeaways: [
@@ -1024,7 +1024,7 @@ Meanwhile, the top 5% of candidates receive offers from competing firms.
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Property managers juggle tenant maintenance emergencies, leasing inquiries, and rent collection 24/7. Here is how modern property management companies use AI to handle routine operations effortlessly.",
     keyTakeaways: [
@@ -1099,7 +1099,7 @@ By automating maintenance intake and leasing inquiries, a single property manage
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "WISMO (Where Is My Order) tickets account for over 50% of e-commerce customer support volume. Here is how modern online stores resolve routine order inquiries instantly and recover abandoned carts with AI.",
     keyTakeaways: [
@@ -1172,7 +1172,7 @@ During holiday shopping surges (Black Friday / Cyber Monday), your automated sys
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Should you subscribe to five separate SaaS tools with monthly user fees, or build a custom AI automation ecosystem tailored to your exact business? Here is the complete decision framework.",
     keyTakeaways: [
@@ -1244,7 +1244,7 @@ Business owners face a fundamental choice: subscribe to another rigid SaaS tool,
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Avoid failed tech rollouts and wasted budgets. Use this step-by-step 10-point checklist before introducing AI automation into your small business.",
     keyTakeaways: [
@@ -1319,7 +1319,7 @@ You don't have to navigate this checklist alone. MivizHub handles all 10 steps f
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Want accurate project quotes and fast implementation without endless back-and-forth? Here is the exact project brief template to hand to your automation agency or consultant.",
     keyTakeaways: [
@@ -1397,7 +1397,7 @@ Don't want to write a brief from scratch? Schedule a 30-minute consultation with
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "Before investing in AI tools, you need to know where your business is leaking time and money. Here is how to run a simple, 4-step internal audit to uncover your highest-ROI automation opportunities.",
     keyTakeaways: [
@@ -1474,7 +1474,7 @@ We audit your lead response time, customer intake flow, and phone answering capa
     author: {
       name: "Rahul Lohar",
       role: "Founder & Growth Architect, MivizHub",
-      avatar: "RL"
+      avatar: "/rahul-profile.png"
     },
     excerpt: "What happens when an API token expires, a phone number is invalid, or an AI agent encounters a question it hasn't seen? Here is how to architect 99.9% reliable automation with monitoring and human-in-the-loop safeguards.",
     keyTakeaways: [

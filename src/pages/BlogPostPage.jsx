@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, Clock, Calendar, Share2, CheckCircle2, ChevronRight, 
@@ -13,6 +13,10 @@ export default function BlogPostPage({ onOpenBooking }) {
   const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [slug]);
 
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
