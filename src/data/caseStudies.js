@@ -323,6 +323,338 @@ Within 4 months:
       "HubSpot CRM Automation",
       "Productized Growth Architecture"
     ]
+  },
+  {
+    id: "b2b-it-consulting-lead-qualification",
+    slug: "b2b-it-consulting-lead-qualification",
+    clientName: "B2B Cloud & IT Engineering Consulting Firm",
+    industry: "IT Services & B2B SaaS",
+    badge: "AI Inbound Sales & Lead Qualification",
+    location: "Bengaluru, Karnataka (India)",
+    privacyNote: "Client name anonymized for client contract & NDA compliance",
+    seoTitle: "B2B IT Consulting Inbound Lead Qualification Case Study | MivizHub",
+    metaDescription: "Learn how a Bengaluru IT consulting firm generated ₹4.2 Lakhs in new pipeline by responding to overseas website inquiries in under 45 seconds using AI.",
+    targetKeywords: [
+      "IT services lead qualification case study",
+      "speed to lead B2B automation",
+      "overseas lead response automation India",
+      "inbound lead conversion case study",
+      "Bangalore IT consulting sales automation"
+    ],
+    heroImage: "/hero-it.jpg",
+    headline: "How an IT Consulting Firm Added ₹4,20,000 in Pipeline by Responding to Overseas Leads in Under 45 Seconds",
+    summary: "Operating out of Bangalore, this 14-person IT engineering firm missed lucrative US and European inbound leads while the team slept. MivizHub deployed an autonomous AI Sales Qualification agent to engage visitors and schedule discovery calls 24/7.",
+    keyTakeaways: [
+      "Reduced inbound lead response time from 11 hours down to 42 seconds for US and UK inquiries.",
+      "Added ₹4,20,000 in qualified proposal pipeline in the first 60 days without hiring night-shift SDRs.",
+      "Increased discovery meeting attendance to 88% using automated calendar reminders and brief prep packs."
+    ],
+    stats: [
+      { label: "New Pipeline Added", value: "+₹4,20,000", highlight: true },
+      { label: "Overseas Response Time", value: "< 45 Seconds" },
+      { label: "Night Timezone Capture", value: "100% Inbound Handled" },
+      { label: "Discovery Show-Up Rate", value: "88% (up from 61%)" }
+    ],
+    theChallenge: `
+Based in Indiranagar, Bengaluru, this specialized cloud DevOps and custom software development agency generated high-quality website traffic from US and European founders looking for engineering talent.
+
+However, because of the 9.5 to 12.5-hour time zone difference, inquiries submitted between 9:00 PM and 5:00 AM IST sat unattended in the company's inbox until the Indian team logged on the next morning.
+
+By the time sales founders sent a reply email 10 to 14 hours later, prospective clients had already booked discovery calls with rival agencies in Eastern Europe or South America that answered instantly. The firm was losing an estimated ₹3 to ₹5 Lakhs in potential project pipeline every single month simply from delayed response times.
+    `,
+    theSolution: `
+MivizHub deployed a 24/7 conversational inbound sales agent and automated qualification workflow:
+
+1. **Instant Web & Email Lead Engagement:**  
+   Within 45 seconds of a form submission or chat message, the AI engages the prospect with tailored technical questions (tech stack, estimated timeline, cloud provider, budget range).
+
+2. **Automated Two-Way Calendar Booking:**  
+   Pre-qualified inquiries meeting the firm's minimum engagement threshold are invited to pick a time slot directly on the founders' Google Calendar, mapped to the prospect's local time zone (EST/PST/GMT).
+
+3. **Pre-Call Qualification Briefing:**  
+   Before each scheduled call, the AI generates a concise bulleted dossier in the team's Slack channel summarizing the prospect's stack, budget, and key technical bottlenecks.
+    `,
+    theResults: `
+Within 60 days of deployment:
+- **₹4,20,000 in Added Qualified Pipeline:** Sourced from 8 high-intent international consultations booked entirely outside Indian office hours.
+- **Lead Response Time Slashed to 42 Seconds:** Callers were blown away by the immediate, intelligent responsiveness.
+- **Zero Cost for Night-Shift SDRs:** Replaced the need to hire a ₹50,000 - ₹60,000/month junior night-shift business development rep.
+    `,
+    quote: {
+      text: "For an Indian tech agency targeting North American clients, waking up to find qualified discovery calls already booked on our calendar is transformative. We eliminated lead leakage without paying ₹60,000/month for an overseas night-shift sales rep. The ROI was clear within two weeks.",
+      author: "Vikram R.",
+      role: "Co-Founder & VP of Growth (Cloud Infrastructure & DevOps Services)"
+    },
+    faq: [
+      {
+        q: "Can the AI understand complex technical requirements like Kubernetes and AWS?",
+        a: "Yes. The AI is fine-tuned on the agency's specific services, tech stack parameters, and portfolio case studies to ask intelligent, relevant scoping questions."
+      },
+      {
+        q: "What happens if an inbound lead does not meet the minimum budget threshold?",
+        a: "The AI politely provides relevant open-source resources or suggests smaller productized audit packages without consuming senior partner calendar availability."
+      },
+      {
+        q: "How does it handle time zone conversions for international clients?",
+        a: "The calendar booking widget automatically detects the visitor's browser time zone and shows slots converted to EST, PST, or GMT while booking into IST."
+      }
+    ],
+    technologiesUsed: [
+      "24/7 Inbound AI Sales Agent",
+      "Time Zone Harmonized Calendar Sync",
+      "Slack Instant Dossier Dispatch",
+      "Technical Lead Scoring Logic",
+      "Automated WhatsApp & Email Reminders"
+    ]
+  },
+  {
+    id: "dental-clinic-patient-appointment-automation",
+    slug: "dental-clinic-patient-appointment-automation",
+    clientName: "Multi-Speciality Dental Care Practice",
+    industry: "Healthcare & Dental Care",
+    badge: "AI Receptionist & WhatsApp Automation",
+    location: "Mumbai, Maharashtra (India)",
+    privacyNote: "Client name anonymized for patient confidentiality & medical privacy",
+    seoTitle: "Dental Clinic Patient Scheduling & WhatsApp Automation Case Study | MivizHub",
+    metaDescription: "See how a multi-chair Mumbai dental clinic reduced patient no-shows by 42% and recovered ₹1.85 Lakhs monthly using automated WhatsApp reminders.",
+    targetKeywords: [
+      "dental clinic automation case study",
+      "patient no-show reduction India",
+      "WhatsApp appointment reminders for doctors",
+      "dental clinic revenue protection",
+      "clinic receptionist workload automation"
+    ],
+    heroImage: "/hero-dental.jpg",
+    headline: "Reducing Patient No-Shows by 42% and Protecting ₹1,85,000 Monthly for a Mumbai Dental Practice",
+    summary: "With 4 dental chairs and 3 consulting specialists, this Mumbai dental practice suffered high no-show rates for root canals and cosmetic procedures. MivizHub automated two-way WhatsApp confirmations and after-hours call handling.",
+    keyTakeaways: [
+      "Decreased clinic appointment no-shows by 42%, protecting approximately ₹1,85,000 in monthly consultation and procedure revenue.",
+      "Saved front-desk staff 18 hours weekly of repetitive telephone confirmation calls.",
+      "Captured 35+ monthly evening inquiries when prospective patients look up dental treatments after work hours."
+    ],
+    stats: [
+      { label: "No-Show Reduction", value: "-42% Fewer Missed Slots", highlight: true },
+      { label: "Monthly Revenue Protected", value: "+₹1,85,000" },
+      { label: "WhatsApp Confirmation Rate", value: "94% Patient Response" },
+      { label: "Front-Desk Time Saved", value: "18 Hours / Week" }
+    ],
+    theChallenge: `
+Located in suburban Mumbai, this busy 4-chair dental clinic offers specialized orthodontic alignment, dental implants, and endodontics. While patient footfall was high, their single front-desk receptionist spent over 3 hours every day manually dialing patients to confirm next-day appointments.
+
+Despite the manual calling, over 22% of confirmed appointments resulted in no-shows or last-minute cancellations while patients were stuck in Mumbai traffic or forgot their slots.
+
+Each empty 45-minute dental chair cost the clinic ₹1,500 to ₹4,500 in lost revenue that could not be reallocated on short notice. Furthermore, patients calling after 8:30 PM to book weekend cleanings received a busy tone or unanswered ring.
+    `,
+    theSolution: `
+MivizHub deployed a unified WhatsApp Business API workflow and after-hours AI voice concierge:
+
+1. **Automated Two-Way WhatsApp Confirmations:**  
+   Patients receive an interactive WhatsApp message 24 hours and 3 hours prior to their appointment with one-tap buttons: [Confirm], [Reschedule], or [Get Clinic Directions on Maps].
+
+2. **Waitlist Auto-Fill Engine:**  
+   When a patient clicks [Reschedule], the slot is immediately released and broadcasted to patients on the clinic's same-day waitlist, filling empty chair time within minutes.
+
+3. **After-Hours AI Call Intake:**  
+   Evening phone inquiries are greeted by a natural bilingual (English & Hindi) conversational assistant that explains treatment costs, clinic timings, and books appointments directly.
+    `,
+    theResults: `
+Within the first 45 days:
+- **No-Show Rate Cut by 42%:** The WhatsApp confirmation response rate reached 94%, as patients prefer messaging over phone calls during work hours.
+- **₹1,85,000 in Monthly Revenue Protected:** Empty dental chair downtime was reduced to near zero.
+- **Receptionist Stress Eliminated:** Staff redirected 18 hours weekly toward in-clinic patient care, billing, and sterile instrument prep.
+    `,
+    quote: {
+      text: "Our biggest operational bleed wasn't lack of patients—it was empty dental chairs from last-minute no-shows. The automated WhatsApp confirmation and rescheduling workflow gave our staff their time back and ensured chairs stayed booked throughout the week.",
+      author: "Dr. Radhika K., MDS",
+      role: "Chief Orthodontist & Clinic Director"
+    },
+    faq: [
+      {
+        q: "Do elderly patients who don't check WhatsApp receive regular SMS?",
+        a: "Yes. If a WhatsApp message remains unread for 4 hours, the system automatically falls back to an interactive SMS confirmation."
+      },
+      {
+        q: "Does the system support regional languages in India?",
+        a: "Yes. The WhatsApp messages and AI voice system natively support English, Hindi, and Hinglish conversational patterns."
+      },
+      {
+        q: "Can it integrate with Practo or our existing clinic software?",
+        a: "Yes. The system synchronizes directly with Google Calendar, Practo Ray, and webhooks from local clinic management ERPs."
+      }
+    ],
+    technologiesUsed: [
+      "Official WhatsApp Business Cloud API",
+      "Bilingual AI Voice Receptionist",
+      "Dynamic Waitlist Slot Reallocation",
+      "Google Maps Smart Directions Trigger",
+      "Two-Way Clinic Calendar Sync"
+    ]
+  },
+  {
+    id: "accounting-firm-gst-tax-workflow-automation",
+    slug: "accounting-firm-gst-tax-workflow-automation",
+    clientName: "Chartered Accountancy & Corporate Tax Advisory",
+    industry: "Accounting & Tax Advisory",
+    badge: "Workflow Automation & Document Intake",
+    location: "Delhi NCR (Gurgaon), India",
+    privacyNote: "Client name anonymized for ICAI professional ethics & client confidentiality",
+    seoTitle: "CA Firm GST & Document Workflow Automation Case Study | MivizHub",
+    metaDescription: "Discover how a Gurgaon Chartered Accountancy firm saved 25 hours per week during peak tax filing season with automated client document collection.",
+    targetKeywords: [
+      "CA firm workflow automation case study",
+      "GST document collection automation",
+      "chartered accountant client follow up",
+      "tax firm productivity automation India",
+      "accounting document chasing solution"
+    ],
+    heroImage: "/hero-tax.jpg",
+    headline: "How a CA Firm Automated GST & TDS Document Follow-Ups, Saving 25 Hours Weekly During Peak Filing",
+    summary: "A 10-person Chartered Accountancy firm in Delhi NCR spent hours every month chasing SME clients for GST invoices, bank statements, and TDS challans. MivizHub built an automated multi-channel document intake workflow.",
+    keyTakeaways: [
+      "Reduced average document collection cycle from 8 days down to 2 days ahead of statutory GST and TDS deadlines.",
+      "Saved junior audit staff and partners over 25 hours weekly of manual email and phone chasing.",
+      "Achieved zero late filing penalties across 85 business clients during quarter-end compliance periods."
+    ],
+    stats: [
+      { label: "Weekly Staff Time Saved", value: "25 Hours / Week", highlight: true },
+      { label: "Document Turnaround Time", value: "2 Days (from 8 Days)" },
+      { label: "Client Deadline Compliance", value: "100% On-Time Filing" },
+      { label: "Penalty Incidents", value: "Zero (100% Protected)" }
+    ],
+    theChallenge: `
+Operating out of Cyber City, Gurgaon, this mid-sized Chartered Accountancy practice handles corporate tax audits, GST compliance, and payroll for 85+ active SME clients.
+
+Every month between the 10th and 20th, the firm entered a state of panic. Junior articles and audit managers spent up to 60% of their workday calling business owners, accountants, and CFOs repeatedly asking for missing purchase registers, bank PDF statements, and GSTR-2B data.
+
+Clients often submitted files at the 11th hour on the 19th evening, leading to rushed filings, portal server crashes, and frantic overtime work. The partners calculated that over 100 billable hours per month were wasted on non-billable administrative chasing.
+    `,
+    theSolution: `
+MivizHub architected a disciplined, automated compliance pipeline:
+
+1. **Automated Scheduled Document Requests:**  
+   On the 1st of every month, an automated branded checklist is sent to each client's designated finance contact via WhatsApp and Email detailing the exact files required for their specific business entity.
+
+2. **Smart Reminder Escalation Cadence:**  
+   If files are not uploaded to the secure client drive by the 7th, a courteous automated follow-up is triggered. On the 11th, a high-priority reminder is sent to the company director with a 1-click upload link.
+
+3. **Automated File Verification & Partner Alert:**  
+   When files are submitted, the system verifies file extensions and notifies the assigned audit junior on their internal dashboard, locking the compliance status.
+    `,
+    theResults: `
+Within 90 days of implementation:
+- **Document Collection Time Dropped to 2 Days:** 82% of clients now submit all compliance documents before the 8th of every month.
+- **25+ Staff Hours Saved Weekly:** Audit juniors reallocated their time toward high-value tax advisory and statutory audit work.
+- **Zero Late Fee Penalties:** 100% of GST-3B and TDS returns filed comfortably ahead of government deadline dates.
+    `,
+    quote: {
+      text: "During tax and audit deadlines, my team used to spend half their workday just calling clients to ask for pending bank statements and purchase registers. MivizHub automated the entire follow-up and upload checklist. Our filings are done days before the portal crashes.",
+      author: "Siddharth N., FCA",
+      role: "Senior Partner (Direct Tax & Corporate Compliance)"
+    },
+    faq: [
+      {
+        q: "Is client financial data secure and private?",
+        a: "Yes. Files are uploaded directly to the firm's private Google Workspace or Microsoft OneDrive enterprise cloud storage using 256-bit SSL encryption."
+      },
+      {
+        q: "Can clients upload files directly from their phone?",
+        a: "Yes. The secure link sent via WhatsApp allows mobile photo or PDF uploads directly from the client's phone without requiring login passwords."
+      },
+      {
+        q: "How does it adapt to different types of clients (proprietorship vs Pvt Ltd)?",
+        a: "The workflow segments clients by entity type so each business only receives requests for the specific documents relevant to their tax filings."
+      }
+    ],
+    technologiesUsed: [
+      "Custom Automated Compliance Engine",
+      "WhatsApp & Email Multi-Channel Triggers",
+      "Google Drive Enterprise Document Vault",
+      "Automated Audit Dashboard Notifications",
+      "Dynamic Entity-Based Checklist Logic"
+    ]
+  },
+  {
+    id: "ecommerce-d2c-whatsapp-rto-automation",
+    slug: "ecommerce-d2c-whatsapp-rto-automation",
+    clientName: "Speciality Apparel & Lifestyle D2C Brand",
+    industry: "E-Commerce & Retail",
+    badge: "AI Customer Support & Order Verification",
+    location: "Pune, Maharashtra (India)",
+    privacyNote: "Client name anonymized for commercial trade secrecy & logistics data compliance",
+    seoTitle: "E-Commerce COD Return-to-Origin (RTO) Automation Case Study | MivizHub",
+    metaDescription: "Learn how a Pune D2C apparel brand cut COD Return-To-Origin (RTO) losses by 31% and saved ₹2.4 Lakhs monthly with automated WhatsApp order verification.",
+    targetKeywords: [
+      "ecommerce RTO reduction case study",
+      "cash on delivery verification WhatsApp",
+      "D2C return to origin automation India",
+      "Shopify WhatsApp automation case study",
+      "ecommerce customer support AI India"
+    ],
+    heroImage: "/hero-ecommerce.jpg",
+    headline: "Cutting Cash-on-Delivery (COD) RTO Losses by 31% with Automated WhatsApp Order Confirmations",
+    summary: "Processing 120+ orders daily, this Pune apparel brand lost massive margins to fake or unconfirmed COD orders that were returned to origin. MivizHub deployed an automated WhatsApp address verification and live AI support assistant.",
+    keyTakeaways: [
+      "Reduced overall Cash-on-Delivery (COD) Return-To-Origin (RTO) rate from 26% down to 18%, saving ₹2,40,000 monthly in courier forward & reverse shipping charges.",
+      "Verified 89% of customer delivery addresses via interactive WhatsApp buttons within 5 minutes of checkout.",
+      "Automated routine customer questions (tracking links, sizing exchanges) with an instant AI support worker, cutting ticket resolution time to under 2 minutes."
+    ],
+    stats: [
+      { label: "RTO Rate Reduction", value: "-31% Return Losses", highlight: true },
+      { label: "Monthly Courier Cash Saved", value: "+₹2,40,000" },
+      { label: "Automated Address Verification", value: "89% Within 5 Mins" },
+      { label: "Support Ticket Speed", value: "< 2 Minutes" }
+    ],
+    theChallenge: `
+Operating on Shopify, this Pune-based contemporary apparel brand grew rapidly across Tier-1 and Tier-2 Indian cities through Instagram ads. However, over 68% of customers chose Cash on Delivery (COD) as their payment option.
+
+The brand suffered a staggering 26% Return-To-Origin (RTO) rate. Couriers returned parcels due to incorrect PIN codes, incomplete house addresses, or impulse buyers refusing delivery when the courier arrived at the doorstep.
+
+Each returned parcel cost the brand approximately ₹140 to ₹180 in forward and reverse courier freight charges, plus locked inventory. This logistical hemorrhage was costing the founders nearly ₹2.5 to ₹3 Lakhs every month.
+    `,
+    theSolution: `
+MivizHub deployed an end-to-end post-purchase WhatsApp automation and AI support pipeline:
+
+1. **Instant Interactive WhatsApp COD Verification:**  
+   Seconds after a COD order is placed on Shopify, the customer receives an automated WhatsApp message requesting confirmation via interactive buttons: [Confirm My Order] or [Cancel Order].
+
+2. **Automated Address Verification & Correction:**  
+   If the pin code is flagged as high-risk or the house/flat number is missing, the AI prompts the customer to reply with their complete landmark address, updating Shopify shipping notes automatically.
+
+3. **24/7 AI Order Tracking & Sizing Concierge:**  
+   When customers ask "Where is my order?" or request a size exchange, an autonomous AI support agent resolves the query in under 2 minutes with live carrier tracking links.
+    `,
+    theResults: `
+Within 60 days of going live:
+- **COD RTO Rate Dropped from 26% to 18%:** A 31% relative reduction in failed deliveries.
+- **₹2,40,000 Saved Monthly in Courier Penalties:** Recovered cash directly improved bottom-line profitability.
+- **Support Ticket Resolution Under 2 Minutes:** Reduced customer anxiety and significantly increased repeat purchase rates.
+    `,
+    quote: {
+      text: "For an Indian D2C brand, high COD return rates can wipe out your net margins overnight. MivizHub's automated WhatsApp verification weeded out invalid orders before we ever handed boxes to Delhivery or Bluedart. It added ₹2.4 Lakhs directly to our monthly cash flow.",
+      author: "Ananya M.",
+      role: "Co-Founder & Head of Operations (D2C Apparel Brand)"
+    },
+    faq: [
+      {
+        q: "What happens if a customer does not confirm their COD order?",
+        a: "The system triggers a gentle follow-up 4 hours later. If still unconfirmed after 24 hours, the order is flagged in Shopify for a manual review call before shipping."
+      },
+      {
+        q: "Does this connect directly to Indian logistics aggregators like Shiprocket and Delhivery?",
+        a: "Yes. The AI syncs with Shopify, Shiprocket, Delhivery, and Bluedart API webhooks to fetch real-time dispatch and tracking milestones."
+      },
+      {
+        q: "Can customers convert COD orders to prepaid on WhatsApp?",
+        a: "Yes. The verification message offers a small incentive (e.g. 5% extra discount or ₹50 off) with a 1-click Razorpay/UPI link to convert COD into prepaid."
+      }
+    ],
+    technologiesUsed: [
+      "Shopify Automated Webhook Triggers",
+      "WhatsApp Interactive Button Verification",
+      "AI Customer Support Bot",
+      "Logistics Tracking API (Shiprocket/Delhivery)",
+      "COD-to-Prepaid Conversion Links"
+    ]
   }
 ];
 
@@ -331,5 +663,9 @@ export const CASE_STUDY_INDUSTRIES = [
   "Home Services & Contracting",
   "Healthcare & Medical Aesthetics",
   "Legal & Professional Services",
-  "Commercial Mechanical & Facilities"
+  "Commercial Mechanical & Facilities",
+  "IT Services & B2B SaaS",
+  "Healthcare & Dental Care",
+  "Accounting & Tax Advisory",
+  "E-Commerce & Retail"
 ];
