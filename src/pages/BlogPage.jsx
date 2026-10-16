@@ -191,8 +191,13 @@ export default function BlogPage({ onOpenBooking }) {
 
                 <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-900 flex items-center justify-center text-xs font-bold">
-                      {post.author.avatar}
+                    <div className="w-8 h-8 rounded-full overflow-hidden bg-cyan-100 text-cyan-900 flex items-center justify-center text-xs font-bold border border-gray-200">
+                      <img
+                        src="/rahul-profile.png"
+                        alt={post.author.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
                     </div>
                     <span className="text-xs font-medium text-gray-700">{post.author.name}</span>
                   </div>

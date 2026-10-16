@@ -422,8 +422,13 @@ export default function BlogPostPage({ onOpenBooking }) {
           {/* Author and Simple Share Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-200">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm shadow">
-                {post.author.avatar}
+              <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-900 text-white flex items-center justify-center font-bold text-sm shadow">
+                <img
+                  src="/rahul-profile.png"
+                  alt={post.author.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
               </div>
               <div>
                 <div className="text-base font-bold text-gray-900">{post.author.name}</div>
@@ -526,8 +531,13 @@ export default function BlogPostPage({ onOpenBooking }) {
 
         {/* Author Credentials Card (E-E-A-T) */}
         <div className="mt-16 bg-gray-50 border-2 border-gray-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-5">
-          <div className="w-16 h-16 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-2xl shrink-0 shadow">
-            {post.author.avatar}
+          <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-900 text-white flex items-center justify-center font-bold text-2xl shrink-0 shadow border border-gray-300">
+            <img
+              src="/rahul-profile.png"
+              alt={post.author.name}
+              className="w-full h-full object-cover"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1 justify-center sm:justify-start">
