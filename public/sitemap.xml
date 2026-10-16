@@ -26,7 +26,8 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- 12 Strategic SEO Blog Posts -->
+  <!-- 32 Strategic SEO Blog Posts -->
+  <!-- Cluster 0: Foundational Roadmap (01-12) -->
   <url>
     <loc>https://www.mivizhub.online/blog/how-to-automate-repetitive-tasks-in-a-small-business</loc>
     <lastmod>2026-10-16</lastmod>
@@ -95,6 +96,134 @@
   </url>
   <url>
     <loc>https://www.mivizhub.online/blog/how-to-connect-business-apps-with-ai-automation</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cluster 1: Specific AI automation problems (13-17) -->
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-automate-email-management-for-a-small-business</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-automate-business-reports-using-ai</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-automate-customer-onboarding-for-service-businesses</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-automate-invoice-processing-for-small-businesses</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-automate-appointment-reminders-and-reduce-no-shows</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cluster 2: AI agents and digital workers (18-22) -->
+  <url>
+    <loc>https://www.mivizhub.online/blog/what-is-an-ai-agent-workflow-real-business-examples</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-agents-for-sales-what-can-they-handle-without-human-help</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-agents-for-customer-support-use-cases-and-limitations</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-measure-the-roi-of-an-ai-agent</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/when-should-a-business-not-use-an-ai-agent</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cluster 3: Industry-specific opportunities (23-27) -->
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-automation-for-digital-marketing-agencies-practical-workflows</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-automation-for-accounting-firms-tasks-to-automate-first</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-automation-for-recruitment-agencies-from-cv-screening-to-scheduling</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-automation-for-property-management-companies</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-automation-for-online-stores-customer-service-and-order-workflows</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cluster 4: Commercial-intent and decision-stage topics (28-32) -->
+  <url>
+    <loc>https://www.mivizhub.online/blog/custom-ai-automation-vs-off-the-shelf-software-which-should-you-choose</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/ai-automation-implementation-checklist-for-small-businesses</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/what-to-include-in-an-ai-automation-project-brief</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-audit-your-business-before-introducing-ai-automation</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mivizhub.online/blog/how-to-keep-ai-automation-reliable-monitoring-errors-and-human-review</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
