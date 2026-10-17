@@ -1,9 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Clock, Calendar, ArrowRight, BookOpen, CheckCircle2, Sparkles, User, Tag } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { 
+  Search, Clock, ArrowRight, BookOpen, CheckCircle2, 
+  Sparkles, Zap, TrendingUp, PhoneCall 
+} from 'lucide-react';
 import Container from '../components/ui/Container';
 import { BLOG_POSTS, BLOG_CATEGORIES } from '../data/blogs';
 import SEOHead from '../components/SEOHead';
+
+// Dynamic thematic category badge styling
+const getCategoryBadgeStyle = (category) => {
+  switch (category) {
+    case "AI Workforce":
+    case "AI Agents & Digital Workers":
+      return "bg-indigo-50 text-indigo-900 border-indigo-200/80 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600";
+    case "Sales & Follow-Up Automation":
+      return "bg-emerald-50 text-emerald-900 border-emerald-200/80 group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600";
+    case "Workflow Automation":
+    case "Process Automation":
+      return "bg-cyan-50 text-cyan-900 border-cyan-200/80 group-hover:bg-cyan-700 group-hover:text-white group-hover:border-cyan-700";
+    case "Commercial Strategy & ROI":
+    case "Workforce Strategy & ROI":
+      return "bg-amber-50 text-amber-950 border-amber-200/80 group-hover:bg-amber-600 group-hover:text-white group-hover:border-amber-600";
+    case "Industry Playbooks":
+      return "bg-purple-50 text-purple-950 border-purple-200/80 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600";
+    default:
+      return "bg-slate-100 text-slate-800 border-slate-200 group-hover:bg-slate-900 group-hover:text-white group-hover:border-slate-900";
+  }
+};
 
 export default function BlogPage({ onOpenBooking }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -51,29 +76,38 @@ export default function BlogPage({ onOpenBooking }) {
         jsonLd={jsonLd}
       />
 
-      {/* Header Section */}
-      <div className="bg-[#f8fafc] border-b border-gray-200 py-12 sm:py-16">
-        <Container className="max-w-4xl text-center">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs sm:text-sm font-semibold tracking-wide mb-4">
-            <BookOpen size={15} className="text-cyan-600" />
-            Plain-English Guides for Business Owners
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
-            Grow Your Business & Cut Operational Overhead
-          </h1>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            Simple, practical guides on how modern businesses get more customer inquiries and handle the work automatically with AI employees.
-          </p>
+      {/* Header Section with Atmospheric Spotlight */}
+      <div className="bg-[#f8fafc] border-b border-gray-200 py-12 sm:py-16 relative overflow-hidden">
+        {/* Subtle radial glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(6,182,212,0.08)_0%,transparent_70%)] pointer-events-none" />
+
+        <Container className="max-w-4xl text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs sm:text-sm font-semibold tracking-wide mb-4 shadow-2xs">
+              <BookOpen size={15} className="text-cyan-600" />
+              Plain-English Guides for Business Owners
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
+              Grow Your Business & Cut Operational Overhead
+            </h1>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+              Simple, practical playbooks on how modern businesses get more customer inquiries and handle the work automatically with AI employees.
+            </p>
+          </motion.div>
 
           {/* Search Bar - High Contrast & Large */}
           <div className="max-w-xl mx-auto relative mb-6">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
-              placeholder="Search guides (e.g., missed calls, SEO, AI receptionist)..."
+              placeholder="Search guides (e.g., missed calls, pipeline, AI receptionist, ROI)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3.5 bg-white border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-cyan-600 shadow-sm text-base"
+              className="w-full pl-12 pr-4 py-3.5 bg-white border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-cyan-600 shadow-sm text-base transition-colors"
             />
           </div>
 
@@ -98,7 +132,7 @@ export default function BlogPage({ onOpenBooking }) {
                     onClick={() => setSelectedCategory(category)}
                     className={`flex-shrink-0 snap-center whitespace-nowrap text-xs sm:text-sm px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
                       isActive
-                        ? "bg-gray-900 text-white shadow-md scale-[1.02]"
+                        ? "bg-gray-900 text-white shadow-md shadow-gray-900/20 scale-[1.02]"
                         : "bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 border border-gray-300 shadow-2xs hover:border-gray-400"
                     }`}
                   >
@@ -114,35 +148,49 @@ export default function BlogPage({ onOpenBooking }) {
       <Container className="max-w-6xl mt-12">
         {/* Featured Guide Banner (Shown when not searching and on 'All') */}
         {selectedCategory === "All" && !searchQuery && featuredPost && (
-          <div className="mb-14 bg-gradient-to-br from-cyan-50/50 via-white to-gray-50 border-2 border-cyan-200 rounded-2xl p-6 sm:p-10 shadow-sm">
-            <div className="max-w-3xl">
-              <div className="flex flex-wrap items-center gap-3 mb-3">
-                <span className="text-xs font-bold uppercase tracking-wider bg-cyan-100 text-cyan-900 px-3 py-1 rounded-md">
-                  Featured Guide
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ y: -4 }}
+            className="group relative mb-14 bg-gradient-to-br from-cyan-50/60 via-white to-indigo-50/30 border-2 border-cyan-200/90 hover:border-cyan-500 rounded-3xl p-6 sm:p-10 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-cyan-900/10 overflow-hidden cursor-pointer"
+          >
+            {/* Top Glowing Header Accent Bar */}
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-400" />
+            
+            {/* Ambient Background Light Blob */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.12)_0%,transparent_70%)] pointer-events-none" />
+
+            <div className="max-w-3xl relative z-10">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider bg-cyan-900 text-white px-3.5 py-1.5 rounded-lg shadow-xs">
+                  <Sparkles size={13} className="text-cyan-300 fill-cyan-300" /> Featured Blueprint
                 </span>
-                <span className="text-xs font-semibold text-gray-500 flex items-center gap-1">
-                  <Clock size={13} /> {featuredPost.readingTime}
+                <span className="text-xs font-bold text-cyan-950 bg-cyan-100/80 px-2.5 py-1 rounded-md border border-cyan-200 flex items-center gap-1">
+                  <Clock size={13} className="text-cyan-700" /> {featuredPost.readingTime}
                 </span>
-                <span className="text-xs text-gray-500">• {featuredPost.publishDate}</span>
+                <span className="text-xs text-gray-500 font-semibold">• {featuredPost.publishDate}</span>
               </div>
 
               <Link to={`/blog/${featuredPost.slug}`}>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 hover:text-cyan-700 transition-colors mb-4 leading-snug">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 group-hover:text-cyan-900 transition-colors mb-4 leading-tight tracking-tight">
                   {featuredPost.title}
                 </h2>
               </Link>
 
-              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 font-normal">
                 {featuredPost.excerpt}
               </p>
 
-              {/* Quick Summary Points */}
-              <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 mb-6 space-y-2.5">
-                <div className="text-xs font-bold uppercase text-gray-500 tracking-wider">
-                  What you will learn in this guide:
+              {/* Quick Takeaways Box */}
+              <div className="bg-white/90 backdrop-blur-xs border border-gray-200/90 rounded-2xl p-5 sm:p-6 mb-7 space-y-3 shadow-2xs group-hover:border-cyan-200 transition-colors">
+                <div className="text-xs font-black uppercase text-gray-500 tracking-wider flex items-center gap-1.5">
+                  <Zap size={14} className="text-amber-500 fill-amber-500" />
+                  What you will learn in this blueprint:
                 </div>
                 {featuredPost.keyTakeaways.slice(0, 3).map((takeaway, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-800">
+                  <div key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-800 font-medium">
                     <CheckCircle2 size={18} className="text-emerald-600 shrink-0 mt-0.5" />
                     <span>{takeaway}</span>
                   </div>
@@ -151,7 +199,7 @@ export default function BlogPage({ onOpenBooking }) {
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-sm shrink-0">
+                  <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-sm shrink-0 ring-2 ring-transparent group-hover:ring-cyan-400 transition-all">
                     <img
                       src="/rahul-profile.png"
                       alt={featuredPost.author.name}
@@ -160,126 +208,166 @@ export default function BlogPage({ onOpenBooking }) {
                   </div>
                   <div>
                     <span className="text-sm font-bold text-gray-900 block leading-tight">{featuredPost.author.name}</span>
-                    <span className="text-xs text-gray-600">{featuredPost.author.role}</span>
+                    <span className="text-xs text-gray-600 font-medium">{featuredPost.author.role}</span>
                   </div>
                 </div>
 
                 <Link
                   to={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center justify-center gap-2 text-base font-bold text-white bg-gray-900 hover:bg-black px-6 py-3 rounded-xl transition-all shadow-md"
+                  className="inline-flex items-center justify-center gap-2 text-base font-extrabold text-white bg-gray-900 hover:bg-black px-7 py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-xl group-hover:shadow-cyan-900/20 group-hover:scale-[1.02]"
                 >
-                  Read Complete Guide <ArrowRight size={18} />
+                  Read Complete Blueprint <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
-        {/* Section Title */}
+        {/* Section Title & Live Count */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-            {selectedCategory === "All" ? "All Business Guides" : selectedCategory}
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span>{selectedCategory === "All" ? "All Business Guides" : selectedCategory}</span>
+            {selectedCategory === "All" && (
+              <span className="text-xs font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-200">
+                Live Library
+              </span>
+            )}
           </h2>
-          <span className="text-sm text-gray-500 font-medium">
+          <span className="text-sm text-gray-500 font-semibold">
             Showing {filteredPosts.length} {filteredPosts.length === 1 ? 'guide' : 'guides'}
           </span>
         </div>
 
-        {/* Articles Grid */}
+        {/* Articles Grid with GOATED Physics-Based Hover Animations */}
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16 bg-gray-50 rounded-2xl border border-gray-200">
-            <p className="text-gray-600 text-base mb-4">No guides match your search.</p>
+            <p className="text-gray-600 text-base mb-4 font-medium">No guides match your search criteria.</p>
             <button
               onClick={() => { setSelectedCategory("All"); setSearchQuery(""); }}
-              className="text-sm font-semibold text-cyan-700 hover:underline"
+              className="text-sm font-bold text-cyan-700 hover:underline cursor-pointer"
             >
-              Clear filters and view all
+              Clear filters and view all guides →
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <article
-                key={post.id}
-                className="bg-white border-2 border-gray-200 hover:border-gray-900 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all shadow-sm hover:shadow-md group"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded bg-gray-100 text-gray-800">
-                      {post.category}
-                    </span>
-                    <span className="text-xs text-gray-500 flex items-center gap-1 font-medium">
-                      <Clock size={12} /> {post.readingTime}
-                    </span>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
+            {filteredPosts.map((post, pIdx) => {
+              const catBadgeStyle = getCategoryBadgeStyle(post.category);
 
-                  <Link to={`/blog/${post.slug}`}>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-cyan-700 transition-colors mb-3 leading-snug">
-                      {post.title}
-                    </h3>
-                  </Link>
-
-                  <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full overflow-hidden bg-cyan-100 text-cyan-900 flex items-center justify-center text-xs font-bold border border-gray-200">
-                      <img
-                        src="/rahul-profile.png"
-                        alt={post.author.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      />
-                    </div>
-                    <span className="text-xs font-medium text-gray-700">{post.author.name}</span>
-                  </div>
-
+              return (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.45, delay: (pIdx % 3) * 0.07 }}
+                  whileHover={{ y: -8, scale: 1.012 }}
+                  className="h-full flex"
+                >
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="text-sm font-bold text-cyan-700 group-hover:text-cyan-900 flex items-center gap-1"
+                    className="group relative w-full h-full flex flex-col justify-between bg-white border-2 border-gray-200/90 hover:border-cyan-500 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-[0_22px_45px_rgba(8,145,178,0.15)] overflow-hidden cursor-pointer isolate"
                   >
-                    Read Guide <ArrowRight size={15} />
+                    {/* 1. Top Radiant Gradient Accent Bar on Hover */}
+                    <div className="absolute top-0 inset-x-0 h-1.5 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:via-indigo-500 group-hover:to-cyan-400 transition-all duration-300" />
+
+                    {/* 2. Ambient Radial Halo Blooming inside Card on Hover */}
+                    <div className="absolute -top-20 -right-20 w-48 h-48 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.14)_0%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+
+                    <div>
+                      {/* Category Badge & Reading Time */}
+                      <div className="flex items-center justify-between gap-2 mb-4 pt-1">
+                        <span className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all duration-200 flex items-center gap-1.5 shadow-2xs ${catBadgeStyle}`}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100 group-hover:animate-ping" />
+                          <span>{post.category}</span>
+                        </span>
+                        
+                        <span className="text-xs text-gray-500 flex items-center gap-1 font-semibold group-hover:text-cyan-700 transition-colors">
+                          <Clock size={12} className="text-gray-400 group-hover:text-cyan-600 group-hover:rotate-45 transition-all duration-300" />
+                          <span>{post.readingTime}</span>
+                        </span>
+                      </div>
+
+                      {/* Title with Smooth Hover Micro-Shift */}
+                      <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-cyan-800 transition-colors duration-200 mb-3 leading-snug">
+                        {post.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-sm text-gray-600 group-hover:text-gray-700 leading-relaxed mb-6 line-clamp-3 font-normal">
+                        {post.excerpt}
+                      </p>
+                    </div>
+
+                    {/* Bottom Footer: Author & Magnetic Action Pill */}
+                    <div className="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 ring-2 ring-transparent group-hover:ring-cyan-400/50 transition-all duration-200 shadow-2xs shrink-0">
+                          <img
+                            src="/rahul-profile.png"
+                            alt={post.author.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                          />
+                        </div>
+                        <span className="text-xs font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
+                          {post.author.name}
+                        </span>
+                      </div>
+
+                      {/* GOATED Interactive Action Button Pill */}
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-black bg-gray-100 text-gray-900 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-200 shadow-2xs group-hover:shadow-md group-hover:shadow-cyan-600/30">
+                        <span>Read Guide</span>
+                        <ArrowRight size={13} className="stroke-[2.5] group-hover:translate-x-1 transition-transform duration-200" />
+                      </span>
+                    </div>
                   </Link>
-                </div>
-              </article>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         )}
 
         {/* High-Converting Clear CTA Box for Business Owners */}
-        <div className="mt-20 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl p-8 sm:p-12 text-center">
-          <div className="max-w-2xl mx-auto">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-cyan-800 block mb-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 bg-[#f8fafc] border-2 border-gray-300 hover:border-cyan-500 rounded-2xl p-8 sm:p-12 text-center shadow-sm hover:shadow-2xl hover:shadow-cyan-900/10 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+        >
+          {/* Subtle Ambient Radial Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.08)_0%,transparent_70%)] pointer-events-none" />
+
+          <div className="max-w-2xl mx-auto relative z-10">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-cyan-800 block mb-2">
               Free Consultation For Business Owners
             </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
               Wondering How Much Revenue You Lose to Missed Calls?
             </h3>
-            <p className="text-base text-gray-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed font-normal">
               We will review your current phone handling and website search ranking, and show you exactly how an AI receptionist and growth strategy can bring in more customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
-                onClick={onOpenBooking}
-                className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition-all shadow-md"
+                onClick={() => onOpenBooking('ai-staffing')}
+                className="w-full sm:w-auto px-8 py-4 bg-gray-900 hover:bg-black text-white font-extrabold text-base rounded-xl transition-all shadow-md hover:shadow-xl hover:shadow-gray-900/25 hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer"
               >
-                Schedule a 30-Minute Call
+                <PhoneCall size={18} /> Schedule a 30-Minute Call
               </button>
               <Link
                 to="/casestudy"
-                className="text-base font-semibold text-gray-700 hover:text-gray-900 px-6 py-3.5 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
+                className="text-base font-bold text-gray-700 hover:text-gray-900 px-6 py-4 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
               >
                 View Client Results & Numbers →
               </Link>
             </div>
-            <p className="text-xs text-gray-500 mt-4">
+            <p className="text-xs text-gray-500 mt-4 font-medium">
               Zero obligation • Real practical guidance • No technical experience needed
             </p>
           </div>
-        </div>
+        </motion.div>
 
       </Container>
     </div>
