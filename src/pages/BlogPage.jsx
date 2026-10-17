@@ -30,6 +30,40 @@ const getCategoryBadgeStyle = (category) => {
   }
 };
 
+const renderInlineMarkdown = (rawText) => {
+  if (!rawText) return null;
+  const text = String(rawText).replace(/\*{4,}/g, '').trim();
+  const tokens = [];
+  const regex = /(\*\*.*?\*\*|\*.*?\*)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      tokens.push(text.substring(lastIndex, match.index).replace(/\*{2,}/g, ''));
+    }
+    const token = match[0];
+    if (token.startsWith('**') && token.endsWith('**')) {
+      tokens.push(
+        <strong key={match.index} className="font-extrabold text-gray-900">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      tokens.push(
+        <em key={match.index} className="italic text-gray-800">
+          {token.slice(1, -1)}
+        </em>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    tokens.push(text.substring(lastIndex).replace(/\*{2,}/g, ''));
+  }
+  return tokens.length > 0 ? tokens : text.replace(/\*{2,}/g, '');
+};
+
 export default function BlogPage({ onOpenBooking }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -192,7 +226,7 @@ export default function BlogPage({ onOpenBooking }) {
                 {featuredPost.keyTakeaways.slice(0, 3).map((takeaway, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-800 font-medium">
                     <CheckCircle2 size={18} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{takeaway}</span>
+                    <span>{renderInlineMarkdown(takeaway)}</span>
                   </div>
                 ))}
               </div>
@@ -295,7 +329,7 @@ export default function BlogPage({ onOpenBooking }) {
 
                       {/* Excerpt */}
                       <p className="text-sm text-gray-600 group-hover:text-gray-700 leading-relaxed mb-6 line-clamp-3 font-normal">
-                        {post.excerpt}
+                        {renderInlineMarkdown(post.excerpt)}
                       </p>
                     </div>
 

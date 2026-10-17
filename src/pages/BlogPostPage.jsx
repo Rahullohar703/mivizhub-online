@@ -33,7 +33,15 @@ export default function BlogPostPage({ onOpenBooking }) {
     }
   };
 
-  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  // Contextually matched related posts
+  const relatedPosts = BLOG_POSTS
+    .filter((p) => p.slug !== slug)
+    .sort((a, b) => {
+      if (a.category === post.category && b.category !== post.category) return -1;
+      if (b.category === post.category && a.category !== post.category) return 1;
+      return 0;
+    })
+    .slice(0, 3);
 
   // Schema.org JSON-LD Rich Snippet Data
   const jsonLd = {
@@ -101,17 +109,24 @@ export default function BlogPostPage({ onOpenBooking }) {
     ]
   };
 
-  // Helper to render inline markdown: bold, links, italic
+  // Helper to clean stray unmatched asterisks and clean text
+  const cleanRawText = (str) => {
+    if (!str) return str;
+    return str.replace(/\*{2,}/g, '');
+  };
+
+  // Helper to render inline markdown: bold, links, italic, code
   const renderInlineMarkdown = (rawText) => {
     if (!rawText) return null;
+    let text = String(rawText).replace(/\*{4,}/g, '').trim();
     const tokens = [];
-    const regex = /(\[.*?\]\(.*?\)|\*\*.*?\*\*|\*.*?\*)/g;
+    const regex = /(\[.*?\]\(.*?\)|\`.*?\`|\*\*.*?\*\*|\*.*?\*)/g;
     let lastIndex = 0;
     let match;
 
-    while ((match = regex.exec(rawText)) !== null) {
+    while ((match = regex.exec(text)) !== null) {
       if (match.index > lastIndex) {
-        tokens.push(rawText.substring(lastIndex, match.index));
+        tokens.push(cleanRawText(text.substring(lastIndex, match.index)));
       }
       const token = match[0];
       if (token.startsWith('[') && token.includes('](')) {
@@ -130,6 +145,12 @@ export default function BlogPostPage({ onOpenBooking }) {
             </a>
           );
         }
+      } else if (token.startsWith('`') && token.endsWith('`')) {
+        tokens.push(
+          <code key={match.index} className="bg-gray-100 text-cyan-900 px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono border border-gray-200">
+            {token.slice(1, -1)}
+          </code>
+        );
       } else if (token.startsWith('**') && token.endsWith('**')) {
         tokens.push(
           <strong key={match.index} className="font-extrabold text-gray-900">
@@ -145,10 +166,10 @@ export default function BlogPostPage({ onOpenBooking }) {
       }
       lastIndex = regex.lastIndex;
     }
-    if (lastIndex < rawText.length) {
-      tokens.push(rawText.substring(lastIndex));
+    if (lastIndex < text.length) {
+      tokens.push(cleanRawText(text.substring(lastIndex)));
     }
-    return tokens.length > 0 ? tokens : rawText;
+    return tokens.length > 0 ? tokens : text;
   };
 
   // Robust line-by-line markdown block parser
@@ -276,7 +297,7 @@ export default function BlogPostPage({ onOpenBooking }) {
           if (block.type === 'h3') {
             return (
               <h3 key={bIdx} className="text-xl sm:text-2xl font-extrabold text-gray-900 pt-5 pb-1 border-b border-gray-200">
-                {block.content}
+                {renderInlineMarkdown(block.content)}
               </h3>
             );
           }
@@ -284,18 +305,20 @@ export default function BlogPostPage({ onOpenBooking }) {
           if (block.type === 'h4') {
             return (
               <h4 key={bIdx} className="text-lg sm:text-xl font-bold text-gray-900 pt-3">
-                {block.content}
+                {renderInlineMarkdown(block.content)}
               </h4>
             );
           }
 
           if (block.type === 'numbered-header') {
             return (
-              <div key={bIdx} className="text-lg sm:text-xl font-extrabold text-gray-900 pt-5 pb-1 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-900 text-sm font-black inline-flex items-center justify-center shrink-0 border border-cyan-200">
+              <div key={bIdx} className="text-base sm:text-lg text-gray-900 pt-3 pb-1 flex items-start gap-3.5">
+                <span className="w-7 h-7 rounded-lg bg-cyan-100 text-cyan-900 text-xs sm:text-sm font-black inline-flex items-center justify-center shrink-0 border border-cyan-200 mt-0.5 shadow-2xs">
                   {block.number}
                 </span>
-                <span>{block.content}</span>
+                <div className="leading-relaxed flex-1">
+                  {renderInlineMarkdown(block.content)}
+                </div>
               </div>
             );
           }
@@ -471,7 +494,7 @@ export default function BlogPostPage({ onOpenBooking }) {
             {post.keyTakeaways.map((takeaway, idx) => (
               <div key={idx} className="flex items-start gap-3 text-base sm:text-lg text-gray-900">
                 <CheckCircle2 size={20} className="text-emerald-700 shrink-0 mt-0.5" />
-                <span className="leading-relaxed font-medium">{takeaway}</span>
+                <span className="leading-relaxed font-medium">{renderInlineMarkdown(takeaway)}</span>
               </div>
             ))}
           </div>
@@ -523,7 +546,7 @@ export default function BlogPostPage({ onOpenBooking }) {
                     </button>
                     {isOpen && (
                       <div className="px-5 pb-5 text-base sm:text-lg text-gray-700 leading-relaxed border-t border-gray-100 pt-3 bg-gray-50/50">
-                        {item.a}
+                        {renderInlineMarkdown(item.a)}
                       </div>
                     )}
                   </div>
@@ -599,14 +622,25 @@ export default function BlogPostPage({ onOpenBooking }) {
               <Link
                 key={related.id}
                 to={`/blog/${related.slug}`}
-                className="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-gray-900 transition-all block group"
+                className="group relative bg-white border-2 border-gray-200 hover:border-cyan-500 rounded-2xl p-5 hover:shadow-xl hover:shadow-cyan-900/10 hover:-translate-y-1.5 transition-all duration-300 block overflow-hidden cursor-pointer flex flex-col justify-between"
               >
-                <div className="text-xs font-bold text-cyan-800 mb-2">{related.category}</div>
-                <h4 className="text-base font-bold text-gray-900 group-hover:text-cyan-800 transition-colors line-clamp-2 mb-2 leading-snug">
-                  {related.title}
-                </h4>
-                <div className="text-xs text-gray-500 font-medium">
-                  {related.readingTime}
+                {/* Top subtle gradient hairline */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-indigo-500 transition-all duration-300" />
+                
+                <div>
+                  <div className="text-xs font-bold text-cyan-800 uppercase tracking-wider mb-2 pt-1">{related.category}</div>
+                  <h4 className="text-base font-extrabold text-gray-900 group-hover:text-cyan-800 transition-colors line-clamp-2 mb-2 leading-snug">
+                    {related.title}
+                  </h4>
+                </div>
+
+                <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-semibold mt-3">
+                  <span className="flex items-center gap-1">
+                    <Clock size={12} className="text-gray-400 group-hover:text-cyan-600 transition-colors" /> {related.readingTime}
+                  </span>
+                  <span className="text-cyan-700 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5">
+                    Read →
+                  </span>
                 </div>
               </Link>
             ))}
