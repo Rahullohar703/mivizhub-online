@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { 
   Building2, MapPin, CheckCircle2, ArrowRight, ArrowLeft, 
   ChevronRight, Quote, PhoneCall, Check, Award, HelpCircle, ChevronDown
@@ -278,16 +279,23 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
         </header>
 
         {/* Key Results Numbers Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 sm:p-8 bg-[#f8fafc] border-2 border-gray-300 rounded-2xl mb-8 shadow-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 p-5 sm:p-7 bg-gradient-to-b from-[#f8fafc] to-white border-2 border-gray-300/80 rounded-2xl mb-8 shadow-sm">
           {study.stats.map((stat, idx) => (
-            <div key={idx} className="text-center">
-              <span className={`text-2xl sm:text-3xl font-extrabold block mb-1 ${stat.highlight ? "text-emerald-700" : "text-gray-900"}`}>
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="text-center p-3 rounded-xl bg-white/70 border border-gray-200/80 shadow-2xs hover:shadow-md transition-shadow"
+            >
+              <span className={`text-2xl sm:text-3xl font-black block mb-1 tracking-tight ${stat.highlight ? "text-emerald-700" : "text-gray-900"}`}>
                 {stat.value}
               </span>
-              <span className="text-xs sm:text-sm text-gray-600 font-medium">
+              <span className="text-xs sm:text-sm text-gray-600 font-semibold block leading-snug">
                 {stat.label}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -372,7 +380,13 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
         <div className="space-y-10">
           
           {/* 1. The Challenge */}
-          <section className="bg-rose-50/50 border-2 border-rose-200 rounded-2xl p-6 sm:p-8">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="bg-rose-50/50 border-2 border-rose-200 rounded-2xl p-6 sm:p-8"
+          >
             <span className="text-xs font-bold uppercase tracking-wider text-rose-900 block mb-2">
               The Problem Before MivizHub
             </span>
@@ -389,13 +403,19 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
                   </p>
                 ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* 2. The Solution */}
           {(() => {
             const { intro, items } = parseSolution(study.theSolution);
             return (
-              <section className="bg-cyan-50/40 border-2 border-cyan-200 rounded-2xl p-6 sm:p-8">
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5 }}
+                className="bg-cyan-50/40 border-2 border-cyan-200 rounded-2xl p-6 sm:p-8"
+              >
                 <span className="text-xs font-bold uppercase tracking-wider text-cyan-900 block mb-2">
                   The Plan & Setup
                 </span>
@@ -428,7 +448,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
                     </div>
                   ))}
                 </div>
-              </section>
+              </motion.section>
             );
           })()}
 
@@ -436,7 +456,13 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
           {(() => {
             const { intro, items } = parseResults(study.theResults);
             return (
-              <section className="bg-emerald-50/40 border-2 border-emerald-200 rounded-2xl p-6 sm:p-8">
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5 }}
+                className="bg-emerald-50/40 border-2 border-emerald-200 rounded-2xl p-6 sm:p-8"
+              >
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-900 block mb-2">
                   The Measured Results
                 </span>
@@ -458,12 +484,18 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
                     </div>
                   ))}
                 </div>
-              </section>
+              </motion.section>
             );
           })()}
 
           {/* Client Testimonial Box */}
-          <div className="bg-gray-100 border-2 border-gray-300 rounded-2xl p-6 sm:p-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-gray-100 border-2 border-gray-300 rounded-2xl p-6 sm:p-8"
+          >
             <Quote className="text-gray-400 mb-3" size={32} />
             <p className="text-base sm:text-lg text-gray-900 font-medium italic leading-relaxed mb-4">
               "{study.quote.text}"
@@ -472,7 +504,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
               <div className="text-base font-bold text-gray-900">{study.quote.author}</div>
               <div className="text-sm text-cyan-800 font-semibold">{study.quote.role}</div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Active Capabilities Box */}
           <div className="bg-white border-2 border-gray-200 rounded-xl p-6">
