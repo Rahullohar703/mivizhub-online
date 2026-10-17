@@ -1,9 +1,11 @@
 import { BLOGS_BATCH_1 } from './blogsBatch1';
 import { BLOGS_BATCH_2 } from './blogsBatch2';
+import { BLOGS_BATCH_3 } from './blogsBatch3';
 
 export const BLOG_POSTS = [
   ...BLOGS_BATCH_1,
-  ...BLOGS_BATCH_2
+  ...BLOGS_BATCH_2,
+  ...BLOGS_BATCH_3
 ];
 
 export const BLOG_CATEGORIES = [
