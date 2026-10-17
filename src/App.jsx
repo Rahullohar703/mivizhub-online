@@ -24,6 +24,8 @@ import BlogPostPage from './pages/BlogPostPage';
 import CaseStudyPage from './pages/CaseStudyPage';
 import CaseStudyDetailPage from './pages/CaseStudyDetailPage';
 
+import { getBookingUrl } from './config/booking';
+
 function HomePage({ onOpenBooking }) {
   useEffect(() => {
     document.title = "MivizHub | Business Growth with Marketing & AI Staffing";
@@ -84,8 +86,9 @@ function HomePage({ onOpenBooking }) {
 }
 
 export default function App() {
-  const handleOpenBooking = () => {
-    window.open("https://calendly.com/mivizhub/30min", "_blank");
+  const handleOpenBooking = (context) => {
+    const url = getBookingUrl(context);
+    window.open(url, "_blank");
   };
 
   return (

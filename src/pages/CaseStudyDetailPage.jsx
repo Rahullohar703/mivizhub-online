@@ -599,7 +599,7 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking(study)}
                 className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
               >
                 <PhoneCall size={18} /> Schedule a Free 30-Min Call

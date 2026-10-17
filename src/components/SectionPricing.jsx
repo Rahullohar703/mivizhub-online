@@ -279,7 +279,7 @@ export default function SectionPricing({ onOpenBooking }) {
             {/* Card 1 CTA */}
             <div className="pt-6 border-t border-white/10 text-center">
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking('Presence ($250/mo)')}
                 className="w-full py-4 px-6 rounded-xl font-bold text-sm sm:text-base text-white bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 transition-all duration-200 shadow-md flex items-center justify-center gap-2 group/btn"
               >
                 <span>Build My Presence</span>
@@ -448,7 +448,7 @@ export default function SectionPricing({ onOpenBooking }) {
             {/* Card 2 CTA */}
             <div className="pt-6 border-t border-white/10 text-center relative z-10">
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking('Growth ($500/mo)')}
                 className="w-full py-4 px-6 rounded-xl font-bold text-sm sm:text-base text-white bg-[#4F46E5] hover:bg-[#4338CA] shadow-xl shadow-indigo-600/35 transition-all duration-200 flex items-center justify-center gap-2 group/btn hover:scale-[1.01]"
               >
                 <span>Start Growing</span>

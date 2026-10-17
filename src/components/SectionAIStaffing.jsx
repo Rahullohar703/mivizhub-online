@@ -157,7 +157,7 @@ export default function SectionAIStaffing({ onOpenBooking }) {
           </div>
           <ArrowFillButton 
             btnText="Explore AI Staffing" 
-            onClick={onOpenBooking} 
+            onClick={() => onOpenBooking('ai-staffing')} 
             bgColor="#10141e"
             textColor="#ffffff"
             fillBgColor="#31c0de"

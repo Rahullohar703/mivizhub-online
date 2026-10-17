@@ -61,7 +61,7 @@ export default function Navbar({ onOpenBooking }) {
       if (pricingEl) {
         pricingEl.scrollIntoView({ behavior: 'smooth' });
       } else {
-        onOpenBooking();
+        onOpenBooking('Growth ($500/mo)');
       }
     } else {
       onOpenBooking();

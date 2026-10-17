@@ -96,7 +96,7 @@ export default function SectionMarketing({ onOpenBooking }) {
           </div>
           <ArrowFillButton 
             btnText="Book a Marketing Review" 
-            onClick={onOpenBooking} 
+            onClick={() => onOpenBooking('Growth ($500/mo)')} 
             bgColor="#10141e"
             textColor="#ffffff"
             fillBgColor="#4F46E5"

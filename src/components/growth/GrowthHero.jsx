@@ -108,7 +108,7 @@ export default function GrowthHero({ onOpenBooking, onSelectPlan }) {
 
           <ArrowFillButton
             btnText="Talk to Our Team"
-            onClick={() => onOpenBooking()}
+            onClick={() => onOpenBooking('Growth ($500/mo)')}
             size="lg"
             variant="secondary"
             className="w-full sm:w-auto border-white/15 hover:border-white/30"
