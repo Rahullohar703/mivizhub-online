@@ -77,21 +77,36 @@ export default function BlogPage({ onOpenBooking }) {
             />
           </div>
 
-          {/* Category Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 pt-2">
-            {BLOG_CATEGORIES.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`text-xs sm:text-sm px-4 py-2 rounded-lg font-medium transition-all ${
-                  selectedCategory === category
-                    ? "bg-gray-900 text-white shadow-sm"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          {/* Category Filter Buttons - Mobile Horizontal Scroll with Edge Fades & Desktop Wrap */}
+          <div className="relative max-w-full pt-1">
+            {/* Subtle edge fade overlays on mobile */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 sm:hidden" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 sm:hidden" />
+
+            {/* Micro swipe hint for mobile */}
+            <div className="flex items-center justify-center gap-1.5 text-[11px] font-semibold text-gray-500 mb-2 sm:hidden">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-700 animate-pulse" />
+              <span>Swipe to filter by topic</span>
+            </div>
+
+            <div className="flex items-center sm:justify-center gap-2 overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-0 sm:flex-wrap py-1.5 snap-x">
+              {BLOG_CATEGORIES.map((category) => {
+                const isActive = selectedCategory === category;
+                return (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`flex-shrink-0 snap-center whitespace-nowrap text-xs sm:text-sm px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "bg-gray-900 text-white shadow-md scale-[1.02]"
+                        : "bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 border border-gray-300 shadow-2xs hover:border-gray-400"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </Container>
       </div>

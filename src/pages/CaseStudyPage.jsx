@@ -107,26 +107,28 @@ export default function CaseStudyPage({ onOpenBooking }) {
           </p>
 
           {/* Primary Solution Tabs: Marketing & Growth vs AI Staffing */}
-          <div className="inline-flex p-1.5 bg-gray-200/80 rounded-2xl mb-8 max-w-xl mx-auto border border-gray-300">
-            {CASE_STUDY_CATEGORIES.map((cat) => {
-              const isActive = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                    isActive
-                      ? "bg-gray-900 text-white shadow-md"
-                      : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
-                  }`}
-                >
-                  {cat === "Marketing & Growth" && <TrendingUp size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
-                  {cat === "AI Staffing & Automation" && <Bot size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
-                  {cat === "All Services" && <Sparkles size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
-                  <span>{cat}</span>
-                </button>
-              );
-            })}
+          <div className="relative max-w-full mb-8">
+            <div className="inline-flex p-1.5 bg-gray-200/80 rounded-2xl max-w-full overflow-x-auto no-scrollbar border border-gray-300">
+              {CASE_STUDY_CATEGORIES.map((cat) => {
+                const isActive = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`flex-shrink-0 flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
+                      isActive
+                        ? "bg-gray-900 text-white shadow-md"
+                        : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
+                    }`}
+                  >
+                    {cat === "Marketing & Growth" && <TrendingUp size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
+                    {cat === "AI Staffing & Automation" && <Bot size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
+                    {cat === "All Services" && <Sparkles size={15} className={isActive ? "text-cyan-300" : "text-gray-500"} />}
+                    <span>{cat}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Aggregate Stat Bar - Clean, White Cards with Strong Contrast */}
@@ -149,21 +151,36 @@ export default function CaseStudyPage({ onOpenBooking }) {
             </div>
           </div>
 
-          {/* Industry Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 pt-2">
-            {CASE_STUDY_INDUSTRIES.map((industry) => (
-              <button
-                key={industry}
-                onClick={() => setSelectedIndustry(industry)}
-                className={`text-xs sm:text-sm px-3.5 py-1.5 rounded-lg font-medium transition-all ${
-                  selectedIndustry === industry
-                    ? "bg-cyan-800 text-white shadow-sm"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-                }`}
-              >
-                {industry}
-              </button>
-            ))}
+          {/* Industry Filter Buttons - Mobile Horizontal Scroll with Edge Fades & Desktop Wrap */}
+          <div className="relative max-w-full pt-1">
+            {/* Subtle edge fade overlays on mobile */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 sm:hidden" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 sm:hidden" />
+
+            {/* Micro swipe hint for mobile */}
+            <div className="flex items-center justify-center gap-1.5 text-[11px] font-semibold text-gray-500 mb-2 sm:hidden">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-700 animate-pulse" />
+              <span>Swipe to filter by industry</span>
+            </div>
+
+            <div className="flex items-center sm:justify-center gap-2 overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-0 sm:flex-wrap py-1.5 snap-x">
+              {CASE_STUDY_INDUSTRIES.map((industry) => {
+                const isActive = selectedIndustry === industry;
+                return (
+                  <button
+                    key={industry}
+                    onClick={() => setSelectedIndustry(industry)}
+                    className={`flex-shrink-0 snap-center whitespace-nowrap text-xs sm:text-sm px-4 py-2 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "bg-cyan-800 text-white shadow-md shadow-cyan-900/20 scale-[1.02]"
+                        : "bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-100 border border-gray-300 shadow-2xs hover:border-gray-400"
+                    }`}
+                  >
+                    {industry}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </Container>
       </div>
