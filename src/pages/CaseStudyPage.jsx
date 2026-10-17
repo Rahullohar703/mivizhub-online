@@ -250,18 +250,18 @@ export default function CaseStudyPage({ onOpenBooking }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: idx * 0.08 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className="group relative bg-white border-2 border-gray-200/90 hover:border-gray-900/40 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-xl hover:shadow-cyan-900/10 transition-all duration-300 overflow-hidden"
+                  whileHover={{ y: -6, scale: 1.03 }}
+                  className="group relative bg-white border-2 border-gray-200/90 hover:border-cyan-500 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-2xl hover:shadow-cyan-500/15 transition-all duration-300 overflow-hidden cursor-default"
                 >
                   {/* Top vibrant gradient accent line */}
                   <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${stat.gradient}`} />
 
                   {/* Header Row: Icon + Badge */}
                   <div className="flex items-center justify-between mb-3 pt-0.5">
-                    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-xl ${stat.iconBg} border ${stat.iconColor} shadow-2xs group-hover:scale-110 transition-transform`}>
+                    <span className={`inline-flex items-center justify-center w-8 h-8 rounded-xl ${stat.iconBg} border ${stat.iconColor} shadow-2xs group-hover:scale-115 transition-transform duration-200`}>
                       <Icon size={16} />
                     </span>
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-gray-500 px-2 py-0.5 rounded-full bg-gray-100 border border-gray-200">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-gray-500 px-2 py-0.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-cyan-50 group-hover:text-cyan-800 transition-colors">
                       {stat.badge}
                     </span>
                   </div>
@@ -340,7 +340,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
               >
                 <Link
                   to={`/casestudy/${study.slug}`}
-                  className="group relative block bg-white border-2 border-gray-200 hover:border-gray-900 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-900/5 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                  className="group relative block bg-white border-2 border-gray-200 hover:border-gray-900 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/10 hover:-translate-y-2 overflow-hidden cursor-pointer"
                 >
                   {/* Top Subtle Gradient Accent on Hover */}
                   <div className="absolute top-0 left-0 right-0 h-1.5 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:via-emerald-500 group-hover:to-cyan-600 transition-all duration-300" />
@@ -352,7 +352,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                         {study.serviceCategory || "Growth Service"}
                       </span>
                       {study.planTier && (
-                        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-cyan-100 text-cyan-900 border border-cyan-300/80 flex items-center gap-1">
+                        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-cyan-100 text-cyan-900 border border-cyan-300/80 flex items-center gap-1 group-hover:bg-cyan-200 transition-colors">
                           <Zap size={12} className="text-cyan-700 fill-cyan-700" />
                           {study.planTier.shortName} • {study.planTier.price.split(' ')[0]}
                         </span>
@@ -391,7 +391,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
 
                       {/* Before vs. With MivizHub Visual Contrast Grid */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
-                        <div className="bg-rose-50/70 p-3.5 sm:p-4 rounded-xl border border-rose-200/90">
+                        <div className="bg-rose-50/70 hover:bg-rose-50 border border-rose-200/90 hover:border-rose-400 p-3.5 sm:p-4 rounded-xl hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                           <span className="text-rose-900 font-extrabold text-xs tracking-wider uppercase flex items-center gap-1 mb-1">
                             <span className="inline-block w-2 h-2 rounded-full bg-rose-500" /> The Problem Before:
                           </span>
@@ -400,7 +400,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                           </p>
                         </div>
 
-                        <div className="bg-emerald-50/70 p-3.5 sm:p-4 rounded-xl border border-emerald-200/90">
+                        <div className="bg-emerald-50/70 hover:bg-emerald-50 border border-emerald-200/90 hover:border-emerald-400 p-3.5 sm:p-4 rounded-xl hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                           <span className="text-emerald-900 font-extrabold text-xs tracking-wider uppercase flex items-center gap-1 mb-1">
                             <span className="inline-block w-2 h-2 rounded-full bg-emerald-600" /> With MivizHub:
                           </span>
@@ -412,7 +412,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
 
                       {/* Client Quote Strip */}
                       {study.quote && (
-                        <div className="border-l-4 border-cyan-700 pl-3.5 py-1 text-xs sm:text-sm text-gray-700 bg-gray-50/80 rounded-r-lg">
+                        <div className="border-l-4 border-cyan-700 pl-3.5 py-1 text-xs sm:text-sm text-gray-700 bg-gray-50/80 hover:bg-gray-100 rounded-r-lg transition-colors">
                           <p className="italic">"{study.quote.text}"</p>
                           <span className="block not-italic text-xs font-bold text-gray-900 mt-1">
                             — {study.quote.author}, {study.quote.role}
@@ -422,7 +422,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                     </div>
 
                     {/* Right Column: Measured Results Scorecard */}
-                    <div className="lg:col-span-4 bg-gray-50 border-2 border-gray-200/90 rounded-xl p-5 group-hover:border-gray-300 transition-colors">
+                    <div className="lg:col-span-4 bg-gray-50 hover:bg-white border-2 border-gray-200/90 hover:border-cyan-400 rounded-xl p-5 shadow-2xs hover:shadow-xl hover:shadow-cyan-900/10 transition-all duration-300">
                       <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-200">
                         <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                           Verified Results
