@@ -8,6 +8,118 @@ import Container from '../components/ui/Container';
 import { CASE_STUDIES } from '../data/caseStudies';
 import SEOHead from '../components/SEOHead';
 
+// Helper to render inline markdown: bold, italic, and links cleanly without asterisks
+function renderInlineMarkdown(rawText) {
+  if (!rawText) return null;
+  const tokens = [];
+  const regex = /(\[.*?\]\(.*?\)|\*\*.*?\*\*|\*.*?\*)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(rawText)) !== null) {
+    if (match.index > lastIndex) {
+      tokens.push(rawText.substring(lastIndex, match.index));
+    }
+    const token = match[0];
+    if (token.startsWith('[') && token.includes('](')) {
+      const linkText = token.substring(1, token.indexOf(']('));
+      const linkUrl = token.substring(token.indexOf('](') + 2, token.length - 1);
+      if (linkUrl.startsWith('/') && !linkUrl.includes('#')) {
+        tokens.push(
+          <Link key={match.index} to={linkUrl} className="text-cyan-800 font-bold hover:underline">
+            {linkText}
+          </Link>
+        );
+      } else {
+        tokens.push(
+          <a key={match.index} href={linkUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-bold hover:underline">
+            {linkText}
+          </a>
+        );
+      }
+    } else if (token.startsWith('**') && token.endsWith('**')) {
+      tokens.push(
+        <strong key={match.index} className="font-extrabold text-gray-900">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      tokens.push(
+        <em key={match.index} className="italic text-gray-800">
+          {token.slice(1, -1)}
+        </em>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < rawText.length) {
+    tokens.push(rawText.substring(lastIndex));
+  }
+  return tokens.length > 0 ? tokens : rawText;
+}
+
+// Parses numbered solution items (e.g. 1. **Title:**\n Description)
+function parseSolution(raw) {
+  if (!raw) return { intro: '', items: [] };
+  const lines = raw.trim().split('\n');
+  const intro = [];
+  const items = [];
+  let currentItem = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    const numMatch = line.match(/^(\d+)\.\s+(.*)/);
+    if (numMatch) {
+      if (currentItem) items.push(currentItem);
+      let title = numMatch[2].trim();
+      if (title.startsWith('**') && title.endsWith('**')) {
+        title = title.slice(2, -2).trim();
+      }
+      currentItem = { number: numMatch[1], title, bodyLines: [] };
+    } else if (currentItem) {
+      currentItem.bodyLines.push(line);
+    } else {
+      intro.push(line);
+    }
+  }
+  if (currentItem) items.push(currentItem);
+
+  return {
+    intro: intro.join(' '),
+    items: items.map(it => ({
+      number: it.number,
+      title: it.title,
+      body: it.bodyLines.join(' ')
+    }))
+  };
+}
+
+// Parses bulleted outcome items (e.g. - **Metric:** Description)
+function parseResults(raw) {
+  if (!raw) return { intro: '', items: [] };
+  const lines = raw.trim().split('\n');
+  const intro = [];
+  const items = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    if (line.startsWith('- ') || line.startsWith('* ')) {
+      items.push(line.replace(/^[-*]\s+/, '').trim());
+    } else if (items.length === 0) {
+      intro.push(line);
+    } else {
+      items[items.length - 1] += ' ' + line;
+    }
+  }
+
+  return {
+    intro: intro.join(' '),
+    items
+  };
+}
+
 export default function CaseStudyDetailPage({ onOpenBooking }) {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -267,36 +379,88 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Where The Business Was Losing Money & Time
             </h2>
-            <div className="text-gray-800 leading-relaxed text-base sm:text-lg space-y-4 whitespace-pre-line font-normal">
-              {study.theChallenge.trim()}
+            <div className="text-gray-800 leading-relaxed text-base sm:text-lg space-y-4 font-normal">
+              {study.theChallenge
+                .trim()
+                .split(/\n\s*\n/)
+                .map((paragraph, pIdx) => (
+                  <p key={pIdx} className="leading-relaxed">
+                    {renderInlineMarkdown(paragraph.replace(/\n/g, ' ').trim())}
+                  </p>
+                ))}
             </div>
           </section>
 
           {/* 2. The Solution */}
-          <section className="bg-cyan-50/40 border-2 border-cyan-200 rounded-2xl p-6 sm:p-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-900 block mb-2">
-              The Plan & Setup
-            </span>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              How MivizHub Solved The Issue
-            </h2>
-            <div className="text-gray-800 leading-relaxed text-base sm:text-lg space-y-4 whitespace-pre-line font-normal">
-              {study.theSolution.trim()}
-            </div>
-          </section>
+          {(() => {
+            const { intro, items } = parseSolution(study.theSolution);
+            return (
+              <section className="bg-cyan-50/40 border-2 border-cyan-200 rounded-2xl p-6 sm:p-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-900 block mb-2">
+                  The Plan & Setup
+                </span>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  How MivizHub Solved The Issue
+                </h2>
+                {intro && (
+                  <p className="text-gray-800 leading-relaxed text-base sm:text-lg mb-6 font-normal">
+                    {renderInlineMarkdown(intro)}
+                  </p>
+                )}
+                <div className="space-y-4">
+                  {items.map((item, idx) => (
+                    <div key={idx} className="bg-white/90 border border-cyan-200/90 rounded-xl p-4 sm:p-5 shadow-2xs">
+                      <div className="flex items-start gap-3.5">
+                        <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-cyan-700 text-white font-extrabold text-sm shrink-0 mt-0.5 shadow-xs">
+                          {item.number}
+                        </span>
+                        <div className="flex-1 space-y-1">
+                          <h3 className="font-extrabold text-gray-900 text-base sm:text-lg">
+                            {renderInlineMarkdown(item.title)}
+                          </h3>
+                          {item.body && (
+                            <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-normal">
+                              {renderInlineMarkdown(item.body)}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })()}
 
           {/* 3. The Results */}
-          <section className="bg-emerald-50/40 border-2 border-emerald-200 rounded-2xl p-6 sm:p-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-900 block mb-2">
-              The Measured Results
-            </span>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              What Happened After Deployment
-            </h2>
-            <div className="text-gray-800 leading-relaxed text-base sm:text-lg space-y-4 whitespace-pre-line font-normal">
-              {study.theResults.trim()}
-            </div>
-          </section>
+          {(() => {
+            const { intro, items } = parseResults(study.theResults);
+            return (
+              <section className="bg-emerald-50/40 border-2 border-emerald-200 rounded-2xl p-6 sm:p-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-900 block mb-2">
+                  The Measured Results
+                </span>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  What Happened After Deployment
+                </h2>
+                {intro && (
+                  <p className="text-gray-900 font-bold text-base sm:text-lg mb-4">
+                    {renderInlineMarkdown(intro)}
+                  </p>
+                )}
+                <div className="space-y-3.5">
+                  {items.map((itemText, idx) => (
+                    <div key={idx} className="flex items-start gap-3 bg-white/90 border border-emerald-200/90 rounded-xl p-4 shadow-2xs">
+                      <CheckCircle2 size={20} className="text-emerald-700 shrink-0 mt-0.5" />
+                      <div className="text-sm sm:text-base text-gray-800 leading-relaxed flex-1 font-normal">
+                        {renderInlineMarkdown(itemText)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })()}
 
           {/* Client Testimonial Box */}
           <div className="bg-gray-100 border-2 border-gray-300 rounded-2xl p-6 sm:p-8">

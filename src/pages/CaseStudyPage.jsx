@@ -5,6 +5,56 @@ import Container from '../components/ui/Container';
 import { CASE_STUDIES, CASE_STUDY_CATEGORIES, CASE_STUDY_INDUSTRIES } from '../data/caseStudies';
 import SEOHead from '../components/SEOHead';
 
+// Helper to render inline markdown: bold, italic, and links cleanly without asterisks
+function renderInlineMarkdown(rawText) {
+  if (!rawText) return null;
+  const tokens = [];
+  const regex = /(\[.*?\]\(.*?\)|\*\*.*?\*\*|\*.*?\*)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(rawText)) !== null) {
+    if (match.index > lastIndex) {
+      tokens.push(rawText.substring(lastIndex, match.index));
+    }
+    const token = match[0];
+    if (token.startsWith('[') && token.includes('](')) {
+      const linkText = token.substring(1, token.indexOf(']('));
+      const linkUrl = token.substring(token.indexOf('](') + 2, token.length - 1);
+      if (linkUrl.startsWith('/') && !linkUrl.includes('#')) {
+        tokens.push(
+          <Link key={match.index} to={linkUrl} className="text-cyan-800 font-bold hover:underline">
+            {linkText}
+          </Link>
+        );
+      } else {
+        tokens.push(
+          <a key={match.index} href={linkUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-800 font-bold hover:underline">
+            {linkText}
+          </a>
+        );
+      }
+    } else if (token.startsWith('**') && token.endsWith('**')) {
+      tokens.push(
+        <strong key={match.index} className="font-extrabold text-gray-900">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      tokens.push(
+        <em key={match.index} className="italic text-gray-800">
+          {token.slice(1, -1)}
+        </em>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < rawText.length) {
+    tokens.push(rawText.substring(lastIndex));
+  }
+  return tokens.length > 0 ? tokens : rawText;
+}
+
 export default function CaseStudyPage({ onOpenBooking }) {
   const [selectedCategory, setSelectedCategory] = useState("All Services");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
@@ -187,7 +237,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                           <span className="inline-block w-2 h-2 rounded-full bg-rose-500" /> The Problem Before:
                         </span>
                         <p className="text-xs sm:text-sm text-gray-800 leading-relaxed line-clamp-3 font-normal">
-                          {study.theChallenge.split('\n\n')[0].replace(/\n/g, ' ').trim()}
+                          {renderInlineMarkdown(study.theChallenge.split('\n\n')[0].replace(/\n/g, ' ').trim())}
                         </p>
                       </div>
 
@@ -196,7 +246,7 @@ export default function CaseStudyPage({ onOpenBooking }) {
                           <span className="inline-block w-2 h-2 rounded-full bg-emerald-600" /> With MivizHub:
                         </span>
                         <p className="text-xs sm:text-sm text-gray-800 leading-relaxed line-clamp-3 font-normal">
-                          {study.theSolution.split('\n\n')[0].replace(/\n/g, ' ').trim()}
+                          {renderInlineMarkdown(study.theSolution.split('\n\n')[0].replace(/\n/g, ' ').trim())}
                         </p>
                       </div>
                     </div>
