@@ -12,6 +12,8 @@ import SEOHead from '../components/SEOHead';
 // Dynamic thematic category badge styling
 const getCategoryBadgeStyle = (category) => {
   switch (category) {
+    case "Marketing & Growth":
+      return "bg-rose-50 text-rose-900 border-rose-200/80 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-600";
     case "AI Workforce":
     case "AI Agents & Digital Workers":
       return "bg-indigo-50 text-indigo-900 border-indigo-200/80 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600";
