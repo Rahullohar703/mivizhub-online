@@ -189,71 +189,80 @@ export default function BlogPage({ onOpenBooking }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ y: -4 }}
-            className="group relative mb-14 bg-gradient-to-br from-cyan-50/60 via-white to-indigo-50/30 border-2 border-cyan-200/90 hover:border-cyan-500 rounded-3xl p-6 sm:p-10 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-cyan-900/10 overflow-hidden cursor-pointer"
+            whileHover={{ y: -6, scale: 1.01 }}
+            className="group relative mb-14 rounded-3xl transition-all duration-300 cursor-pointer isolate"
           >
-            {/* Top Glowing Header Accent Bar */}
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-400" />
-            
-            {/* Ambient Background Light Blob */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.12)_0%,transparent_70%)] pointer-events-none" />
+            {/* Luminous Multi-Hue Outer Glow Aura (Awakens on Hover) */}
+            <div className="absolute -inset-[3px] rounded-3xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-emerald-400 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 -z-10 group-hover:animate-gradient-shift pointer-events-none" />
 
-            <div className="max-w-3xl relative z-10">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider bg-cyan-900 text-white px-3.5 py-1.5 rounded-lg shadow-xs">
-                  <Sparkles size={13} className="text-cyan-300 fill-cyan-300" /> Featured Blueprint
-                </span>
-                <span className="text-xs font-bold text-cyan-950 bg-cyan-100/80 px-2.5 py-1 rounded-md border border-cyan-200 flex items-center gap-1">
-                  <Clock size={13} className="text-cyan-700" /> {featuredPost.readingTime}
-                </span>
-                <span className="text-xs text-gray-500 font-semibold">• {featuredPost.publishDate}</span>
-              </div>
+            <div className="relative w-full h-full bg-gradient-to-br from-cyan-50/70 via-white to-indigo-50/40 border-2 border-cyan-200/90 group-hover:border-transparent rounded-3xl p-6 sm:p-10 transition-all duration-300 shadow-sm group-hover:shadow-[0_25px_60px_rgba(6,182,212,0.22)] overflow-hidden">
+              {/* Prismatic Liquid Glass Shine Glare (Sweeps Across on Hover) */}
+              <div className="absolute inset-0 -translate-x-[160%] group-hover:translate-x-[220%] transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/70 to-transparent pointer-events-none transform -skew-x-25 z-30" />
 
-              <Link to={`/blog/${featuredPost.slug}`}>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 group-hover:text-cyan-900 transition-colors mb-4 leading-tight tracking-tight">
-                  {featuredPost.title}
-                </h2>
-              </Link>
+              {/* Top Glowing Header Accent Bar */}
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-400 z-10" />
+              
+              {/* Ambient Background Light Blob */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.2)_0%,rgba(99,102,241,0.12)_40%,transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
 
-              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 font-normal">
-                {featuredPost.excerpt}
-              </p>
-
-              {/* Quick Takeaways Box */}
-              <div className="bg-white/90 backdrop-blur-xs border border-gray-200/90 rounded-2xl p-5 sm:p-6 mb-7 space-y-3 shadow-2xs group-hover:border-cyan-200 transition-colors">
-                <div className="text-xs font-black uppercase text-gray-500 tracking-wider flex items-center gap-1.5">
-                  <Zap size={14} className="text-amber-500 fill-amber-500" />
-                  What you will learn in this blueprint:
-                </div>
-                {featuredPost.keyTakeaways.slice(0, 3).map((takeaway, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-800 font-medium">
-                    <CheckCircle2 size={18} className="text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{renderInlineMarkdown(takeaway)}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-sm shrink-0 ring-2 ring-transparent group-hover:ring-cyan-400 transition-all">
-                    <img
-                      src="/rahul-profile.png"
-                      alt={featuredPost.author.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-sm font-bold text-gray-900 block leading-tight">{featuredPost.author.name}</span>
-                    <span className="text-xs text-gray-600 font-medium">{featuredPost.author.role}</span>
-                  </div>
+              <div className="max-w-3xl relative z-10">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider bg-cyan-900 text-white px-3.5 py-1.5 rounded-lg shadow-xs group-hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all">
+                    <Sparkles size={13} className="text-cyan-300 fill-cyan-300 animate-pulse" /> Featured Blueprint
+                  </span>
+                  <span className="text-xs font-bold text-cyan-950 bg-cyan-100/80 px-2.5 py-1 rounded-md border border-cyan-200 flex items-center gap-1">
+                    <Clock size={13} className="text-cyan-700" /> {featuredPost.readingTime}
+                  </span>
+                  <span className="text-xs text-gray-500 font-semibold">• {featuredPost.publishDate}</span>
                 </div>
 
-                <Link
-                  to={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center justify-center gap-2 text-base font-extrabold text-white bg-gray-900 hover:bg-black px-7 py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-xl group-hover:shadow-cyan-900/20 group-hover:scale-[1.02]"
-                >
-                  Read Complete Blueprint <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <Link to={`/blog/${featuredPost.slug}`}>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 group-hover:text-cyan-950 transition-colors mb-4 leading-tight tracking-tight">
+                    {featuredPost.title}
+                  </h2>
                 </Link>
+
+                <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 font-normal">
+                  {featuredPost.excerpt}
+                </p>
+
+                {/* Quick Takeaways Box */}
+                <div className="bg-white/90 backdrop-blur-xs border border-gray-200/90 rounded-2xl p-5 sm:p-6 mb-7 space-y-3 shadow-2xs group-hover:border-cyan-300 transition-colors">
+                  <div className="text-xs font-black uppercase text-gray-500 tracking-wider flex items-center gap-1.5">
+                    <Zap size={14} className="text-amber-500 fill-amber-500" />
+                    What you will learn in this blueprint:
+                  </div>
+                  {featuredPost.keyTakeaways.slice(0, 3).map((takeaway, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-800 font-medium">
+                      <CheckCircle2 size={18} className="text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{renderInlineMarkdown(takeaway)}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-sm shrink-0 ring-2 ring-transparent group-hover:ring-cyan-400 transition-all duration-300 group-hover:scale-105">
+                      <img
+                        src="/rahul-profile.png"
+                        alt={featuredPost.author.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold text-gray-900 block leading-tight">{featuredPost.author.name}</span>
+                      <span className="text-xs text-gray-600 font-medium">{featuredPost.author.role}</span>
+                    </div>
+                  </div>
+
+                  <Link
+                    to={`/blog/${featuredPost.slug}`}
+                    className="inline-flex items-center justify-center gap-2 text-base font-extrabold text-white bg-gray-900 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:via-indigo-600 group-hover:to-cyan-600 px-7 py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] group-hover:scale-[1.03]"
+                  >
+                    <span>Read Complete Blueprint</span>
+                    <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-200" />
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -274,7 +283,7 @@ export default function BlogPage({ onOpenBooking }) {
           </span>
         </div>
 
-        {/* Articles Grid with GOATED Physics-Based Hover Animations */}
+        {/* Articles Grid with Crazy Glowing & Shiny Prismatic Hover Animations */}
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16 bg-gray-50 rounded-2xl border border-gray-200">
             <p className="text-gray-600 text-base mb-4 font-medium">No guides match your search criteria.</p>
@@ -297,23 +306,32 @@ export default function BlogPage({ onOpenBooking }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.45, delay: (pIdx % 3) * 0.07 }}
-                  whileHover={{ y: -8, scale: 1.012 }}
-                  className="h-full flex"
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group relative h-full flex isolate cursor-pointer"
                 >
+                  {/* 1. CRAZY MULTI-COLORED LUMINOUS AURA (Backdrop Neon Blur on Hover) */}
+                  <div className="absolute -inset-[3px] rounded-2xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 blur-md transition-all duration-300 -z-10 group-hover:animate-gradient-shift pointer-events-none" />
+
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="group relative w-full h-full flex flex-col justify-between bg-white border-2 border-gray-200/90 hover:border-cyan-500 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-[0_22px_45px_rgba(8,145,178,0.15)] overflow-hidden cursor-pointer isolate"
+                    className="relative w-full h-full flex flex-col justify-between bg-white border-2 border-gray-200/90 group-hover:border-transparent rounded-2xl p-6 sm:p-7 transition-all duration-300 shadow-sm group-hover:shadow-[0_20px_50px_rgba(8,145,178,0.22)] overflow-hidden cursor-pointer"
                   >
-                    {/* 1. Top Radiant Gradient Accent Bar on Hover */}
-                    <div className="absolute top-0 inset-x-0 h-1.5 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:via-indigo-500 group-hover:to-cyan-400 transition-all duration-300" />
+                    {/* 2. PRISMATIC LIQUID GLASS SHINE (Sweeps across card diagonally on hover) */}
+                    <div className="absolute inset-0 -translate-x-[160%] group-hover:translate-x-[220%] transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/70 to-transparent pointer-events-none transform -skew-x-25 z-30" />
 
-                    {/* 2. Ambient Radial Halo Blooming inside Card on Hover */}
-                    <div className="absolute -top-20 -right-20 w-48 h-48 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.14)_0%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10" />
+                    {/* 3. Top Laser Edge Highlight with Animated Radiant Sheen */}
+                    <div className="absolute top-0 inset-x-0 h-1.5 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:via-indigo-500 group-hover:to-cyan-400 transition-all duration-300 z-10" />
 
-                    <div>
+                    {/* 4. Ambient Radial Spotlight Aura in Top Right */}
+                    <div className="absolute -top-20 -right-20 w-56 h-56 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.25)_0%,rgba(99,102,241,0.12)_45%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none z-0 group-hover:scale-110" />
+
+                    {/* 5. Secondary Ambient Spotlight Aura in Bottom Left */}
+                    <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.15)_0%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none z-0" />
+
+                    <div className="relative z-10">
                       {/* Category Badge & Reading Time */}
                       <div className="flex items-center justify-between gap-2 mb-4 pt-1">
-                        <span className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all duration-200 flex items-center gap-1.5 shadow-2xs ${catBadgeStyle}`}>
+                        <span className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all duration-200 flex items-center gap-1.5 shadow-2xs group-hover:shadow-md ${catBadgeStyle}`}>
                           <span className="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100 group-hover:animate-ping" />
                           <span>{post.category}</span>
                         </span>
@@ -324,37 +342,38 @@ export default function BlogPage({ onOpenBooking }) {
                         </span>
                       </div>
 
-                      {/* Title with Smooth Hover Micro-Shift */}
-                      <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-cyan-800 transition-colors duration-200 mb-3 leading-snug">
+                      {/* Title with Smooth Hover Micro-Shift & Gradient Glow Accent */}
+                      <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-cyan-950 transition-colors duration-200 mb-3 leading-snug">
                         {post.title}
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-sm text-gray-600 group-hover:text-gray-700 leading-relaxed mb-6 line-clamp-3 font-normal">
+                      <p className="text-sm text-gray-600 group-hover:text-gray-800 leading-relaxed mb-6 line-clamp-3 font-normal transition-colors">
                         {renderInlineMarkdown(post.excerpt)}
                       </p>
                     </div>
 
-                    {/* Bottom Footer: Author & Magnetic Action Pill */}
-                    <div className="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
+                    {/* Bottom Footer: Author & Electric Magnetic Action Pill */}
+                    <div className="pt-4 border-t border-gray-100 group-hover:border-gray-200 flex items-center justify-between mt-auto relative z-10 transition-colors">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 ring-2 ring-transparent group-hover:ring-cyan-400/50 transition-all duration-200 shadow-2xs shrink-0">
+                        <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 ring-2 ring-transparent group-hover:ring-cyan-400/80 transition-all duration-200 shadow-2xs shrink-0 group-hover:scale-105">
                           <img
                             src="/rahul-profile.png"
                             alt={post.author.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                             onError={(e) => { e.currentTarget.style.display = 'none'; }}
                           />
                         </div>
-                        <span className="text-xs font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
+                        <span className="text-xs font-semibold text-gray-700 group-hover:text-gray-950 transition-colors">
                           {post.author.name}
                         </span>
                       </div>
 
-                      {/* GOATED Interactive Action Button Pill */}
-                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-black bg-gray-100 text-gray-900 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-200 shadow-2xs group-hover:shadow-md group-hover:shadow-cyan-600/30">
+                      {/* Super Magnetic Interactive CTA Button Pill */}
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-black bg-gray-100 text-gray-900 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:via-indigo-600 group-hover:to-cyan-600 group-hover:text-white transition-all duration-300 shadow-2xs group-hover:shadow-[0_0_18px_rgba(6,182,212,0.55)] group-hover:scale-105">
+                        <Sparkles size={11} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-cyan-200 animate-pulse" />
                         <span>Read Guide</span>
-                        <ArrowRight size={13} className="stroke-[2.5] group-hover:translate-x-1 transition-transform duration-200" />
+                        <ArrowRight size={13} className="stroke-[2.5] group-hover:translate-x-1.5 transition-transform duration-200" />
                       </span>
                     </div>
                   </Link>
