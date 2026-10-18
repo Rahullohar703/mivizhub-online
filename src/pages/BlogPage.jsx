@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Search, Clock, ArrowRight, BookOpen, CheckCircle2, 
   Sparkles, Zap, TrendingUp, PhoneCall 
 } from 'lucide-react';
 import Container from '../components/ui/Container';
+import { ArrowFillButton } from '../components/ui/arrow-fill-button';
 import { BLOG_POSTS, BLOG_CATEGORIES } from '../data/blogs';
 import SEOHead from '../components/SEOHead';
 
@@ -67,6 +68,7 @@ const renderInlineMarkdown = (rawText) => {
 };
 
 export default function BlogPage({ onOpenBooking }) {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -255,13 +257,13 @@ export default function BlogPage({ onOpenBooking }) {
                     </div>
                   </div>
 
-                  <Link
-                    to={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center justify-center gap-2 text-base font-extrabold text-white bg-gray-900 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:via-indigo-600 group-hover:to-cyan-600 px-7 py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] group-hover:scale-[1.03]"
-                  >
-                    <span>Read Complete Blueprint</span>
-                    <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-200" />
-                  </Link>
+                  <ArrowFillButton
+                    size="lg"
+                    variant="primary"
+                    onClick={() => navigate(`/blog/${featuredPost.slug}`)}
+                    btnText="Read Complete Blueprint"
+                    className="w-full sm:w-auto shadow-xl shadow-cyan-600/30"
+                  />
                 </div>
               </div>
             </div>
@@ -405,18 +407,20 @@ export default function BlogPage({ onOpenBooking }) {
               We will review your current phone handling and website search ranking, and show you exactly how an AI receptionist and growth strategy can bring in more customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
+              <ArrowFillButton
+                size="lg"
+                variant="primary"
                 onClick={() => onOpenBooking('ai-staffing')}
-                className="w-full sm:w-auto px-8 py-4 bg-gray-900 hover:bg-black text-white font-extrabold text-base rounded-xl transition-all shadow-md hover:shadow-xl hover:shadow-gray-900/25 hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <PhoneCall size={18} /> Schedule a 30-Minute Call
-              </button>
-              <Link
-                to="/casestudy"
-                className="text-base font-bold text-gray-700 hover:text-gray-900 px-6 py-4 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
-              >
-                View Client Results & Numbers →
-              </Link>
+                btnText="Schedule a 30-Minute Call"
+                className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
+              />
+              <ArrowFillButton
+                size="lg"
+                variant="secondary"
+                onClick={() => navigate('/casestudy')}
+                btnText="View Client Results & Numbers"
+                className="w-full sm:w-auto border-gray-300 hover:border-gray-400"
+              />
             </div>
             <p className="text-xs text-gray-500 mt-4 font-medium">
               Zero obligation • Real practical guidance • No technical experience needed

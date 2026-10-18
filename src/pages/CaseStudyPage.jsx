@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { 
   Award, ArrowRight, CheckCircle2, Building2, MapPin, PhoneCall, 
   TrendingUp, TrendingDown, CalendarCheck, Bot, Sparkles, Zap, Clock 
 } from 'lucide-react';
 import Container from '../components/ui/Container';
+import { ArrowFillButton } from '../components/ui/arrow-fill-button';
 import { CASE_STUDIES, CASE_STUDY_CATEGORIES, CASE_STUDY_INDUSTRIES } from '../data/caseStudies';
 import SEOHead from '../components/SEOHead';
 
@@ -156,6 +157,7 @@ const AGGREGATE_STATS = [
 ];
 
 export default function CaseStudyPage({ onOpenBooking }) {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All Services");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
 
@@ -492,18 +494,20 @@ export default function CaseStudyPage({ onOpenBooking }) {
               Let's look at your Google search visibility, website conversion, and customer response speed together on a free 30-minute consultation.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button
+              <ArrowFillButton
+                size="lg"
+                variant="primary"
                 onClick={() => onOpenBooking(selectedCategory === "AI Staffing & Automation" ? 'ai-staffing' : 'presence')}
-                className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
-              >
-                <PhoneCall size={18} /> Schedule a Free 30-Min Call
-              </button>
-              <Link
-                to="/growth"
-                className="text-base font-semibold text-gray-800 hover:text-black px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
-              >
-                Explore /growth Services →
-              </Link>
+                btnText="Schedule a Free 30-Min Call"
+                className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
+              />
+              <ArrowFillButton
+                size="lg"
+                variant="secondary"
+                onClick={() => navigate('/growth')}
+                btnText="Explore /growth Services"
+                className="w-full sm:w-auto border-gray-300 hover:border-gray-400"
+              />
             </div>
           </div>
         </div>

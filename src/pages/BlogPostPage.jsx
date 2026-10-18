@@ -5,6 +5,7 @@ import {
   HelpCircle, User, ArrowRight, Check, Sparkles, BookOpen, PhoneCall
 } from 'lucide-react';
 import Container from '../components/ui/Container';
+import { ArrowFillButton } from '../components/ui/arrow-fill-button';
 import { BLOG_POSTS } from '../data/blogs';
 import SEOHead from '../components/SEOHead';
 
@@ -590,18 +591,20 @@ export default function BlogPostPage({ onOpenBooking }) {
               We can audit your business phone setup and local search visibility for free. You will walk away with an exact plan to stop losing customers to competitors.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button
+              <ArrowFillButton
+                size="lg"
+                variant="primary"
                 onClick={() => onOpenBooking(post)}
-                className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
-              >
-                <PhoneCall size={18} /> Book a Free 30-Min Strategy Call
-              </button>
-              <Link
-                to="/casestudy"
-                className="text-base font-semibold text-gray-800 hover:text-black px-5 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
-              >
-                Read Real Client Stories →
-              </Link>
+                btnText="Book a Free 30-Min Strategy Call"
+                className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
+              />
+              <ArrowFillButton
+                size="lg"
+                variant="secondary"
+                onClick={() => navigate('/casestudy')}
+                btnText="Read Real Client Stories"
+                className="w-full sm:w-auto border-gray-300 hover:border-gray-400"
+              />
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import {
   ChevronRight, Quote, PhoneCall, Check, Award, HelpCircle, ChevronDown
 } from 'lucide-react';
 import Container from '../components/ui/Container';
+import { ArrowFillButton } from '../components/ui/arrow-fill-button';
 import { CASE_STUDIES } from '../data/caseStudies';
 import SEOHead from '../components/SEOHead';
 
@@ -598,18 +599,20 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
               We set up custom phone handling and growth campaigns in under 72 hours. Let's look at your numbers together on a short 30-minute call.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button
+              <ArrowFillButton
+                size="lg"
+                variant="primary"
                 onClick={() => onOpenBooking(study)}
-                className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
-              >
-                <PhoneCall size={18} /> Schedule a Free 30-Min Call
-              </button>
-              <Link
-                to="/casestudy"
-                className="text-base font-semibold text-gray-800 hover:text-black px-5 py-3 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors"
-              >
-                View More Client Stories →
-              </Link>
+                btnText="Schedule a Free 30-Min Call"
+                className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
+              />
+              <ArrowFillButton
+                size="lg"
+                variant="secondary"
+                onClick={() => navigate('/casestudy')}
+                btnText="View More Client Stories"
+                className="w-full sm:w-auto border-gray-300 hover:border-gray-400"
+              />
             </div>
           </div>
         </div>
