@@ -66,8 +66,10 @@ async function main() {
   };
 
   const endpoints = [
-    "https://api.indexnow.org/IndexNow",
-    "https://www.bing.com/IndexNow"
+    "https://api.indexnow.org/indexnow",
+    "https://www.bing.com/indexnow",
+    "https://yandex.com/indexnow",
+    "https://search.seznam.cz/indexnow"
   ];
 
   console.log(`\nSubmitting ${urls.length} URLs using Key: ${KEY}`);
