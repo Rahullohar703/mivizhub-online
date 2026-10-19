@@ -10,6 +10,7 @@ const COMPACT_LAYOUT_BREAKPOINT = 1280;
 const ANIMATION_DURATION_MS = 450;
 
 export function ArrowFillButton({
+  as: Component = "a",
   btnText,
   label,
   children,
@@ -209,10 +210,11 @@ export function ArrowFillButton({
     props.onClick?.(event);
   };
 
+  const elementProps = Component === "a" ? { href, ...props } : { ...props };
+
   return (
-    <a
-      href={href}
-      {...props}
+    <Component
+      {...elementProps}
       onClick={handleClick}
       data-pressed={isPressed ? "true" : "false"}
       onPointerDown={handlePointerDown}
@@ -266,7 +268,7 @@ export function ArrowFillButton({
           strokeWidth={2.5}
         />
       </span>
-    </a>
+    </Component>
   );
 }
 

@@ -191,26 +191,19 @@ export default function BlogPage({ onOpenBooking }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ y: -6, scale: 1.01 }}
-            className="group relative mb-14 rounded-3xl transition-all duration-300 cursor-pointer isolate"
+            className="relative mb-14 rounded-3xl isolate"
           >
-            {/* Luminous Multi-Hue Outer Glow Aura (Awakens on Hover) */}
-            <div className="absolute -inset-[3px] rounded-3xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-emerald-400 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 -z-10 group-hover:animate-gradient-shift pointer-events-none" />
-
-            <div className="relative w-full h-full bg-gradient-to-br from-cyan-50/70 via-white to-indigo-50/40 border-2 border-cyan-200/90 group-hover:border-transparent rounded-3xl p-6 sm:p-10 transition-all duration-300 shadow-sm group-hover:shadow-[0_25px_60px_rgba(6,182,212,0.22)] overflow-hidden">
-              {/* Prismatic Liquid Glass Shine Glare (Sweeps Across on Hover) */}
-              <div className="absolute inset-0 -translate-x-[160%] group-hover:translate-x-[220%] transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/70 to-transparent pointer-events-none transform -skew-x-25 z-30" />
-
-              {/* Top Glowing Header Accent Bar */}
-              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-400 z-10" />
+            <div className="relative w-full h-full bg-[#f8fafc] border border-gray-200/90 rounded-3xl p-6 sm:p-10 shadow-xs overflow-hidden">
+              {/* Clean Top Accent Line */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-cyan-600" />
               
-              {/* Ambient Background Light Blob */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.2)_0%,rgba(99,102,241,0.12)_40%,transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
+              {/* Subtle Static Ambient Background Glow */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.08)_0%,transparent_70%)] pointer-events-none" />
 
               <div className="max-w-3xl relative z-10">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider bg-cyan-900 text-white px-3.5 py-1.5 rounded-lg shadow-xs group-hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all">
-                    <Sparkles size={13} className="text-cyan-300 fill-cyan-300 animate-pulse" /> Featured Blueprint
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider bg-cyan-900 text-white px-3.5 py-1.5 rounded-lg shadow-2xs">
+                    <Sparkles size={13} className="text-cyan-300" /> Featured Blueprint
                   </span>
                   <span className="text-xs font-bold text-cyan-950 bg-cyan-100/80 px-2.5 py-1 rounded-md border border-cyan-200 flex items-center gap-1">
                     <Clock size={13} className="text-cyan-700" /> {featuredPost.readingTime}
@@ -219,7 +212,7 @@ export default function BlogPage({ onOpenBooking }) {
                 </div>
 
                 <Link to={`/blog/${featuredPost.slug}`}>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 group-hover:text-cyan-950 transition-colors mb-4 leading-tight tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 hover:text-cyan-700 transition-colors mb-4 leading-tight tracking-tight">
                     {featuredPost.title}
                   </h2>
                 </Link>
@@ -229,7 +222,7 @@ export default function BlogPage({ onOpenBooking }) {
                 </p>
 
                 {/* Quick Takeaways Box */}
-                <div className="bg-white/90 backdrop-blur-xs border border-gray-200/90 rounded-2xl p-5 sm:p-6 mb-7 space-y-3 shadow-2xs group-hover:border-cyan-300 transition-colors">
+                <div className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 mb-7 space-y-3 shadow-2xs">
                   <div className="text-xs font-black uppercase text-gray-500 tracking-wider flex items-center gap-1.5">
                     <Zap size={14} className="text-amber-500 fill-amber-500" />
                     What you will learn in this blueprint:
@@ -244,7 +237,7 @@ export default function BlogPage({ onOpenBooking }) {
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-sm shrink-0 ring-2 ring-transparent group-hover:ring-cyan-400 transition-all duration-300 group-hover:scale-105">
+                    <div className="w-11 h-11 rounded-full overflow-hidden bg-gray-100 border border-gray-300 shadow-2xs shrink-0">
                       <img
                         src="/rahul-profile.png"
                         alt={featuredPost.author.name}
@@ -260,9 +253,13 @@ export default function BlogPage({ onOpenBooking }) {
                   <ArrowFillButton
                     size="lg"
                     variant="primary"
-                    onClick={() => navigate(`/blog/${featuredPost.slug}`)}
-                    btnText="Read Complete Blueprint"
-                    className="w-full sm:w-auto shadow-xl shadow-cyan-600/30"
+                    href={`/blog/${featuredPost.slug}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(`/blog/${featuredPost.slug}`);
+                    }}
+                    btnText="Read More"
+                    className="w-full sm:w-auto shadow-lg shadow-blue-600/20"
                   />
                 </div>
               </div>
@@ -308,61 +305,49 @@ export default function BlogPage({ onOpenBooking }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.45, delay: (pIdx % 3) * 0.07 }}
-                  whileHover={{ y: -10, scale: 1.02 }}
+                  whileHover={{ y: -4 }}
                   className="group relative h-full flex isolate cursor-pointer"
                 >
-                  {/* 1. CRAZY MULTI-COLORED LUMINOUS AURA (Backdrop Neon Blur on Hover) */}
-                  <div className="absolute -inset-[3px] rounded-2xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 blur-md transition-all duration-300 -z-10 group-hover:animate-gradient-shift pointer-events-none" />
-
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="relative w-full h-full flex flex-col justify-between bg-white border-2 border-gray-200/90 group-hover:border-transparent rounded-2xl p-6 sm:p-7 transition-all duration-300 shadow-sm group-hover:shadow-[0_20px_50px_rgba(8,145,178,0.22)] overflow-hidden cursor-pointer"
+                    className="relative w-full h-full flex flex-col justify-between bg-white border border-gray-200 hover:border-gray-300 rounded-2xl p-6 sm:p-7 transition-all duration-200 shadow-2xs hover:shadow-xl hover:shadow-gray-900/5 overflow-hidden cursor-pointer"
                   >
-                    {/* 2. PRISMATIC LIQUID GLASS SHINE (Sweeps across card diagonally on hover) */}
-                    <div className="absolute inset-0 -translate-x-[160%] group-hover:translate-x-[220%] transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/70 to-transparent pointer-events-none transform -skew-x-25 z-30" />
-
-                    {/* 3. Top Laser Edge Highlight with Animated Radiant Sheen */}
-                    <div className="absolute top-0 inset-x-0 h-1.5 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:via-indigo-500 group-hover:to-cyan-400 transition-all duration-300 z-10" />
-
-                    {/* 4. Ambient Radial Spotlight Aura in Top Right */}
-                    <div className="absolute -top-20 -right-20 w-56 h-56 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.25)_0%,rgba(99,102,241,0.12)_45%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none z-0 group-hover:scale-110" />
-
-                    {/* 5. Secondary Ambient Spotlight Aura in Bottom Left */}
-                    <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.15)_0%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none z-0" />
+                    {/* Clean Subtle Top Hairline on Hover */}
+                    <div className="absolute top-0 inset-x-0 h-0.5 bg-transparent group-hover:bg-cyan-600 transition-colors duration-200 z-10" />
 
                     <div className="relative z-10">
                       {/* Category Badge & Reading Time */}
                       <div className="flex items-center justify-between gap-2 mb-4 pt-1">
-                        <span className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all duration-200 flex items-center gap-1.5 shadow-2xs group-hover:shadow-md ${catBadgeStyle}`}>
-                          <span className="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100 group-hover:animate-ping" />
+                        <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg border transition-colors flex items-center gap-1.5 shadow-2xs ${catBadgeStyle}`}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-current opacity-70" />
                           <span>{post.category}</span>
                         </span>
                         
-                        <span className="text-xs text-gray-500 flex items-center gap-1 font-semibold group-hover:text-cyan-700 transition-colors">
-                          <Clock size={12} className="text-gray-400 group-hover:text-cyan-600 group-hover:rotate-45 transition-all duration-300" />
+                        <span className="text-xs text-gray-500 flex items-center gap-1 font-semibold group-hover:text-gray-700 transition-colors">
+                          <Clock size={12} className="text-gray-400 group-hover:text-cyan-600 transition-colors" />
                           <span>{post.readingTime}</span>
                         </span>
                       </div>
 
-                      {/* Title with Smooth Hover Micro-Shift & Gradient Glow Accent */}
-                      <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-cyan-950 transition-colors duration-200 mb-3 leading-snug">
+                      {/* Title with Clean Hover Transition */}
+                      <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-cyan-700 transition-colors duration-200 mb-3 leading-snug">
                         {post.title}
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-sm text-gray-600 group-hover:text-gray-800 leading-relaxed mb-6 line-clamp-3 font-normal transition-colors">
+                      <p className="text-sm text-gray-600 group-hover:text-gray-700 leading-relaxed mb-6 line-clamp-3 font-normal transition-colors">
                         {renderInlineMarkdown(post.excerpt)}
                       </p>
                     </div>
 
-                    {/* Bottom Footer: Author & Electric Magnetic Action Pill */}
+                    {/* Bottom Footer: Author & Signature Animated Button */}
                     <div className="pt-4 border-t border-gray-100 group-hover:border-gray-200 flex items-center justify-between mt-auto relative z-10 transition-colors">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 ring-2 ring-transparent group-hover:ring-cyan-400/80 transition-all duration-200 shadow-2xs shrink-0 group-hover:scale-105">
+                        <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 ring-1 ring-gray-200 group-hover:ring-gray-300 transition-all duration-200 shadow-2xs shrink-0">
                           <img
                             src="/rahul-profile.png"
                             alt={post.author.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            className="w-full h-full object-cover"
                             onError={(e) => { e.currentTarget.style.display = 'none'; }}
                           />
                         </div>
@@ -371,12 +356,14 @@ export default function BlogPage({ onOpenBooking }) {
                         </span>
                       </div>
 
-                      {/* Super Magnetic Interactive CTA Button Pill */}
-                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-black bg-gray-100 text-gray-900 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:via-indigo-600 group-hover:to-cyan-600 group-hover:text-white transition-all duration-300 shadow-2xs group-hover:shadow-[0_0_18px_rgba(6,182,212,0.55)] group-hover:scale-105">
-                        <Sparkles size={11} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-cyan-200 animate-pulse" />
-                        <span>Read Guide</span>
-                        <ArrowRight size={13} className="stroke-[2.5] group-hover:translate-x-1.5 transition-transform duration-200" />
-                      </span>
+                      {/* Animated ArrowFillButton as span */}
+                      <ArrowFillButton
+                        as="span"
+                        size="sm"
+                        variant="secondary"
+                        btnText="Read More"
+                        className="shadow-none border-gray-200"
+                      />
                     </div>
                   </Link>
                 </motion.div>

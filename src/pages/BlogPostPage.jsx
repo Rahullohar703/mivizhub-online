@@ -623,40 +623,34 @@ export default function BlogPostPage({ onOpenBooking }) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {relatedPosts.map((related) => (
               <div key={related.id} className="group relative isolate h-full flex">
-                {/* Luminous Multi-Hue Outer Glow Aura */}
-                <div className="absolute -inset-[2.5px] rounded-2xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-fuchsia-400 opacity-0 group-hover:opacity-100 blur-md transition-all duration-300 -z-10 group-hover:animate-gradient-shift pointer-events-none" />
-
                 <Link
                   to={`/blog/${related.slug}`}
-                  className="relative w-full h-full bg-white border-2 border-gray-200/90 group-hover:border-transparent rounded-2xl p-5 shadow-sm group-hover:shadow-[0_18px_40px_rgba(8,145,178,0.2)] hover:-translate-y-1.5 transition-all duration-300 block overflow-hidden cursor-pointer flex flex-col justify-between"
+                  className="relative w-full h-full bg-white border border-gray-200 hover:border-gray-300 rounded-2xl p-5 shadow-2xs hover:shadow-lg hover:shadow-gray-900/5 hover:-translate-y-1 transition-all duration-200 block overflow-hidden cursor-pointer flex flex-col justify-between"
                 >
-                  {/* Prismatic Liquid Glass Light Sweep */}
-                  <div className="absolute inset-0 -translate-x-[160%] group-hover:translate-x-[220%] transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/70 to-transparent pointer-events-none transform -skew-x-25 z-20" />
+                  {/* Clean 2px top hairline on hover */}
+                  <div className="absolute top-0 inset-x-0 h-0.5 bg-transparent group-hover:bg-cyan-600 transition-colors duration-200 z-10" />
 
-                  {/* Top Radiant Gradient Laser Hairline */}
-                  <div className="absolute top-0 inset-x-0 h-1 bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:via-indigo-500 group-hover:to-cyan-400 transition-all duration-300 z-10" />
-
-                  {/* Ambient Radial Spotlight Aura in Top Right */}
-                  <div className="absolute -top-14 -right-14 w-40 h-40 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.2)_0%,transparent_70%)] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none z-0" />
-                  
                   <div className="relative z-10">
-                    <div className="text-xs font-bold text-cyan-800 uppercase tracking-wider mb-2 pt-1 flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 group-hover:animate-ping" />
+                    <div className="text-xs font-semibold text-cyan-800 uppercase tracking-wider mb-2 pt-1 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-600" />
                       <span>{related.category}</span>
                     </div>
-                    <h4 className="text-base font-extrabold text-gray-900 group-hover:text-cyan-950 transition-colors line-clamp-2 mb-2 leading-snug">
+                    <h4 className="text-base font-extrabold text-gray-900 group-hover:text-cyan-700 transition-colors line-clamp-2 mb-2 leading-snug">
                       {related.title}
                     </h4>
                   </div>
 
                   <div className="pt-3 border-t border-gray-100 group-hover:border-gray-200 flex items-center justify-between text-xs text-gray-500 font-semibold mt-3 relative z-10">
                     <span className="flex items-center gap-1">
-                      <Clock size={12} className="text-gray-400 group-hover:text-cyan-600 group-hover:rotate-45 transition-all duration-300" /> {related.readingTime}
+                      <Clock size={12} className="text-gray-400 group-hover:text-cyan-600 transition-colors" /> {related.readingTime}
                     </span>
-                    <span className="px-3 py-1 rounded-lg text-xs font-black bg-gray-100 group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-indigo-600 text-gray-800 group-hover:text-white transition-all duration-300 group-hover:shadow-[0_0_12px_rgba(6,182,212,0.5)] inline-flex items-center gap-1 group-hover:scale-105">
-                      <span>Read</span>
-                      <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
-                    </span>
+                    <ArrowFillButton
+                      as="span"
+                      size="sm"
+                      variant="secondary"
+                      btnText="Read"
+                      className="shadow-none border-gray-200 text-xs"
+                    />
                   </div>
                 </Link>
               </div>

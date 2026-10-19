@@ -27,11 +27,13 @@ export interface ArrowFillButtonOwnProps {
   hoverArrowColor?: string;
   animationDuration?: number;
   fillOnHover?: boolean;
+  as?: any;
 }
 
-export type ArrowFillButtonProps = ArrowFillButtonOwnProps & Omit<ComponentPropsWithoutRef<'a'>, keyof ArrowFillButtonOwnProps>;
+export type ArrowFillButtonProps = ArrowFillButtonOwnProps & Record<string, any>;
 
 export function ArrowFillButton({
+  as: Component = "a",
   btnText,
   label,
   children,
@@ -223,10 +225,11 @@ export function ArrowFillButton({
     props.onClick?.(event);
   };
 
+  const elementProps = Component === "a" ? { href, ...props } : { ...props };
+
   return (
-    <a
-      href={href}
-      {...props}
+    <Component
+      {...elementProps}
       onClick={handleClick}
       data-pressed={isPressed ? "true" : "false"}
       onPointerDown={handlePointerDown}
@@ -280,7 +283,7 @@ export function ArrowFillButton({
           strokeWidth={2.5}
         />
       </span>
-    </a>
+    </Component>
   );
 }
 
