@@ -22,6 +22,13 @@ export default function GrowthPage({ onOpenBooking }) {
         "Build your online presence, improve search visibility, create strategic content and generate more opportunities with Mivizhub Marketing & Growth."
       );
     }
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://www.mivizhub.online/growth');
   }, []);
 
   const handleSelectPlan = (planType) => {

@@ -33,9 +33,16 @@ function HomePage({ onOpenBooking }) {
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "MivizHub helps businesses grow with performance-driven marketing and AI-powered staffing — bringing in more customers while taking more work off your plate."
+        "MivizHub helps businesses grow with performance marketing and AI-powered staffing — attracting customers while taking work off your plate."
       );
     }
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://www.mivizhub.online/');
   }, []);
 
   return (

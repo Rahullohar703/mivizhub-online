@@ -319,13 +319,18 @@ export default function CaseStudyDetailPage({ onOpenBooking }) {
                   Pricing: <strong className="text-gray-900">{study.planTier.price}</strong> • {study.planTier.billingCadence || "Flat Monthly • Cancel Anytime"}
                 </span>
               </div>
-              <Link
-                to="/growth"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-cyan-900 bg-cyan-100 hover:bg-cyan-200 border border-cyan-300 px-4 py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md hover:scale-105 active:scale-95 self-start sm:self-auto shrink-0"
-              >
-                <span>Compare Plans on /growth</span>
-                <ArrowRight size={15} />
-              </Link>
+              <ArrowFillButton
+                as="a"
+                href="/growth"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/growth');
+                }}
+                size="sm"
+                variant="secondary"
+                btnText="Compare Plans on /growth"
+                className="border-cyan-300 bg-white/90 text-cyan-900 hover:bg-cyan-50 self-start sm:self-auto shrink-0 shadow-2xs"
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-5 text-left">

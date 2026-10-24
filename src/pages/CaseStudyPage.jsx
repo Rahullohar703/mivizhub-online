@@ -211,9 +211,19 @@ export default function CaseStudyPage({ onOpenBooking }) {
             <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4">
               Real Results for Real Businesses
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">
               Explore verified case studies across search visibility, website conversion, customer acquisition, and 24/7 AI staff automation.
             </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+              <ArrowFillButton
+                size="default"
+                variant="primary"
+                onClick={() => onOpenBooking('presence')}
+                btnText="Book a Free Growth Consultation"
+                className="shadow-lg shadow-blue-600/25"
+              />
+            </div>
           </motion.div>
 
           {/* Primary Solution Tabs: Marketing & Growth vs AI Staffing */}
@@ -470,10 +480,13 @@ export default function CaseStudyPage({ onOpenBooking }) {
                       <span>4-min read • Full timeline, pricing &amp; implementation</span>
                     </span>
 
-                    <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold px-4 py-2 rounded-xl bg-gray-900 text-white group-hover:bg-cyan-700 transition-all">
-                      <span>Read Full Case Study</span>
-                      <ArrowRight size={15} className="transform group-hover:translate-x-1.5 transition-transform duration-200" />
-                    </div>
+                    <ArrowFillButton
+                      as="span"
+                      size="sm"
+                      variant="primary"
+                      btnText="Read Full Case Study"
+                      className="shadow-md shadow-blue-600/20"
+                    />
                   </div>
                 </Link>
               </motion.div>
