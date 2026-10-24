@@ -99,10 +99,14 @@ function createHtmlPage(template, {
   // 7. Semantic HTML inside #root for non-JS / static crawlers
   const semanticContent = `
     <div id="root">
-      <header class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-        <h1>${escapeHtml(h1 || title)}</h1>
-        <p>${escapeHtml(description || previewText || '')}</p>
-      </header>
+      <main style="max-width:900px;margin:0 auto;padding:48px 24px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+        <h1 style="font-size:2.25rem;font-weight:800;line-height:1.25;color:#f4f4f5;margin-bottom:1rem;">
+          ${escapeHtml(h1 || title)}
+        </h1>
+        <p style="font-size:1.125rem;line-height:1.6;color:#a1a1aa;margin-bottom:2rem;">
+          ${escapeHtml(description || previewText || '')}
+        </p>
+      </main>
     </div>
   `.trim();
 
