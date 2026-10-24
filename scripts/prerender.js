@@ -129,11 +129,36 @@ function main() {
 
   let count = 0;
 
-  // 1. Homepage update (ensure H1 is present inside #root for static crawlers)
-  const homeHtml = baseTemplate.replace(
-    /<div id="root">[\s\S]*?<\/div>/i,
-    `<div id="root"><header class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"><h1>MivizHub | Business Growth with Marketing &amp; AI Staffing</h1><p>Attract customers with performance marketing while autonomous 24/7 AI staff handle inquiries, calls, and follow-ups.</p></header></div>`
-  );
+  // 1. Homepage update (ensure H1 and Organization/WebSite Schema are present)
+  const homeJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'MivizHub',
+      'url': BASE_URL,
+      'logo': `${BASE_URL}/logo-256.png`,
+      'founder': {
+        '@type': 'Person',
+        'name': 'Rahul Lohar'
+      },
+      'description': 'MivizHub helps businesses grow with performance marketing and AI-powered staffing — attracting customers while taking work off your plate.'
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'MivizHub',
+      'url': BASE_URL
+    }
+  ];
+
+  const homeHtml = createHtmlPage(baseTemplate, {
+    title: 'MivizHub | Business Growth with Marketing & AI Staffing',
+    description: 'MivizHub helps businesses grow with performance marketing and AI-powered staffing — attracting customers while taking work off your plate.',
+    canonicalUrl: `${BASE_URL}/`,
+    h1: 'MivizHub | Business Growth with Marketing & AI Staffing',
+    previewText: 'Attract customers with performance marketing while autonomous 24/7 AI staff handle inquiries, calls, and follow-ups.',
+    jsonLd: homeJsonLd
+  });
   fs.writeFileSync(templatePath, homeHtml, 'utf-8');
   count++;
   console.log('✓ Prerendered: / (Homepage)');
@@ -181,12 +206,25 @@ function main() {
   console.log('✓ Prerendered: /blog');
 
   // 4. Growth Hub: /growth
+  const growthJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    'name': 'Marketing & Growth Architecture for Small Businesses | MivizHub',
+    'url': `${BASE_URL}/growth`,
+    'description': 'High-impact local SEO, Google Business Profile optimization, website conversion engineering, and paid search management.',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'MivizHub',
+      'url': BASE_URL
+    }
+  };
   const growthHtml = createHtmlPage(baseTemplate, {
     title: 'Marketing & Growth Architecture for Small Businesses | MivizHub',
     description: 'High-impact local SEO, Google Business Profile optimization, website conversion engineering, and paid search management.',
     canonicalUrl: `${BASE_URL}/growth`,
     h1: 'Performance Marketing & Growth Architecture',
     previewText: 'Systematically rank #1 on Google Maps, capture local search intent, and double customer acquisition.',
+    jsonLd: growthJsonLd,
     keywords: ['marketing growth architecture', 'local SEO agency', 'Google Business Profile optimization', 'small business growth']
   });
   writePage('growth', growthHtml);
