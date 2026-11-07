@@ -96,10 +96,10 @@ function createHtmlPage(template, {
     html = html.replace('</head>', `${scriptTags}\n  </head>`);
   }
 
-  // 7. Semantic HTML inside #root for non-JS / static crawlers
+  // 7. Semantic HTML inside noscript for non-JS / static crawlers
   const semanticContent = `
-    <div id="root">
-      <main style="max-width:900px;margin:0 auto;padding:48px 24px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+    <noscript>
+      <main style="max-width:900px;margin:0 auto;padding:48px 24px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#f4f4f5;">
         <h1 style="font-size:2.25rem;font-weight:800;line-height:1.25;color:#f4f4f5;margin-bottom:1rem;">
           ${escapeHtml(h1 || title)}
         </h1>
@@ -107,10 +107,16 @@ function createHtmlPage(template, {
           ${escapeHtml(description || previewText || '')}
         </p>
       </main>
-    </div>
+    </noscript>
+    <div id="root"></div>
   `.trim();
 
-  html = html.replace(/<div id="root">[\s\S]*?<\/div>/i, semanticContent);
+  // Replace existing noscript/root or plain root
+  if (html.includes('<noscript>') && html.includes('<div id="root">')) {
+    html = html.replace(/<noscript>[\s\S]*?<\/noscript>\s*<div id="root">[\s\S]*?<\/div>/i, semanticContent);
+  } else {
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>/i, semanticContent);
+  }
 
   return html;
 }
