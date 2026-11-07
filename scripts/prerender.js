@@ -145,7 +145,7 @@ function main() {
         '@type': 'Person',
         'name': 'Rahul Lohar'
       },
-      'description': 'MivizHub helps businesses grow with performance marketing and AI-powered staffing — attracting customers while taking work off your plate.'
+      'description': 'MivizHub helps general contractors, trade pros, and ops-heavy businesses capture high-value projects with local search marketing, 24/7 AI voice dispatch, and automated estimate follow-ups.'
     },
     {
       '@context': 'https://schema.org',
@@ -156,11 +156,11 @@ function main() {
   ];
 
   const homeHtml = createHtmlPage(baseTemplate, {
-    title: 'MivizHub | Business Growth with Marketing & AI Staffing',
-    description: 'MivizHub helps businesses grow with performance marketing and AI-powered staffing — attracting customers while taking work off your plate.',
+    title: 'MivizHub | Growth Marketing & AI Operations for Construction & Field Trades',
+    description: 'MivizHub helps general contractors, trade pros, and ops-heavy businesses capture high-value projects with local search marketing, 24/7 AI voice dispatch, and automated estimate follow-ups.',
     canonicalUrl: `${BASE_URL}/`,
-    h1: 'MivizHub | Business Growth with Marketing & AI Staffing',
-    previewText: 'Attract customers with performance marketing while autonomous 24/7 AI staff handle inquiries, calls, and follow-ups.',
+    h1: 'MivizHub | Growth Marketing & AI Operations for Construction & Field Trades',
+    previewText: 'Win more high-value projects and stop losing bids to missed calls with done-for-you contractor marketing and 24/7 AI operations.',
     jsonLd: homeJsonLd
   });
   fs.writeFileSync(templatePath, homeHtml, 'utf-8');

@@ -13,13 +13,13 @@ export default function SectionProblems() {
         {/* Section Header */}
         <div className="max-w-5xl mx-auto text-center mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            The Reality of Running a Business
+            The Reality of Running a Construction &amp; Field Ops Business
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
-            Growing your business shouldn't mean working 80 hours a week.
+            Working on the job site shouldn't mean losing bids at the desk.
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-            Most business owners find themselves trapped between two constant headaches:
+            Most contractors and operations leaders find themselves trapped between two constant headaches:
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function SectionProblems() {
                 <span className="text-xs font-mono font-bold text-gray-400 bg-white/5 px-3 py-1 rounded border border-white/5">
                   Headache #1
                 </span>
-                <span className="text-xs font-semibold text-rose-400">Customer Flow</span>
+                <span className="text-xs font-semibold text-rose-400">Unpredictable Pipeline</span>
               </div>
               
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
@@ -41,13 +41,13 @@ export default function SectionProblems() {
               </h3>
               
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
-                Word-of-mouth is unpredictable. One month you have more jobs than you can handle, and the next month your crew is sitting idle.
+                Relying solely on word-of-mouth creates feast-or-famine cycles. One month crews are overwhelmed, and the next month equipment sits idle and payroll feels heavy.
               </p>
             </div>
 
             <div className="bg-[#0b101c] p-4 rounded-xl border border-white/5 text-xs sm:text-sm text-rose-300">
               <span className="text-white font-bold block mb-1">What this costs you:</span>
-              Quiet weeks, payroll stress, and zero control over your business growth.
+              Quiet weeks, cash flow stress, and zero predictability over your upcoming project schedule.
             </div>
           </div>
 
@@ -58,21 +58,21 @@ export default function SectionProblems() {
                 <span className="text-xs font-mono font-bold text-gray-400 bg-white/5 px-3 py-1 rounded border border-white/5">
                   Headache #2
                 </span>
-                <span className="text-xs font-semibold text-amber-400">Daily Workload</span>
+                <span className="text-xs font-semibold text-amber-400">Field vs. Office Friction</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                "Drowning in Missed Calls, Inquiries & Admin"
+                "Drowning in Missed Calls &amp; Stalled Estimates"
               </h3>
               
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
-                When you're busy delivering work, answering customer calls is impossible. Phone calls go to voicemail, quote requests sit for days, and leads vanish.
+                When you're on a noisy jobsite or driving between bids, answering calls is impossible. Phone calls go to voicemail, open quotes sit uncalled, and homeowners hire the next contractor on Google.
               </p>
             </div>
 
             <div className="bg-[#0b101c] p-4 rounded-xl border border-white/5 text-xs sm:text-sm text-amber-300">
               <span className="text-white font-bold block mb-1">What this costs you:</span>
-              Lost deals, unhappy clients, 14-hour work days, and zero time off.
+              Lost $5,000–$50,000+ jobs, unclosed estimates going cold, and working until midnight doing admin.
             </div>
           </div>
 
@@ -84,10 +84,10 @@ export default function SectionProblems() {
             <ArrowDown className="w-5 h-5" />
           </div>
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3">
-            MivizHub Solves Both Ends of the Equation
+            MivizHub Solves Both Ends of the Contractor Equation
           </h3>
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Our <span className="text-white font-bold">Marketing</span> gets qualified customer inquiries coming in. Our <span className="text-white font-bold">AI Employees</span> answer your calls in 1 ring, follow up with leads in 60 seconds, chase pending quotes, and keep your schedule full.
+            Our <span className="text-white font-bold">Growth Marketing Plans</span> bring qualified local homeowner and commercial project inquiries straight to your phone. Our <span className="text-white font-bold">AI Operations &amp; Dispatch</span> answers calls in 1 ring, qualifies job scope, nurtures pending estimates, and keeps your crews booked.
           </p>
         </div>
 

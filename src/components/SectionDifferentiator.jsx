@@ -16,10 +16,10 @@ export default function SectionDifferentiator() {
             The Power of The Combination
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Why Marketing & AI Staffing Belong Together
+            Why Contractor Marketing &amp; Field Automation Belong Together
           </h2>
           <p className="text-base sm:text-lg text-gray-200 max-w-3xl mx-auto">
-            Most businesses try to fix growth one piece at a time — and get stuck. Here is why doing both changes everything:
+            Most trade businesses try to fix growth one piece at a time — and get stuck. Here is why doing both transforms your business:
           </p>
         </div>
 
@@ -39,12 +39,12 @@ export default function SectionDifferentiator() {
                 Marketing Alone
               </h3>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
-                Ads bring calls, but you're busy on site. Callers hit voicemail and hire the next competitor on Google.
+                Ads and Google rankings bring phone calls, but you're on a noisy roof or job site. Callers hit voicemail and hire the next contractor on Google.
               </p>
             </div>
             <div className="pt-4 border-t border-white/5 flex items-center gap-2 text-xs sm:text-sm font-semibold text-rose-400">
               <X className="w-4 h-4 flex-shrink-0" />
-              <span>Wasted ad spend & lost jobs</span>
+              <span>Wasted ad budget &amp; lost $10k+ jobs</span>
             </div>
           </div>
 
@@ -58,15 +58,15 @@ export default function SectionDifferentiator() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
-                AI Staffing Alone
+                AI Automation Alone
               </h3>
               <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
-                Inquiries, customer calls, and quote follow-ups run flawlessly 24/7, but growth stalls because not enough new prospects know you exist.
+                Every inbound call is answered in 1 ring, estimates are nurtured, and dispatch notes are logged, but growth stalls because not enough local property owners know you exist.
               </p>
             </div>
             <div className="pt-4 border-t border-white/5 flex items-center gap-2 text-xs sm:text-sm font-semibold text-amber-400">
               <X className="w-4 h-4 flex-shrink-0" />
-              <span>Great operations, but slow growth</span>
+              <span>Smooth jobsite ops, but quiet weeks</span>
             </div>
           </div>
 
@@ -80,27 +80,27 @@ export default function SectionDifferentiator() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
-                Marketing + AI Staffing
+                Growth Plans + AI Automation
               </h3>
               <p className="text-sm sm:text-base text-gray-200 leading-relaxed mb-6">
-                Marketing drives qualified leads to your business. AI employees handle calls, follow up in 60 seconds, and chase quotes until jobs are booked.
+                Targeted marketing floods your pipeline with high-value bid requests. AI automation answers calls, qualifies project scope in 60s, and follows up until the contract is signed.
               </p>
             </div>
             <div className="pt-4 border-t border-white/10 flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-400">
               <Check className="w-4 h-4 flex-shrink-0" />
-              <span>Full schedule, zero missed revenue</span>
+              <span>Full project schedule, zero missed revenue</span>
             </div>
           </div>
 
         </div>
 
-        {/* Supporting Statement: Bold & Memorable */}
+        {/* Supporting Statement */}
         <div className="max-w-5xl mx-auto bg-[#131122]/90 border border-white/10 rounded-3xl p-10 sm:p-14 text-center shadow-2xl">
           <blockquote className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-5 leading-snug">
-            “One brings more business in. The other helps you get the work done.”
+            “One brings high-value projects in. The other ensures you never lose a job to a missed call.”
           </blockquote>
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            You don't have to hire a high-priced agency for marketing and then hire multiple full-time administrative staff. MivizHub gives you the complete growth engine in one simple partnership.
+            You don't need to juggle multiple expensive marketing agencies and full-time office dispatchers. MivizHub delivers a complete, hands-off growth and operations system designed specifically for contractors.
           </p>
         </div>
 

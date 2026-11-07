@@ -6,28 +6,28 @@ import Section from './ui/Section';
 export default function SectionCaseStudies() {
   const caseStudies = [
     {
-      industry: "General Contractor",
-      badge: "AI Staffing",
+      industry: "General Contractor & Remodeling",
+      badge: "AI Automation",
       stat: "Zero Missed Calls",
       statDesc: "+$14,000 extra work booked in Month 1",
       before: "Owner missed 4-6 calls a day on noisy job sites. Leads called competitors instead.",
-      after: "AI receptionist picks up in 1 ring 24/7 and books estimator site visits on his calendar."
+      after: "AI voice dispatcher picks up in 1 ring 24/7 and books estimator walkthroughs on his calendar."
     },
     {
-      industry: "Healthcare Clinic",
-      badge: "AI Staffing",
-      stat: "Zero Hold Times",
-      statDesc: "35% increase in confirmed bookings",
-      before: "10-minute morning phone queues, stressed receptionists, and frustrated patients.",
-      after: "AI handles routine scheduling and clinic FAQs instantly, freeing front desk to care for patients."
+      industry: "Commercial HVAC & Mechanical",
+      badge: "Growth Engine + AI Ops",
+      stat: "+35% Booked Contracts",
+      statDesc: "Zero hold times & faster quotes",
+      before: "Urgent commercial service calls went to voicemail during peak summer, frustrating building managers.",
+      after: "AI triage answers 24/7 emergencies, schedules dispatches, and nurtures commercial maintenance bids."
     },
     {
-      industry: "Home Services & Roofing",
-      badge: "Marketing + AI Staffing",
+      industry: "Roofing & Storm Restoration",
+      badge: "Growth Engine + AI Ops",
       stat: "+28% More Jobs Won",
       statDesc: "From automated quote follow-up",
-      before: "Sent estimates sat without follow-up while owner was in the field, losing jobs to competitors.",
-      after: "AI qualifies web leads in 45s and automatically nurtures unclosed quotes until booked."
+      before: "Sent estimates sat without follow-up while owner was in the field, losing jobs to faster competitors.",
+      after: "AI qualifies storm inquiries in 45s and automatically nurtures pending bids until approved."
     }
   ];
 

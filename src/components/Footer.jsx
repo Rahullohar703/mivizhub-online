@@ -17,10 +17,10 @@ export default function Footer({ onOpenBooking }) {
               </span>
             </Link>
             <p className="text-sm text-textMuted max-w-sm leading-relaxed mb-4">
-              Marketing brings more business in. AI staffing helps get the work done. Scale operations and accelerate revenue without the payroll burden.
+              Done-for-you growth marketing and 24/7 AI operations for construction, trade pros, and ops-heavy teams. Win more high-value projects without working 80 hours a week.
             </p>
             <div className="text-xs text-textMuted font-medium">
-              Marketing & Growth • Autonomous AI Staffing
+              Contractor Growth Plans • 24/7 Field &amp; Office AI Operations
             </div>
           </div>
 
@@ -40,7 +40,10 @@ export default function Footer({ onOpenBooking }) {
                 <Link to="/blog" className="hover:text-[#31c0de] transition-colors font-medium">Growth & AI Blog</Link>
               </li>
               <li>
-                <a href="/#ai-staffing" className="hover:text-textMain transition-colors">AI Workforce</a>
+                <a href="/#offers" className="hover:text-textMain transition-colors">3 Core Offers</a>
+              </li>
+              <li>
+                <a href="/#ai-staffing" className="hover:text-textMain transition-colors">AI Field Operations</a>
               </li>
               <li>
                 <a href="/#how-it-works" className="hover:text-textMain transition-colors">How It Works</a>

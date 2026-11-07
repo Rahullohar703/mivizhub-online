@@ -18,33 +18,33 @@ export default function SectionHero({ onOpenBooking }) {
         {/* Simple, Trustworthy Badge */}
         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
           <span className="text-xs sm:text-sm font-medium text-gray-200 tracking-wide">
-            Done-For-You Business Growth • Zero Software To Learn
+            Built For Contractors, Trade Pros &amp; Field Operations • Zero Software To Learn
           </span>
         </div>
 
         {/* Primary Headline: Wide container so it completes in 1 to 2 lines cleanly */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight text-white leading-[1.15] mb-6 max-w-6xl mx-auto">
-          Your Next Best Employee <span className="text-[#31c0de]">Isn't Human.</span>
+          Win More High-Value Projects. <span className="text-[#31c0de]">Stop Losing Bids to Missed Calls.</span>
         </h1>
 
-        {/* Supporting Copy: Exact user requirement, readable 18px-20px */}
+        {/* Supporting Copy */}
         <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto mb-10 font-normal">
-          We build and manage AI Employees that answer calls, qualify leads, follow up with customers, and automate repetitive work so your business grows without growing your payroll.
+          We build and manage done-for-you local marketing and AI operations for construction, trade contractors, and field teams. Rank #1 locally, answer calls in 1 ring, qualify leads in 60 seconds, and automate back-office admin.
         </p>
 
-        {/* CTAs: Clean, large, boomer-friendly with ArrowFillButton */}
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-6">
           <ArrowFillButton 
             onClick={onOpenBooking} 
-            btnText="Book a Free 15-Minute Intro Call"
+            btnText="Book a Free 15-Minute Strategy Call"
             size="lg"
             variant="primary"
             className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
           />
 
           <ArrowFillButton 
-            btnText="See Our 2 Simple Services" 
-            href="#services" 
+            btnText="Explore Our 3 Core Offers" 
+            href="#offers" 
             size="lg"
             variant="secondary"
             className="w-full sm:w-auto border-white/15 hover:border-white/30"
@@ -53,46 +53,64 @@ export default function SectionHero({ onOpenBooking }) {
 
         {/* Reassurance text */}
         <p className="text-sm sm:text-base text-gray-400 mb-14 font-medium">
-          No pushy sales reps • We set everything up • Works with your existing phone number
+          No pushy sales reps • Turnkey setup in 7 days • Works with your existing phone number
         </p>
 
-        {/* Clean, Expansive 2-Pillar Bar (Wide, Unboxed & Modern) */}
+        {/* 3-Pillar Offer Highlight Bar */}
         <div className="w-full max-w-6xl mx-auto">
-          <div className="bg-[#0e1322]/95 border border-white/10 rounded-2xl p-7 sm:p-10 shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="bg-[#0e1322]/95 border border-white/10 rounded-2xl p-7 sm:p-9 shadow-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
               
-              {/* Service 1 */}
-              <div className="flex items-start gap-5 text-left">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center flex-shrink-0 text-base">
+              {/* Offer 1 */}
+              <div className="flex items-start gap-4 text-left">
+                <div className="w-11 h-11 rounded-xl bg-[#31c0de]/10 border border-[#31c0de]/20 text-[#31c0de] font-bold flex items-center justify-center flex-shrink-0 text-sm">
                   01
                 </div>
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-1">
-                    Marketing & Growth
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#31c0de] block mb-1">
+                    AI Automation &amp; Ops
                   </span>
-                  <h3 className="text-xl font-bold text-white mb-1.5">
-                    Brings Business In
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    Field &amp; Office 24/7
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                    Targeted Google & local ads that get your phone ringing with customers ready for quotes.
+                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    24/7 voice dispatch, instant quote qualification in &lt;60s, estimate follow-ups, and calendar/CRM sync.
                   </p>
                 </div>
               </div>
 
-              {/* Service 2 */}
-              <div className="flex items-start gap-5 text-left border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8 lg:pl-12">
-                <div className="w-12 h-12 rounded-xl bg-[#31c0de]/10 border border-[#31c0de]/20 text-[#31c0de] font-bold flex items-center justify-center flex-shrink-0 text-base">
+              {/* Offer 2 */}
+              <div className="flex items-start gap-4 text-left border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6 lg:pl-8">
+                <div className="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 font-bold flex items-center justify-center flex-shrink-0 text-sm">
                   02
                 </div>
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-1">
-                    AI Staffing
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                    Presence Plan ($250/mo)
                   </span>
-                  <h3 className="text-xl font-bold text-white mb-1.5">
-                    Handles The Work 24/7
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    Contractor Foundation
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                    Dedicated AI staff that answers calls, qualifies web leads in 60s, follows up on quotes, and manages your schedule.
+                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    High-converting landing page, Google Maps #1 rank optimization, local SEO, and monthly project showcases.
+                  </p>
+                </div>
+              </div>
+
+              {/* Offer 3 */}
+              <div className="flex items-start gap-4 text-left border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6 lg:pl-8">
+                <div className="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center flex-shrink-0 text-sm">
+                  03
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-400 block mb-1">
+                    Growth Engine ($500/mo)
+                  </span>
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    High-Ticket Project Engine
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    Targeted Google &amp; Meta ad campaigns, dedicated bid pages, speed-to-lead automation, and end-to-end tracking.
                   </p>
                 </div>
               </div>
@@ -101,8 +119,11 @@ export default function SectionHero({ onOpenBooking }) {
 
             {/* Clean bottom note */}
             <div className="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-gray-400 text-center sm:text-left">
-              <span>Zero software for you to learn. We set up, train, and manage everything.</span>
-              <span className="text-gray-200 font-semibold">Use one service or combine both</span>
+              <span>Zero software for you to learn. We set up, train, and manage everything hands-off.</span>
+              <a href="#offers" className="text-[#31c0de] hover:underline font-semibold flex items-center gap-1">
+                <span>View Full Plan Deliverables</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>

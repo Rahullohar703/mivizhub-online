@@ -8,28 +8,28 @@ export default function SectionMarketing({ onOpenBooking }) {
   const pillars = [
     {
       step: "01",
-      title: "Google & Local Search",
-      desc: "Show up at the very top of Google Maps and search when people in your city need your work.",
+      title: "Google Maps & Local Search",
+      desc: "Dominate the local map pack and search results when property owners and builders in your area search for your trade.",
       points: [
-        "Top rankings on Google Maps",
-        "High-intent search ads that bring real calls"
+        "Top 3 Google Map Pack rankings in your territory",
+        "High-intent search ads that deliver ready-to-buy calls"
       ]
     },
     {
       step: "02",
-      title: "Turn Clicks Into Calls",
-      desc: "Make it dead simple for homeowners and commercial clients to request an estimate in 30 seconds.",
+      title: "Turn Clicks Into Scheduled Bids",
+      desc: "Fast, mobile-friendly landing pages engineered specifically for homeowners and commercial project managers to request an estimate.",
       points: [
-        "Fast quote request pages with zero confusion",
-        "Instant text confirmation sent to every lead"
+        "Simple quote request flow with project detail capture",
+        "Instant SMS confirmation sent immediately to each lead"
       ]
     },
     {
       step: "03",
-      title: "Honest Monthly Reports",
-      desc: "Know exactly how many calls and quote requests came in, and what each job cost to acquire.",
+      title: "Honest Job & Lead Attribution",
+      desc: "Know exactly how many phone calls, quote requests, and won contracts came in, and what each job cost to acquire.",
       points: [
-        "Plain-English summary (calls, leads, cost per job)",
+        "Plain-English reports (calls, bids, cost per acquired job)",
         "Zero vanity metrics or agency fluff"
       ]
     }
@@ -44,13 +44,13 @@ export default function SectionMarketing({ onOpenBooking }) {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            Service 01: Marketing & Growth
+            Growth Plans Deep Dive
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
-            Bring More Customers In.
+            Bring High-Value Projects Through The Door.
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-            We manage your entire marketing system so you get a predictable flow of quote requests without burning money on useless clicks.
+            We build and manage your complete contractor marketing engine so you get a predictable flow of estimate requests without burning cash on useless clicks.
           </p>
         </div>
 
@@ -88,14 +88,14 @@ export default function SectionMarketing({ onOpenBooking }) {
         <div className="bg-[#10172a]/90 border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
             <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
-              Want a steady flow of quote requests?
+              Want a steady flow of high-value bids?
             </h4>
             <p className="text-sm sm:text-base text-gray-300">
-              Let's review your market and show you what it will take to get consistent leads.
+              Let's review your local service area and map out the exact strategy to win top rankings.
             </p>
           </div>
           <ArrowFillButton 
-            btnText="Book a Marketing Review" 
+            btnText="Book a Contractor Growth Review" 
             onClick={() => onOpenBooking('Growth ($500/mo)')} 
             bgColor="#10141e"
             textColor="#ffffff"

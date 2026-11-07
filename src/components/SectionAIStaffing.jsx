@@ -8,27 +8,27 @@ export default function SectionAIStaffing({ onOpenBooking }) {
   const roles = [
     {
       badge: "Voice & Phone",
-      title: "24/7 AI Receptionist",
-      desc: "Answers incoming calls in 1 ring with natural speech. Answers questions on pricing & services, handles emergency triage, and books appointments.",
+      title: "24/7 AI Voice Dispatcher",
+      desc: "Answers incoming calls in 1 ring on loud job sites, handles after-hours emergency calls, and schedules estimator visits directly on your calendar.",
       stat: "Zero missed calls day or night"
     },
     {
       badge: "Speed to Lead",
-      title: "AI Lead Qualifier",
-      desc: "Calls or texts web & ad inquiries within 60 seconds. Pre-qualifies budget, project scope, and timeline before booking directly into your calendar.",
-      stat: "First to respond wins the deal"
+      title: "AI Estimate & Scope Qualifier",
+      desc: "Calls or texts web & ad inquiries within 60 seconds. Pre-qualifies job address, scope of work, budget, and timeline before booking an on-site visit.",
+      stat: "First contractor to respond wins 70% of jobs"
     },
     {
       badge: "Revenue Recovery",
-      title: "AI Quote Follow-Up",
-      desc: "Monitors sent proposals and estimates, sending polite follow-ups via SMS and email so high-value deals never slip through the cracks.",
+      title: "Automated Bid & Quote Follow-Up",
+      desc: "Monitors open bids and proposals, sending professional, polite follow-ups via SMS and email so high-value estimates never get forgotten.",
       stat: "Recovers 15–25% of stalled quotes"
     },
     {
-      badge: "Operations & Care",
-      title: "24/7 Support & Admin",
-      desc: "Resolves routine client FAQs via chat, email, and text. Syncs client notes with your CRM and sends appointment reminders to eliminate no-shows.",
-      stat: "Cuts no-shows & routine admin by 60%"
+      badge: "Field Operations",
+      title: "Field Ops & Dispatch Sync",
+      desc: "Resolves routine client FAQs, syncs job notes directly into your CRM (Jobber, Housecall Pro, ServiceTitan), and sends automated appointment reminders.",
+      stat: "Cuts no-shows & back-office admin by 60%"
     }
   ];
 
@@ -41,13 +41,13 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            Service 02: AI Staffing & Digital Workforce
+            AI Operations &amp; Field Automation
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
-            Digital Employees That Never Sleep.
+            Automated Operations Built for the Realities of the Field.
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-            We build, train, and manage dedicated AI employees that handle phone calls, qualify leads, follow up on quotes, and support customers 24/7.
+            We build, train, and manage dedicated AI systems tailored for contractors, estimators, and field operations teams so you win more jobs without working till midnight.
           </p>
         </div>
 
@@ -79,14 +79,14 @@ export default function SectionAIStaffing({ onOpenBooking }) {
           ))}
         </div>
 
-        {/* Practical Comparison: In-House Staff vs. MivizHub AI Employees */}
+        {/* Practical Comparison: In-House Staff vs. MivizHub AI Operations */}
         <div className="max-w-6xl mx-auto mb-16 bg-[#131122]/90 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
           <div className="text-center mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block mb-2">
               Simple Comparison
             </span>
             <h3 className="text-2xl sm:text-3xl font-bold text-white">
-              Hiring In-House Office Staff vs. MivizHub AI Employees
+              Hiring an In-House Office Dispatcher vs. MivizHub AI Operations
             </h3>
           </div>
 
@@ -95,32 +95,32 @@ export default function SectionAIStaffing({ onOpenBooking }) {
             {/* Traditional Hire */}
             <div className="bg-[#0e0c18] border border-white/5 rounded-2xl p-6 sm:p-8">
               <span className="text-base font-bold text-rose-400 block mb-4 pb-3 border-b border-white/5">
-                Traditional Office Staff
+                Traditional Office Dispatcher
               </span>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li className="flex items-center gap-3">
                   <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
-                  <span>$45,000 - $60,000/yr salary per person + taxes & benefits</span>
+                  <span>$45,000 - $60,000/yr salary + payroll taxes &amp; benefits</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
-                  <span>Only 40 hours/week (evenings & weekends missed)</span>
+                  <span>Only 40 hours/week (evenings &amp; weekends missed)</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
-                  <span>Handles 1 inquiry at a time (busy signals & hold times)</span>
+                  <span>Handles 1 inquiry at a time (busy signals &amp; missed calls)</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <X className="w-5 h-5 text-rose-400 flex-shrink-0" />
-                  <span>Requires weeks of training, sick leave & can quit</span>
+                  <span>Requires weeks of training, sick leave &amp; constant turnover</span>
                 </li>
               </ul>
             </div>
 
-            {/* MivizHub AI Employee */}
+            {/* MivizHub AI Operations */}
             <div className="bg-[#18122c] border-2 border-[#31c0de]/40 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-cyan-950/20">
               <span className="text-base font-bold text-[#31c0de] block mb-4 pb-3 border-b border-white/10">
-                Your MivizHub AI Employees
+                MivizHub AI Field &amp; Office Operations
               </span>
               <ul className="space-y-3 text-sm text-gray-200">
                 <li className="flex items-center gap-3">
@@ -129,15 +129,15 @@ export default function SectionAIStaffing({ onOpenBooking }) {
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span>24/7/365 coverage across calls, SMS, email & chat</span>
+                  <span>24/7/365 coverage across phone calls, SMS &amp; estimate forms</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span>Handles unlimited inquiries at once (zero wait times)</span>
+                  <span>Picks up in 1 ring, handles multiple calls at once</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span>100% custom-trained, integrated, and managed for you</span>
+                  <span>Syncs directly with Jobber, Housecall Pro, ServiceTitan &amp; calendars</span>
                 </li>
               </ul>
             </div>
@@ -149,15 +149,15 @@ export default function SectionAIStaffing({ onOpenBooking }) {
         <div className="bg-[#131122]/90 border border-white/10 rounded-3xl p-8 sm:p-10 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-2xl">
           <div>
             <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
-              Want to see what an AI employee can handle for your business?
+              Ready to automate your field operations?
             </h4>
             <p className="text-sm sm:text-base text-gray-300">
-              Book a quick 15-minute call. We'll show you voice demos, lead workflows, and follow-up automations.
+              See how our 24/7 AI Voice Dispatcher sounds and works for your specific trade.
             </p>
           </div>
           <ArrowFillButton 
-            btnText="Explore AI Staffing" 
-            onClick={() => onOpenBooking('ai-staffing')} 
+            btnText="Schedule a Live Voice AI Demo" 
+            onClick={() => onOpenBooking ? onOpenBooking('AI Automation & Field Ops') : null} 
             bgColor="#10141e"
             textColor="#ffffff"
             fillBgColor="#31c0de"
@@ -172,5 +172,3 @@ export default function SectionAIStaffing({ onOpenBooking }) {
     </Section>
   );
 }
-
-

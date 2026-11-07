@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { HardHat, Factory, HeartPulse, Briefcase, ShoppingBag, Building2, Check, UserCheck } from 'lucide-react';
+import { HardHat, Flame, Wrench, Truck, Building2, Check, UserCheck, Shield, Hammer } from 'lucide-react';
 
 export default function SectionIndustries() {
-  const [activeTab, setActiveTab] = useState('Construction');
+  const [activeTab, setActiveTab] = useState('General Contracting');
   const scrollContainerRef = useRef(null);
   const tabRefs = useRef({});
 
@@ -22,173 +22,170 @@ export default function SectionIndustries() {
   };
 
   const industries = [
-    { id: 'Construction', name: 'Construction & Trades', icon: <HardHat className="w-4 h-4" /> },
-    { id: 'Industrial & Manufacturing', name: 'Manufacturing & Industrial', icon: <Factory className="w-4 h-4" /> },
-    { id: 'Healthcare & Wellness', name: 'Healthcare & Clinics', icon: <HeartPulse className="w-4 h-4" /> },
-    { id: 'Professional Services', name: 'Professional Services', icon: <Briefcase className="w-4 h-4" /> },
-    { id: 'E-commerce', name: 'E-commerce & Retail', icon: <ShoppingBag className="w-4 h-4" /> },
-    { id: 'Other Growing Businesses', name: 'Other Growing Businesses', icon: <Building2 className="w-4 h-4" /> }
+    { id: 'General Contracting', name: 'General Contractors & Builders', icon: <HardHat className="w-4 h-4" /> },
+    { id: 'Roofing & Siding', name: 'Roofing, Siding & Gutters', icon: <Hammer className="w-4 h-4" /> },
+    { id: 'HVAC & Mechanical', name: 'HVAC & Mechanical', icon: <Flame className="w-4 h-4" /> },
+    { id: 'Plumbing & Electrical', name: 'Plumbing & Electrical', icon: <Wrench className="w-4 h-4" /> },
+    { id: 'Excavation & Concrete', name: 'Excavation & Concrete', icon: <Truck className="w-4 h-4" /> },
+    { id: 'Commercial Ops', name: 'Commercial & Facility Ops', icon: <Building2 className="w-4 h-4" /> }
   ];
 
   const details = {
-    'Construction': {
-      title: 'Construction, Remodeling & Trade Contractors',
-      desc: 'Never miss high-paying jobs while your hands are full on the job site.',
+    'General Contracting': {
+      title: 'General Contractors, Custom Home Builders & Remodelers',
+      desc: 'Never miss high-dollar renovation and custom build opportunities while managing subs on-site.',
       marketing: [
-        'Google Local Services ads that deliver qualified quote and estimate requests',
-        'Top rankings on Google Maps across your entire local service territory'
+        'Local SEO and Google Map Pack domination for high-ticket home remodeling and addition projects',
+        'Targeted Google Search campaigns targeting homeowners ready to hire licensed general contractors',
+        'High-converting portfolio landing pages showcasing past craftsmanship, permits, and customer reviews'
       ],
       agents: [
         {
           name: 'AI Site Receptionist',
-          badge: 'Voice & Calls',
-          task: 'Answers incoming calls in 1 ring on noisy job sites, screens emergency repairs, and books estimator site visits.'
+          badge: 'Voice & Dispatch',
+          task: 'Picks up in 1 ring on noisy jobsites, collects project address & timeline, and schedules on-site walkthroughs.'
         },
         {
-          name: 'AI Quote Follow-Up Agent',
+          name: 'AI Bid Nurture Specialist',
+          badge: 'Estimate Recovery',
+          task: 'Sends automated, polite multi-touch follow-ups on open proposals so $20k–$100k+ bids never go cold.'
+        }
+      ]
+    },
+    'Roofing & Siding': {
+      title: 'Roofing, Storm Restoration & Siding Contractors',
+      desc: 'Speed to lead is everything in roofing. Be the first contractor to call back and win the inspection.',
+      marketing: [
+        'Hyper-local storm response and roof replacement Google Ads triggered in active storm zones',
+        'Google Business Profile ranking to capture homeowners searching "emergency roof repair near me"',
+        'Automated 5-star review acquisition workflows after every completed roof replacement'
+      ],
+      agents: [
+        {
+          name: 'AI Emergency Inspection Dispatcher',
+          badge: 'Speed to Lead',
+          task: 'Calls web and storm inquiry leads in <60 seconds, qualifies insurance vs. retail, and books drone/ladder inspections.'
+        },
+        {
+          name: 'AI Insurance & Estimate Follow-Up',
           badge: 'Revenue Recovery',
-          task: 'Follows up with homeowners on pending bids via text and email so proposals never get forgotten.'
+          task: 'Checks in with homeowners awaiting insurance adjuster approvals and nudges pending estimate approvals.'
         }
       ]
     },
-    'Industrial & Manufacturing': {
-      title: 'Industrial Supply & Custom Fabrication',
-      desc: 'Win commercial contracts and stop drowning in manual order status emails.',
+    'HVAC & Mechanical': {
+      title: 'Residential & Commercial HVAC Contractors',
+      desc: 'Capture peak seasonal furnace and AC replacement calls without putting customers on hold.',
       marketing: [
-        'Targeted B2B outreach to commercial procurement officers & facility managers',
-        'High-intent search campaigns for specific fabrication and industrial keywords'
+        'High-intent Google Ads targeting urgent AC repair and heat pump system installations',
+        'Territory-wide Google Maps ranking across your primary city and surrounding suburbs',
+        'Seasonal maintenance agreement campaigns that generate recurring, predictable off-peak revenue'
       ],
       agents: [
         {
-          name: 'AI RFQ & Spec Intake Agent',
-          badge: 'Lead Intake',
-          task: 'Extracts technical project requirements from incoming RFQs and alerts estimators with structured specs.'
+          name: '24/7 AI HVAC Dispatcher',
+          badge: 'Emergency Triage',
+          task: 'Answers after-hours "no AC" and "no heat" emergencies instantly, collects system details, and books diagnostic visits.'
         },
         {
-          name: 'AI Operations Coordinator',
-          badge: 'Operations & ERP',
-          task: 'Answers routine order status, delivery, and inventory inquiries 24/7 without burdening shop-floor staff.'
+          name: 'AI Service Agreement Coordinator',
+          badge: 'Recurring Revenue',
+          task: 'Follows up on diagnostic quotes to pitch system replacements and schedules seasonal tune-up visits.'
         }
       ]
     },
-    'Healthcare & Wellness': {
-      title: 'Dental, Medical, Chiropractic & Clinics',
-      desc: 'Eliminate front-desk phone hold times and keep appointment books completely full.',
+    'Plumbing & Electrical': {
+      title: 'Plumbing, Drain & Electrical Trade Contractors',
+      desc: 'Turn urgent emergency service calls and panel upgrade inquiries into booked technician dispatches.',
       marketing: [
-        'Targeted local patient acquisition campaigns for high-value treatments & care',
-        'Automated 5-star Google review campaigns sent to satisfied patients'
+        'Google Local Services Ads (Google Screened) setup to generate pre-qualified call-in leads',
+        'Targeted search campaigns for high-margin jobs (whole-home repipes, EV charger and 200A panel upgrades)',
+        'Local citation network that outranks regional competitors across all service zip codes'
       ],
       agents: [
         {
-          name: 'AI Patient Appointment Coordinator',
-          badge: 'Voice & Booking',
-          task: 'Answers patient calls with zero hold times, books appointments, and manages routine rescheduling 24/7.'
+          name: 'AI Dispatch & Triage Specialist',
+          badge: '1-Ring Voice',
+          task: 'Identifies water leaks or electrical hazards, provides safety guidance, and dispatches the on-call tech.'
         },
         {
-          name: 'AI Patient Recall Assistant',
-          badge: 'Patient Care & SMS',
-          task: 'Sends automated appointment reminder texts to eliminate no-shows and re-engages patients due for check-ups.'
+          name: 'AI Appointment Reminder & Sync',
+          badge: 'Calendar & CRM',
+          task: 'Syncs appointments with Jobber/Housecall Pro and sends SMS reminders to homeowners, cutting no-shows to 0%.'
         }
       ]
     },
-    'Professional Services': {
-      title: 'Law Firms, Accountants & Consultants',
-      desc: 'Book high-value consultations without low-level administrative overhead.',
+    'Excavation & Concrete': {
+      title: 'Excavation, Grading, Concrete & Paving Contractors',
+      desc: 'Win large site prep, foundation, and flatwork contracts with builders and commercial developers.',
       marketing: [
-        'High-authority Google Search campaigns targeting high-retainer prospective clients',
-        'Targeted executive outreach and referral acquisition campaigns'
+        'Commercial B2B search campaigns targeting general contractors and developers seeking site work subs',
+        'Local SEO establishing authority for foundation pouring, grading, retaining walls, and asphalt paving',
+        'Before-and-after project showcase social campaigns that prove equipment capabilities and scale'
       ],
       agents: [
         {
-          name: 'AI Intake & Lead Qualifier',
-          badge: 'Pre-Qualification',
-          task: 'Screens incoming inquiries on budget, urgency, and case fit before booking partner calendar slots.'
+          name: 'AI Scope & Plan Intake Specialist',
+          badge: 'Lead Qualification',
+          task: 'Collects parcel details, square footage, civil plans, and grading timeline before notifying your estimator.'
         },
         {
-          name: 'AI Document & Onboarding Assistant',
-          badge: 'Client Onboarding',
-          task: 'Collects intake documents, signs agreements, and sends consultation prep checklists automatically.'
+          name: 'AI Subcontractor Coordination Bot',
+          badge: 'Field Ops',
+          task: 'Automates dispatch notifications for equipment drop-offs, concrete truck deliveries, and crew schedules.'
         }
       ]
     },
-    'E-commerce': {
-      title: 'E-commerce, Brands & Distributors',
-      desc: 'Scale online sales while keeping customer support instant and 24/7.',
+    'Commercial Ops': {
+      title: 'Commercial Cleaning, Landscaping & Facility Operations',
+      desc: 'Land high-margin recurring maintenance agreements and keep field teams synchronized.',
       marketing: [
-        'High-ROI performance advertising focused on measurable return on ad spend',
-        'Post-purchase email and SMS flows that turn one-time buyers into repeat clients'
+        'B2B outreach to property managers, HOA boards, and commercial facility directors',
+        'High-converting landing pages built specifically for multi-location commercial RFPs',
+        'Local search presence targeting commercial groundskeeping, janitorial, and maintenance contracts'
       ],
       agents: [
         {
-          name: 'AI Customer Support Specialist',
-          badge: '24/7 Support',
-          task: 'Resolves shipping inquiries, returns, and product FAQs instantly across web chat, SMS, and email.'
+          name: 'AI RFP & Quote Coordinator',
+          badge: 'B2B Intake',
+          task: 'Captures facility square footage, cleaning frequency, and bid specs, populating quote drafts instantly.'
         },
         {
-          name: 'AI Cart Recovery & Reactivation Agent',
-          badge: 'Revenue Recovery',
-          task: 'Follows up with abandoned checkout shoppers and sends personalized re-order reminders based on past orders.'
-        }
-      ]
-    },
-    'Other Growing Businesses': {
-      title: 'Any Growing Business With Inbound Customers',
-      desc: 'Our system adapts to any business that needs more leads and automated front-office operations.',
-      marketing: [
-        'Custom lead generation campaigns tailored to your exact customer profile',
-        'Transparent monthly tracking on every phone call, lead, and dollar spent'
-      ],
-      agents: [
-        {
-          name: 'AI Front-Desk & Voice Assistant',
-          badge: 'Voice & Phone',
-          task: 'Custom-trained on your services, pricing, and business rules to handle incoming inquiries 24/7.'
-        },
-        {
-          name: 'AI Speed-to-Lead & Follow-Up Agent',
-          badge: 'Lead Follow-Up',
-          task: 'Reaches new web inquiries within 60 seconds and keeps your sales pipeline moving without manual chasing.'
+          name: 'AI Crew & Schedule Coordinator',
+          badge: 'Daily Ops Sync',
+          task: 'Handles client rescheduling requests 24/7 and updates crew dispatch sheets without owner intervention.'
         }
       ]
     }
   };
 
-  const current = details[activeTab];
+  const current = details[activeTab] || details['General Contracting'];
 
   return (
-    <Section id="industries" className="py-20 scroll-mt-24 bg-gradient-to-b from-[#0d0f1e] via-[#0f1524] to-[#0a0e19] border-t border-white/10 relative overflow-hidden">
-      {/* Subtle blue-slate ambient spotlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.07)_0%,transparent_70%)] pointer-events-none" />
+    <Section id="industries" className="py-20 scroll-mt-24 bg-gradient-to-b from-[#0c101c] via-[#0e1322] to-[#0a0e19] border-t border-white/10 relative overflow-hidden">
+      {/* Subtle midnight-indigo spotlight */}
+      <div className="absolute top-0 right-1/4 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.07)_0%,transparent_70%)] pointer-events-none" />
       <Container className="relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-5xl mx-auto mb-14">
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            Who We Help
+            Tailored For The Trades
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Built for Growing Businesses Across Multiple Industries
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+            Built Specifically For Construction &amp; Field Ops
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
-            Click your industry to see how marketing drives customers in, and which dedicated AI employees handle the work.
+            Every trade has unique job workflows, pricing structures, and emergency scenarios. See how MivizHub adapts to yours:
           </p>
         </div>
 
-        {/* Tab Buttons: Sleek horizontal swipe chip bar on mobile, centered flex grid on desktop */}
-        <div className="relative max-w-6xl mx-auto mb-10 -mx-4 px-4 sm:mx-auto sm:px-0">
-          {/* Subtle mobile edge fade indicators */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0d0f1e] to-transparent z-10 sm:hidden" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0d0f1e] to-transparent z-10 sm:hidden" />
-
-          {/* Micro swipe hint for mobile */}
-          <div className="flex items-center justify-center gap-1.5 text-[11px] font-semibold text-gray-400 mb-2.5 sm:hidden">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#31c0de] animate-pulse" />
-            <span>Swipe across to view all 6 industries</span>
-          </div>
-
+        {/* Tab Navigation Pill Bar */}
+        <div className="max-w-6xl mx-auto mb-12">
           <div 
             ref={scrollContainerRef}
-            className="flex items-center sm:justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-0 sm:flex-wrap py-2 snap-x snap-mandatory"
+            className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 pt-2 px-2 no-scrollbar scroll-smooth snap-x snap-mandatory justify-start lg:justify-center"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {industries.map((tab) => {
               const isActive = activeTab === tab.id;
@@ -199,21 +196,15 @@ export default function SectionIndustries() {
                   onClick={() => handleSelectTab(tab.id)}
                   className={`group relative overflow-hidden flex-shrink-0 snap-center flex items-center gap-2 sm:gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-300 ease-out transform-gpu cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d0f1e] ${
                     isActive 
-                      ? 'bg-gradient-to-r from-[#4F46E5] to-[#4338CA] text-white shadow-xl shadow-indigo-600/35 border border-indigo-400/40 -translate-y-0.5 scale-[1.02] hover:shadow-[0_8px_30px_rgba(79,70,229,0.5)] hover:-translate-y-1 hover:scale-[1.04] active:scale-95' 
-                      : 'bg-[#121727]/90 text-gray-300 border border-white/10 hover:text-white hover:border-cyan-400/50 hover:bg-[#18223a] hover:shadow-[0_8px_25px_rgba(49,192,222,0.2)] hover:-translate-y-1 hover:scale-[1.03] active:scale-95'
+                      ? 'bg-gradient-to-r from-[#4F46E5] to-[#4338CA] text-white shadow-xl shadow-indigo-600/35 border border-indigo-400/40 -translate-y-0.5 scale-[1.02] hover:shadow-[0_8px_30px_rgba(79,70,229,0.5)]' 
+                      : 'bg-[#121727]/90 text-gray-300 border border-white/10 hover:text-white hover:border-cyan-400/50 hover:bg-[#18223a]'
                   }`}
                 >
-                  {/* Subtle shine sweep on hover */}
-                  <span 
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" 
-                    aria-hidden="true" 
-                  />
-
                   <span 
                     className={`inline-flex items-center justify-center transition-all duration-300 ${
                       isActive 
-                        ? 'text-white scale-110 group-hover:scale-125 group-hover:rotate-6' 
-                        : 'text-[#31c0de] group-hover:scale-125 group-hover:rotate-6 group-hover:text-cyan-300'
+                        ? 'text-white scale-110' 
+                        : 'text-[#31c0de] group-hover:scale-110'
                     }`}
                   >
                     {tab.icon}
@@ -225,7 +216,7 @@ export default function SectionIndustries() {
           </div>
         </div>
 
-        {/* Tab Content Box - Wide & Spacious */}
+        {/* Tab Content Box */}
         <div className="max-w-6xl mx-auto bg-[#111728]/90 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
           <div className="mb-8 pb-8 border-b border-white/10">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -238,15 +229,15 @@ export default function SectionIndustries() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {/* Column 1: Marketing */}
+            {/* Column 1: Marketing Engine */}
             <div className="bg-[#0c101c] border border-white/5 p-7 rounded-2xl flex flex-col justify-between shadow-lg">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block">
-                    1. Marketing & Growth Engine
+                    1. Growth &amp; Local Presence Engine
                   </span>
                   <span className="text-xs font-semibold text-indigo-300 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
-                    Brings Business In
+                    Brings High-Value Bids In
                   </span>
                 </div>
 
@@ -261,15 +252,15 @@ export default function SectionIndustries() {
               </div>
             </div>
 
-            {/* Column 2: Specific AI Staff Deployed */}
+            {/* Column 2: AI Operations Deployed */}
             <div className="bg-[#0c101c] border border-white/5 p-7 rounded-2xl flex flex-col justify-between shadow-lg">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#31c0de] block">
-                    2. Dedicated AI Employees Deployed
+                    2. AI Operations &amp; Dispatch Deployed
                   </span>
                   <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                    24/7 Coverage
+                    24/7 Field Coverage
                   </span>
                 </div>
 
@@ -298,7 +289,7 @@ export default function SectionIndustries() {
 
           {/* Bottom Reassurance */}
           <div className="mt-8 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-gray-400">
-            <span>We customize both services specifically for your market, service pricing, and customer journey.</span>
+            <span>We customize all campaigns and AI voice rules specifically for your trade pricing, service radius, and license coverage.</span>
             <span className="text-gray-200 font-semibold">Zero software setup required on your end</span>
           </div>
 

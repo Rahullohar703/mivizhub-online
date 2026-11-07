@@ -28,12 +28,12 @@ import { getBookingUrl } from './config/booking';
 
 function HomePage({ onOpenBooking }) {
   useEffect(() => {
-    document.title = "MivizHub | Business Growth with Marketing & AI Staffing";
+    document.title = "MivizHub | Growth Marketing & AI Operations for Construction & Field Trades";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "MivizHub helps businesses grow with performance marketing and AI-powered staffing — attracting customers while taking work off your plate."
+        "MivizHub helps general contractors, trade pros, and ops-heavy businesses capture high-value projects with local search marketing, 24/7 AI voice dispatch, and automated estimate follow-ups."
       );
     }
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -53,13 +53,13 @@ function HomePage({ onOpenBooking }) {
       {/* 2. Platform & Partner Trust Bar */}
       <SectionTrust />
 
-      {/* 3. The Problem Section: Growing a business shouldn't mean doing everything yourself */}
+      {/* 3. The Problem Section: Working on the job site shouldn't mean losing bids at the desk */}
       <SectionProblems />
 
-      {/* 4. Core Services: Marketing & Growth & AI Staffing Overview */}
-      <SectionServices />
+      {/* 4. Core 3 Offers: AI Automation, Presence ($250/mo) & Growth ($500/mo) */}
+      <SectionServices onOpenBooking={onOpenBooking} />
 
-      {/* 5. Core Differentiator: Bring In More Business. Handle More Business. */}
+      {/* 5. Core Differentiator: Bring In High-Value Projects + Never Miss a Call */}
       <SectionDifferentiator />
 
       {/* 6. Dedicated Marketing & Growth Deep Dive */}

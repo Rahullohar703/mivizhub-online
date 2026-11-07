@@ -3,22 +3,24 @@ import Container from './ui/Container';
 
 export default function SectionTrust() {
   const tools = [
-    'Google Calendar',
-    'Microsoft Outlook',
-    'HubSpot',
-    'Twilio Voice',
+    'Google Maps & Local SEO',
+    'Google Ads',
     'Meta Business',
-    'Google Ads'
+    'Jobber',
+    'Housecall Pro',
+    'ServiceTitan',
+    'Procore',
+    'Twilio Voice'
   ];
 
   return (
     <section className="py-10 bg-gradient-to-b from-[#080b12] to-[#0a0f1d] border-b border-white/5">
       <Container>
         <p className="text-center text-xs font-semibold text-gray-400 mb-6 tracking-wider uppercase">
-          Integrates With the Tools and Platforms You Already Use
+          Seamlessly Integrates With Leading Contractor &amp; Field Operations Tools
         </p>
         
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 opacity-70">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 opacity-70">
           {tools.map((name, idx) => (
             <div 
               key={idx}
