@@ -35,7 +35,7 @@ export default function SectionBlogPreview() {
   ];
 
   return (
-    <Section id="blog-preview" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative overflow-hidden">
+    <Section id="blog-preview" className="py-24 bg-[#f4f6f8] border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.04)_0%,transparent_70%)] pointer-events-none" />
 
@@ -66,7 +66,7 @@ export default function SectionBlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.15 }}
-              className="group bg-slate-50/80 hover:bg-white rounded-3xl p-7 border-2 border-slate-200/90 hover:border-blue-400 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative cursor-pointer"
+              className="group bg-white rounded-3xl p-7 border-2 border-slate-200/90 hover:border-blue-400 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative cursor-pointer"
             >
               <Link to={`/blog/${article.slug}`} className="flex flex-col h-full justify-between">
                 <div>

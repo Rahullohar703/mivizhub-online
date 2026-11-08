@@ -87,13 +87,19 @@ export default function SectionHero({ onOpenBooking }) {
             className="w-full sm:w-auto shadow-xl shadow-slate-900/15 hover:shadow-2xl hover:shadow-blue-600/25 transition-all duration-300"
           />
 
-          {/* Secondary Light Button with Visible Blue Arrow */}
+          {/* Secondary Light Button with High-Contrast Blue/Dark Arrow */}
           <ArrowFillButton 
             btnText="Explore Our Solutions" 
             href="#solutions" 
             size="lg"
             variant="light"
-            className="w-full sm:w-auto shadow-sm hover:shadow-md transition-all duration-300"
+            bgColor="#ffffff"
+            textColor="#0f172a"
+            fillBgColor="#2563eb"
+            fillTextColor="#ffffff"
+            arrowColor="#ffffff"
+            hoverArrowColor="#ffffff"
+            className="w-full sm:w-auto border-2 border-slate-200/90 hover:border-blue-500 shadow-sm hover:shadow-md transition-all duration-300"
           />
         </motion.div>
 

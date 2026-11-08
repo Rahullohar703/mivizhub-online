@@ -39,7 +39,7 @@ export default function SectionTrust() {
   ];
 
   return (
-    <Section id="positioning" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative overflow-hidden">
+    <Section id="positioning" className="py-24 bg-[#f8fafc] border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.04)_0%,transparent_70%)] pointer-events-none" />
 
@@ -73,13 +73,13 @@ export default function SectionTrust() {
               <p>
                 You manage projects, coordinate teams, handle enquiries, prepare quotations, and deal with complex sales cycles.
               </p>
-              <p className="text-slate-800 font-semibold border-l-4 border-blue-600 pl-4 py-1 bg-slate-50 rounded-r-lg">
+              <p className="text-slate-800 font-semibold border-l-4 border-blue-600 pl-4 py-1.5 bg-white border border-slate-200/80 rounded-r-xl shadow-2xs">
                 Generic marketing and disconnected software rarely solve these challenges. MivizHub combines industry-focused growth strategies with practical AI automation to help your business operate and grow more efficiently.
               </p>
             </div>
 
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-700">
+            <div className="inline-flex items-center gap-2 p-3.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-bold text-slate-700 shadow-2xs">
               <ShieldCheck className="w-5 h-5 text-blue-600 flex-shrink-0" />
               <span>Industry understanding • Growth systems • Smarter operations</span>
             </div>
@@ -100,7 +100,7 @@ export default function SectionTrust() {
               {pillars.map((pillar, idx) => (
                 <div 
                   key={idx}
-                  className="group relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-slate-50/90 border-2 border-slate-200/90 hover:bg-white hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="group relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-white border-2 border-slate-200/90 hover:border-blue-400 hover:[box-shadow:0_0_0_2px_#93c5fd,0_10px_20px_-5px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 shadow-sm"
                 >
                   {/* Glowing Icon Badge with Real Emoji */}
                   <div className={`w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${pillar.shadow} text-2xl group-hover:scale-110 transition-transform duration-300 relative z-10`}>

@@ -48,7 +48,7 @@ function HomePage({ onOpenBooking }) {
   }, []);
 
   return (
-    <main id="main-content" className="bg-white text-slate-900">
+    <main id="main-content" className="bg-[#f8fafc] text-slate-900">
       {/* 01. Hero Section */}
       <SectionHero onOpenBooking={onOpenBooking} />
 
