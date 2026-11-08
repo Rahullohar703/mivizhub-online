@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
 import { ArrowFillButton } from './ui/arrow-fill-button';
@@ -57,7 +58,7 @@ export default function SectionHowItWorks({ onOpenBooking }) {
             <Sparkles className="w-3.5 h-3.5 text-blue-600" />
             <span>The Process</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 font-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 font-heading">
             Simple to Start. <span className="text-blue-600">Built Around Your Business.</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal">
@@ -65,41 +66,50 @@ export default function SectionHowItWorks({ onOpenBooking }) {
           </p>
         </div>
 
-        {/* 4 Steps Grid with Step Visuals and Hover Lift */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 relative">
-          {steps.map((st, idx) => (
-            <div 
-              key={idx}
-              className={`group bg-slate-50/80 hover:bg-white border-2 border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative cursor-default ${st.borderHover}`}
-            >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${st.gradient} flex items-center justify-center shadow-lg ${st.shadow} group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
-                    {st.icon}
+        {/* 4 Steps Connected Roadmap with Flow Lines */}
+        <div className="relative mb-16">
+          {/* Desktop Connecting Line */}
+          <div className="hidden lg:block absolute top-[52px] left-16 right-16 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 rounded-full z-0 opacity-30" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {steps.map((st, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.12 }}
+                className={`group bg-slate-50/90 hover:bg-white border-2 border-slate-200/90 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative cursor-default ${st.borderHover}`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${st.gradient} flex items-center justify-center shadow-lg ${st.shadow} group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
+                      {st.icon}
+                    </div>
+                    
+                    <span className="text-xs font-mono font-bold text-slate-400 bg-white border border-slate-200 px-2 py-0.5 rounded group-hover:bg-slate-900 group-hover:text-white transition-colors">
+                      0{idx + 1}
+                    </span>
                   </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 font-heading group-hover:text-blue-600 transition-colors">
+                    Step {st.num} — {st.title}
+                  </h3>
                   
-                  <span className="text-xs font-mono font-bold text-slate-400 bg-white border border-slate-200 px-2 py-0.5 rounded group-hover:bg-slate-900 group-hover:text-white transition-colors">
-                    0{idx + 1}
-                  </span>
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    {st.desc}
+                  </p>
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-2 font-heading group-hover:text-blue-600 transition-colors">
-                  Step {st.num} — {st.title}
-                </h3>
-                
-                <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                  {st.desc}
-                </p>
-              </div>
-
-              {/* Connecting arrow for desktop */}
-              {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-slate-300">
-                  <ArrowRight className="w-5 h-5 text-slate-300" />
-                </div>
-              )}
-            </div>
-          ))}
+                {/* Connecting arrow indicator for desktop */}
+                {idx < steps.length - 1 && (
+                  <div className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-slate-300">
+                    <ArrowRight className="w-5 h-5 text-slate-300" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}

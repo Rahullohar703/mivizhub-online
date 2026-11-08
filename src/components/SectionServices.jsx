@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Container from './ui/Container';
 import Section from './ui/Section';
 import { Check, Globe, Target, Cpu, Sparkles } from 'lucide-react';
@@ -10,6 +11,9 @@ export default function SectionServices({ onOpenBooking }) {
       num: "01",
       name: "Digital Presence",
       planRef: "Presence Plan ($250/mo)",
+      price: "$250",
+      cadence: "/ month",
+      billingNote: "Flat monthly rate • No lock-in contracts",
       icon: <Globe className="w-6 h-6 text-white" strokeWidth={2.2} />,
       gradient: "from-blue-600 to-cyan-500",
       shadow: "shadow-blue-500/30",
@@ -41,6 +45,9 @@ export default function SectionServices({ onOpenBooking }) {
       num: "02",
       name: "Growth & Lead Generation",
       planRef: "Growth Plan ($500/mo)",
+      price: "$500",
+      cadence: "/ month",
+      billingNote: "Flat monthly rate • No lock-in contracts",
       icon: <Target className="w-6 h-6 text-white" strokeWidth={2.2} />,
       gradient: "from-indigo-600 to-purple-600",
       shadow: "shadow-indigo-500/35",
@@ -74,6 +81,9 @@ export default function SectionServices({ onOpenBooking }) {
       num: "03",
       name: "AI Automation & Operations",
       planRef: "AI Automation & Operations",
+      price: "Custom",
+      cadence: "proposal",
+      billingNote: "Tailored to your systems & integration scope",
       icon: <Cpu className="w-6 h-6 text-white" strokeWidth={2.2} />,
       gradient: "from-cyan-600 to-emerald-500",
       shadow: "shadow-cyan-500/30",
@@ -121,21 +131,25 @@ export default function SectionServices({ onOpenBooking }) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3 shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-            <span>Core Solutions</span>
+            <span>Core Solutions &amp; Pricing</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 font-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 font-heading">
             Everything Your Business Needs to <span className="text-blue-600">Attract, Convert, and Operate Better.</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal">
-            Three integrated solutions. One growth partner.
+            Three integrated solutions. Transparent flat rates. One connected growth partner.
           </p>
         </div>
 
-        {/* 3 High-Attention Colorful Solution Cards Grid */}
+        {/* 3 High-Attention Colorful Solution Cards with Prominent Pricing */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
           {solutions.map((sol, idx) => (
-            <div 
+            <motion.div 
               key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
               className={`group bg-white rounded-3xl p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 relative border-2 ${sol.borderTop} ${sol.hoverBorder} ${
                 sol.isPopular 
                   ? 'border-indigo-400 ring-4 ring-indigo-500/10' 
@@ -144,8 +158,7 @@ export default function SectionServices({ onOpenBooking }) {
             >
               <div>
                 {/* Header info & Colorful Hero Icon */}
-                <div className="flex items-start justify-between mb-6">
-                  {/* Colorful Gradient Icon */}
+                <div className="flex items-start justify-between mb-5">
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${sol.gradient} flex items-center justify-center shadow-lg ${sol.shadow} group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                     {sol.icon}
                   </div>
@@ -161,26 +174,43 @@ export default function SectionServices({ onOpenBooking }) {
                   )}
                 </div>
 
-                <div className="mb-2">
-                  <span className={`inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border mb-2 ${sol.tagColor}`}>
+                {/* Plan Tier Badge */}
+                <div className="mb-3">
+                  <span className={`inline-block text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${sol.tagColor}`}>
                     {sol.num} — {sol.name}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 font-heading leading-snug group-hover:text-blue-600 transition-colors">
+                {/* PROMINENT PRICING DISPLAY */}
+                <div className="mb-5 pb-5 border-b border-slate-100">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading">
+                      {sol.price}
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-slate-500">
+                      {sol.cadence}
+                    </span>
+                  </div>
+                  <span className="text-xs text-slate-400 block mt-1 font-medium">
+                    {sol.billingNote}
+                  </span>
+                </div>
+
+                {/* Headline & Body */}
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2.5 font-heading leading-snug group-hover:text-blue-600 transition-colors">
                   {sol.headline}
                 </h3>
 
-                <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 font-normal">
                   {sol.desc}
                 </p>
 
                 {/* Items List with Colorful Checkmark Badges */}
-                <div className="pt-5 border-t border-slate-100 mb-6">
+                <div className="pt-4 border-t border-slate-100 mb-6">
                   <span className="text-xs font-extrabold uppercase tracking-wider text-slate-800 block mb-3.5">
                     {sol.listTitle}
                   </span>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2.5">
                     {sol.items.map((item, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-snug">
                         <span className={`w-5 h-5 rounded-full ${sol.checkColor} flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform`}>
@@ -194,8 +224,8 @@ export default function SectionServices({ onOpenBooking }) {
               </div>
 
               {/* Card Footer: Best For + Scope Note + CTA */}
-              <div className="pt-6 border-t border-slate-100 space-y-4">
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/80 text-xs text-slate-600">
+              <div className="pt-5 border-t border-slate-100 space-y-4">
+                <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 text-xs text-slate-600">
                   <span className="font-bold text-slate-800 block mb-0.5">Best for:</span>
                   {sol.bestFor}
                 </div>
@@ -220,7 +250,7 @@ export default function SectionServices({ onOpenBooking }) {
                 />
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 

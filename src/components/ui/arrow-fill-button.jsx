@@ -89,6 +89,15 @@ export function ArrowFillButton({
       hoverArrowColor: "#09090b",
       className: "border-white/15 hover:border-white/30 shadow-md",
     },
+    light: {
+      bgColor: "#ffffff",
+      textColor: "#0f172a",
+      fillBgColor: "#2563eb",
+      fillTextColor: "#ffffff",
+      arrowColor: "#ffffff",
+      hoverArrowColor: "#ffffff",
+      className: "border-2 border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md",
+    },
     default: {
       bgColor: "#141824",
       textColor: "#ffffff",
