@@ -54,7 +54,7 @@ export default function SectionCTA({ onOpenBooking }) {
                 textColor="#ffffff"
                 fillBgColor="#ffffff"
                 fillTextColor="#0f172a"
-                arrowColor="#ffffff"
+                arrowColor="#0f172a"
                 hoverArrowColor="#0f172a"
                 className="w-full sm:w-auto border border-white/20 hover:border-white/40 hover:-translate-y-0.5 transition-all duration-300"
               />

@@ -123,8 +123,17 @@ export function ArrowFillButton({
   const finalFillTextColor = fillTextColor ?? variantDefaults.fillTextColor;
   const finalHoverFillBgColor = hoverFillBgColor ?? finalFillBgColor;
   const finalHoverFillTextColor = hoverFillTextColor ?? finalFillTextColor;
-  const finalArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
-  const finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
+  let finalArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
+  let finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
+
+  // Safeguard: Ensure the arrow icon is never the exact same color as its circular background
+  const normalizeColor = (c) => String(c || '').toLowerCase().trim();
+  if (normalizeColor(finalArrowColor) === normalizeColor(finalFillBgColor)) {
+    finalArrowColor = finalFillTextColor;
+  }
+  if (normalizeColor(finalHoverArrowColor) === normalizeColor(finalHoverFillBgColor)) {
+    finalHoverArrowColor = finalHoverFillTextColor;
+  }
 
   const usesUtilityBackground =
     className.includes("bg-") ||

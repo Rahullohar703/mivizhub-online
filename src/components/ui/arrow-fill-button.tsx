@@ -112,6 +112,15 @@ export function ArrowFillButton({
       hoverArrowColor: "#09090b",
       className: "border-white/15 hover:border-white/30 shadow-md",
     },
+    light: {
+      bgColor: "#ffffff",
+      textColor: "#0f172a",
+      fillBgColor: "#2563eb",
+      fillTextColor: "#ffffff",
+      arrowColor: "#ffffff",
+      hoverArrowColor: "#ffffff",
+      className: "border-2 border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md",
+    },
     default: {
       bgColor: "#141824",
       textColor: "#ffffff",
@@ -129,8 +138,17 @@ export function ArrowFillButton({
   const finalFillTextColor = fillTextColor ?? variantDefaults.fillTextColor;
   const finalHoverFillBgColor = hoverFillBgColor ?? finalFillBgColor;
   const finalHoverFillTextColor = hoverFillTextColor ?? finalFillTextColor;
-  const finalArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
-  const finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
+  let finalArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
+  let finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
+
+  // Safeguard: Ensure the arrow icon is never the exact same color as its circular background
+  const normalizeColor = (c: any) => String(c || '').toLowerCase().trim();
+  if (normalizeColor(finalArrowColor) === normalizeColor(finalFillBgColor)) {
+    finalArrowColor = finalFillTextColor;
+  }
+  if (normalizeColor(finalHoverArrowColor) === normalizeColor(finalHoverFillBgColor)) {
+    finalHoverArrowColor = finalHoverFillTextColor;
+  }
 
   const usesUtilityBackground =
     className.includes("bg-") ||
