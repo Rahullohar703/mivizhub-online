@@ -10,10 +10,7 @@ export default function SectionServices({ onOpenBooking }) {
     {
       num: "01",
       name: "Digital Presence",
-      planRef: "Presence Plan ($250/mo)",
-      price: "$250",
-      cadence: "/ month",
-      billingNote: "Flat monthly rate • No lock-in contracts",
+      planRef: "Digital Presence",
       emoji: "🌐",
       gradient: "from-blue-600 to-cyan-500",
       shadow: "shadow-blue-500/30",
@@ -44,10 +41,7 @@ export default function SectionServices({ onOpenBooking }) {
     {
       num: "02",
       name: "Growth & Lead Generation",
-      planRef: "Growth Plan ($500/mo)",
-      price: "$500",
-      cadence: "/ month",
-      billingNote: "Flat monthly rate • No lock-in contracts",
+      planRef: "Growth & Lead Generation",
       emoji: "🎯",
       gradient: "from-indigo-600 to-purple-600",
       shadow: "shadow-indigo-500/35",
@@ -81,9 +75,6 @@ export default function SectionServices({ onOpenBooking }) {
       num: "03",
       name: "AI Automation & Operations",
       planRef: "AI Automation & Operations",
-      price: "Custom",
-      cadence: "proposal",
-      billingNote: "Tailored to your systems & integration scope",
       emoji: "🤖",
       gradient: "from-cyan-600 to-emerald-500",
       shadow: "shadow-cyan-500/30",
@@ -131,7 +122,7 @@ export default function SectionServices({ onOpenBooking }) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3 shadow-2xs">
             <span>💎</span>
-            <span>Core Solutions &amp; Pricing</span>
+            <span>Core Solutions</span>
           </div>
           
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
@@ -139,7 +130,7 @@ export default function SectionServices({ onOpenBooking }) {
           </h2>
           
           <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            Three integrated solutions. Transparent flat rates. One growth partner.
+            Three integrated solutions. One growth partner.
           </p>
         </div>
 
@@ -177,24 +168,9 @@ export default function SectionServices({ onOpenBooking }) {
                 </div>
 
                 {/* Plan Tier Badge (Clean, No Slop Hyphen) */}
-                <div className="mb-3">
+                <div className="mb-4">
                   <span className={`inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${sol.tagColor}`}>
                     {sol.name}
-                  </span>
-                </div>
-
-                {/* PROMINENT PRICING DISPLAY */}
-                <div className="mb-5 pb-5 border-b border-slate-100">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-heading text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
-                      {sol.price}
-                    </span>
-                    <span className="font-sans text-sm sm:text-base font-bold text-slate-500">
-                      {sol.cadence}
-                    </span>
-                  </div>
-                  <span className="font-sans text-xs text-slate-400 block mt-1 font-medium">
-                    {sol.billingNote}
                   </span>
                 </div>
 

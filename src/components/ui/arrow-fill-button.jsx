@@ -43,7 +43,7 @@ export function ArrowFillButton({
       fontSize: "text-xs",
       iconCircle: "1.65rem",
       iconRight: "0.25rem",
-      iconSize: "size-3.5",
+      iconSize: "w-3.5 h-3.5",
     },
     default: {
       height: "h-11 min-h-[44px]",
@@ -51,7 +51,7 @@ export function ArrowFillButton({
       fontSize: "text-sm",
       iconCircle: "2.1rem",
       iconRight: "0.35rem",
-      iconSize: "size-4",
+      iconSize: "w-4 h-4",
     },
     lg: {
       height: "h-12 sm:h-[52px] min-h-[48px] sm:min-h-[52px]",
@@ -59,7 +59,7 @@ export function ArrowFillButton({
       fontSize: "text-sm sm:text-base",
       iconCircle: "2.35rem",
       iconRight: "0.4rem",
-      iconSize: "size-4 sm:size-4.5",
+      iconSize: "w-4 h-4 sm:w-5 sm:h-5",
     },
   }[size] || {
     height: "h-11 min-h-[44px]",
@@ -67,7 +67,7 @@ export function ArrowFillButton({
     fontSize: "text-sm",
     iconCircle: "2.1rem",
     iconRight: "0.35rem",
-    iconSize: "size-4",
+    iconSize: "w-4 h-4",
   };
 
   const variantDefaults = {
@@ -123,17 +123,62 @@ export function ArrowFillButton({
   const finalFillTextColor = fillTextColor ?? variantDefaults.fillTextColor;
   const finalHoverFillBgColor = hoverFillBgColor ?? finalFillBgColor;
   const finalHoverFillTextColor = hoverFillTextColor ?? finalFillTextColor;
-  let finalArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
-  let finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
+  let rawArrowColor = arrowColor ?? variantDefaults.arrowColor ?? finalFillTextColor;
+  let rawHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
 
-  // Safeguard: Ensure the arrow icon is never the exact same color as its circular background
-  const normalizeColor = (c) => String(c || '').toLowerCase().trim();
-  if (normalizeColor(finalArrowColor) === normalizeColor(finalFillBgColor)) {
-    finalArrowColor = finalFillTextColor;
-  }
-  if (normalizeColor(finalHoverArrowColor) === normalizeColor(finalHoverFillBgColor)) {
-    finalHoverArrowColor = finalHoverFillTextColor;
-  }
+  // Robust luminance calculation for any hex, rgb, rgba, or named color
+  const getPerceivedLuminance = (color) => {
+    if (!color) return 0.5;
+    const c = String(color).trim().toLowerCase();
+    if (c === '#fff' || c === '#ffffff' || c === 'white') return 1;
+    if (c === '#000' || c === '#000000' || c === 'black') return 0;
+    if (c === '#0f172a' || c === '#121622' || c === '#141824' || c === '#1e293b') return 0.08;
+    if (c === '#2563eb' || c === '#1d4ed8') return 0.22;
+    if (c.startsWith('rgba')) {
+      const match = c.match(/rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)/);
+      if (match) {
+        const r = parseInt(match[1], 10);
+        const g = parseInt(match[2], 10);
+        const b = parseInt(match[3], 10);
+        return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      }
+    }
+    if (c.startsWith('rgb')) {
+      const match = c.match(/rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/);
+      if (match) {
+        return (0.299 * parseInt(match[1], 10) + 0.587 * parseInt(match[2], 10) + 0.114 * parseInt(match[3], 10)) / 255;
+      }
+    }
+    if (c.startsWith('#')) {
+      const hex = c.replace('#', '');
+      if (hex.length === 3) {
+        const r = parseInt(hex[0] + hex[0], 16);
+        const g = parseInt(hex[1] + hex[1], 16);
+        const b = parseInt(hex[2] + hex[2], 16);
+        return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      }
+      if (hex.length >= 6) {
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+        return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      }
+    }
+    return 0.5;
+  };
+
+  // High-contrast resolution: guarantees the arrow is never invisible or low contrast
+  const ensureContrast = (badgeBg, arrow) => {
+    const bgLum = getPerceivedLuminance(badgeBg);
+    const arrowLum = getPerceivedLuminance(arrow);
+    if (Math.abs(bgLum - arrowLum) < 0.35) {
+      return bgLum >= 0.5 ? '#0f172a' : '#ffffff';
+    }
+    return arrow;
+  };
+
+  const finalArrowColor = ensureContrast(finalFillBgColor, rawArrowColor);
+  const finalHoverArrowColor = ensureContrast(finalHoverFillBgColor, rawHoverArrowColor);
 
   const usesUtilityBackground =
     className.includes("bg-") ||
