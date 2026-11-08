@@ -13,6 +13,8 @@ import SectionIndustries from './components/SectionIndustries';
 import SectionHowItWorks from './components/SectionHowItWorks';
 import SectionOutcomes from './components/SectionOutcomes';
 import SectionCaseStudies from './components/SectionCaseStudies';
+import SectionCaseStudiesPreview from './components/SectionCaseStudiesPreview';
+import SectionBlogPreview from './components/SectionBlogPreview';
 import SectionCredentials from './components/SectionCredentials';
 import SectionPricing from './components/SectionPricing';
 import SectionFAQ from './components/SectionFAQ';
@@ -62,19 +64,25 @@ function HomePage({ onOpenBooking }) {
       {/* 05. Combined Offer: The MivizHub Growth & Operations System */}
       <SectionDifferentiator onOpenBooking={onOpenBooking} />
 
-      {/* 06. Industries: Built Environment, Industrial & Operations */}
+      {/* 06. Verified Client Case Studies Preview (In-Page Navigation to /casestudy) */}
+      <SectionCaseStudiesPreview onOpenBooking={onOpenBooking} />
+
+      {/* 07. Industries: Built Environment, Industrial & Operations */}
       <SectionIndustries onOpenBooking={onOpenBooking} />
 
-      {/* 07. Why MivizHub: We Understand That Every Industry Operates Differently */}
+      {/* 08. Why MivizHub: We Understand That Every Industry Operates Differently */}
       <SectionCredentials />
 
-      {/* 08. How It Works: Simple to Start. Built Around Your Business */}
+      {/* 09. How It Works: Simple to Start. Built Around Your Business */}
       <SectionHowItWorks onOpenBooking={onOpenBooking} />
 
-      {/* 09. Frequently Asked Questions */}
+      {/* 10. Industry Insights & Practical Guides Preview (In-Page Navigation to /blog) */}
+      <SectionBlogPreview />
+
+      {/* 11. Frequently Asked Questions */}
       <SectionFAQ />
 
-      {/* 10. Final Call to Action */}
+      {/* 12. Final Call to Action */}
       <SectionCTA onOpenBooking={onOpenBooking} />
     </main>
   );

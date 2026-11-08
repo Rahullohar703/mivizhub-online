@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { ChevronDown, HelpCircle, Sparkles } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function SectionFAQ() {
   const faqs = [
@@ -42,23 +42,25 @@ export default function SectionFAQ() {
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
 
-      <Container className="max-w-4xl relative z-10">
+      <Container className="max-w-4xl relative z-10 px-4 sm:px-6">
         
-        {/* Header */}
+        {/* Header with Consistent Typography */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3 shadow-2xs">
-            <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3 shadow-2xs">
+            <span>❓</span>
             <span>Clear Answers</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 font-heading">
+          
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-normal">
+          
+          <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
             Direct, plain-English answers to common questions about working with MivizHub.
           </p>
         </div>
 
-        {/* FAQ Accordion - High Contrast, Colorful Accent & Smooth Animations */}
+        {/* FAQ Accordion - High Contrast, Animated Chevron */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = open === idx;
@@ -67,19 +69,19 @@ export default function SectionFAQ() {
                 key={idx} 
                 className={`group bg-white border-2 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-md ${
                   isOpen 
-                    ? 'border-blue-500 ring-2 ring-blue-500/10' 
+                    ? 'border-blue-500 ring-4 ring-blue-500/10' 
                     : 'border-slate-200/90 hover:border-slate-300'
                 }`}
               >
                 <button 
                   onClick={() => setOpen(isOpen ? -1 : idx)}
-                  className="w-full text-left px-6 py-5 font-bold text-base sm:text-lg text-slate-900 hover:text-blue-600 transition-colors flex justify-between items-center gap-4 cursor-pointer"
+                  className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 font-heading font-bold text-base sm:text-lg text-slate-900 hover:text-blue-600 transition-colors flex justify-between items-center gap-4 cursor-pointer"
                 >
-                  <span className={`${isOpen ? 'text-blue-600' : 'text-slate-900'} transition-colors`}>
+                  <span className={`${isOpen ? 'text-blue-600' : 'text-slate-900'} transition-colors leading-snug`}>
                     {faq.q}
                   </span>
                   
-                  {/* Animated Colorful Chevron Indicator */}
+                  {/* Animated Chevron Indicator */}
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                     isOpen 
                       ? 'bg-blue-600 text-white rotate-180 shadow-md shadow-blue-500/20' 
@@ -90,7 +92,7 @@ export default function SectionFAQ() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 font-normal">
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 font-sans text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 font-normal">
                     {faq.a}
                   </div>
                 )}
