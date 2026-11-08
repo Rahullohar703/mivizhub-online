@@ -117,13 +117,13 @@ export default function SectionServices({ onOpenBooking }) {
   ];
 
   return (
-    <Section id="solutions" className="py-24 bg-white/75 backdrop-blur-sm border-b border-slate-200/80 text-slate-900 relative overflow-hidden">
+    <Section id="solutions" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Anchor alias so #services scrolls here */}
       <div id="services" className="absolute -top-24" />
 
-      {/* Atmospheric color lighting */}
-      <div className="absolute top-1/4 left-1/4 w-[750px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[750px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.1)_0%,transparent_70%)] pointer-events-none" />
+      {/* Ambient background glows */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="max-w-7xl relative z-10 px-4 sm:px-6">
         

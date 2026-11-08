@@ -118,9 +118,9 @@ export default function SectionIndustries({ onOpenBooking }) {
   const current = industries[activeTab];
 
   return (
-    <Section id="industries" className="py-24 bg-white/75 backdrop-blur-sm border-b border-slate-200/80 text-slate-900 relative overflow-hidden">
+    <Section id="industries" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Background ambiance */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="max-w-6xl relative z-10 px-4 sm:px-6">
         

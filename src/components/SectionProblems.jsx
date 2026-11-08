@@ -59,10 +59,10 @@ export default function SectionProblems() {
   ];
 
   return (
-    <Section id="problem" className="bg-slate-50/70 backdrop-blur-sm py-24 border-b border-slate-200/80 text-slate-900 relative overflow-hidden">
+    <Section id="problem" className="bg-slate-50/80 py-24 border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-[550px] h-[550px] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="max-w-6xl relative z-10">
         

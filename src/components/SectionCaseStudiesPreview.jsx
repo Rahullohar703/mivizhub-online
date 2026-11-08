@@ -47,9 +47,9 @@ export default function SectionCaseStudiesPreview() {
   ];
 
   return (
-    <Section id="case-studies" className="py-24 bg-slate-50/70 backdrop-blur-sm border-b border-slate-200/80 text-slate-900 relative overflow-hidden">
+    <Section id="case-studies" className="py-24 bg-slate-50/80 border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[450px] bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.08)_0%,rgba(37,99,235,0.06)_40%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="max-w-6xl relative z-10 px-4 sm:px-6">
         

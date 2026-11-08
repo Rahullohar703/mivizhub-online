@@ -39,10 +39,9 @@ export default function SectionTrust() {
   ];
 
   return (
-    <Section id="positioning" className="py-24 bg-white/75 backdrop-blur-sm border-b border-slate-200/80 text-slate-900 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[450px] h-[450px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)] pointer-events-none" />
+    <Section id="positioning" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.04)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="max-w-6xl relative z-10 px-4 sm:px-6">
         
