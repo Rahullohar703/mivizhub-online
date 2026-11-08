@@ -5,7 +5,7 @@ import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function SectionCTA({ onOpenBooking }) {
   return (
-    <Section id="contact" className="py-24 bg-[#f8fafc] text-center relative overflow-hidden">
+    <Section id="contact" className="py-24 bg-white text-center relative overflow-hidden">
       <Container className="max-w-5xl px-4 sm:px-6">
         
         {/* Deep Navy High-Attention CTA Card with Radiant Gradient Halo */}

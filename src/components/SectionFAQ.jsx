@@ -27,7 +27,7 @@ export default function SectionFAQ() {
     },
     {
       q: 'How much does it cost?',
-      a: 'We offer flat-rate monthly plans starting at $250/mo for Digital Presence and $500/mo for our Growth & Lead Generation engine, with no lock-in contracts. Custom AI automation workflows and enterprise integrations are scoped transparently based on your systems and requirements.'
+      a: 'Pricing depends on your business requirements, implementation complexity, and ongoing support. We provide a proposal after understanding your needs.'
     },
     {
       q: 'How do we get started?',

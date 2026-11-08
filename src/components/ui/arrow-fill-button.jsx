@@ -127,21 +127,12 @@ export function ArrowFillButton({
   let finalHoverArrowColor = hoverArrowColor ?? variantDefaults.hoverArrowColor ?? finalHoverFillTextColor;
 
   // Safeguard: Ensure the arrow icon is never the exact same color as its circular background
-  const normalizeColor = (c) => String(c || '').toLowerCase().replace(/\s+/g, '');
-  const isLight = (c) => {
-    const col = normalizeColor(c);
-    return col === '#ffffff' || col === '#fff' || col === 'rgb(255,255,255)' || col === 'rgba(255,255,255,1)' || col === 'white';
-  };
-  const isDark = (c) => {
-    const col = normalizeColor(c);
-    return col === '#000000' || col === '#000' || col === '#0f172a' || col === '#141824' || col === '#111111' || col === '#09090b' || col === 'black';
-  };
-
-  if (normalizeColor(finalArrowColor) === normalizeColor(finalFillBgColor) || (isLight(finalArrowColor) && isLight(finalFillBgColor)) || (isDark(finalArrowColor) && isDark(finalFillBgColor))) {
-    finalArrowColor = isLight(finalFillBgColor) ? '#0f172a' : '#ffffff';
+  const normalizeColor = (c) => String(c || '').toLowerCase().trim();
+  if (normalizeColor(finalArrowColor) === normalizeColor(finalFillBgColor)) {
+    finalArrowColor = finalFillTextColor;
   }
-  if (normalizeColor(finalHoverArrowColor) === normalizeColor(finalHoverFillBgColor) || (isLight(finalHoverArrowColor) && isLight(finalHoverFillBgColor)) || (isDark(finalHoverArrowColor) && isDark(finalHoverFillBgColor))) {
-    finalHoverArrowColor = isLight(finalHoverFillBgColor) ? '#0f172a' : '#ffffff';
+  if (normalizeColor(finalHoverArrowColor) === normalizeColor(finalHoverFillBgColor)) {
+    finalHoverArrowColor = finalHoverFillTextColor;
   }
 
   const usesUtilityBackground =
@@ -282,22 +273,16 @@ export function ArrowFillButton({
 
       {/* Arrow Badge Container */}
       <span
-        className="pointer-events-none absolute right-[var(--icon-right)] top-1/2 z-[3] inline-flex h-[var(--icon-circle)] w-[var(--icon-circle)] shrink-0 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full shadow-sm transition-colors duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:[background-color:var(--btn-fill-bg-hover)] group-hover:[color:var(--btn-arrow-hover)] group-data-[pressed=true]:[background-color:var(--btn-fill-bg-hover)] group-data-[pressed=true]:[color:var(--btn-arrow-hover)]"
-        style={{
-          backgroundColor: 'var(--btn-fill-bg)',
-          color: 'var(--btn-arrow)',
-        }}
+        className="pointer-events-none absolute right-[var(--icon-right)] top-1/2 z-[3] inline-flex h-[var(--icon-circle)] w-[var(--icon-circle)] shrink-0 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full bg-[var(--btn-fill-bg)] text-[var(--btn-arrow)] transition-colors duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:bg-[var(--btn-fill-bg-hover)] group-hover:text-[var(--btn-arrow-hover)] group-data-[pressed=true]:bg-[var(--btn-fill-bg-hover)] group-data-[pressed=true]:text-[var(--btn-arrow-hover)] shadow-sm"
         aria-hidden="true"
       >
         <ArrowRight
-          style={{ color: 'inherit', stroke: 'currentColor' }}
-          className={`absolute left-1/2 top-1/2 ${sizeConfig.iconSize} translate-x-[-170%] -translate-y-1/2 origin-center scale-0 transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 group-hover:scale-100 group-data-[pressed=true]:-translate-x-1/2 group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-100`}
+          className={`absolute left-1/2 top-1/2 ${sizeConfig.iconSize} translate-x-[-170%] -translate-y-1/2 origin-center scale-0 text-current transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 group-hover:scale-100 group-data-[pressed=true]:-translate-x-1/2 group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-100`}
           strokeWidth={2.5}
         />
 
         <ArrowRight
-          style={{ color: 'inherit', stroke: 'currentColor' }}
-          className={`absolute left-1/2 top-1/2 ${sizeConfig.iconSize} -translate-x-1/2 -translate-y-1/2 origin-center transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:translate-x-[70%] group-hover:-translate-y-1/2 group-hover:scale-0 group-data-[pressed=true]:translate-x-[70%] group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-0`}
+          className={`absolute left-1/2 top-1/2 ${sizeConfig.iconSize} -translate-x-1/2 -translate-y-1/2 origin-center text-current transition-transform duration-[450ms] ease-[cubic-bezier(0.785,0.135,0.15,0.86)] motion-reduce:transition-none group-hover:translate-x-[70%] group-hover:-translate-y-1/2 group-hover:scale-0 group-data-[pressed=true]:translate-x-[70%] group-data-[pressed=true]:-translate-y-1/2 group-data-[pressed=true]:scale-0`}
           strokeWidth={2.5}
         />
       </span>

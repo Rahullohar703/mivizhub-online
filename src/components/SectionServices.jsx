@@ -18,8 +18,7 @@ export default function SectionServices({ onOpenBooking }) {
       gradient: "from-blue-600 to-cyan-500",
       shadow: "shadow-blue-500/30",
       borderTop: "border-t-4 border-t-blue-500",
-      contourHover: "hover:[box-shadow:0_0_0_2px_#93c5fd,0_0_0_5px_#2563eb,0_20px_25px_-5px_rgba(37,99,235,0.12)]",
-      contourBadge: "Level 1 • Foundation",
+      hoverBorder: "hover:border-blue-400",
       tagColor: "bg-blue-50 text-blue-700 border-blue-200",
       checkColor: "bg-blue-100 text-blue-700",
       headline: "Become the business customers discover, trust, and choose.",
@@ -53,8 +52,7 @@ export default function SectionServices({ onOpenBooking }) {
       gradient: "from-indigo-600 to-purple-600",
       shadow: "shadow-indigo-500/35",
       borderTop: "border-t-4 border-t-indigo-600",
-      contourHover: "hover:[box-shadow:0_0_0_2px_#c7d2fe,0_0_0_5px_#4f46e5,0_25px_30px_-5px_rgba(79,70,229,0.18)]",
-      contourBadge: "Level 2 • Traction",
+      hoverBorder: "hover:border-indigo-400",
       tagColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
       checkColor: "bg-indigo-100 text-indigo-700",
       isPopular: true,
@@ -75,7 +73,7 @@ export default function SectionServices({ onOpenBooking }) {
       btnTheme: {
         bgColor: "#2563eb",
         textColor: "#ffffff",
-        fillBgColor: "#1d4ed8",
+        fillBgColor: "#0f172a",
         fillTextColor: "#ffffff"
       }
     },
@@ -90,8 +88,7 @@ export default function SectionServices({ onOpenBooking }) {
       gradient: "from-cyan-600 to-emerald-500",
       shadow: "shadow-cyan-500/30",
       borderTop: "border-t-4 border-t-cyan-500",
-      contourHover: "hover:[box-shadow:0_0_0_2px_#99f6e4,0_0_0_5px_#0d9488,0_20px_25px_-5px_rgba(13,148,136,0.12)]",
-      contourBadge: "Level 3 • Deep Ops",
+      hoverBorder: "hover:border-cyan-400",
       tagColor: "bg-cyan-50 text-cyan-700 border-cyan-200",
       checkColor: "bg-cyan-100 text-cyan-700",
       headline: "Let your team focus on valuable work. Automate the repetitive.",
@@ -113,20 +110,20 @@ export default function SectionServices({ onOpenBooking }) {
       btnTheme: {
         bgColor: "#0f172a",
         textColor: "#ffffff",
-        fillBgColor: "#0d9488",
+        fillBgColor: "#0284c7",
         fillTextColor: "#ffffff"
       }
     }
   ];
 
   return (
-    <Section id="solutions" className="py-24 bg-[#f1f4f8] border-b border-slate-200 text-slate-900 relative overflow-hidden">
+    <Section id="solutions" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative overflow-hidden">
       {/* Anchor alias so #services scrolls here */}
       <div id="services" className="absolute -top-24" />
 
       {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <Container className="max-w-7xl relative z-10 px-4 sm:px-6">
         
@@ -155,9 +152,9 @@ export default function SectionServices({ onOpenBooking }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className={`group bg-white rounded-3xl p-6 sm:p-9 flex flex-col justify-between transition-all duration-300 shadow-sm hover:-translate-y-2 relative border-2 ${sol.borderTop} ${sol.contourHover} ${
+              className={`group bg-white rounded-3xl p-6 sm:p-9 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 relative border-2 ${sol.borderTop} ${sol.hoverBorder} ${
                 sol.isPopular 
-                  ? 'border-indigo-400 ring-2 ring-indigo-500/20' 
+                  ? 'border-indigo-400 ring-4 ring-indigo-500/10' 
                   : 'border-slate-200/90'
               }`}
             >
@@ -173,8 +170,8 @@ export default function SectionServices({ onOpenBooking }) {
                       MOST POPULAR
                     </span>
                   ) : (
-                    <span className="font-mono text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200/60">
-                      {sol.contourBadge}
+                    <span className="font-mono text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
+                      Plan {sol.num}
                     </span>
                   )}
                 </div>
