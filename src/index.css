@@ -69,5 +69,19 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: none;
 }
 
+/* Engineered Precision Blueprint Patterns */
+.bg-blueprint-grid {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.32) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+.bg-blueprint-lines {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(203, 213, 225, 0.28) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.28) 1px, transparent 1px);
+}
+
+
 
 

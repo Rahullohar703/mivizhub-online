@@ -48,42 +48,50 @@ function HomePage({ onOpenBooking }) {
   }, []);
 
   return (
-    <main id="main-content" className="bg-white text-slate-900">
-      {/* 01. Hero Section */}
-      <SectionHero onOpenBooking={onOpenBooking} />
+    <main id="main-content" className="bg-[#f8fafc] text-slate-900 relative min-h-screen">
+      {/* Engineered Precision Blueprint Dot Grid Underlay */}
+      <div 
+        className="fixed inset-0 bg-blueprint-grid pointer-events-none z-0 opacity-75" 
+        aria-hidden="true" 
+      />
 
-      {/* 02. Trust & Positioning: You Know Your Industry. We Help You Grow Within It. */}
-      <SectionTrust />
+      <div className="relative z-10">
+        {/* 01. Hero Section */}
+        <SectionHero onOpenBooking={onOpenBooking} />
 
-      {/* 03. Problem Section: You’re Busy Running Your Business. But Is Your Business Growing? */}
-      <SectionProblems />
+        {/* 02. Trust & Positioning: You Know Your Industry. We Help You Grow Within It. */}
+        <SectionTrust />
 
-      {/* 04. Core Solutions: 01 Digital Presence | 02 Growth & Leads | 03 AI Automation */}
-      <SectionServices onOpenBooking={onOpenBooking} />
+        {/* 03. Problem Section: You’re Busy Running Your Business. But Is Your Business Growing? */}
+        <SectionProblems />
 
-      {/* 05. Combined Offer: The MivizHub Growth & Operations System */}
-      <SectionDifferentiator onOpenBooking={onOpenBooking} />
+        {/* 04. Core Solutions: 01 Digital Presence | 02 Growth & Leads | 03 AI Automation */}
+        <SectionServices onOpenBooking={onOpenBooking} />
 
-      {/* 06. Verified Client Case Studies Preview (In-Page Navigation to /casestudy) */}
-      <SectionCaseStudiesPreview onOpenBooking={onOpenBooking} />
+        {/* 05. Combined Offer: The MivizHub Growth & Operations System */}
+        <SectionDifferentiator onOpenBooking={onOpenBooking} />
 
-      {/* 07. Industries: Built Environment, Industrial & Operations */}
-      <SectionIndustries onOpenBooking={onOpenBooking} />
+        {/* 06. Verified Client Case Studies Preview (In-Page Navigation to /casestudy) */}
+        <SectionCaseStudiesPreview onOpenBooking={onOpenBooking} />
 
-      {/* 08. Why MivizHub: We Understand That Every Industry Operates Differently */}
-      <SectionCredentials />
+        {/* 07. Industries: Built Environment, Industrial & Operations */}
+        <SectionIndustries onOpenBooking={onOpenBooking} />
 
-      {/* 09. How It Works: Simple to Start. Built Around Your Business */}
-      <SectionHowItWorks onOpenBooking={onOpenBooking} />
+        {/* 08. Why MivizHub: We Understand That Every Industry Operates Differently */}
+        <SectionCredentials />
 
-      {/* 10. Industry Insights & Practical Guides Preview (In-Page Navigation to /blog) */}
-      <SectionBlogPreview />
+        {/* 09. How It Works: Simple to Start. Built Around Your Business */}
+        <SectionHowItWorks onOpenBooking={onOpenBooking} />
 
-      {/* 11. Frequently Asked Questions */}
-      <SectionFAQ />
+        {/* 10. Industry Insights & Practical Guides Preview (In-Page Navigation to /blog) */}
+        <SectionBlogPreview />
 
-      {/* 12. Final Call to Action */}
-      <SectionCTA onOpenBooking={onOpenBooking} />
+        {/* 11. Frequently Asked Questions */}
+        <SectionFAQ />
+
+        {/* 12. Final Call to Action */}
+        <SectionCTA onOpenBooking={onOpenBooking} />
+      </div>
     </main>
   );
 }
