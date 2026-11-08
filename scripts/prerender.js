@@ -99,11 +99,11 @@ function createHtmlPage(template, {
   // 7. Semantic HTML inside noscript for non-JS / static crawlers
   const semanticContent = `
     <noscript>
-      <main style="max-width:900px;margin:0 auto;padding:48px 24px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#f4f4f5;">
-        <h1 style="font-size:2.25rem;font-weight:800;line-height:1.25;color:#f4f4f5;margin-bottom:1rem;">
+      <main style="max-width:900px;margin:0 auto;padding:48px 24px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#0f172a;">
+        <h1 style="font-size:2.25rem;font-weight:800;line-height:1.25;color:#0f172a;margin-bottom:1rem;">
           ${escapeHtml(h1 || title)}
         </h1>
-        <p style="font-size:1.125rem;line-height:1.6;color:#a1a1aa;margin-bottom:2rem;">
+        <p style="font-size:1.125rem;line-height:1.6;color:#334155;margin-bottom:2rem;">
           ${escapeHtml(description || previewText || '')}
         </p>
       </main>
@@ -151,7 +151,7 @@ function main() {
         '@type': 'Person',
         'name': 'Rahul Lohar'
       },
-      'description': 'MivizHub helps general contractors, trade pros, and ops-heavy businesses capture high-value projects with local search marketing, 24/7 AI voice dispatch, and automated estimate follow-ups.'
+      'description': 'We help construction, real estate, engineering, manufacturing, and operations-heavy businesses attract better customers, convert more enquiries, and streamline everyday operations.'
     },
     {
       '@context': 'https://schema.org',
@@ -162,12 +162,13 @@ function main() {
   ];
 
   const homeHtml = createHtmlPage(baseTemplate, {
-    title: 'MivizHub | Growth Marketing & AI Operations for Construction & Field Trades',
-    description: 'MivizHub helps general contractors, trade pros, and ops-heavy businesses capture high-value projects with local search marketing, 24/7 AI voice dispatch, and automated estimate follow-ups.',
+    title: 'MivizHub | Growth & AI Automation for Industry',
+    description: 'We help construction, real estate, engineering, manufacturing, and operations-heavy businesses attract better customers, convert more enquiries, and streamline everyday operations.',
     canonicalUrl: `${BASE_URL}/`,
-    h1: 'MivizHub | Growth Marketing & AI Operations for Construction & Field Trades',
-    previewText: 'Win more high-value projects and stop losing bids to missed calls with done-for-you contractor marketing and 24/7 AI operations.',
-    jsonLd: homeJsonLd
+    h1: 'Build a Stronger Business. Win More Opportunities. Automate the Work Holding You Back.',
+    previewText: 'We help construction, real estate, engineering, manufacturing, and operations-heavy businesses attract better customers, convert more enquiries, and streamline everyday operations. From marketing and lead generation to AI-powered automation, we build systems designed around how your industry actually works.',
+    jsonLd: homeJsonLd,
+    keywords: ['industry growth', 'construction marketing', 'real estate marketing', 'AI automation for operations', 'lead generation', 'enquiry conversion']
   });
   fs.writeFileSync(templatePath, homeHtml, 'utf-8');
   count++;

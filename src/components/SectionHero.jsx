@@ -1,135 +1,74 @@
 import React from 'react';
-import Button from './ui/Button';
 import Container from './ui/Container';
 import Section from './ui/Section';
-import { Phone, Calendar, ArrowRight, Check } from 'lucide-react';
 import { ArrowFillButton } from './ui/arrow-fill-button';
 
 export default function SectionHero({ onOpenBooking }) {
   return (
-    <Section id="hero" className="pt-32 pb-16 md:pt-40 md:pb-24 bg-[#080b12] text-textMain relative overflow-hidden">
-      {/* Clean, subtle ambient glow (hardware-accelerated, zero blur overhead) */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.12)_0%,rgba(59,130,246,0.04)_40%,transparent_75%)] pointer-events-none" />
-      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(49,192,222,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute top-1/3 -right-48 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
-      
+    <Section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900 border-b border-slate-200 relative overflow-hidden">
+      {/* Subtle background ambiance */}
+      <div className="absolute top-0 inset-x-0 h-96 bg-[radial-gradient(ellipse_at_top,rgba(37,99,235,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(2,132,199,0.05)_0%,transparent_70%)] pointer-events-none" />
+
       <Container className="relative z-10 flex flex-col items-center text-center">
         
-        {/* Simple, Trustworthy Badge */}
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
-          <span className="text-xs sm:text-sm font-medium text-gray-200 tracking-wide">
-            Built For Contractors, Trade Pros &amp; Field Operations • Zero Software To Learn
+        {/* Eyebrow Badge */}
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-6 shadow-sm">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-700">
+            GROWTH &amp; AI AUTOMATION FOR INDUSTRY
           </span>
         </div>
 
-        {/* Primary Headline: Wide container so it completes in 1 to 2 lines cleanly */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight text-white leading-[1.15] mb-6 max-w-6xl mx-auto">
-          Win More High-Value Projects. <span className="text-[#31c0de]">Stop Losing Bids to Missed Calls.</span>
+        {/* Primary Headline */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold tracking-tight text-slate-900 leading-[1.18] mb-6 max-w-5xl mx-auto font-heading">
+          Build a Stronger Business. Win More Opportunities. <span className="text-blue-600">Automate the Work Holding You Back.</span>
         </h1>
 
-        {/* Supporting Copy */}
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto mb-10 font-normal">
-          We build and manage done-for-you local marketing and AI operations for construction, trade contractors, and field teams. Rank #1 locally, answer calls in 1 ring, qualify leads in 60 seconds, and automate back-office admin.
-        </p>
+        {/* Body Copy */}
+        <div className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-10 space-y-3 font-normal">
+          <p>
+            We help construction, real estate, engineering, manufacturing, and operations-heavy businesses attract better customers, convert more enquiries, and streamline everyday operations.
+          </p>
+          <p className="text-slate-500 text-sm sm:text-base">
+            From marketing and lead generation to AI-powered automation, we build systems designed around how your industry actually works.
+          </p>
+        </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-6">
+        {/* CTAs with ArrowFillButton */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-8">
           <ArrowFillButton 
-            onClick={onOpenBooking} 
-            btnText="Book a Free 15-Minute Strategy Call"
+            onClick={() => onOpenBooking ? onOpenBooking('Growth Strategy Call') : null}
+            btnText="Book Your Growth Strategy Call"
             size="lg"
-            variant="primary"
-            className="w-full sm:w-auto shadow-xl shadow-blue-600/30"
+            bgColor="#0f172a"
+            textColor="#ffffff"
+            fillBgColor="#2563eb"
+            fillTextColor="#ffffff"
+            arrowColor="#ffffff"
+            hoverArrowColor="#ffffff"
+            className="w-full sm:w-auto shadow-lg shadow-slate-900/10"
           />
 
           <ArrowFillButton 
-            btnText="Explore Our 3 Core Offers" 
-            href="#offers" 
+            btnText="Explore Our Solutions" 
+            href="#solutions" 
             size="lg"
-            variant="secondary"
-            className="w-full sm:w-auto border-white/15 hover:border-white/30"
+            bgColor="#ffffff"
+            textColor="#0f172a"
+            fillBgColor="#0f172a"
+            fillTextColor="#ffffff"
+            arrowColor="#0f172a"
+            hoverArrowColor="#ffffff"
+            className="w-full sm:w-auto border border-slate-300 shadow-sm hover:border-slate-400"
           />
         </div>
 
-        {/* Reassurance text */}
-        <p className="text-sm sm:text-base text-gray-400 mb-14 font-medium">
-          No pushy sales reps • Turnkey setup in 7 days • Works with your existing phone number
+        {/* Trust Line */}
+        <p className="text-xs sm:text-sm text-slate-500 font-medium">
+          Built for businesses where projects, people, operations, and sales are complex.
         </p>
-
-        {/* 3-Pillar Offer Highlight Bar */}
-        <div className="w-full max-w-6xl mx-auto">
-          <div className="bg-[#0e1322]/95 border border-white/10 rounded-2xl p-7 sm:p-9 shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-              
-              {/* Offer 1 */}
-              <div className="flex items-start gap-4 text-left">
-                <div className="w-11 h-11 rounded-xl bg-[#31c0de]/10 border border-[#31c0de]/20 text-[#31c0de] font-bold flex items-center justify-center flex-shrink-0 text-sm">
-                  01
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#31c0de] block mb-1">
-                    AI Automation &amp; Ops
-                  </span>
-                  <h3 className="text-lg font-bold text-white mb-1">
-                    Field &amp; Office 24/7
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                    24/7 voice dispatch, instant quote qualification in &lt;60s, estimate follow-ups, and calendar/CRM sync.
-                  </p>
-                </div>
-              </div>
-
-              {/* Offer 2 */}
-              <div className="flex items-start gap-4 text-left border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6 lg:pl-8">
-                <div className="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 font-bold flex items-center justify-center flex-shrink-0 text-sm">
-                  02
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1">
-                    Presence Plan ($250/mo)
-                  </span>
-                  <h3 className="text-lg font-bold text-white mb-1">
-                    Contractor Foundation
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                    High-converting landing page, Google Maps #1 rank optimization, local SEO, and monthly project showcases.
-                  </p>
-                </div>
-              </div>
-
-              {/* Offer 3 */}
-              <div className="flex items-start gap-4 text-left border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6 lg:pl-8">
-                <div className="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center flex-shrink-0 text-sm">
-                  03
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-400 block mb-1">
-                    Growth Engine ($500/mo)
-                  </span>
-                  <h3 className="text-lg font-bold text-white mb-1">
-                    High-Ticket Project Engine
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                    Targeted Google &amp; Meta ad campaigns, dedicated bid pages, speed-to-lead automation, and end-to-end tracking.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Clean bottom note */}
-            <div className="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-gray-400 text-center sm:text-left">
-              <span>Zero software for you to learn. We set up, train, and manage everything hands-off.</span>
-              <a href="#offers" className="text-[#31c0de] hover:underline font-semibold flex items-center gap-1">
-                <span>View Full Plan Deliverables</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
-        </div>
 
       </Container>
     </Section>
   );
 }
-

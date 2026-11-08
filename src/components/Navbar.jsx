@@ -35,8 +35,7 @@ export default function Navbar({ onOpenBooking }) {
 
   // Main navigation items
   const homeNavItems = [
-    { name: '3 Core Offers', url: isHomePage ? '#offers' : '/#offers', isRoute: false, icon: Tag },
-    { name: 'AI Operations', url: isHomePage ? '#ai-staffing' : '/', isRoute: !isHomePage, icon: Users },
+    { name: 'AI Workforce', url: isHomePage ? '#ai-staffing' : '/', isRoute: !isHomePage, icon: Users },
     { name: 'Marketing & Growth', url: '/growth', isRoute: true, icon: TrendingUp },
     { name: 'Case Studies', url: '/casestudy', isRoute: true, icon: Award },
     { name: 'Blog', url: '/blog', isRoute: true, icon: BookOpen },

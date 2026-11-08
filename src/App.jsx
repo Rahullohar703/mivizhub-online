@@ -28,12 +28,12 @@ import { getBookingUrl } from './config/booking';
 
 function HomePage({ onOpenBooking }) {
   useEffect(() => {
-    document.title = "MivizHub | Growth Marketing & AI Operations for Construction & Field Trades";
+    document.title = "MivizHub | Growth & AI Automation for Industry";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "MivizHub helps general contractors, trade pros, and ops-heavy businesses capture high-value projects with local search marketing, 24/7 AI voice dispatch, and automated estimate follow-ups."
+        "We help construction, real estate, engineering, manufacturing, and operations-heavy businesses attract better customers, convert more enquiries, and streamline everyday operations."
       );
     }
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -46,47 +46,35 @@ function HomePage({ onOpenBooking }) {
   }, []);
 
   return (
-    <main id="main-content">
-      {/* 1. Hero Section */}
+    <main id="main-content" className="bg-white text-slate-900">
+      {/* 01. Hero Section */}
       <SectionHero onOpenBooking={onOpenBooking} />
 
-      {/* 2. Platform & Partner Trust Bar */}
+      {/* 02. Trust & Positioning: You Know Your Industry. We Help You Grow Within It. */}
       <SectionTrust />
 
-      {/* 3. The Problem Section: Working on the job site shouldn't mean losing bids at the desk */}
+      {/* 03. Problem Section: You’re Busy Running Your Business. But Is Your Business Growing? */}
       <SectionProblems />
 
-      {/* 4. Core 3 Offers: AI Automation, Presence ($250/mo) & Growth ($500/mo) */}
+      {/* 04. Core Solutions: 01 Digital Presence | 02 Growth & Leads | 03 AI Automation */}
       <SectionServices onOpenBooking={onOpenBooking} />
 
-      {/* 5. Core Differentiator: Bring In High-Value Projects + Never Miss a Call */}
-      <SectionDifferentiator />
+      {/* 05. Combined Offer: The MivizHub Growth & Operations System */}
+      <SectionDifferentiator onOpenBooking={onOpenBooking} />
 
-      {/* 6. Dedicated Marketing & Growth Deep Dive */}
-      <SectionMarketing onOpenBooking={onOpenBooking} />
+      {/* 06. Industries: Built Environment, Industrial & Operations */}
+      <SectionIndustries onOpenBooking={onOpenBooking} />
 
-      {/* 7. Dedicated AI Staffing Deep Dive */}
-      <SectionAIStaffing onOpenBooking={onOpenBooking} />
-
-      {/* 8. Who We Help: Broad Industry Categories */}
-      <SectionIndustries />
-
-      {/* 9. Simple 3-Step Process */}
-      <SectionHowItWorks />
-
-      {/* 10. Outcomes: More Leads, More Time, Lower Overhead, More Growth */}
-      <SectionOutcomes />
-
-      {/* 11. Case Studies: Problem -> Solution -> Outcome */}
-      <SectionCaseStudies />
-
-      {/* 12. Credentials & Trust Standards */}
+      {/* 07. Why MivizHub: We Understand That Every Industry Operates Differently */}
       <SectionCredentials />
 
-      {/* 13. Frequently Asked Questions */}
+      {/* 08. How It Works: Simple to Start. Built Around Your Business */}
+      <SectionHowItWorks onOpenBooking={onOpenBooking} />
+
+      {/* 09. Frequently Asked Questions */}
       <SectionFAQ />
 
-      {/* 14. Final Call to Action */}
+      {/* 10. Final Call to Action */}
       <SectionCTA onOpenBooking={onOpenBooking} />
     </main>
   );

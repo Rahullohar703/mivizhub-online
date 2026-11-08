@@ -1,75 +1,88 @@
 import React from 'react';
 import Container from './ui/Container';
 import Section from './ui/Section';
+import { ArrowFillButton } from './ui/arrow-fill-button';
 
-export default function SectionHowItWorks() {
+export default function SectionHowItWorks({ onOpenBooking }) {
   const steps = [
     {
-      num: "1",
-      title: "15-Minute Intro Call",
-      desc: "We learn about your business, your services, and how you want your phone answered. No technical questions."
+      num: "01",
+      title: "Understand",
+      desc: "We discuss your business, industry, goals, current challenges, and growth opportunities."
     },
     {
-      num: "2",
-      title: "We Build Everything For You",
-      desc: "We build your marketing campaigns, train your AI receptionist, and connect your calendar. Zero work for you."
+      num: "02",
+      title: "Identify",
+      desc: "We identify where your business is losing opportunities, wasting time, or struggling to scale."
     },
     {
-      num: "3",
-      title: "Your Phone Rings & Jobs Get Booked",
-      desc: "Leads come in, your AI assistant answers every call in 1 ring, and appointments show up on your schedule."
+      num: "03",
+      title: "Build",
+      desc: "We recommend and implement the right combination of marketing, lead management, and automation."
+    },
+    {
+      num: "04",
+      title: "Improve",
+      desc: "We monitor performance, identify improvements, and optimise your systems over time."
     }
   ];
 
   return (
-    <Section id="how-it-works" className="py-20 bg-gradient-to-b from-[#0a0e19] via-[#0c1426] to-[#080d1a] border-t border-white/10 relative overflow-hidden">
-      {/* Subtle tech midnight ambient spotlight */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(49,192,222,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <Container className="relative z-10">
+    <Section id="how-it-works" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative">
+      <Container className="max-w-6xl">
         
-        {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#31c0de] block mb-2">
-            Simple 3-Step Process
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 block mb-2">
+            The Process
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            How Getting Started Works
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 font-heading">
+            Simple to Start. Built Around Your Business.
           </h2>
-          <p className="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
-            You don't need any technical skills. We handle 100% of the setup, training, and ongoing management.
+          <p className="text-base sm:text-lg text-slate-600">
+            A structured, collaborative approach to improving your growth and operations.
           </p>
         </div>
 
-        {/* 3 Step Cards - Wide & Expansive */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {steps.map((step, idx) => (
-            <div
+        {/* 4 Steps Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          {steps.map((st, idx) => (
+            <div 
               key={idx}
-              className="bg-[#0f1728]/90 border border-white/10 rounded-3xl p-8 sm:p-9 flex flex-col justify-between hover:border-[#31c0de]/40 transition-all shadow-xl"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:border-slate-300 transition-colors"
             >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-[#31c0de] font-heading font-extrabold flex items-center justify-center text-2xl mb-6 shadow-md">
-                  0{step.num}
+                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-slate-900 font-extrabold flex items-center justify-center text-lg mb-5 shadow-2xs font-mono">
+                  {st.num}
                 </div>
-                
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  {step.title}
+                <h3 className="text-xl font-bold text-slate-900 mb-2 font-heading">
+                  Step {st.num} — {st.title}
                 </h3>
-
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                  {step.desc}
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                  {st.desc}
                 </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-white/5 text-xs sm:text-sm font-semibold text-gray-400">
-                Step 0{idx + 1} of 03 • Done For You
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <ArrowFillButton 
+            onClick={() => onOpenBooking ? onOpenBooking('Process Strategy Call') : null}
+            btnText="Book Your Strategy Call"
+            size="lg"
+            bgColor="#0f172a"
+            textColor="#ffffff"
+            fillBgColor="#2563eb"
+            fillTextColor="#ffffff"
+            arrowColor="#ffffff"
+            hoverArrowColor="#ffffff"
+            className="w-full sm:w-auto shadow-md"
+          />
         </div>
 
       </Container>
     </Section>
   );
 }
-
