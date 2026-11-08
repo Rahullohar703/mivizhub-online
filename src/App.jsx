@@ -87,7 +87,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-background font-sans antialiased text-textMain selection:bg-brandPurple selection:text-white min-h-screen">
+    <div className="font-sans antialiased text-slate-900 bg-white selection:bg-blue-600 selection:text-white min-h-screen">
       <ScrollToTop />
       <Navbar onOpenBooking={handleOpenBooking} />
       <Routes>

@@ -15,16 +15,16 @@ html {
   /* Note: Never apply global scroll-behavior: smooth on html root as it causes wheel/touch lag */
   scroll-padding-top: 5.5rem;
   font-family: var(--font-body);
-  background-color: #080b12;
-  color: #f4f4f5;
+  background-color: #ffffff;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #080b12;
-  color: #f4f4f5;
+  background-color: #ffffff;
+  color: #0f172a;
   -webkit-overflow-scrolling: touch;
   font-size: 16px;
   line-height: 1.6;
@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
   font-weight: 700;
-  color: #ffffff;
 }
 
 /* Crisp, professional text utility classes - NO rainbow neon */
