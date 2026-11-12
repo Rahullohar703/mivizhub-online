@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/blogs/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/casestudies/:path*",
+      "destination": "/casestudy/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

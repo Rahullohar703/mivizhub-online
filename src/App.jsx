@@ -105,6 +105,7 @@ export default function App() {
         <Route path="/blog/:slug" element={<BlogPostPage onOpenBooking={handleOpenBooking} />} />
         <Route path="/casestudy" element={<CaseStudyPage onOpenBooking={handleOpenBooking} />} />
         <Route path="/casestudies" element={<Navigate to="/casestudy" replace />} />
+        <Route path="/blogs" element={<Navigate to="/blog" replace />} />
         <Route path="/casestudy/:slug" element={<CaseStudyDetailPage onOpenBooking={handleOpenBooking} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
